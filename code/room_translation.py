@@ -32,19 +32,29 @@ for i in range(len(df)):
     find_logo()
     
     # Click on Translate 
-    find_and_click_on('TARSautomation\\img\\translate.png')
+    find_and_click('TARSautomation\\img\\translate.png')
     time.sleep(2)
     
     # Click on menu and locate discription input box
     find_and_click_on('TARSautomation\\img\\translate_product.PNG')
     tabing(6)
     
+    # Clear the box if update option is on
+    if translate_or_update == 2:
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('del')  
+         
     # Get data from DataFrame and type in the discription box, do not change the secound locater!
     description = df.iloc[i, 2]
     type_translate(2, description)
     
+    # Clear the box if update option is on
+    if translate_or_update == 2:
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('del') 
+        
     # Get data from DataFrame and type in the marketing lable, box do not change the secound locater!
-    marketing_label = df.iloc[0, 1]
+    marketing_label = df.iloc[i, 1]
     type_translate(translate_or_update, marketing_label)
 
     # Select translate or update
@@ -57,7 +67,7 @@ for i in range(len(df)):
         time.sleep(1)
 
     # close browser
-    time.sleep(0.5)
+    time.sleep(2)
     pyautogui.hotkey('ctrl', 'w')
 
 if translate_or_update == 1:

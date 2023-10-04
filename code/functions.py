@@ -153,8 +153,8 @@ def extract_capital_letters(input_string):
     
     return capital_letters
 
+"""
 # search products
-
 def product_search(product_type, text_search):
     find_logo()
     x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\product.PNG', confidence=0.8)
@@ -180,7 +180,7 @@ def product_search(product_type, text_search):
     clear_search_box(6)
     pyautogui.write(text_search)
     pyautogui.press('enter')
-    
+    """
     
 # Action key press
 def loop_key_press(text):
@@ -266,3 +266,32 @@ def check_descrip_len(df, col):
     if accept != 0:
         print('Please go back to the content book and correct it')
         sys.exit()
+        
+        
+# Locate add product menu
+def locate_product_menu():
+    find_logo()
+    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\product.PNG', confidence=0.8)
+    pyautogui.moveTo(x, y, 0.1)
+    pyautogui.click()
+    tabing(3)
+    pyautogui.press('enter')
+
+# Search in dropdown list
+def product_search(product_type):
+    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\dropdown.PNG', confidence=0.8)
+    pyautogui.moveTo(x, y, 0.1)
+    pyautogui.click()
+    pyautogui.press('(')
+    time.sleep(3)
+    loop_key_press(product_type)
+    time.sleep(1)
+    pyautogui.press('enter')
+    time.sleep(2)
+    
+# Search for product code
+def code_search(text_search):
+    find_searchbox()
+    clear_search_box(6)
+    pyautogui.write(text_search)
+    pyautogui.press('enter')
