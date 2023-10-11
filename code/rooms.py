@@ -8,7 +8,7 @@ hotel_rid = input('Enter Hotel RID: ')
 
 # set file path and url
 url = 'https://dataweb.accor.net/dotw-trans/productTabs!input.action'
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Roomtypes"
 
 # open url and load excel file
@@ -17,7 +17,7 @@ load_excel_file(excel_file_path, sheet_name)
 
 # import room data for seach in the menu
 
-excel_file = 'TARSautomation\\room_library.xlsx'
+excel_file = 'room_library.xlsx'
 room_df = pd.read_excel(excel_file)
 
 # function for finding room category
@@ -34,19 +34,29 @@ try:
         # loop until room code is none
         cell_start = 11
         i = 0
+        previous_search = ''
         while True:
             # locate a menu and search for room type
-            room_code = str(sheet[f'C{cell_start + i}'].value)
+            room_code = str(sheet[f'C{cell_start + i}'].value).strip()
             if room_code != 'None':
                 # Check Room Code
                 category = get_category_by_code(room_df, code=room_code)[0]
-                product_search(product_type=category, text_search=room_code)
-                print(category)
+                
+                # locate products menus tab
+                locate_product_menu()
+                
+                # check previous search
+                if previous_search != category:
+                    product_search(product_type=category)
+                
+                # Search for room code
+                code_search(room_code)
                 find_add()
                 time.sleep(2)
                 # Add data
+                
                 # tick on site or close by -> Room always onsite 7 times to this section
-                find_and_click_on('TARSautomation\\img\\add_product.PNG')
+                find_and_click_on('img\\add_product.PNG')
                 tabing(4)
                 
                 # paying product tickbox

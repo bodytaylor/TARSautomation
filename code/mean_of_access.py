@@ -7,7 +7,7 @@ from functions import *
 hotel_rid = input('Enter Hotel RID: ')
 
 url = 'https://dataweb.accor.net/dotw-trans/accessTabs!input.action'
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Address&Setup"
 code_list = []
 
@@ -21,7 +21,7 @@ find_add()
 time.sleep(1)
 
 # go to the entry form
-find_and_click_on('TARSautomation\\img\\add_access.PNG')
+find_and_click_on('img\\add_access.PNG')
 tabing(2)
 
 
@@ -44,11 +44,11 @@ try:
         open_web(url_translation)
         
         # Click on translation button
-        find_and_click_on('TARSautomation\\img\\translate.png')
+        find_and_click_on('img\\translate.png')
         find_logo()
         
         # Locate a input section
-        find_and_click_on('TARSautomation\\img\\translate_menu.PNG')
+        find_and_click_on('img\\translate_menu.PNG')
         tabing(8)
         time.sleep(1)
         
@@ -78,7 +78,7 @@ try:
                 time.sleep(1)
                 find_add()
                 time.sleep(1)
-                find_and_click_on('TARSautomation\\img\\add_access.PNG')
+                find_and_click_on('img\\add_access.PNG')
                 tabing(2)
                 enter_data(data)
                 

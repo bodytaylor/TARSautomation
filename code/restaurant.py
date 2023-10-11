@@ -24,7 +24,7 @@ def format_time(time):
 hotel_rid = input('Enter Hotel RID: ')
 
 # Load workbook and read the data
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Restaurant"  
 restaurants = {}
 try:
@@ -211,7 +211,7 @@ open_web(url)
 # Locate menu and reorder search result
 tabing(2)
 pyautogui.press('enter')
-find_and_click('TARSautomation\\img\\type_code.PNG')
+find_and_click('img\\type_code.PNG')
 find_searchbox()
 pyautogui.write('rt')
 pyautogui.press('enter')
@@ -222,7 +222,7 @@ for keys in restaurants:
     # Find add button and start entering data
     find_add()
     time.sleep(1)
-    find_and_click_on('TARSautomation\\img\\add_res.PNG')
+    find_and_click_on('img\\add_res.PNG')
     tabing(2)
     
     # Enter Ranking

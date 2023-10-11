@@ -1,0 +1,13 @@
+# BPG with Brand exception 
+'RIXOS HOTELS'
+'SLS'
+'BANYAN TREE'
+'ART SERIES'
+'HYDE'
+'MANTIS'
+'ANGSANA'
+'MONDRIAN'
+'MANTRA'
+'BREAKFREE'
+
+# Check Ref file

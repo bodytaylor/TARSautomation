@@ -21,7 +21,7 @@ def count_rows(sheet, column_letter, start_row):
     return row_count
 
 # Load workbook and read the data
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Restaurant"  
 restaurants = {}
 try:
@@ -65,11 +65,11 @@ for i in range(len(df)):
     find_logo()
     
     # Click on translation button
-    find_and_click_on('TARSautomation\\img\\translate.png')
+    find_and_click_on('img\\translate.png')
     time.sleep(2)
     
     # Click on menu and locate Translate a restaurant input box
-    find_and_click_on('TARSautomation\\img\\translate_rt.PNG')
+    find_and_click_on('img\\translate_rt.PNG')
     time.sleep(1)
     tabing(6)
 

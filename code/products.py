@@ -9,7 +9,7 @@ hotel_rid = input('Enter Hotel RID: ')
 
 # set file path and url
 url = 'https://dataweb.accor.net/dotw-trans/productTabs!input.action'
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Other Services"
 
 # open url and load excel file
@@ -17,7 +17,7 @@ open_web(url)
 load_excel_file(excel_file_path, sheet_name)
 
 # import room data for seach in the menu
-excel_file = 'TARSautomation\\product_library.xlsx'
+excel_file = 'product_library.xlsx'
 product_df = pd.read_excel(excel_file)
 
 # function for finding room category
@@ -28,7 +28,7 @@ def get_category_by_code(df, code):
 # Locate add product menu
 def locate_product_menu():
     find_logo()
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\product.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\product.PNG', confidence=0.8)
     pyautogui.moveTo(x, y, 0.1)
     pyautogui.click()
     tabing(3)
@@ -36,7 +36,7 @@ def locate_product_menu():
 
 # Search in dropdown list
 def product_search(product_type):
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\dropdown.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\dropdown.PNG', confidence=0.8)
     pyautogui.moveTo(x, y, 0.1)
     pyautogui.click()
     pyautogui.press('(')
@@ -90,16 +90,17 @@ try:
                     code_search(product_code)    
                     find_add()      
                     time.sleep(2)                                   
-                    find_and_click_on('TARSautomation\\img\\add_product.PNG')
+                    find_and_click_on('img\\add_product.PNG')
                     tabing(4)
 
-                    # heck if it paying ?
+                    # Check if it paying ?
                     if paying == 'Yes':
                         pyautogui.press('space')
                     tabing(3)
                     
                     # Occupancy = 1
-                    pyautogui.write('1')
+                    if paying == 'Yes':
+                        pyautogui.write('1')
                     tabing(5)
                             
                     # always tick on available on GDS
@@ -107,7 +108,8 @@ try:
                     tabing(2)
                     
                     # Max quantity of product in room = 1
-                    pyautogui.write('1')
+                    if paying == 'Yes':
+                        pyautogui.write('1')
                     tabing(1)
                             
                     # go to add button

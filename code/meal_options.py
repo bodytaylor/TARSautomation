@@ -8,7 +8,7 @@ hotel_rid = input('Enter Hotel RID: ')
 
 # set file path and url
 url = 'https://dataweb.accor.net/dotw-trans/productTabs!input.action'
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Other Services"
 
 # open url
@@ -18,7 +18,7 @@ open_web(url)
 meal_options_list = ['MBREAK', 'MBUFF', 'DMBREA', 'AMBREA']
 
 # load product categories
-excel_file = 'TARSautomation\\product_library.xlsx'
+excel_file = 'product_library.xlsx'
 product_df = pd.read_excel(excel_file)
 
 
@@ -26,10 +26,19 @@ product_df = pd.read_excel(excel_file)
 for i in range(len(meal_options_list)):
     code = meal_options_list[i] 
     category = get_category_by_code(product_df, code)[0]
-    product_search(product_type=category, text_search=code)
+    
+    # Check Catagory before search
+    locate_product_menu()
+    if i == 0:
+            previous_search = ''
+    if category != previous_search:
+        product_search(product_type=category)
+
+    code_search(code)
+    
     find_add()
     time.sleep(2)
-    find_and_click_on('TARSautomation\\img\\add_product.PNG')
+    find_and_click_on('img\\add_product.PNG')
     tabing(4)
     
     # always tick paying
@@ -49,6 +58,8 @@ for i in range(len(meal_options_list)):
     tabing(1)
     
     pyautogui.press('enter')
+    
+    previous_search = category
     
 print(f'Mandatory Meal Option has been added to {hotel_rid}!')
 

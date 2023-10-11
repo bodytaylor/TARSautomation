@@ -61,7 +61,7 @@ def tick_box (tickbox):
 # find and click on add item
 def find_add():
     find_logo()
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\add.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\add.PNG', confidence=0.8)
     pyautogui.moveTo(x, y, 0.1) 
     pyautogui.click()
 
@@ -69,10 +69,10 @@ def find_add():
 # wait for logo to load then continue
 def find_logo():
     time.sleep(1)
-    image = pyautogui.locateOnScreen("TARSautomation\\img\\accor_logo.PNG", confidence=0.8)
+    image = pyautogui.locateOnScreen("img\\accor_logo.PNG", confidence=0.8)
     time.sleep(1)
     while image == None:
-        image = pyautogui.locateOnScreen("TARSautomation\\img\\accor_logo.PNG", confidence=0.8)
+        image = pyautogui.locateOnScreen("img\\accor_logo.PNG", confidence=0.8)
         print("still haven't found the image")
     print("Page loaded successfully!!")
     time.sleep(1)
@@ -80,7 +80,7 @@ def find_logo():
 # find search box
 def find_searchbox():
     find_logo()
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\filter.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\filter.PNG', confidence=0.8)
     pyautogui.moveTo(x, y + 30, 0.1)
     pyautogui.click()
 
@@ -90,9 +90,9 @@ def enter_description(keys):
     url = f'https://dataweb.accor.net/dotw-trans/translateHotelLoungeInput.action?actionType=translate&description.lounge.type.code=MEET&description.lounge.name={keys}&'
     webbrowser.open_new_tab(url)
     find_logo()
-    find_and_click('TARSautomation\\img\\translate.png')
+    find_and_click('img\\translate.png')
     time.sleep(1)
-    find_and_click_on('TARSautomation\\img\\translate_menu.png')
+    find_and_click_on('img\\translate_menu.png')
     tabing(5)
     
     # Enter Translations
@@ -115,7 +115,7 @@ def enter_description(keys):
 # find and click on add item
 def find_add():
     find_logo()
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\add.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\add.PNG', confidence=0.8)
     pyautogui.moveTo(x, y, 0.1) 
     pyautogui.click()
     
@@ -149,7 +149,7 @@ def locate_menu():
 
 
 # Load workbook and read the data
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Meeting Room"  
 description = {}
 try:

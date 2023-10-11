@@ -7,7 +7,7 @@ from functions import *
 hotel_rid = input('Enter Hotel RID: ')
 
 url = 'https://dataweb.accor.net/dotw-trans/ipTabs!input.action'
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Main Attractions"
 open_web(url)
 load_excel_file(excel_file_path, sheet_name)

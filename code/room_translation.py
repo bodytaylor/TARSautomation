@@ -4,7 +4,7 @@ from functions import *
 
 # get room code and store as list
 def get_room_data():
-    excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+    excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
     sheet_name = "Roomtypes"
     df = pd.read_excel(excel_file_path, sheet_name=sheet_name, usecols='C, AC, AA', skiprows=9, nrows=15)
     df.columns = ['room_code', 'marketing_label', 'tar_ref']
@@ -32,11 +32,11 @@ for i in range(len(df)):
     find_logo()
     
     # Click on Translate 
-    find_and_click('TARSautomation\\img\\translate.png')
+    find_and_click('img\\translate.png')
     time.sleep(2)
     
     # Click on menu and locate discription input box
-    find_and_click_on('TARSautomation\\img\\translate_product.PNG')
+    find_and_click_on('img\\translate_product.PNG')
     tabing(6)
     
     # Clear the box if update option is on

@@ -62,17 +62,17 @@ def load_excel_file(file_path, sheet_name):
 # find and click on add item
 def find_add():
     find_logo()
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\add.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\add.PNG', confidence=0.8)
     pyautogui.moveTo(x, y, 0.1) 
     pyautogui.click()
 
 # wait for logo to load then continue
 def find_logo():
     time.sleep(1)
-    image = pyautogui.locateOnScreen("TARSautomation\\img\\accor_logo.PNG", confidence=0.8)
+    image = pyautogui.locateOnScreen("img\\accor_logo.PNG", confidence=0.8)
     time.sleep(1)
     while image == None:
-        image = pyautogui.locateOnScreen("TARSautomation\\img\\accor_logo.PNG", confidence=0.8)
+        image = pyautogui.locateOnScreen("img\\accor_logo.PNG", confidence=0.8)
         print("Page is loading . .")
         time.sleep(1)
     print("Page loaded successfully!!")
@@ -81,19 +81,19 @@ def find_logo():
 # find search box
 def find_searchbox():
     find_logo()
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\filter.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\filter.PNG', confidence=0.8)
     pyautogui.moveTo(x, y + 30, 0.1)
     pyautogui.click()
 
 # function for input description into translation page
 def enter_description(keys, search_key):
     # Open new tab and locate menu
-    url = f'https://dataweb.accor.net/dotw-trans/translateHotelLoungeInput.action?actionType=translate&description.lounge.type.code=MEET&description.lounge.name={search_key}&'
+    url = f'https://dataweb.accor.net/dotw-trans/translateHotelLoungeInput.action?actionType=translate&description.lounge.type.code=MEET&description.lounge.name={search_key}'
     webbrowser.open_new_tab(url)
     find_logo()
-    find_and_click('TARSautomation\\img\\translate.png')
+    find_and_click('img\\translate.png')
     time.sleep(1)
-    find_and_click_on('TARSautomation\\img\\translate_menu.png')
+    find_and_click_on('img\\translate_menu.png')
     tabing(5)
     
     # Enter Translations
@@ -116,7 +116,7 @@ def enter_description(keys, search_key):
 # find and click on add item
 def find_add():
     find_logo()
-    x, y = pyautogui.locateCenterOnScreen('TARSautomation\\img\\add.PNG', confidence=0.8)
+    x, y = pyautogui.locateCenterOnScreen('img\\add.PNG', confidence=0.8)
     pyautogui.moveTo(x, y, 0.1) 
     pyautogui.click()
     
@@ -147,7 +147,7 @@ def locate_menu():
 
 
 # Load workbook and read the data
-excel_file_path = f'TARSautomation\hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 sheet_name = "Meeting Room"  
 description = {}
 try:
@@ -181,7 +181,7 @@ check_descrip_len(df=df, col='description')
 
 # If all pass, Add translation
 for key in description:
-    search_key = str(key).replace(' ', '+')
+    search_key = url_parse(key)
     enter_description(keys=key, search_key=search_key)
     print(f'Description for {key} has been added')
     
