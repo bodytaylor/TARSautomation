@@ -5,30 +5,6 @@ import openpyxl
 import pandas as pd
 from functions import *
 
-# search for non accepted charecters in data frame
-def check_text_meet(df, col,):
-    df['Non_Matching_Chars'] = df[col].apply(find_non_matching_chars)
-    accept = 0
-    for index, row in df.iterrows():
-        non_matching_chars = row['Non_Matching_Chars']
-        if non_matching_chars:
-            print(f"Row {df.iloc[index, 0]} column {col}: Detected characters: '{non_matching_chars}'")
-            accept += 1
-    if accept != 0:
-        print('Please go back to the content book and correct it')
-        sys.exit()
-
-# Check Description lengh
-def check_descrip_len(df, col):
-    accept = 0
-    for index, description in df.iterrows():
-        if len(description) > 255:
-            print(f"Row {df.iloc[index, 0]} column {col}: contain more than 255 charactors")
-            accept += 1
-    if accept != 0:
-        print('Please go back to the content book and correct it')
-        sys.exit()
-
 # Function to count even rows until an empty cell is encountered
 def count_even_rows(sheet, column_letter, start_row):
     even_row_count = 0
@@ -58,6 +34,29 @@ def load_excel_file(file_path, sheet_name):
     except Exception as e:
         print(f"An error occurred while loading the Excel file: {str(e)}")
         return None, None
+
+# Function to enter data into a web page
+def enter_data(data):
+    time.sleep(1)
+    for _ in range(6):
+        pyautogui.press('tab')
+    
+    # Loop through the data and enter it
+    for value in data:
+        if value == None:
+            pyautogui.write('0')
+            pyautogui.press('tab')
+        else:
+            pyautogui.write(str(value))
+            pyautogui.press('tab')
+    
+    # Handle tickboxes
+def tick_box (tickbox):
+    for value in tickbox:
+        if value == 'Yes':
+            pyautogui.press('space')
+        pyautogui.press('tab')
+    pyautogui.press('enter')
     
 # find and click on add item
 def find_add():
@@ -66,6 +65,7 @@ def find_add():
     pyautogui.moveTo(x, y, 0.1) 
     pyautogui.click()
 
+
 # wait for logo to load then continue
 def find_logo():
     time.sleep(1)
@@ -73,8 +73,7 @@ def find_logo():
     time.sleep(1)
     while image == None:
         image = pyautogui.locateOnScreen("img\\accor_logo.PNG", confidence=0.8)
-        print("Page is loading . .")
-        time.sleep(1)
+        print("still haven't found the image")
     print("Page loaded successfully!!")
     time.sleep(1)
     
@@ -86,9 +85,9 @@ def find_searchbox():
     pyautogui.click()
 
 # function for input description into translation page
-def enter_description(keys, search_key):
+def enter_description(keys):
     # Open new tab and locate menu
-    url = f'https://dataweb.accor.net/dotw-trans/translateHotelLoungeInput.action?actionType=translate&description.lounge.type.code=MEET&description.lounge.name={search_key}'
+    url = f'https://dataweb.accor.net/dotw-trans/translateHotelLoungeInput.action?actionType=translate&description.lounge.type.code=MEET&description.lounge.name={keys}&'
     webbrowser.open_new_tab(url)
     find_logo()
     find_and_click('img\\translate.png')
@@ -128,6 +127,9 @@ def clear_search_box(n):
 # user input for Hotel RID
 hotel_rid = input('Enter Hotel RID: ')
 
+# Open web browser and navigate to a page
+webbrowser.open('https://dataweb.accor.net/dotw-trans/displayHotelLounges!input.action')
+
 # Navigate to Lounges library tab
 def locate_menu():
     find_logo()
@@ -162,7 +164,34 @@ try:
         # Loop through the rows and enter data
         cell_start = 12
         for i in range(even_row_count):
+            data = [
+                    str(sheet[f"C{cell_start}"].value).strip(),
+                    int(round((sheet[f"G{cell_start}"].value), 0)),
+                    sheet[f"F{cell_start}"].value,
+                    round((sheet[f"H{cell_start}"].value), 2),
+                    sheet[f"I{cell_start}"].value,
+                    sheet[f"L{cell_start}"].value,
+                    sheet[f"N{cell_start}"].value,
+                    sheet[f"J{cell_start}"].value,
+                    sheet[f"M{cell_start}"].value,
+                    sheet[f"K{cell_start}"].value,
+                    sheet[f"O{cell_start}"].value,
+                    sheet[f"Q{cell_start}"].value,
+                    sheet[f"P{cell_start}"].value,
+                    sheet[f"R{cell_start}"].value
+                    ]
+            tickbox = [sheet[f"S{cell_start}"].value,
+                       sheet[f"T{cell_start}"].value,
+                       sheet[f"U{cell_start}"].value,
+                       sheet[f"V{cell_start}"].value]
             description[sheet[f"C{cell_start}"].value] = (sheet[f"E{cell_start + 1}"].value)
+            
+            locate_menu()
+            
+            # Enter data into the web page
+            enter_data(data)
+            tick_box(tickbox)
+            print(f"{sheet[f'C{cell_start}'].value} has been added to Lounges!")
             cell_start += 2
 
 except Exception as e:
@@ -172,18 +201,8 @@ finally:
     if workbook:
         workbook.close()
 
-# Create df
-df = pd.DataFrame(list(description.items()), columns=['meet_room', 'description'])
+# instruction for next step
+print('Add meeting room successfully!!')
+print('Next add translation. . .')
 
-# Check Discription before entering it
-check_text_meet(df=df, col='description')
-check_descrip_len(df=df, col='description')
-
-# If all pass, Add translation
-for key in description:
-    search_key = url_parse(key)
-    enter_description(keys=key, search_key=search_key)
-    print(f'Description for {key} has been added')
-    
-print(f'Translation Added to all meeting rooms in {hotel_rid}')
 

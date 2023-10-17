@@ -33,25 +33,24 @@ elements_dict['hotelDataTranslate.translatedAddress2'] = data[3]
 elements_dict['hotelDataTranslate.translatedAddress3'] = data[4]
 
 # Tell user to open web console
-print('Open web browser console by pressing CTRL + SHIFT + I')
-find_console()
-
-# Fill data in console
-# Goto Target URL
-type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-trans/displayHotelData!input.action";')
+find_edge_console()
+go_to_url('https://dataweb.accor.net/dotw-trans/displayHotelData!input.action')
 time.sleep(2)
-find_logo()
 
 # Click on Translation Langauge GB
-translate_button = "document.querySelector('a[class=\"zoneCliquable\"]').click();"
+translate_button = "var elements = document.getElementsByClassName('zoneCliquable'); if (elements.length > 0) { elements[0].click(); }"
 type_and_enter(translate_button)
 time.sleep(2)
 
+switch_mode()
 # Start Writing in the browser console
 for key, value in elements_dict.items():
     if value != None:
-        input_text(key, value)
-
+        input_textf(key, value)
+        
+switch_mode()
+pyautogui.press('enter')
+time.sleep(1)
 # Click translate and confirm
 type_and_enter(text='document.getElementById(\"hotelDataForm.submitButton\").click();')
 time.sleep(1)

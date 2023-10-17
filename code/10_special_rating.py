@@ -18,15 +18,11 @@ data = get_excel_values(
 
 local_rating = data[0]
 
-# Tell user to open web console
-print('Open web browser console by pressing CTRL + SHIFT + I')
-find_console()
-
 # Fill data in console
-# Goto Target URL
-type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-trans/displayHotelStandings!input.action";')
-time.sleep(2)
-find_logo()
+find_edge_console()
+# walk to this url
+go_to_url("https://dataweb.accor.net/dotw-trans/displayHotelStandings!input.action")
+
 
 # input data in console
 # Click Add

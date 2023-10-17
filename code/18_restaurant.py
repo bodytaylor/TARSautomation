@@ -265,8 +265,13 @@ for keys in restaurants:
     # Menus
     tickbox(data=restaurants[f'{keys}'][8]['Menus'])
     
+    if brunch == None:
+        tabing(11)
+    else:
+        tabing(23)
+        
+        
     # Find Update Button
-    tabing(11)
     pyautogui.press('enter')
     print(f'Restaurant {keys} has been added!')
     

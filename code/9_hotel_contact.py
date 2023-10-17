@@ -25,7 +25,7 @@ def accor_name(title, input_name, input_surname) -> str:
 
 # Name ACCOR Standard for single cell
 def accor_format_name(title, text_input) -> str:
-    if text_input != None:
+    if text_input and title is not None:
         words = text_input.split()
         formatted_name = words[0].capitalize()
         for word in words[1:]:
@@ -99,7 +99,8 @@ sale_email = contact_data[13]
 	
 # Sales  contact: I24, J24
 sale_title = contact_data[14]
-sale_title = sale_title.replace(".", "")
+if sale_title != None:
+    sale_title = sale_title.replace(".", "")
 sale_name = contact_data[15]
 if sale_name != None:
     words = sale_name.split()
@@ -132,23 +133,23 @@ contact_dict ={
 
 
 # Tell user to open web console
-print('Open web browser console by pressing CTRL + SHIFT + I')
-find_console()
+find_edge_console()
+# walk to this url
+go_to_url("https://dataweb.accor.net/dotw-trans/displayHotelContacts.action")
 
-# Fill data in console
-# Goto Target URL
-type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-trans/displayHotelContacts.action";')
-time.sleep(2)
-find_logo()
 
 # input data in console
 ## input text data ##
+switch_mode()
 for key, value in contact_dict.items():
-    input_text(element_id=key, text=value)
+    input_textf(element_id=key, text=value)
 
 ## input dropdown data ##
-select_dropdown(element_id="hotelContactsForm_marketingContact_function_code", value=50)
+select_dropdownf(element_id="hotelContactsForm_marketingContact_function_code", value=50)
     
 ## Tick on message to all accor.com
+
+switch_mode()
+pyautogui.press('enter')
 
 print('Automation Done Please Review The input data before click save! Thanks.')

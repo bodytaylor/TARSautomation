@@ -13,24 +13,10 @@ def type_and_enter(text):
     pyautogui.press('enter')
 
 # Open target web
-webbrowser.open('https://dataweb.accor.net/dotw-trans/displayHotelAutomation!input.action')
-find_logo()
-# open browser console
-pyautogui.hotkey('win', 'r')
-time.sleep(1)
-pyautogui.typewrite(r"%systemroot%\system32\f12\IEChooser.exe")
-time.sleep(1)
-
-pyautogui.press('enter')
+find_edge_console()
+go_to_url('https://dataweb.accor.net/dotw-trans/displayHotelAutomation!input.action')
 time.sleep(2)
-tabing(3)
-pyautogui.press('enter')
-# wait for webpage to load
-find_logo()
-time.sleep(5)
-pyautogui.hotkey('ctrl', '2')
-time.sleep(1)
-find_and_click(img_path=r'img\ie12.PNG')
+
 
 # ready to roll!!
 automation_list = ['RT', 'DQ', 'GG', 'HO', 'TE']

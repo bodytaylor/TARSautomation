@@ -235,7 +235,7 @@ def check_text(df, col, row_shift=11):
         
 # Create a function to find non-matching characters
 def find_non_matching_chars(text):
-    pattern = r'[^a-zA-Z0-9*,-.: ]'
+    pattern = r'[^a-zA-Z0-9*,-.: \']'
     return ''.join(re.findall(pattern, text))
 
 
@@ -342,18 +342,18 @@ def input_text(element_id, text):
     if text != None:
         pyautogui.typewrite(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
         time.sleep(0.5)
-        pyautogui.hotkey('enter')
+        pyautogui.press('enter')
         
 def input_textf(element_id, text):
     if text != None:
         pyautogui.typewrite(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-        pyautogui.hotkey('enter')
+        pyautogui.press('enter')
     
 # select dropdown
 def select_dropdown(element_id, value):
     if value != None:
         pyautogui.typewrite(f'var selectElement1 = document.getElementById("{element_id}"); selectElement1.value = "{value}";')
-        time.sleep(0.5)
+        time.sleep(0.25)
         pyautogui.press('enter')
 
 # fast track
@@ -365,7 +365,7 @@ def select_dropdownf(element_id, value):
 # Click button
 def click_button(element):
     pyautogui.typewrite(f'document.getElementById("{element}").click();')
-    time.sleep(0.5)
+    time.sleep(0.25)
     pyautogui.press('enter')
     
 # Purse text in to url
@@ -398,3 +398,8 @@ def press_ctrl_plus(key):
     pyautogui.keyDown('ctrl')
     pyautogui.press(key)
     pyautogui.keyUp('ctrl')
+    
+# Tickbox in browser console
+def tick_box(element):
+    pyautogui.typewrite(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
+    pyautogui.press('enter')

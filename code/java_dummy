@@ -1,0 +1,3 @@
+## Product need element list
+
+addBasicElement('DEAFSI','Room for hearing impaired guests','HANDI','R','false','false');

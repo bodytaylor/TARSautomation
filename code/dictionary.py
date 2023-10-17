@@ -219,6 +219,7 @@ standard_dict = {
     "JO&JOE": "BU",
     "MAMA SHELTER": "FI",
     "MANTRA": "FI",
+    "MANTIS": "UP",
     "MERCURE": "FI",
     "MERCURE LIVING": "FI",
     "MGALLERY BY SOFITEL": "LX",
@@ -277,3 +278,22 @@ location_dict = {
     "Within 5 min of train station": "TRAN",
     "Within 5 min of airport": "AIRP",
 }
+
+
+bar_dic = {
+    "BAR1": "AMERICAN BAR",
+    "BAR": "BAR",
+    "IBI99": "bar",
+    "IBI01": "bar-rendez-vous",
+    "BAR7": "DISCOTHEQUE BAR",
+    "BAR6": "LOBBY BAR",
+    "LOUNGE": "LOUNGE",
+    "BAR4": "PIANO BAR",
+    "BAR2": "POOL BAR",
+    "BAR3": "POOL SIDE SNACK BAR",
+    "PRIVBA": "PRIVATE BAR",
+    "PUB": "PUB",
+    "SNACBA": "SNACK-BAR",
+    "WINBAR": "WINE BAR",
+}
+

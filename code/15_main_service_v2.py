@@ -7,6 +7,15 @@ meal_options_list = ['MBREAK', 'MBUFF', 'DMBREA', 'AMBREA']
 # user input for Hotel RID
 hotel_rid = input('Enter Hotel RID: ')
 
+# Search for product lib
+def add_product(code, df):
+    code = str(code).strip()
+    if code in df['code'].values:
+        result = df.loc[df['code'] == code].values[0].astype(str).tolist()
+        element = f"addBasicElement('{result[0]}','{result[1]}','{result[2]}','{result[3]}','{result[4]}','{result[5]}');"
+        return element
+    else:
+        return None
 
 # Read Excel file and put in data frame
 excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
@@ -29,46 +38,38 @@ df = pd.DataFrame({'code': code, 'available': available, 'amount': amount})
 df.dropna(subset=['available'], inplace=True)
 df = df.loc[df['available'] == 'Yes']
 
-# read product library
-excel_file = 'product_library.xlsx'
-product_df = pd.read_excel(excel_file)
+# Load product library
+csv_path = 'products_lib.csv'
+product_lib_df = pd.read_csv(
+    csv_path,
+    header=0,
+    sep=';'
+)
 
 # open web
-url = 'https://dataweb.accor.net/dotw-trans/productTabs!input.action'
-open_web(url)
+find_edge_console()
+go_to_url('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
+time.sleep(2)
 
-i = 0
+
 for index, row in df.iterrows():
     code = row['code']
     if code not in meal_options_list:
-        category = get_category_by_code(product_df, code)[0]
-    
-        # Check Catagory before search
-        locate_product_menu()
-        if i == 0:
-                previous_search = ''
-        if category != previous_search:
-            product_search(product_type=category)
+        product_to_add = add_product(code, df=product_lib_df)
+        type_and_enter(product_to_add)
+        time.sleep(1)
 
-        code_search(code)
-        find_add()
-        time.sleep(2)
-        find_and_click_on('img\\add_product.PNG')
-        tabing(10)
-        
         amount = row['amount']
         if pd.isna(amount) == False:
             amount = str(int(row['amount']))
-            pyautogui.typewrite(amount)
+            input_textf(element_id='hotelProduct.quantity', text=amount)
         
-        tabing(2)
-        # tick on available on GDS
-        pyautogui.press('space' )
-        tabing(3)
+        # always yes on GDS
+        tick_box(element='hotelProduct.availableOnGDSMedia')
         
-        pyautogui.press('enter')
-        
-        previous_search = category
-        i += 1
+        # Click add
+        type_and_enter('document.getElementById("hotelProduct.submitButton").click();')
+        print(f'INFO - {code} has been added')
+        time.sleep(1.5)  
     
 print(f'Main Product has been added to {hotel_rid}!')

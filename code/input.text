@@ -1,0 +1,97 @@
+var elements = document.querySelectorAll('a[href="#zloug"]');
+
+elements.forEach(function(element, index) {
+  console.log('Element ' + index + ':', element);
+});
+
+ Element 0: 
+ Element 1: 
+ Element 2: 
+ Element 3: 
+ Element 4: 
+ Element 5: 
+VM268:4 Element 6: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('AP1','C265')​;​}​">​…​</a>​
+VM268:4 Element 7: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('AP2','C265')​;​}​">​…​</a>​
+VM268:4 Element 8: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIMB1','C265')​;​}​">​…​</a>​
+VM268:4 Element 9: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIMB2','C265')​;​}​">​…​</a>​
+VM268:4 Element 10: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIMB3','C265')​;​}​">​…​</a>​
+VM268:4 Element 11: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('AMBREA','C265')​;​}​">​…​</a>​
+VM268:4 Element 12: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('DMBREA','C265')​;​}​">​…​</a>​
+VM268:4 Element 13: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('AUDI','C265')​;​}​">​…​</a>​
+VM268:4 Element 14: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('BOLT','C265')​;​}​">​…​</a>​
+VM268:4 Element 15: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('SPINKL','C265')​;​}​">​…​</a>​
+VM268:4 Element 16: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('VING','C265')​;​}​">​…​</a>​
+VM268:4 Element 17: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('AIRC','C265')​;​}​">​…​</a>​
+VM268:4 Element 18: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('AIRCOL','C265')​;​}​">​…​</a>​
+VM268:4 Element 19: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('AUTAIR','C265')​;​}​">​…​</a>​
+VM268:4 Element 20: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('EMER1','C265')​;​}​">​…​</a>​
+VM268:4 Element 21: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('FAMRNB','C265')​;​}​">​…​</a>​
+VM268:4 Element 22: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('INTHD','C265')​;​}​">​…​</a>​
+VM268:4 Element 23: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('MBRINC','C265')​;​}​">​…​</a>​
+VM268:4 Element 24: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('NOSMOK','C265')​;​}​">​…​</a>​
+VM268:4 Element 25: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('NSRNMB','C265')​;​}​">​…​</a>​
+VM268:4 Element 26: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('OPENH','C265')​;​}​">​…​</a>​
+VM268:4 Element 27: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('SAFE','C265')​;​}​">​…​</a>​
+VM268:4 Element 28: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('VOLT2','C265')​;​}​">​…​</a>​
+VM268:4 Element 29: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('WATER','C265')​;​}​">​…​</a>​
+VM268:4 Element 30: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('WHEEL','C265')​;​}​">​…​</a>​
+VM268:4 Element 31: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('WIFI2','C265')​;​}​">​…​</a>​
+VM268:4 Element 32: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('MBREAK','C265')​;​}​">​…​</a>​
+VM268:4 Element 33: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('MBUFF','C265')​;​}​">​…​</a>​
+VM268:4 Element 34: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('PARK1','C265')​;​}​">​…​</a>​
+VM268:4 Element 35: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('PKGECL','C265')​;​}​">​…​</a>​
+VM268:4 Element 36: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('TURN','C265')​;​}​">​…​</a>​
+VM268:4 Element 37: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('VALET','C265')​;​}​">​…​</a>​
+VM268:4 Element 38: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('XPKCSI','C265')​;​}​">​…​</a>​
+VM268:4 Element 39: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIAI1','C265')​;​}​">​…​</a>​
+VM268:4 Element 40: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIAI2','C265')​;​}​">​…​</a>​
+VM268:4 Element 41: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIAI3','C265')​;​}​">​…​</a>​
+VM268:4 Element 42: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIFB1','C265')​;​}​">​…​</a>​
+VM268:4 Element 43: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIFB2','C265')​;​}​">​…​</a>​
+VM268:4 Element 44: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIFB3','C265')​;​}​">​…​</a>​
+VM268:4 Element 45: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIHB1','C265')​;​}​">​…​</a>​
+VM268:4 Element 46: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIHB2','C265')​;​}​">​…​</a>​
+VM268:4 Element 47: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('CHIHB3','C265')​;​}​">​…​</a>​
+VM268:4 Element 48: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to undelete ?')​)​{undeleteHotelElement('DWPOOL','C265')​;​}​">​…​</a>​
+VM268:4 Element 49: <a href=​"#zloug" onclick=​"if( confirm('Do you really want to delete ?')​)​{deleteHotelElement('FITE','C265')​;​}​">​…​</a>​
+VM268:4 Element 50: <a href=​"#zloug" onclick=​"addBasicElement('AIRC','Air conditioning','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 51: <a href=​"#zloug" onclick=​"addBasicElement('AIRCOL','Air Cooling System','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 52: <a href=​"#zloug" onclick=​"addBasicElement('AIRP','Pulse air','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 53: <a href=​"#zloug" onclick=​"addBasicElement('BATHM','Bath Menu','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 54: <a href=​"#zloug" onclick=​"addBasicElement('BILL','TV with on-screen billing info','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 55: <a href=​"#zloug" onclick=​"addBasicElement('CHAIR','rolling seats','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 56: <a href=​"#zloug" onclick=​"addBasicElement('CONBED','Bedding concept','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 57: <a href=​"#zloug" onclick=​"addBasicElement('CONTV','Connectivity Panel','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 58: <a href=​"#zloug" onclick=​"addBasicElement('COOMU','Connecting rooms available','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 59: <a href=​"#zloug" onclick=​"addBasicElement('COVZY','Nightcove Zyken','RAMINI','Z','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 60: <a href=​"#zloug" onclick=​"addBasicElement('COVZYK','Nightcove Zyken','RAMINI','Z','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 61: <a href=​"#zloug" onclick=​"addBasicElement('DATA','Data port in room','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 62: <a href=​"#zloug" onclick=​"addBasicElement('DOCSTA','Docking station','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 63: <a href=​"#zloug" onclick=​"addBasicElement('DRAPEO','Blackout curtains','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 64: <a href=​"#zloug" onclick=​"addBasicElement('EXPRES','Express check in','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 65: <a href=​"#zloug" onclick=​"addBasicElement('EXPROU','Express check out','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 66: <a href=​"#zloug" onclick=​"addBasicElement('FERA','Iron in room','RAMINI','Z','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 67: <a href=​"#zloug" onclick=​"addBasicElement('FERAR','Iron at reception','RAMINI','Z','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 68: <a href=​"#zloug" onclick=​"addBasicElement('HAIRD2','Hair dryer in bedroom','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 69: <a href=​"#zloug" onclick=​"addBasicElement('ICE','Ice machine','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 70: <a href=​"#zloug" onclick=​"addBasicElement('IRONIN','Ironing board and flat-iron','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 71: <a href=​"#zloug" onclick=​"addBasicElement('LAMPDE','Adjustable desk lamp','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 72: <a href=​"#zloug" onclick=​"addBasicElement('LUXFR','Luxury French brand amenities','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 73: <a href=​"#zloug" onclick=​"addBasicElement('MINFRE','Mini bar with free soft drinks','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 74: <a href=​"#zloug" onclick=​"addBasicElement('MIRROR','Full-length mirror','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 75: <a href=​"#zloug" onclick=​"addBasicElement('MMHUB','Multimedia hub','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 76: <a href=​"#zloug" onclick=​"addBasicElement('NWBED','Sweet Bed','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 77: <a href=​"#zloug" onclick=​"addBasicElement('PAPER','Free morning newspaper','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 78: <a href=​"#zloug" onclick=​"addBasicElement('PDJCH','Breakfast in bed','RAMINI','Z','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 79: <a href=​"#zloug" onclick=​"addBasicElement('PILOWM','Pillow Menu','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 80: <a href=​"#zloug" onclick=​"addBasicElement('POTS','Pots\/​Pans\/​Dishes','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 81: <a href=​"#zloug" onclick=​"addBasicElement('PRESS','Trouser press in room','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 82: <a href=​"#zloug" onclick=​"addBasicElement('SAFE','Safe deposit box in room','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 83: <a href=​"#zloug" onclick=​"addBasicElement('SAUNA','Sauna in bathroom','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 84: <a href=​"#zloug" onclick=​"addBasicElement('SPA','Spa\/​Jacuzzi in bathroom','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 85: <a href=​"#zloug" onclick=​"addBasicElement('TURN','Turn down service','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 86: <a href=​"#zloug" onclick=​"addBasicElement('VACUUM','Vacuum cleaner','RAMINI','R','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 87: <a href=​"#zloug" onclick=​"addBasicElement('VOLT2','220\/​240 V AC','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 88: <a href=​"#zloug" onclick=​"addBasicElement('VOLT3','110\/​120 V AC','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+VM268:4 Element 89: <a href=​"#zloug" onclick=​"addBasicElement('WATER','Free in-room mineral water','RAMINI','H','false','false')​;​return true;​">​…​</a>​
+undefined

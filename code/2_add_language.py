@@ -22,9 +22,9 @@ df = pd.read_excel(file_path,
 # filter df
 while True:
     df_filtered = df[(df['COUNTRY NAME'] == country_and_city[0]) & (df['CITY NAME'] == country_and_city[1])]
-
+    print(df_filtered)
     if len(df_filtered) == 0:
-        country_and_city = str(input('Please input the closest major city: '))
+        country_and_city[1] = str(input('Please input the closest major city: '))
     elif len(df_filtered) != 0:
         break
 
@@ -43,22 +43,20 @@ df_filtered.drop(columns=col_drop, inplace=True)
 # create list from col head
 lang_to_add = df_filtered.columns.to_list()
 
-# open language definition page
-webbrowser.open('https://dataweb.accor.net/dotw-trans/secure/hotelLanguagesInput.action')
-find_logo()
-
+# fuction for adding language
 def add_language(lang):
+    text = f"window.confirm = ajaxReplace('dataForm', 'addHotelLanguage.action?language.languageCode={lang}', 'get');"
+    type_and_enter(text)
     time.sleep(1)
-    code_search(str(lang).strip())
-    find_add()
-    time.sleep(0.2)
-    pyautogui.press('enter')
-    time.sleep(1)
-    print(f'INFO - Language {lang} has benn added to {hotel_rid}!')
-    
+
+# open language definition page
+find_edge_console()
+go_to_url("https://dataweb.accor.net/dotw-trans/secure/hotelLanguagesInput.action")
+time.sleep(2)
+
 # start loop
 for item in lang_to_add:
-    add_language(item)
+    add_language(lang=item)
 
 print(f'Task complete total language is {total_lang - 2}')
 print(f"Don't forget to Manually set Reference language to {ref_lang}")

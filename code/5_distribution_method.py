@@ -10,20 +10,14 @@ excel_file = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
 
 email = get_excel_values(
     file_path=excel_file, 
-    cell_addresses=['C47'], 
+    cell_addresses=['C45'], 
     sheet_name='Address&Setup'
 )[0]
 
 # Find web browser and webbrowser console that already opened
-find_and_click(img_path=r'img\ielogo.PNG')
-time.sleep(1)
-find_and_click(img_path=r'img\console_logo.PNG')
-
-# open target url and wait
-find_and_click(img_path=r'img\ie12.PNG')
-find_logo()
-type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-trans/displayDistribMethod!input.action";')
-
+find_edge_console()
+go_to_url('https://dataweb.accor.net/dotw-trans/displayDistribMethod!input.action')
+time.sleep(2)
 
 # Fill form
 select_1 = 'var selectElement = document.getElementById("hotTransmissionPartner.standardPartner.type"); selectElement.value = "B";'
@@ -31,8 +25,6 @@ select_2 = 'var selectElement = document.getElementById("hotTransmissionPartner.
 
 order = [select_1, select_2]
 time.sleep(2)
-find_logo()
-find_and_click(img_path=r'img\ie12.PNG')
 find_logo()
 for i in order:
     type_and_enter(i)
