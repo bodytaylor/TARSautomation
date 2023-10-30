@@ -35,17 +35,19 @@ hotel_rid = str(input('Enter Hotel RID: '))
 hotel_rid = hotel_rid.upper()
 
 # Tell user to open web console
-print('Open web browser console by pressing CTRL + SHIFT + J')
-find_console()
+find_edge_console()
 
 # Fill data in console
 # Goto Target URL
 type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-trans/secure/guaranteeTabs!input.action";')
-time.sleep(2)
+time.sleep(2.5)
 find_logo()
 
+# Clear console
+press_ctrl_plus(key='l')
+
 # Let Rolls!
-guarantees_list = ['AX','CA', 'VI', 'WIRE', 'IATA', 'PCHECK', 'CASH', 'CCHECK', 'PREP1']
+guarantees_list = ['AX','CA', 'VI', 'WIRE', 'IATA', 'PCHECK', 'CASH', 'CCHECK', 'PREP1', 'GTO']
 for item in guarantees_list:
     add_element(item)
     if item == 'IATA':

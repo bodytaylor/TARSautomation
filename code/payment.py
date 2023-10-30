@@ -43,7 +43,7 @@ type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-tran
 time.sleep(2.5)
 find_logo()
 # clear console
-pyautogui.hotkey('ctrl', 'l')
+press_ctrl_plus(key='l')
 
 # Let Rolls!
 payment_list = ['AX', 'CA', 'VI', 'WIRE', 'CREDIT', 'PCHECK', 'CR', 'CCHECK', 'PREPA1', 'PRCARD']

@@ -12,8 +12,8 @@ def find_console():
     image = pyautogui.locateOnScreen(r"img\chrome console.PNG", confidence=0.8)
     while image == None:
         image = pyautogui.locateOnScreen(r"img\chrome console.PNG", confidence=0.8)
-        time.sleep(1)
-        print('Please Open Browser Console By Press CTRL + SHIFT + I')
+        time.sleep(2)
+        print('Please Open Google Chrome Browser Console By Press CTRL + SHIFT + I')
     time.sleep(1)
 
 
@@ -403,3 +403,16 @@ def press_ctrl_plus(key):
 def tick_box(element):
     pyautogui.typewrite(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
     pyautogui.press('enter')
+    
+# toggle Chrome console
+def toggle_console():
+    pyautogui.hotkey('ctrl', 'shift', 'i')
+    time.sleep(0.5)
+    pyautogui.hotkey('ctrl', 'shift', 'i')
+    time.sleep(0.5)
+    
+# fuction for adding language
+def add_language(lang):
+    text = f"window.confirm = ajaxReplace('dataForm', 'addHotelLanguage.action?language.languageCode={lang}', 'get');"
+    type_and_enter(text)
+    time.sleep(1)

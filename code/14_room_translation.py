@@ -11,6 +11,15 @@ def get_room_data():
     df = df.dropna()
     return df
 
+# find type of product
+def find_type(df, code):
+    code = str(code).strip()
+    if code in df['code'].values:
+        result = df.loc[df['code'] == code].values[0].astype(str).tolist()
+        return result[2]
+    else:
+        return None
+
 # Confirm Hotel RID and select mode
 hotel_rid = input('Enter Hotel RID: ')  
 translate_or_update = int(input('Translate Hit: 1 \nUpdate Hit: 2\nPlease type number and Hit Enter: '))
@@ -21,13 +30,23 @@ df = get_room_data()
 check_text(df, col='marketing_label')
 check_text(df, col='tar_ref')
 
+
+# Load product library
+csv_path = 'products_lib.csv'
+product_lib_df = pd.read_csv(
+    csv_path,
+    header=0,
+    sep=';'
+)
+
 # Start the loop!
 for i in range(len(df)):
     # Get room code
     room_code = df.iloc[i, 0]
+    room_type = find_type(df=product_lib_df, code=room_code)
     
     # Open Web Browser on translate page and wait for webpage load
-    url = f'https://dataweb.accor.net/dotw-trans/translateHotelProduct!input.action?actionType=translate&hotelProduct.code={room_code}&hotelProduct.type.code=ROOMSU&hotelProduct.centralUse=true&'
+    url = f'https://dataweb.accor.net/dotw-trans/translateHotelProduct!input.action?actionType=translate&hotelProduct.code={room_code}&hotelProduct.type.code={room_type}&hotelProduct.centralUse=true&'
     open_web(url)
     find_logo()
     

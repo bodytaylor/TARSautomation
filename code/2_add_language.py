@@ -1,6 +1,4 @@
 import time
-import pyautogui
-import webbrowser
 import pandas as pd
 from functions import *
 
@@ -42,12 +40,6 @@ df_filtered.drop(columns=col_drop, inplace=True)
 
 # create list from col head
 lang_to_add = df_filtered.columns.to_list()
-
-# fuction for adding language
-def add_language(lang):
-    text = f"window.confirm = ajaxReplace('dataForm', 'addHotelLanguage.action?language.languageCode={lang}', 'get');"
-    type_and_enter(text)
-    time.sleep(1)
 
 # open language definition page
 find_edge_console()

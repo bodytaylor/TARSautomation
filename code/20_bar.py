@@ -129,10 +129,9 @@ pyautogui.press('enter')
 # Start Looping!
 for keys in bars:
     # Locate menu
-    find_and_click('img\\type_code.PNG')
-    find_searchbox()
-    pyautogui.write(bars['Bar'][0]['Code'])
-    pyautogui.press('enter')
+    if rank == 1:
+        find_and_click('img\\type_code.PNG')
+    code_search(bars[f'{keys}'][0]['Code'])
     
     # Find add button and start entering data
     find_add()

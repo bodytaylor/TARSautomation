@@ -1,3 +1,131 @@
-## Product need element list
 
-addBasicElement('DEAFSI','Room for hearing impaired guests','HANDI','R','false','false');
+ // Select roomtype page user need to provide the page url
+
+var accordionHeadings = document.querySelectorAll('.accordion-heading');
+if (accordionHeadings.length > 1) {
+  accordionHeadings[1].click();
+}
+
+// select roombutton based on index -> need to re oder data based on resa oder!!
+var selectButtons = document.querySelectorAll('.button_standard.button_select');
+if (selectButtons.length >= 2) {
+    var secondSelectButton = selectButtons[1];
+    secondSelectButton.addEventListener('click', function() {
+        console.log('Second SELECT button clicked');
+    });
+    secondSelectButton.click();
+  }
+
+
+  // navigate to general description
+var accordionHeadings = document.querySelectorAll('.accordion-heading');
+if (accordionHeadings.length > 1) {
+  accordionHeadings[0].click();
+}
+
+// click edit
+var editButton = document.querySelector('.button_standard.button_edit'); editButton.click();
+
+
+// select bedding type drop down
+// Find the dropdown button by its class name
+var dropdowns = document.querySelectorAll('.pho-select-menu');
+var selectedIndex = 0; // Change this to the index of the dropdown
+if (selectedIndex >= 0 && selectedIndex < dropdowns.length) {
+
+  var selectedDropdown = dropdowns[selectedIndex];
+  var optionElements = selectedDropdown.querySelectorAll('.pho-option');
+
+  if (optionElements.length > 0) {
+    optionElements[3].click(); // Click on the first option
+  } else {
+    console.log('No options found in the selected dropdown.');
+  }
+} else {
+  console.log('Invalid dropdown index: ' + selectedIndex);
+}
+
+
+
+// add view
+var addButton = document.querySelector(".add-item");
+if (addButton) {
+  addButton.click();
+}
+
+
+
+// tick box view
+var checkboxes = document.querySelectorAll('.modalCheckbox');
+if (checkboxes.length > 20) {
+  checkboxes[1].click(); // Simulate a click event on the 2nd checkbox
+}
+
+
+// Click Update
+var updateButton = document.querySelector(".button_submit");
+if (updateButton) {
+  updateButton.click();
+}
+
+
+// tick yes/no on ACCESSIBLE ROOM
+var radioElements = document.querySelectorAll('input[type="radio"][ng-model="$ctrl.descriptor.values[0].booleanValue"][ng-value="false"]');
+if (radioElements) {
+  radioElements.forEach(function(radioElement) {
+    var radioName = radioElement.getAttribute("name");
+    console.log("Radio button name: " + radioName);
+    radioElement.click();
+  });
+}
+
+
+// tick yes/no on SMOKING ROOM
+
+// click add
+var iconElement = document.querySelector(".icon-add");
+if (iconElement) {
+  iconElement.click();
+}
+
+
+// Adding beddtype
+var dropdowns = document.querySelectorAll('.pho-select-menu');
+var selectedIndex = 3; // Change this to the index of the dropdown
+if (selectedIndex >= 0 && selectedIndex < dropdowns.length) {
+
+  var selectedDropdown = dropdowns[selectedIndex];
+  var optionElements = selectedDropdown.querySelectorAll('.pho-option');
+
+  if (optionElements.length > 0) {
+    optionElements[5].click(); // Click on the first option
+  } else {
+    console.log('No options found in the selected dropdown.');
+  }
+} else {
+  console.log('Invalid dropdown index: ' + selectedIndex);
+}
+
+
+// input number of bed
+var targetIndex = 1; // Change this to the desired index
+var inputElements = document.querySelectorAll('input[type="number"][ng-model="innerValue"]');
+
+if (targetIndex >= 0 && targetIndex < inputElements.length) {
+  var inputElement = inputElements[targetIndex];
+  var newValue = 42; // Change this to the value you want
+  inputElement.value = newValue;
+  var event = new Event('change', { bubbles: true });
+  inputElement.dispatchEvent(event);
+} else {
+  console.log('Input element with index ' + targetIndex + ' not found or out of range.');
+}
+
+// click save
+var saveButton = document.querySelector('button.button_standard.button_submit');
+if (saveButton) {
+  saveButton.click();
+} else {
+  console.log('Save button not found.');
+}
+

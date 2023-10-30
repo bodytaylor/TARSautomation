@@ -59,7 +59,7 @@ try:
             bar_code = str(bar_code[0])
             # bar name
             bar_name = sheet[f"B{cell_start}"].value
-            description = sheet[f"E{cell_start + 1}"].value
+            description = sheet[f"D{cell_start + 1}"].value
             
             # create dict
             bars[bar_name] = [
@@ -75,7 +75,7 @@ finally:
     # Close the workbook
     if workbook:
         workbook.close() 
-
+        
 
 # Start Looping!
 for keys in bars:
@@ -87,7 +87,7 @@ for keys in bars:
     keys = keys.upper()
     
     # Open webbrowser
-    url = f'https://dataweb.accor.net/dotw-trans/translateHotelBar!input.action?actionType=translate&hotelBar.barType.code={code_type}&hotelBar.name={keys}&'
+    url = f'https://dataweb.accor.net/dotw-trans/translateHotelBar!input.action?actionType=translate&hotelBar.barType.code={bar_code}&hotelBar.name={keys}&'
     open_web(url)
     find_logo()
     

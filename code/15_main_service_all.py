@@ -60,14 +60,14 @@ def extract_data_from_excel(file_path):
     ws = wb['Main services']  # Specify the sheet name here
 
     # Initialize row and column indices
-    current_row = 42
+    current_row = 40
     current_col = 3  # Column C
 
     while current_row <= 125:
         l_value = ws.cell(row=current_row, column=12).value  # Column L
 
         if l_value == "Yes":
-            code = str(ws.cell(row=current_row, column=current_col).value).strip()
+            code = str(ws.cell(row=current_row, column=current_col).value)[0:6].strip()
             description = None
             marketing = None
 
