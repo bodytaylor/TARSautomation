@@ -235,7 +235,7 @@ def check_text(df, col, row_shift=11):
         
 # Create a function to find non-matching characters
 def find_non_matching_chars(text):
-    pattern = r'[^a-zA-Z0-9*,-.: \']'
+    pattern = r"[^a-zA-Z0-9*,-.:' ]"
     return ''.join(re.findall(pattern, text))
 
 
@@ -416,3 +416,15 @@ def add_language(lang):
     text = f"window.confirm = ajaxReplace('dataForm', 'addHotelLanguage.action?language.languageCode={lang}', 'get');"
     type_and_enter(text)
     time.sleep(1)
+    
+def continue_program():
+    while True:
+        user_input = input("Do you want to continue the program? (y/n): ").strip().lower()
+        if user_input in ("yes", "y"):
+            return True
+        elif user_input in ("no", "n"):
+            return False
+        else:
+            print("Invalid input. Please enter 'y' or 'n'.")
+
+

@@ -1,60 +1,18 @@
-from datetime import datetime
-from functions import *
-from dictionary import *
+import pandas as pd
 
+excel_file_path = f'hotel_workbook\B9F8\B9F8.xlsm'
+sheet_name = "Roomtypes"
+room_df = pd.read_excel(excel_file_path, sheet_name=sheet_name, header=8, dtype=str)
+room_df = room_df.dropna(subset=['TARS product code'])
+room_df = room_df.dropna(axis=1, how='all')
+room_df = room_df.drop(columns=['Unnamed: 1'])
+room_df = room_df.reset_index(drop=True)
+room_df = room_df.drop(index=0)
+columns_to_drop = [col for col in room_df.columns if 'Unnamed' in col]
+room_df = room_df.drop(columns=columns_to_drop)
+room_df = room_df.drop(room_df.index[0:13])
 
-# input textbox
-def input_text(element_id, text):
-    if text != None:
-        pyautogui.typewrite(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-        time.sleep(0.5)
-        pyautogui.press('enter')
-        
-# Click Add
-def add_element(element):
-    pyautogui.typewrite(f"addBasicElement('{element}');")
-    pyautogui.press('enter')
-    time.sleep(0.5)
+print(room_df)
 
-# tick box
-def tick_box_select(element_id):
-    pyautogui.typewrite(f'document.getElementById("{element_id}").checked = true;')
-    pyautogui.press('enter')
-    time.sleep(0.5)
-    
-# Click on
-def click_on_element(element_id):
-    pyautogui.typewrite(f'document.getElementById("{element_id}").click();')
-    pyautogui.press('enter')
-    time.sleep(0.5)
-
-    
-# Ask user for RID    
-hotel_rid = str(input('Enter Hotel RID: '))
-# Make it All Cap
-hotel_rid = hotel_rid.upper()
-
-# Tell user to open web console
-find_edge_console()
-
-# Fill data in console
-# Goto Target URL
-type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-trans/secure/guaranteeTabs!input.action";')
-time.sleep(2.5)
-find_logo()
-
-# Clear console
-press_ctrl_plus(key='l')
-
-# Let Rolls!
-guarantees_list = ['AX','CA', 'VI', 'WIRE', 'IATA', 'PCHECK', 'CASH', 'CCHECK', 'PREP1']
-for item in guarantees_list:
-    add_element(item)
-    if item == 'IATA':
-        tick_box_select('hotelGuarantee.qualified')
-    if item not in ['PCHECK', 'CCHECK']:
-        tick_box_select('hotelGuarantee.availableOnGDSMedia')
-    click_on_element('hotelGuarantee.submitButton')
-    time.sleep(1)
-    
-print('Happy Looping')
+for index, row in room_df.iterrows():
+    print(row['TARS product code'])

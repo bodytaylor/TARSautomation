@@ -258,7 +258,9 @@ enviro_dict = {
     "Near the beach": "NTB",
     "On the Beach": "BEA",
     "Suburb": "SUB", 
-    "Woodland/forest area": "WOO"
+    "Woodland/forest area": "WOO",
+    "In the center of town": "TOW",
+    "On the beach": "BEA",
 }
 
 location_dict = {
