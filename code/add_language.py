@@ -17,8 +17,10 @@ def add(hotel_rid):
 
     # filter df
     while True:
+        print(f'Country: {country_and_city[0]}')
         df_filtered = df[(df['COUNTRY NAME'] == country_and_city[0]) & (df['CITY NAME'] == country_and_city[1])]
         print(df_filtered)
+        print(country_and_city)
         if len(df_filtered) == 0:
             country_and_city[1] = str(input('Please input the closest major city: ')).upper()
         elif len(df_filtered) != 0:

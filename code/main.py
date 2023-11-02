@@ -10,8 +10,9 @@ def set_hotel_rid():
 
 def main():
     # Welcome message to user and get the rid
-    print("Welcome to TARS Automation Tool ver.1.0.0")
-    print("[WARNING] - This Version for content book V.10, (Cell mean of Access at C79)\nOtherwise Use version xx")
+    print("Welcome to TARS Automation Tool ver.1.0.1")
+    print("[WARNING] - This Version for content book V.12, (Cell mean of Access at C84)\nOtherwise Use version 1.0.0")
+    print("[INFO] - form v.16 and above delete 2 row above the Hotel address header")
     set_hotel_rid()
     clear_console()
     

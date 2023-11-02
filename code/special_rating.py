@@ -8,7 +8,7 @@ def add(hotel_rid):
 
     data = get_excel_values(
         file_path=excel_file, 
-        cell_addresses=['G65'], 
+        cell_addresses=['C79'], 
         sheet_name='Address&Setup'
     )
 

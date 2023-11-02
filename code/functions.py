@@ -323,6 +323,10 @@ def get_excel_values(file_path=str, sheet_name=str, cell_addresses=list):
     except Exception as e:
         print(f"An error occurred while loading the Excel file: {str(e)}")
         return None, None
+    finally:
+        # Close the workbook
+        if workbook:
+            workbook.close()
    
 # Function for enter code in console
 

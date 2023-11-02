@@ -35,7 +35,7 @@ def add(hotel_rid):
             time.sleep(1)
             
             # add translation
-            hotel_direction = sheet['C79'].value
+            hotel_direction = sheet['C84'].value
             hotel_name_url = str(hotel_name).replace(" ", "+")
             url_translation = f'https://dataweb.accor.net/dotw-trans/translateHotelAccess!input.action?actionType=translate&hotelAccess.accessType.code=ACCM&hotelAccess.name={hotel_name_url}&'
             open_web(url_translation)
@@ -62,14 +62,14 @@ def add(hotel_rid):
             
             # Add another attraction
             for i in range(4):
-                if sheet[f'E{144 + i}'].value != None:
+                if sheet[f'E{149 + i}'].value != None:
                     pattern = r'([A-Z]+) -'
                     code = re.findall(pattern, sheet[f'C{149 + i}'].value)[0]
                     code_list.append(code)
-                    data = [sheet[f'E{144 + i}'].value,
-                            sheet[f'H{144 + i}'].value,
-                            sheet[f'I{144 + i}'].value,
-                            sheet[f'K{144 + i}'].value]
+                    data = [sheet[f'E{149 + i}'].value,
+                            sheet[f'H{149 + i}'].value,
+                            sheet[f'I{149 + i}'].value,
+                            sheet[f'K{149 + i}'].value]
                     main_search_box(code)
                     time.sleep(1)
                     find_add()
