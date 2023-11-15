@@ -15,8 +15,8 @@ def load_room_data(hotel_rid):
     df = df.drop(index=0)
     columns_to_drop = [col for col in df.columns if 'Unnamed' in col]
     df = df.drop(columns=columns_to_drop)
-    # to remove
-    df = df.drop(df.index[0:13])
+    # to remove in case of error use this line below replace with row number to start
+    # df = df.drop(df.index[0:13])
     return df
 
 def add(hotel_rid):

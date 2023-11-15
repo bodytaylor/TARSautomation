@@ -88,7 +88,7 @@ for index, row in df.iterrows():
             product = row['code']
         else:
             product = row['external_code']
-        for i in range(1, row['max_occ'] + 1):
+        for i in range(1, int(row['max_occ']) + 1):
             r = {
                 'Action': 'A',
                 'HRID': str(f'H{hotel_rid}').strip(),
