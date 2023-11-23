@@ -50,7 +50,11 @@ def add(hotel_rid):
     page = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@id="classicTabName"]'))
         )
-    print(f'[INFO] - {page.text}')         
+    print(f'[INFO] - {page.text}') 
+    
+    # Error collector
+    code_error = []
+    product_error = []        
 
     try:
         # Load Excel file and select the sheet
@@ -65,9 +69,7 @@ def add(hotel_rid):
         sep=';'
         )
         
-        # Error collector
-        code_error = []
-        product_error = []
+        
         
         # loop until room code is none
         # Default Value is 11
