@@ -1,10 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
-import functions as fn
 import time
 import csv
 
@@ -39,7 +37,7 @@ def login():
 
     # Wait for an element to be visible
     try:
-        username_field = WebDriverWait(driver, 5).until(
+        username_field = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.NAME, "login"))
         )
             # Find the username and password input fields and enter your credentials
@@ -79,7 +77,7 @@ def hotel_search(hotel_rid):
     driver.get('https://dataweb.accor.net/dotw-trans/selectHotelInput.action')
     time.sleep(2)
     try:
-        element = WebDriverWait(driver, 5).until(
+        element = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@id="keyword"]'))
         )
         element = driver.find_element(By.XPATH, '//*[@id="keyword"]')
@@ -103,7 +101,7 @@ def check_available(hotel_rid):
     driver.get('https://dataweb.accor.net/dotw-trans/selectHotelInput.action')
     time.sleep(2)
     try:
-        element = WebDriverWait(driver, 5).until(
+        element = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@id="keyword"]'))
         )
         element = driver.find_element(By.XPATH, '//*[@id="keyword"]')
@@ -130,7 +128,7 @@ def get_general_page():
     driver.get('https://dataweb.accor.net/dotw-trans/displayGeneralInformation!input.action')
     time.sleep(2)
     try:
-        element = WebDriverWait(driver, 5).until(
+        element = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.ID, 'formTitle'))
         )
         count = 0
@@ -232,7 +230,7 @@ def get_rate_level():
     driver.get('https://dataweb.accor.net/dotw-trans/displayHotelRates.action')
     time.sleep(2)
     try:
-        download_button = WebDriverWait(driver, 5).until(
+        download_button = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//a[img[@title="Excel"]]'))
         )
         time.sleep(1)

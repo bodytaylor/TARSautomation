@@ -1,9 +1,21 @@
 import time
-import pyautogui
-import webbrowser
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from web_driver_init import driver
 import openpyxl
-import pandas as pd
 from functions import *
+
+# execute java script
+def tick_box_script(element, value):
+    if value != None:
+        driver.execute_script(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
+        time.sleep(0.1)
+
+def input_text(element_id, text):
+    if text != None:
+        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
+        time.sleep(0.1)
 
 # Function to count even rows until an empty cell is encountered
 def count_even_rows(sheet, column_letter, start_row):
@@ -37,117 +49,44 @@ def load_excel_file(file_path, sheet_name):
 
 # Function to enter data into a web page
 def enter_data(data):
-    time.sleep(1)
-    for _ in range(6):
-        pyautogui.press('tab')
+    elements_list = ['hotelLounge.name', 'hotelLounge.surface', 'hotelLounge.maxNumberPax', 
+                     'hotelLounge.ceilingHeight', 'hotelLounge.floorCover', 'hotelLounge.nbPaxBoardRoom',
+                     'hotelLounge.nbPaxInU', 'hotelLounge.nbPaxClassRoom',
+                     'hotelLounge.nbPaxInV', 'hotelLounge.nbPaxTheater', 'hotelLounge.nbPaxRoundTables',
+                     'hotelLounge.nbPaxRoundTablesOff', 'hotelLounge.nbPaxRoundTablesDc',
+                     'hotelLounge.nbPaxRoundTablesOffDc']
     
     # Loop through the data and enter it
-    for value in data:
+    for i, value in enumerate(data):
         if value == None:
-            pyautogui.write('0')
-            pyautogui.press('tab')
+            input_text(element_id=elements_list[i], text='0')
         else:
-            pyautogui.write(str(value))
-            pyautogui.press('tab')
-    
-    # Handle tickboxes
+            input_text(element_id=elements_list[i], text=str(value))
+
+# Handle tickboxes
 def tick_box (tickbox):
-    for value in tickbox:
+    tick_box_elements = [
+        'hotelLounge.buffet', 'hotelLounge.buffetDc', 
+        'hotelLounge.cocktail', 'hotelLounge.exposition'
+        ]
+    for i, value in enumerate(tickbox):
         if value == 'Yes':
-            pyautogui.press('space')
-        pyautogui.press('tab')
-    pyautogui.press('enter')
-    
-# find and click on add item
-def find_add():
-    find_logo()
-    x, y = pyautogui.locateCenterOnScreen('img\\add.PNG', confidence=0.8)
-    pyautogui.moveTo(x, y, 0.1) 
-    pyautogui.click()
-
-
-# wait for logo to load then continue
-def find_logo():
-    time.sleep(1)
-    image = pyautogui.locateOnScreen("img\\accor_logo.PNG", confidence=0.8)
-    time.sleep(1)
-    while image == None:
-        image = pyautogui.locateOnScreen("img\\accor_logo.PNG", confidence=0.8)
-        print("still haven't found the image")
-    print("Page loaded successfully!!")
-    time.sleep(1)
-    
-# find search box
-def find_searchbox():
-    find_logo()
-    x, y = pyautogui.locateCenterOnScreen('img\\filter.PNG', confidence=0.8)
-    pyautogui.moveTo(x, y + 30, 0.1)
-    pyautogui.click()
-
-# function for input description into translation page
-def enter_description(keys):
-    # Open new tab and locate menu
-    url = f'https://dataweb.accor.net/dotw-trans/translateHotelLoungeInput.action?actionType=translate&description.lounge.type.code=MEET&description.lounge.name={keys}&'
-    webbrowser.open_new_tab(url)
-    find_logo()
-    find_and_click('img\\translate.png')
-    time.sleep(1)
-    find_and_click_on('img\\translate_menu.png')
-    tabing(5)
-    
-    # Enter Translations
-    pyautogui.typewrite(description[f'{keys}'], interval=0.01)
-    time.sleep(1)
-    pyautogui.press('tab')
-    time.sleep(1)
-    
-    # go to translate button
-    pyautogui.press('enter')
-    time.sleep(2)
-    # confrim box
-    pyautogui.press('enter')
-    time.sleep(1)
-    # Close tab
-    pyautogui.hotkey('ctrl', 'w')
-    time.sleep(1)
-     
-# find and click on add item
-def find_add():
-    find_logo()
-    x, y = pyautogui.locateCenterOnScreen('img\\add.PNG', confidence=0.8)
-    pyautogui.moveTo(x, y, 0.1) 
-    pyautogui.click()
-    
-# clear a search box before enter a new search    
-def clear_search_box(n):
-    for _ in range(n):
-        pyautogui.press('del')
-
-# Open web browser and navigate to a page
-webbrowser.open('https://dataweb.accor.net/dotw-trans/displayHotelLounges!input.action')
-
-# Navigate to Lounges library tab
-def locate_menu():
-    find_logo()
-    pyautogui.click(x=70, y=229)
-    
-    for _ in range(2):
-        pyautogui.press('tab')
-
-    time.sleep(1)
-    pyautogui.press('enter')
-    pyautogui.click(x=148, y=342)
-    clear_search_box(4)
-    pyautogui.typewrite("MEET")
-    pyautogui.press('enter')
-    find_add()
-    time.sleep(1)
+            tick_box_script(element=tick_box_elements[i], value=value)
 
 def add(hotel_rid):
     # Load workbook and read the data
     excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
     sheet_name = "Meeting Room"  
     description = {}
+    # Open web browser and navigate to a page
+    driver.get('https://dataweb.accor.net/dotw-trans/displayHotelLounges!input.action')
+    WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '//*[@id="hotelLoungesTable"]'))
+        )
+    
+    # Error
+    error = [] 
+               
     try:
         # Load Excel file and select the sheet
         workbook, sheet = load_excel_file(excel_file_path, sheet_name)
@@ -155,7 +94,7 @@ def add(hotel_rid):
         if workbook and sheet:
             # Count even rows
             even_row_count = count_even_rows(sheet, "C", 12)
-            print("Count of even rows until an empty cell:", even_row_count)
+            print("Meeting room count:", even_row_count)
 
             # Loop through the rows and enter data
             cell_start = 12
@@ -182,12 +121,23 @@ def add(hotel_rid):
                         sheet[f"V{cell_start}"].value]
                 description[sheet[f"C{cell_start}"].value] = (sheet[f"E{cell_start + 1}"].value)
                 
-                locate_menu()
+                # Add MEET
+                driver.execute_script("addBasicElement('MEET');")
+                WebDriverWait(driver, 10).until(
+                    EC.visibility_of_element_located((By.XPATH, '//*[@id="formTitle"]'))
+                    )
+                time.sleep(1)
                 
                 # Enter data into the web page
                 enter_data(data)
                 tick_box(tickbox)
-                print(f"{sheet[f'C{cell_start}'].value} has been added to Lounges!")
+                
+                # Click Add
+                driver.execute_script("if(validateForm_hotelLoungeForm($('hotelLoungeForm'))){submitLoungeForm ($('hotelLoungeForm'));}")
+                
+                # Print the response
+                get_response(driver=driver, code=data[0] , error=error)
+                    
                 cell_start += 2
 
     except Exception as e:
@@ -198,7 +148,8 @@ def add(hotel_rid):
             workbook.close()
 
     # instruction for next step
+    if len(error) != 0:
+        for i in error:
+            print(f'[ERROR] - {i}')
     print('Add meeting room successfully!!')
     print('Next add translation. . .')
-
-

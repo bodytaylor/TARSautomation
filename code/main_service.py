@@ -1,5 +1,19 @@
 import pandas as pd
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from web_driver_init import driver
 from functions import *
+
+# execute java script
+def input_text(element_id, text):
+    if text != None:
+        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
+
+# Tickbox in browser console
+def tick_box(element):
+    script = (f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
+    return script
 
 # Search for product lib
 def add_product(code, df):
@@ -44,34 +58,48 @@ def add(hotel_rid):
     )
 
     # open web
-    find_edge_console()
-    go_to_url('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
-    time.sleep(2)
+    driver.get('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
+    time.sleep(1)
+    page = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="classicTabName"]'))
+        )
+    print(f'[INFO] - {page.text}')
     
     product_not_found = []
-
+    error = []
     for index, row in df.iterrows():
         code = row['code']
         if code not in meal_options_list:
             product_to_add = add_product(code, df=product_lib_df)
             if product_to_add is None:
                 product_not_found.append(code)
-            
-            type_and_enter(product_to_add)
-            time.sleep(1)
+            else:
+                driver.execute_script(product_to_add)
+                
+                # Wait for page to load
+                WebDriverWait(driver, 10).until(
+                    EC.visibility_of_element_located((By.XPATH, '//*[@id="formTitle"]'))
+                    )
 
-            amount = row['amount']
-            if pd.isna(amount) == False:
-                amount = str(int(row['amount']))
-                input_textf(element_id='hotelProduct.quantity', text=amount)
-            
-            # always yes on GDS
-            tick_box(element='hotelProduct.availableOnGDSMedia')
-            
-            # Click add
-            type_and_enter('document.getElementById("hotelProduct.submitButton").click();')
-            print(f'INFO - {code} has been added')
-            time.sleep(1.5)  
-        
+                amount = row['amount']
+                if pd.isna(amount) == False:
+                    amount = str(int(row['amount']))
+                    input_text(element_id='hotelProduct.quantity', text=amount)
+                
+                # always yes on GDS
+                driver.execute_script(tick_box(element='hotelProduct.availableOnGDSMedia'))
+                
+                # Click add
+                driver.execute_script('document.getElementById("hotelProduct.submitButton").click();')
+                
+                # Wait for response
+                get_response(driver=driver, code=code, error=error)
+
+    # Print result to user
     print(f'Main Product has been added to {hotel_rid}!')
-    print(f'[INFO] - Product not found {product_not_found}')
+    if len(product_not_found) != 0:
+        print(f'[INFO] - Product not found {product_not_found}')
+    if len(error) != 0:
+        print('##### Mission Report #####')
+        for i in error:
+            print(i)

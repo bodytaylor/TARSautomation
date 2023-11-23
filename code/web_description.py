@@ -1,59 +1,71 @@
 import pandas as pd
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from web_driver_init import driver
 from openpyxl import load_workbook
 import time
 from functions import *
 
-def enter_description(keys, search_key):
-    # Open new tab and locate menu
-    url = f'https://dataweb.accor.net/dotw-trans/translateHotelLoungeInput.action?actionType=translate&description.lounge.type.code=MEET&description.lounge.name={search_key}'
-    webbrowser.open_new_tab(url)
-    find_logo()
-    find_and_click('img\\translate.png')
-    time.sleep(1)
-    find_and_click_on('img\\translate_menu.png')
-    tabing(5)
+# Tickbox in browser console
+def tick_box(element):
+    script = (f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
+    return script
     
 # Enter Translations
-def product_description(code, type, description, marketing):
-    
+def product_description(code, type, description, marketing, hotel_rid):
     # Open Web Browser on translate page and wait for webpage load
     url = f'https://dataweb.accor.net/dotw-trans/translateHotelProduct!input.action?actionType=translate&hotelProduct.code={code}&hotelProduct.type.code={type}&hotelProduct.centralUse=true&'
-    open_web(url)
-    find_logo()
+    driver.get(url)
+    page = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.TAG_NAME, 'h4'))
+        )
+    print(f'[INFO] - {page.text}')
     
-    # Click on Translate 
-    find_and_click('img\\translate.png')
-    time.sleep(2)
+    # Open description input box
+    driver.execute_script(f"displayTranslateForm('translateInput','GB','{code}','{type}','{hotel_rid}','productsDescriptionsTable','true','true','GB','true')")
+    # Wait for page to load
+    WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '//*[@id="translateHotelProductForm"]'))
+        )
     
-    # Click on menu and locate discription input box
-    find_and_click_on('img\\translate_product.PNG')
-    tabing(6)
+    # find description box
+    description_box = driver.find_element(By.ID, "hotelProductTranslate.description")
+    marketing_box =  driver.find_element(By.ID, "hotelProductTranslate.referenceLabel")
          
     # Get data from DataFrame and type in the discription box, do not change the secound locater!
     if description != None:
-        pyautogui.hotkey('ctrl','a')
-        pyautogui.press('del')
-        type_translate(2, description)
-    else:
-        tabing(2)
+        description_box.clear()
+        description_box.send_keys(description)
+        time.sleep(0.5)
 
     # Get data from DataFrame and type in the marketing lable, box do not change the secound locater!
     if marketing != None:   
-        pyautogui.hotkey('ctrl','a')
-        pyautogui.press('del')
-        type_translate(1, marketing)
-    else:
-        tabing(1)
+        marketing_box.clear()
+        marketing_box.send_keys(marketing)
+        time.sleep(0.5)
 
     # Click Translate!
-    pyautogui.press('enter')
+    script = """
+    document.getElementById('translateHotelProductForm.submitButton').click();
+    """
+    # response to popup        
+    driver.execute_script(script)
     time.sleep(1)
-    pyautogui.press('enter')
-
-    # close browser
-    time.sleep(2)
-    pyautogui.hotkey('ctrl', 'w')    
-
+    alert = driver.switch_to.alert
+    alert.accept()
+    
+    # Wait for response
+    WebDriverWait(driver, 7).until(
+        EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
+        )
+    
+    try:
+        action_message = driver.find_element(By.XPATH, '//*[@id="actionmessage"]')
+        print(f'[INFO] - {action_message.text}')
+    except:
+        error_message = driver.find_element(By.XPATH, '//*[@id="errormessage"]')
+        print(f'[INFO] - {error_message.text}')
 
 # read description
 def extract_data_from_excel(file_path):
@@ -131,31 +143,50 @@ def add(hotel_rid):
     df = extract_data_from_excel(file_path)
 
     # open web
-    find_edge_console()
-    go_to_url('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
-    time.sleep(2)
-
+    from web_driver_init import driver
+    driver.get('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
+    time.sleep(1)
+    page = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="classicTabName"]'))
+        )
+    print(f'[INFO] - {page.text}')
+    
+    product_error = []
+    product_not_found = []
     # Let's rolls!
     for index, row in df.iterrows():
         code = row['Code']
         product_to_add = add_product(code, df=product_lib_df)
-        type_and_enter(product_to_add)
-        time.sleep(1)
+        if product_to_add is None:
+                product_not_found.append(code)
+        else:
+            driver.execute_script(product_to_add)
+            # Wait for page to load
+            WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="formTitle"]'))
+            )
         
-        # always yes on GDS
-        tick_box(element='hotelProduct.availableOnGDSMedia')
+            # always yes on GDS
+            tick_box_script = tick_box(element='hotelProduct.availableOnGDSMedia')
+            driver.execute_script(tick_box_script)
+                
+            # Click add
+            driver.execute_script('document.getElementById("hotelProduct.submitButton").click();')
             
-        # Click add
-        type_and_enter('document.getElementById("hotelProduct.submitButton").click();')
-        print(f'INFO - {code} has been added')
-        time.sleep(1.5)  
+            # Get response
+            get_response(driver=driver, code=code, error=product_error)
         
     # Add description
     for index, row in df.iterrows():
         code = row['Code']
-        type = find_type(code=code, df=product_lib_df)
-        des = row['Description']
-        mk_label = row['Marketing']
-        product_description(code=code, description=des, marketing=mk_label, type=type)
-        print(f'INFO - Desciption for {code} has been added')
+        if code not in product_not_found:
+            type = find_type(code=code, df=product_lib_df)
+            des = row['Description']
+            mk_label = row['Marketing']
+            product_description(code=code, description=des, marketing=mk_label, type=type, hotel_rid=hotel_rid)
+            
+    # Print error to user
+    if len(product_error) != 0:
+        for i in product_error:
+            print(i)
     

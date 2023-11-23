@@ -4,12 +4,10 @@ import pandas as pd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import functions as fn
 import time
-import csv
 
 def get_data(element_id=str):
     try:
@@ -342,8 +340,7 @@ def get_checkout_time():
     except ValueError as e:
         print(e)  
 
-    
-
+# Take Now Hotel    
 hotel_list = ['C1N7']
 
 # write to csv

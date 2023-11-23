@@ -1,6 +1,10 @@
 import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 from functions import *
+from web_driver_init import driver
 
 # Function to count even rows until an empty cell is encountered
 def count_rows(sheet, column_letter, start_row):
@@ -22,6 +26,7 @@ def add(hotel_rid):
     excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
     sheet_name = "Restaurant"  
     restaurants = {}
+    error = []
     try:
         # Load Excel file and select the sheet
         workbook, sheet = load_excel_file(excel_file_path, sheet_name)
@@ -49,9 +54,13 @@ def add(hotel_rid):
         
     # Check Text 
     df = pd.DataFrame(list(restaurants.items()), columns=['rt_name', 'description'])
-    check_text(df=df, col='description')
-    check_descrip_len(df=df, col='description')
-
+    while True:
+        sp_char = check_text(df=df, col='description')
+        des_len = check_descrip_len(df=df, col='description')
+        if sp_char == des_len == 0:
+            break
+        continue_program()
+        
     # Start looping!
     for i in range(len(df)):
         rt_name = df.iloc[i, 0]
@@ -59,38 +68,38 @@ def add(hotel_rid):
         
         # Open webbrowser
         url = f'https://dataweb.accor.net/dotw-trans/translateHotelRestaurant!input.action?actionType=translate&hotelRestaurant.type.code=RT&hotelRestaurant.name={search_key}&hotelRestaurant.codeRest=R00{i + 1}&'
-        open_web(url)
-        find_logo()
-        
-        # Click on translation button
-        find_and_click_on('img\\translate.png')
-        time.sleep(2)
-        
-        # Click on menu and locate Translate a restaurant input box
-        find_and_click_on('img\\translate_rt.PNG')
-        time.sleep(1)
-        tabing(6)
+        driver.get(url)
+        # Wait for page to load
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="restaurantsDescriptionsTable"]'))
+            )
 
+        # Click on Translate 
+        driver.execute_script(f"displayTranslateForm('translateInput','GB','RT','restaurantsDescriptionsTable','true','true','GB','true');")
+        
+        # wait for form to appear
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="translateHotelRestaurantFormJson"]'))
+            )
+        
+        # find description box
+        description_box = driver.find_element(By.ID, "hotelRestaurantTranslate.description")
+        
         # Get data from DataFrame and type in the discription box, do not change the secound locater!
         description = df.iloc[i, 1]
-        type_translate(1, description)
+        description_box.send_keys(description)
         
-        # Go to translate button            
+        script = """
+        document.getElementById('translateHotelRestaurantForm.submitButton').click();
+        """
+        
+        driver.execute_script(script)
         time.sleep(1)
-        
-        # Hit enter
-        pyautogui.press('enter')
+        alert = driver.switch_to.alert
+        alert.accept()
         time.sleep(1)
-
-        # Confirm box
-        pyautogui.press('enter')
-        time.sleep(1)
-        
-        # Close Browser
-        time.sleep(0.5)
-        pyautogui.hotkey('ctrl', 'w')
-        
-        # Print result
-        print(f'translation for {rt_name} has been added')
+            
+        # get response
+        get_response(driver=driver, code='RT', error=error)
         
     print(f'Description and translation for restaurants of {hotel_rid} is done!')

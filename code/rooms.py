@@ -1,8 +1,30 @@
 import time
-import pyautogui
 import pandas as pd
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from web_driver_init import driver
 from functions import *
 
+def tick_box(element):
+    driver.execute_script(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
+    time.sleep(0.1)
+
+def input_text(element_id, text):
+    if text != None:
+        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
+        time.sleep(0.1)
+
+# Search for product lib
+def add_product(code, df):
+    code = str(code).strip()
+    if code in df['code'].values:
+        result = df.loc[df['code'] == code].values[0].astype(str).tolist()
+        script = f"addBasicElement('{result[0]}','{result[1]}','{result[2]}','{result[3]}','{result[4]}','{result[5]}');"
+        return script
+    else:
+        return None
+    
 # Load Room Data
 def load_room_data(hotel_rid):
     excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
@@ -24,123 +46,117 @@ def add(hotel_rid):
     url = 'https://dataweb.accor.net/dotw-trans/productTabs!input.action'
 
     # open url and load excel file
-    open_web(url)          
-    # import room data for seach in the menu
-
-    excel_file = 'room_library.xlsx'
-    room_df = pd.read_excel(excel_file)
-
-    # function for finding room category
-    def get_category_by_code(df, code):
-        matching_categories = df[df['code'] == code]['category'].tolist()
-        return matching_categories
+    driver.get(url) 
+    page = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="classicTabName"]'))
+        )
+    print(f'[INFO] - {page.text}')         
 
     try:
         # Load Excel file and select the sheet
         room_data = load_room_data(hotel_rid)
         print(room_data)
         
-            # loop until room code is none
-            # Default Value is 11
-        i = 0
-        previous_search = ''
+        # Load product library
+        csv_path = 'products_lib.csv'
+        product_lib_df = pd.read_csv(
+        csv_path,
+        header=0,
+        sep=';'
+        )
+        
+        # Error collector
+        code_error = []
+        product_error = []
+        
+        # loop until room code is none
+        # Default Value is 11
         for index, row in room_data.iterrows():
             # locate a menu and search for room type
             room_code = str(row['TARS product code']).strip()
             # Check Room Code
-            category = get_category_by_code(room_df, code=room_code)[0]
-                    
-            # locate products menus tab
-            locate_product_menu()
+            add = (add_product(code=room_code, df=product_lib_df))
+            if add is not None:
+                driver.execute_script(add)
                 
-            # check previous search
-            if previous_search != category:
-                product_search(product_type=category)
+                # waiting for input form
+                WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '//*[@id="formTitle"]'))
+                    )  
                 
-            # Search for room code
-            code_search(room_code)
-            find_add()
-            time.sleep(2)
-            # Add data
+                # paying product tickbox
+                tick_box('hotelProduct.paying')
                     
-            # tick on site or close by -> Room always onsite 7 times to this section
-            find_and_click_on('img\\add_product.PNG')
-            tabing(4)
-                
-            # paying product tickbox
-            pyautogui.press('space')
-            tabing(1)
-                
-            # book abble product tickbox
-            pyautogui.press('space')
-            tabing(1)           
-                    
-            # Web only tickbox = skip this one 
-            tabing(1)
-                    
-            # Max Occupency 
-            max_occ = str(row['Maximum occupancy *']).strip()
-            pyautogui.write(max_occ)
-            tabing(1)
-                    
-            # Adult
-            adult = str(row['Maximum adults *']).strip()
-            pyautogui.write(adult)
-            tabing(1)
-                    
-            # Children
-            children = str(row['Maximum children *']).strip()
-            pyautogui.write(children)
-            tabing(1)
-                    
-            # Nb of beds for 1 pax
-            bed_for_1 = str(row['Nb of bed available for\n1 pax *']).strip()
-            pyautogui.write(bed_for_1)
-            tabing(1)          
-                    
-            # Nb of beds for 2 pax
-            bed_for_2 = str(row['Nb of bed available for\n2 pax *']).strip()
-            pyautogui.write(bed_for_2)
-            tabing(1)       
+                # book abble product tickbox
+                tick_box('hotelProduct.bookable')        
                         
-            # room size
-            room_size = str(row['Room size m²*']).strip()
-            pyautogui.write(room_size)
-            tabing(2) 
-                    
-            # Quantity of product
-            quantity = str(row['Quantity\nof product *']).strip()
-            pyautogui.write(quantity)
-            tabing(1) 
-                    
-            # PMS product code -> Put room code
-            pyautogui.write(room_code)
-            tabing(1)
-                    
-            # Available on GDS and Media (always tick)
-            pyautogui.press('space')
-            tabing(1)
-                    
-            # Order in RESA Screen 
-            order_resa = str(row['Order \nin resa \nscreen *'])
-            pyautogui.write(order_resa)
-            tabing(1)
-                    
-            # Max quantity of the product in room -> skip
-            tabing(1)
-                    
-            # Click add
-            pyautogui.press('enter')
-            time.sleep(2)
-                    
-            # Print the result
-            print(f'{room_code} was added successfully!')
-                    
-            i += 1
+                # Max Occupency 
+                max_occ = str(row['Maximum occupancy *']).strip()
+                input_text(element_id='hotelProduct.maxOccupancyTotal', text=max_occ)
+                        
+                # Adult
+                adult = str(row['Maximum adults *']).strip()
+                input_text(element_id='hotelProduct.maxOccupancyAdult', text=adult)
+                        
+                # Children
+                children = str(row['Maximum children *']).strip()
+                input_text(element_id='hotelProduct.maxOccupancyChildren', text=children)
+                        
+                # Nb of beds for 1 pax
+                bed_for_1 = str(row['Nb of bed available for\n1 pax *']).strip()
+                input_text(element_id='hotelProduct.singleBebNumber', text=bed_for_1)      
+                        
+                # Nb of beds for 2 pax
+                bed_for_2 = str(row['Nb of bed available for\n2 pax *']).strip()
+                input_text(element_id='hotelProduct.doubleBebNumber', text=bed_for_2)   
+                            
+                # room size
+                room_size = str(row['Room size m²*']).strip()
+                input_text(element_id='hotelProduct.roomSizeInSquareMeter', text=room_size)
+                        
+                # Quantity of product
+                quantity = str(row['Quantity\nof product *']).strip()
+                input_text(element_id='hotelProduct.quantity', text=quantity)
+                        
+                # PMS product code -> Put room code
+                input_text(element_id='hotelProduct.pmsCode', text=room_code)
+                        
+                # Available on GDS and Media (always tick)
+                tick_box('hotelProduct.availableOnGDSMedia')
+                        
+                # Order in RESA Screen 
+                order_resa = str(row['Order \nin resa \nscreen *'])
+                input_text(element_id='hotelProduct.orderInResaScreen', text=order_resa)
+                        
+                # Max quantity of the product in room -> skip
+                        
+                # Click add
+                driver.execute_script('submitFormProduct();')
+                        
+                # Wait for response
+                WebDriverWait(driver, 7).until(
+                    EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
+                    )
+                try:
+                    action_message_element = driver.find_element(By.XPATH, '//*[@id="actionmessage"]')
+                    action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
+                    print(f'[INFO] - {action_message}')
+                except:
+                    error_message = driver.find_element(By.XPATH, '//*[@id="errormessage"]')
+                    product_error.append(f'{room_code}: {error_message.text}')
+                    print(f'[INFO] - {error_message.text}')
+                        
+            else:
+                code_error.append(room_code)
 
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         
     finally:
-        print('All Rooms was added to TARS!')
-        print('Next Step Room discription and translation')
+        print('Automation Complete')
+        if len(product_error) != 0:
+            for i in product_error:
+                print(f'[ERROR] - {i}')
+        elif len(code_error) != 0:
+            print(f'[ERROR] - CODE NOT FOUND IN LIBRARY {code_error}')
+            

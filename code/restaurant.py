@@ -1,5 +1,57 @@
-import pyautogui
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from web_driver_init import driver
+from functions import load_excel_file
 from functions import *
+
+# java script execute
+def tick_box(element, value):
+    if value != None:
+        driver.execute_script(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
+        time.sleep(0.1)
+
+def input_text(element_id, text):
+    if text != None:
+        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
+        time.sleep(0.1)
+
+def select_dropdown(element_id, value):
+    if value != None:
+        driver.execute_script(f'var selectElement1 = document.getElementById("{element_id}"); selectElement1.value = "{value}";')
+        time.sleep(0.1)
+        
+# dropdown dict
+cooking_type_dict = {
+    "Barbecue": "BBQ",
+    "Bistro": "BISTRO",
+    "Bistronomy": "BISNOM",
+    "Brasserie": "BRASS",
+    "Cafe": "CAFE",
+    "Chinese": "CHINE",
+    "Creole": "CREOLE",
+    "Diabetic": "DIABET",
+    "Dietary cuisine": "Dieta",
+    "European": "EUROP",
+    "French": "FRENCH",
+    "Gourmet": "GASTRO",
+    "Healthy eating": "DIET",
+    "Indian": "INDIAN",
+    "International": "INTERN",
+    "Italian": "ITALY",
+    "Japanese": "JAPAN",
+    "Kosher": "KASHER",
+    "Lebanese": "LEBANE",
+    "Mediterranean": "MED",
+    "Mexican": "MEXICA",
+    "Other cooking style": "OTHER",
+    "Regional": "REGION",
+    "Thai": "THAI",
+    "Thematic cuisine": "THEMA",
+    "Vegetarian cuisine": "VEGET",
+    "Wine bar": "BARVIN",
+    }
 
 # Function to count even rows until an empty cell is encountered
 def count_rows(sheet, column_letter, start_row):
@@ -205,79 +257,114 @@ def add(hotel_rid):
     
     # Open web browser
     url = 'https://dataweb.accor.net/dotw-trans/restaurantTabs!input.action'
-    open_web(url)
-
-    # Locate menu and reorder search result
-    tabing(2)
-    pyautogui.press('enter')
-    find_and_click('img\\type_code.PNG')
-    find_searchbox()
-    pyautogui.write('rt')
-    pyautogui.press('enter')
-
+    driver.get(url)
+    
+    # collect error data
+    error = []
+    # Wait for page to load
+    WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '//*[@id="allRestaurantsTabLink"]'))
+        )
+    
     # Start Looping!
     for keys in restaurants:
         # Find add button and start entering data
-        find_add()
-        time.sleep(1)
-        find_and_click_on('img\\add_res.PNG')
-        tabing(2)
+        driver.execute_script("addBasicElement('RT','RESTAURANT');")
+        # Wait for page to load
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="hotelRestaurantFormJson"]'))
+            )
         
         # Enter Ranking
         rank = str(restaurants[f'{keys}'][1]['rank'])
-        pyautogui.write(rank)
-        tabing(6)
+        input_text(element_id='hotelRestaurant.rank', text=rank)
         
         # Enter name of the restaurant
-        pyautogui.write(keys)
-        tabing(1)
+        input_text(element_id='hotelRestaurant.name', text=keys)
         
         # Enter Opening hour
-        pyautogui.write(restaurants[f'{keys}'][0]['open_hour'])
-        tabing(1)
+        restaurant_hours = restaurants[f'{keys}'][0]['open_hour']
+        input_text(element_id='hotelRestaurant.horaires', text=restaurant_hours)
         
         # Enter Cooking style
-        loop_key_press(restaurants[f'{keys}'][2]['cook_type'])
-        tabing(1)
+        cooking_style = restaurants[f'{keys}'][2]['cook_type']
+        cooking_select = cooking_type_dict.get(cooking_style)
+        select_dropdown(element_id='hotelRestaurant.cookType.code', value=cooking_select)
         
         # Tickbox Open Information
-        tickbox(data=restaurants[f'{keys}'][3]['Open information'])
+        opening_data = restaurants[f'{keys}'][3]['Open information']
+        tick_box(element='hotelRestaurant.mondayMidday', value=opening_data[0])
+        tick_box(element='hotelRestaurant.tuesdayMidday', value=opening_data[1])
+        tick_box(element='hotelRestaurant.wednesdayMidday', value=opening_data[2])
+        tick_box(element='hotelRestaurant.thursdayMidday', value=opening_data[3])
+        tick_box(element='hotelRestaurant.fridayMidday', value=opening_data[4])
+        tick_box(element='hotelRestaurant.saturdayMidday', value=opening_data[5])
+        tick_box(element='hotelRestaurant.sundayMidday', value=opening_data[6])
+        tick_box(element='hotelRestaurant.mondayEvening', value=opening_data[7])
+        tick_box(element='hotelRestaurant.tuesdayEvening', value=opening_data[8])
+        tick_box(element='hotelRestaurant.wednesdayEvening', value=opening_data[9])
+        tick_box(element='hotelRestaurant.thursdayEvening', value=opening_data[10])
+        tick_box(element='hotelRestaurant.fridayEvening', value=opening_data[11])
+        tick_box(element='hotelRestaurant.saturdayEvening', value=opening_data[12])
+        tick_box(element='hotelRestaurant.sundayEvening', value=opening_data[13])
         
         # Tickbox Payment Information
-        tickbox(data=restaurants[f'{keys}'][4]['Payment Option'])
+        payment_data = restaurants[f'{keys}'][4]['Payment Option']
+        tick_box(element='hotelRestaurant.cash', value=payment_data[0])
+        tick_box(element='hotelRestaurant.creditCard', value=payment_data[1])
+        tick_box(element='hotelRestaurant.check', value=payment_data[2])
+        tick_box(element='hotelRestaurant.othersLocalPaymentOptions', value=payment_data[3])
         
         # Skip Ex Chef & Skip AVG price
-        tabing(2)
         
         # Enter Max Seats
         max_pax = str(restaurants[f'{keys}'][5]['Max seats'])
-        pyautogui.write(max_pax)
-        tabing(1)
+        input_text(element_id='hotelRestaurant.maximumSeating', text=max_pax)
         
         # Tickbox Service option
-        tickbox(data=restaurants[f'{keys}'][6]['Service option'])
+        service_data = restaurants[f'{keys}'][6]['Service option']
+        tick_box(element='hotelRestaurant.fullBoard', value=service_data[0])
+        tick_box(element='hotelRestaurant.halfBoard', value=service_data[1])
+        tick_box(element='hotelRestaurant.wheelChairAccess', value=service_data[2])
+        tick_box(element='hotelRestaurant.airConditionning', value=service_data[3])
+        tick_box(element='hotelRestaurant.nonSmoking', value=service_data[4])
+        tick_box(element='hotelRestaurant.exceptionalView', value=service_data[5])
+        tick_box(element='hotelRestaurant.themeRestaurant', value=service_data[6])
+        tick_box(element='hotelRestaurant.mealSwim', value=service_data[7])
+        tick_box(element='hotelRestaurant.petsAllowed', value=service_data[8])
+        tick_box(element='hotelRestaurant.terrasse', value=service_data[9])
+
         
         # Tickbox Classifications & labels
-        tickbox(data=restaurants[f'{keys}'][7]['Classifications'])
+        class_data = restaurants[f'{keys}'][7]['Classifications']
+        tick_box(element='hotelRestaurant.michelin1', value=class_data[0])
+        tick_box(element='hotelRestaurant.michelinBibGourmand', value=class_data[1])        
+        tick_box(element='hotelRestaurant.michelin2', value=class_data[2])
+        tick_box(element='hotelRestaurant.aAA', value=class_data[3])
+        tick_box(element='hotelRestaurant.michelin3', value=class_data[4])
         
         # Menus
-        tickbox(data=restaurants[f'{keys}'][8]['Menus'])
-        
-        if restaurants[f'{keys}'][8]['Menus'][5] == None:
-            tabing(11)
-        else:
-            tabing(23)
+        menus_data = restaurants[f'{keys}'][8]['Menus']
+        tick_box(element='hotelRestaurant.childMenu', value=menus_data[0])
+        tick_box(element='hotelRestaurant.saltFreeMenu', value=menus_data[1])
+        tick_box(element='hotelRestaurant.delightMenu', value=menus_data[2])
+        tick_box(element='hotelRestaurant.vegetarianMenu', value=menus_data[3])
+        tick_box(element='hotelRestaurant.halalMenu', value=menus_data[4])
+        tick_box(element='hotelRestaurant.brunchMenu', value=menus_data[5])
+        tick_box(element='hotelRestaurant.glutenFreeMenu', value=menus_data[6])
+        tick_box(element='hotelRestaurant.kosherMenu', value=menus_data[7])
             
         # Find Update Button
-        pyautogui.press('enter')
-        print(f'Restaurant {keys} has been added!')
-        
-        # Wait page to load and locate menu again
-        find_logo()
-        tabing(2)
-        pyautogui.press('enter')
+        driver.execute_script('submitFormRestaurant();')
         time.sleep(1)
         
+        # get response
+        get_response(driver=driver, code='RT', error=error)
         
+    # print result to user    
     print(f'All restaurants has been loaded to {hotel_rid}!')
     print("don't forget to add description!")
+    if len(error) != 0:
+        for i in error:
+            print(i)
+    

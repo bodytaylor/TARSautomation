@@ -1,19 +1,22 @@
 import time
-import pyautogui
+from web_driver_init import driver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from functions import *
 from dictionary import *
 
 # input textbox
 def input_text(element_id, text):
-    pyautogui.typewrite(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-    time.sleep(0.5)
-    pyautogui.press('enter')
+    if text != None:
+        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
+        time.sleep(0.1)
     
 # select dropdown
 def select_dropdown(element_id, value):
-    pyautogui.typewrite(f'var selectElement1 = document.getElementById("{element_id}"); selectElement1.value = "{value}";')
-    time.sleep(0.5)
-    pyautogui.press('enter')
+    if value != None:
+        driver.execute_script(f'var selectElement1 = document.getElementById("{element_id}"); selectElement1.value = "{value}";')
+        time.sleep(0.1)
 
 # Starting point    
 def add(hotel_rid):
@@ -44,7 +47,6 @@ def add(hotel_rid):
     # Provisional Opening date merge with commercial name K10
     open_date = data[4]
     open_date = open_date.strftime("%B %Y")
-    print(open_date)
     hotel_com_name = f'{hotel_com_name} (Opening {open_date})'
 
 
@@ -116,80 +118,81 @@ def add(hotel_rid):
 
 
     # Goto Target URL
-    find_edge_console()
-    go_to_url('https://dataweb.accor.net/dotw-trans/displayHotelAddress!input.action')
-    time.sleep(2)
+    driver.get('https://dataweb.accor.net/dotw-trans/displayHotelAddress!input.action')
+    page = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="hotelAddressLink"]'))
+        )
+    print(f'[INFO] - {page.text}')
 
     # Fill data in console
     # Hotel name
-    input_textf(element_id="hotel.name", text=hotel_name)
+    input_text(element_id="hotel.name", text=hotel_name)
 
     # Select Brand
-    select_dropdownf(element_id="hotel.brand.code", value=brand_key)
+    select_dropdown(element_id="hotel.brand.code", value=brand_key)
 
     # Select Chain
-    select_dropdownf(element_id="hotel.chain.code", value=chain_key)
+    select_dropdown(element_id="hotel.chain.code", value=chain_key)
 
     # Hotel Commercial name
-    input_textf(element_id="hotel.commercialName", text=hotel_com_name)
+    input_text(element_id="hotel.commercialName", text=hotel_com_name)
 
     # Hotel Short Name
-    input_textf(element_id="hotel.shortName", text=short_name)
+    input_text(element_id="hotel.shortName", text=short_name)
 
     # logging type
-    select_dropdownf(element_id="hotel.hotelManagementType.code", value=logging_key)
+    select_dropdown(element_id="hotel.hotelManagementType.code", value=logging_key)
 
     # Address 1 2 3
     if address1 != None:
-        input_textf(element_id="hotel.address.addresses[0]", text=address1)
+        input_text(element_id="hotel.address.addresses[0]", text=address1)
     if address2 != None:    
-        input_textf(element_id="hotel.address.addresses[1]", text=address2)
+        input_text(element_id="hotel.address.addresses[1]", text=address2)
     if address3 != None:
-        input_textf(element_id="hotel.address.addresses[2]", text=address3)
+        input_text(element_id="hotel.address.addresses[2]", text=address3)
 
     # City
-    input_textf(element_id="hotel.address.city", text=city)
+    input_text(element_id="hotel.address.city", text=city)
 
     # State
     if state != None:
         print('Please Select State by your self, Thanks!')
         
     # IATA City Code
-    input_textf(element_id="hotel.iataCityCode", text=iata)
+    input_text(element_id="hotel.iataCityCode", text=iata)
 
     # Zipcode
-    input_textf(element_id="hotel.address.zipCode", text=zipcode)
+    input_text(element_id="hotel.address.zipCode", text=zipcode)
 
     # Phone and Fax
-    input_textf(element_id="hotel.address.indTel", text=phone_country_code)
-    input_textf(element_id="hotel.address.tel", text=phone)
-    input_textf(element_id="hotel.address.indFax", text=phone_country_code)
-    input_textf(element_id="hotel.address.fax", text=fax)
+    input_text(element_id="hotel.address.indTel", text=phone_country_code)
+    input_text(element_id="hotel.address.tel", text=phone)
+    input_text(element_id="hotel.address.indFax", text=phone_country_code)
+    input_text(element_id="hotel.address.fax", text=fax)
 
     # Resa Phone and Resa Fax
-    input_textf(element_id="hotel.indTelReservation", text=phone_country_code)
-    input_textf(element_id="hotel.telReservation", text=resa_phone)
-    input_textf(element_id="hotel.indFaxReservation", text=phone_country_code)
-    input_textf(element_id="hotel.faxReservation", text=resa_fax)
+    input_text(element_id="hotel.indTelReservation", text=phone_country_code)
+    input_text(element_id="hotel.telReservation", text=resa_phone)
+    input_text(element_id="hotel.indFaxReservation", text=phone_country_code)
+    input_text(element_id="hotel.faxReservation", text=resa_fax)
 
     # Hotel Code Place
-    input_textf(element_id="hotel.placeCode", text=code_place)
+    input_text(element_id="hotel.placeCode", text=code_place)
 
     # Tracking
-    select_dropdownf(element_id="hotel.segmentationType.code", value="TRACK")
+    select_dropdown(element_id="hotel.segmentationType.code", value="TRACK")
 
     # TARS Mode
-    select_dropdownf(element_id="hotel.tarsMode.code", value="O")
+    select_dropdown(element_id="hotel.tarsMode.code", value="O")
 
     # PMS interface
-    select_dropdownf(element_id="versionPmsInterface", value="")
+    select_dropdown(element_id="versionPmsInterface", value="")
 
     # Email
-    input_textf(element_id="hotel.address.email", text=email)
+    input_text(element_id="hotel.address.email", text=email)
 
     # Internet Address
-    input_textf(element_id="hotel.internetAddress", text=inter_acc)
+    input_text(element_id="hotel.internetAddress", text=inter_acc)
 
     # Run code
-
     print('Automation Done Please Review The input data before click save! Thanks.')

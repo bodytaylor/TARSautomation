@@ -1,28 +1,13 @@
 import time
-import pyautogui
-from functions import *
+from web_driver_init import driver
 
-
-# insert function
-def type_and_enter(text):
-    text = str(text)
-    pyautogui.typewrite(text)
-    time.sleep(0.5)
-    pyautogui.press('enter')
-    
 def add(hotel_rid):
-
-    # Open target web
-    find_edge_console()
-    go_to_url('https://dataweb.accor.net/dotw-trans/displayHotelAutomation!input.action')
-    time.sleep(2)
-
-
+    driver.get('https://dataweb.accor.net/dotw-trans/displayHotelAutomation!input.action')
+    time.sleep(5)
     # ready to roll!!
     automation_list = ['RT', 'DQ', 'GG', 'HO', 'TE']
 
     for item in automation_list:
-        find_logo()
         # pass value to type
         add = 'addGDSElement();'
         code = f'var inputElement = document.getElementById("system.systemCode"); inputElement.value = "{item}";'
@@ -32,11 +17,9 @@ def add(hotel_rid):
         
         order = [add, code, search, hrid, save]
         for i in order:
-            type_and_enter(i)
-            time.sleep(1)
-        
+            driver.execute_script(i)
+            time.sleep(0.75)
     # for DHISCO
-
     add = 'addGDSElement();'
     code = 'var inputElement = document.getElementById("system.systemCode"); inputElement.value = "WB";'
     search = 'searchGDS();'
@@ -46,7 +29,10 @@ def add(hotel_rid):
 
     order = [add, code, search, insert, hrid, save]
     for i in order:
-        type_and_enter(i)
-        time.sleep(0.5)
+        driver.execute_script(i)
+        time.sleep(0.75)
 
     print(f'ALL MANDATORY AUTOMATION SYSTEMS HAS BEEN ADDED TO {hotel_rid}')
+
+
+

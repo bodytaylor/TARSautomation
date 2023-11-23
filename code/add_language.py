@@ -1,6 +1,16 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import pandas as pd
 from functions import *
+from web_driver_init import driver
+
+# fuction for adding language
+def add_language(lang):
+    script = f"window.confirm = ajaxReplace('dataForm', 'addHotelLanguage.action?language.languageCode={lang}', 'get');"
+    driver.execute_script(script)
+    time.sleep(1)
 
 def add(hotel_rid):
     # Get Contry and city infomation from content book
@@ -42,9 +52,11 @@ def add(hotel_rid):
     lang_to_add = df_filtered.columns.to_list()
 
     # open language definition page
-    find_edge_console()
-    go_to_url("https://dataweb.accor.net/dotw-trans/secure/hotelLanguagesInput.action")
-    time.sleep(2)
+    driver.get("https://dataweb.accor.net/dotw-trans/secure/hotelLanguagesInput.action")
+    element = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.TAG_NAME, 'h2'))
+        )
+    print(element.text)
 
     # start loop
     for item in lang_to_add:

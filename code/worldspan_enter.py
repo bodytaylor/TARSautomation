@@ -3,7 +3,6 @@ import pandas as pd
 from functions import *
 import ast
 
-
 def find_gds_windows():
     time.sleep(1)
     image = pyautogui.locateOnScreen(r"img\worldspan.PNG", confidence=0.8)

@@ -134,18 +134,6 @@ def find_add():
     pyautogui.moveTo(x, y, 0.1) 
     pyautogui.click()
 
-    
-# Function to enter data into a web page This function will skip None Value and leave the cell blank
-def enter_data(data):
-    # Loop through the data and enter it
-    for value in data:
-        if value != None:
-            pyautogui.write(str(value))
-            pyautogui.press('tab')
-        else:
-            pyautogui.press('tab')
-        pyautogui.press('enter')
-
 # clear a search box before enter a new search    
 def clear_search_box(n):
     for _ in range(n):
@@ -341,18 +329,6 @@ def switch_mode():
     pyautogui.hotkey('ctrl', 'shift', 'm')
     
 # Browser console function
-# input textbox
-def input_text(element_id, text):
-    if text != None:
-        pyautogui.typewrite(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-        time.sleep(0.5)
-        pyautogui.press('enter')
-        
-def input_textf(element_id, text):
-    if text != None:
-        pyautogui.typewrite(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-        pyautogui.press('enter')
-    
 # select dropdown
 def select_dropdown(element_id, value):
     if value != None:
@@ -403,23 +379,12 @@ def press_ctrl_plus(key):
     pyautogui.press(key)
     pyautogui.keyUp('ctrl')
     
-# Tickbox in browser console
-def tick_box(element):
-    pyautogui.typewrite(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
-    pyautogui.press('enter')
-    
 # toggle Chrome console
 def toggle_console():
     pyautogui.hotkey('ctrl', 'shift', 'i')
     time.sleep(0.5)
     pyautogui.hotkey('ctrl', 'shift', 'i')
     time.sleep(0.5)
-    
-# fuction for adding language
-def add_language(lang):
-    text = f"window.confirm = ajaxReplace('dataForm', 'addHotelLanguage.action?language.languageCode={lang}', 'get');"
-    type_and_enter(text)
-    time.sleep(1)
     
 def continue_program():
     while True:
@@ -432,3 +397,26 @@ def continue_program():
             print("Invalid input. Please enter 'y' or 'n'.")
 
 
+# New function for selenium
+
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+def get_response(driver, code, error=list):
+     # Get response
+            WebDriverWait(driver, 7).until(
+                EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
+                ) 
+            time.sleep(0.5)
+            try:
+                action_message_element = WebDriverWait(driver, 7).until(
+                    EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]'))
+                    )
+                action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
+                print(f'[INFO] - {action_message}')
+            except:
+                error_message = action_message_element = WebDriverWait(driver, 7).until(
+                    EC.visibility_of_element_located((By.XPATH, '//*[@id="errormessage"]'))
+                    )
+                error.append(f'{code}: {error_message.text}')
+                print(f'[INFO] - {error_message.text}')

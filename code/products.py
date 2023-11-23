@@ -1,9 +1,23 @@
 import time
-import pyautogui
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from web_driver_init import driver
 import pandas as pd
 from functions import *
 
 # version 1.0.2
+
+# execute java script
+def input_text(element_id, text):
+    if text != None:
+        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
+
+# Tickbox in browser console
+def tick_box(element):
+    script = (f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
+    return script
+
 # Search for product lib
 def add_product(code, df):
     code = str(code).strip()
@@ -41,32 +55,46 @@ def add(hotel_rid):
         sep=';'
     )
 
-    find_edge_console()
-    go_to_url('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
-    time.sleep(2)
+    driver.get('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
+    time.sleep(1)
+    page = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="classicTabName"]'))
+        )
+    print(f'[INFO] - {page.text}')
 
     # Start Loop
     products_not_found = []
+    error = []
     for index, row in products_df.iterrows():
-        add = (add_product(row['Code'], df=product_lib_df))
+        code = row['Code']
+        add = (add_product(code, df=product_lib_df))
         if add == None:
-            products_not_found.append(row['Code'])
-        type_and_enter(add)
-        time.sleep(1)
-    
-        if row['paying'] == 'Yes':
-            tick_box(element='hotelProduct.paying')
-            input_textf(element_id='hotelProduct.maxOccupancyTotal', text='1')
-            input_textf(element_id='hotelProduct.maxQtyInRoom', text='1')
-            input_textf(element_id='hotelProduct.orderInResaScreen', text='99')
-            input_textf(element_id='hotelProduct.maxOccupancyAdult', text='1')
-        tick_box(element='hotelProduct.availableOnGDSMedia')
-        
-        type_and_enter('document.getElementById("hotelProduct.submitButton").click();')
-        print(f'INFO - {row} has been added')
-        time.sleep(1.5)   
+            products_not_found.append(code)
+        else:
+            driver.execute_script(add)
+            # Wait for page to load
+            WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="formTitle"]'))
+            )
+            
+            if row['paying'] == 'Yes':
+                driver.execute_script(tick_box(element='hotelProduct.paying'))
+                input_text(element_id='hotelProduct.maxOccupancyTotal', text='1')
+                input_text(element_id='hotelProduct.maxQtyInRoom', text='1')
+                input_text(element_id='hotelProduct.orderInResaScreen', text='99')
+                input_text(element_id='hotelProduct.maxOccupancyAdult', text='1')
+                
+            driver.execute_script(tick_box(element='hotelProduct.availableOnGDSMedia'))
+            driver.execute_script('document.getElementById("hotelProduct.submitButton").click();')
+            
+            # Wait for response
+            get_response(driver=driver, code=code, error=error)
         
     if len(products_not_found) != 0:
-        print(f'[INFOR] - Please Manually Check this product: {products_not_found}')
+        print(f'[INFO] - Please Manually Check this product: {products_not_found}')
+    if len(error) != 0:
+        print('##### Mission Report #####')
+        for i in error:
+            print(i)
         
     

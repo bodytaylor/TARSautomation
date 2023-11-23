@@ -231,7 +231,8 @@ def check_text(df, col, row_shift=11):
             accept += 1
     if accept != 0:
         print('Please go back to the content book and correct it')
-        sys.exit()
+        
+    return accept
         
 # Create a function to find non-matching characters
 def find_non_matching_chars(text):
@@ -255,7 +256,7 @@ def tickbox(data=list):
 
 
 # search for non accepted charecters in data frame
-def check_text(df, col,):
+def check_text(df, col):
     df['Non_Matching_Chars'] = df[col].apply(find_non_matching_chars)
     accept = 0
     for index, row in df.iterrows():
@@ -265,7 +266,7 @@ def check_text(df, col,):
             accept += 1
     if accept != 0:
         print('Please go back to the content book and correct it')
-        sys.exit()
+    return accept
             
 # Check Description lengh
 def check_descrip_len(df, col):
@@ -275,9 +276,8 @@ def check_descrip_len(df, col):
             print(f"Row {df.iloc[index, 0]} column {col}: contain more than 255 charactors")
             accept += 1
     if accept != 0:
-        print('Please go back to the content book and correct it')
-        sys.exit()
-        
+        print('Please go back to the content book and correct it') 
+    return accept    
         
 # Locate add product menu
 def locate_product_menu():
@@ -431,4 +431,26 @@ def continue_program():
         else:
             print("Invalid input. Please enter 'y' or 'n'.")
 
+# New function for selenium
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
+# Get response
+def get_response(driver, code, error=list):
+            WebDriverWait(driver, 7).until(
+                EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
+                ) 
+            time.sleep(0.5)
+            try:
+                action_message_element = WebDriverWait(driver, 7).until(
+                    EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]'))
+                    )
+                action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
+                print(f'[INFO] - {action_message}')
+            except:
+                error_message = action_message_element = WebDriverWait(driver, 7).until(
+                    EC.visibility_of_element_located((By.XPATH, '//*[@id="errormessage"]'))
+                    )
+                error.append(f'{code}: {error_message.text}')
+                print(f'[INFO] - {error_message.text}')

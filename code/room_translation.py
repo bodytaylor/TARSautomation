@@ -1,4 +1,7 @@
 import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 from functions import *
 
@@ -27,12 +30,16 @@ def find_type(df, code):
 def add(hotel_rid):
     translate_or_update = int(input('Translate Hit: 1 \nUpdate Hit: 2\nPlease type number and Hit Enter: '))
     # Get room data from excel sheet
-    df = get_room_data(hotel_rid)
+    
     # Check for unaccepted characters, if there are any, script will terminate!
-    check_text(df, col='marketing_label')
-    check_text(df, col='tar_ref')
-
-
+    while True:
+        df = get_room_data(hotel_rid)
+        marketing_check = check_text(df, col='marketing_label')
+        tar_ref_check = check_text(df, col='tar_ref')
+        if marketing_check == tar_ref_check == 0:
+            break
+        continue_program()
+        
     # Load product library
     csv_path = 'products_lib.csv'
     product_lib_df = pd.read_csv(
@@ -40,7 +47,13 @@ def add(hotel_rid):
         header=0,
         sep=';'
     )
-
+    
+    # import driver session
+    from  web_driver_init import driver
+    
+    # error
+    error = []
+    
     # Start the loop!
     for i in range(len(df)):
         # Get room code
@@ -49,49 +62,65 @@ def add(hotel_rid):
         
         # Open Web Browser on translate page and wait for webpage load
         url = f'https://dataweb.accor.net/dotw-trans/translateHotelProduct!input.action?actionType=translate&hotelProduct.code={room_code}&hotelProduct.type.code={room_type}&hotelProduct.centralUse=true&'
-        open_web(url)
-        find_logo()
+        driver.get(url)
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, "zoneCliquable"))
+            )
         
         # Click on Translate 
-        find_and_click('img\\translate.png')
-        time.sleep(2)
+        driver.execute_script(f"displayTranslateForm('translateInput','GB','{room_code}','{room_type}','{hotel_rid}','productsDescriptionsTable','true','true','GB','true')")
         
-        # Click on menu and locate discription input box
-        find_and_click_on('img\\translate_product.PNG')
-        tabing(6)
+        # Wait for page to load
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="translateHotelProductFormJson"]'))
+            )
+        
+        # find description box
+        description_box = driver.find_element(By.ID, "hotelProductTranslate.description")
+        marketing_box =  driver.find_element(By.ID, "hotelProductTranslate.referenceLabel")
         
         # Clear the box if update option is on
         if translate_or_update == 2:
-            pyautogui.hotkey('ctrl', 'a')
-            pyautogui.press('del')  
+            marketing_box.clear()
+            description_box.clear() 
             
         # Get data from DataFrame and type in the discription box, do not change the secound locater!
         description = df.iloc[i, 2]
-        type_translate(2, description)
-        
-        # Clear the box if update option is on
-        if translate_or_update == 2:
-            pyautogui.hotkey('ctrl', 'a')
-            pyautogui.press('del') 
+        description_box.send_keys(description)
             
         # Get data from DataFrame and type in the marketing lable, box do not change the secound locater!
         marketing_label = df.iloc[i, 1]
-        type_translate(translate_or_update, marketing_label)
+        marketing_box.send_keys(marketing_label)
 
         # Select translate or update
         if translate_or_update == 1:
-            pyautogui.press('enter')
+            # Click on Translate button
+            script = """
+            document.getElementById('translateHotelProductForm.submitButton').click();
+            """
+            
+            driver.execute_script(script)
             time.sleep(1)
-            pyautogui.press('enter')
+            alert = driver.switch_to.alert
+            alert.accept()
+            time.sleep(1)
         else:
-            pyautogui.press('enter')
-            time.sleep(1)
+            script = """
+            document.getElementById('translateHotelProductForm.submitSaveButton').click();
+            """
 
-        # close browser
-        time.sleep(2)
-        pyautogui.hotkey('ctrl', 'w')
+            driver.execute_script(script)
+            time.sleep(1)
+            
+        # get response
+        get_response(driver=driver, code=room_code, error=error)
 
     if translate_or_update == 1:
         print(f'Translation for all rooms in {hotel_rid} is done!')
     else:
         print(f'Discription for all rooms in {hotel_rid} is done! Please comeback and hit translate later!')
+        
+    # Print error to user
+    if len(error) != 0:
+        for i in error:
+            print(f'[ERROR] - {i}')

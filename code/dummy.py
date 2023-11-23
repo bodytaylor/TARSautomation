@@ -1,51 +1,113 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-import time
+surrouding_dict = {
+    'ADML':	'Administrative Location',
+    'AIRP':	'Airport',
+    'SKI': 'At a ski lift',
+    'BAR': 'Bar',
+    'BAY': 'Bay',
+    'BUS': 'Bus stop',
+    'AFFA':	'Business & financial district',
+    'CANL':	'Canal',
+    'CITY':	'City center',
+    'DOWN':	'City downtown',
+    'NCIT':	'Closest major urban centre',
+    'CENT':	'Distance from city centre',
+    'NPT1':	'Domestic airport 1 - full name',
+    'NAP1':	'Domestic airport 1 - IATA code',
+    'NPT2':	'Domestic airport 2 - full name',
+    'NAP2':	'Domestic airport 2 - IATA code',
+    'NPT3':	'Domestic airport 3 - full name',
+    'NAP3':	'Domestic airport 3 - IATA code',
+    'THEA':	'Entertainment/theatre district',
+    'FERR':	'Ferries',
+    'HELI':	'Helipad/aerodrome',
+    'HEXI':	'Highway exit',
+    'APT1':	'Int. airport 1 - full name',
+    'AER1':	'Int. airport 1 - IATA code',
+    'APT2':	'Int. airport 2 - full name',
+    'AER2':	'Int. airport 2 - IATA code',
+    'APT3':	'Int. airport 3 - full name',
+    'AER3':	'Int. airport 3 - IATA code',
+    'APT4':	'Int. airport 4 - full name',
+    'AER4':	'Int. airport 4 - IATA code',
+    'APT5':	'Int. airport 5 - full name',
+    'AER5':	'Int. airport 5 - IATA code',
+    'MARI':	'Marina',
+    'HARD':	'Marine terminal',
+    'METR':	'Metro/underground/subway',
+    'MONT':	'Mountain',
+    'NAPA':	'National park',
+    'PLGN':	'Nearby',
+    'NCC': 'Nearest major city - code',
+    'NCN': 'Nearest major city - name',
+    'PLAG':	'On the beach',
+    'VIEW':	'Panoramic view',
+    'PARK':	'Park',
+    'PCC': 'Primary city code',
+    'PCN': 'Primary city name',
+    'STAT':	'Railway and underground station',
+    'GARE':	'Railway station',
+    'RSTO':	'Restaurant',
+    'RIVE':	'River',
+    'SHOP':	'Shopping district',
+    'THTR':	'Theatre',
+    'SNCF':	'TRAIN + HOTEL GARE SNCF',
+    'TRAM':	'Tramway',
+    'VALL':	'Valley',
+    'SVIE':	'With sea view',
+    'WOOD':	'Wood/forest',
+    'ADMI':	'Administrative building',
+    'ENT': 'Amusement park',
+    'APAR':	'Amusement park',
+    'AQU': 'Aquarium',
+    'ARTC':	'Art and Culture',
+    'PLGA':	'Beach area',
+    'BOT': 'Botanical gardens',
+    'EVNT':	'Business centre',
+    'CAS': 'Casino',
+    'CINE':	'Cinema district',
+    'CLIN':	'Clinic/hospital',
+    'COLL':	'College/university',
+    'COMP':	'Company',
+    'CONC':	'Concert hall',
+    'CONG':	'Convention centre',
+    'CULT':	'Cultural centre',
+    'EMBA':	'Embassy',
+    'ENTE':	'Entertainment and theatre',
+    'ENTC':	'Entertainment centre',
+    'EVNS':	'Events centre',
+    'EXHI':	'Exhibition and convention centre',
+    'EXPO':	'Exhibition centre',
+    'GOLF':	'Golf course',
+    'HIST':	'Historic monument',
+    'HOPI':	'Hospital',
+    'INDU':	'Industrial area',
+    'LAKE':	'Lake',
+    'MALL':	'Mall and Shopping Centre',
+    'MILI':	'Military base',
+    'MOVI':	'Movie theatre',
+    'MUSM':	'Museums',
+    'TSP': 'Nearest transport',
+    'OPE': 'Opera/symphony/concert hall',
+    'OATT':	'Other attractions',
+    'OTBU':	'Other point of business interest',
+    'RELI':	'Place of worship',
+    'CTR1':	'Primary point of interest',
+    'RAC': 'Racetrack',
+    'REST':	'Restaurant and cafe district',
+    'SCHO':	'School/university',
+    'SHOM':	'Shopping centre/mall',
+    'PIST':	'Ski area',
+    'DIVE':	'Special tourist area',
+    'TOUR':	'Special tourist area',
+    'CSPO':	'Sports centre',
+    'SPOR':	'Sports centre',
+    'STAD':	'Stadium',
+    'ATOU':	'Tourist attraction',
+    'INFO':	'Tourist information',
+    'WORL':	'World Trade Center',
+    'ZOO':	'Zoo',
+    'PZOO':	'Zoological park',
+    }
 
-
-ieOptions = webdriver.IeOptions()
-ieOptions.add_additional_option("ie.edgechromium", True)
-ieOptions.add_additional_option("ie.edgepath",'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')
-driver = webdriver.Ie(options=ieOptions)
-
-def login():
-        # Navigate to the login page
-    driver.get("https://dataweb.accor.net/dotw-trans/login!input.action")
-
-    # Wait for an element to be visible
-    try:
-        username_field = WebDriverWait(driver, 5).until(
-            EC.visibility_of_element_located((By.NAME, "login"))
-        )
-            # Find the username and password input fields and enter your credentials
-        username_field = driver.find_element(By.ID, "loginField")
-        password_field = driver.find_element(By.NAME, "password")
-
-        username = "NANSAN"
-        password = "Welcome@2023"
-        driver.execute_script("arguments[0].value = '';", username_field)
-        username_field.send_keys(username)
-        driver.execute_script("arguments[0].value = arguments[1];", password_field, password)
-
-        # Submit the login form
-        submit_button = driver.find_element(By.CSS_SELECTOR, 'input#login_0[value="Submit"].submit')
-
-        # Click the button
-        submit_button.click()
-        password_field.send_keys(Keys.RETURN)
-    except ValueError as e:
-        print(e)
-
-
-
-login()
-time.sleep(10)
-driver.execute_script('var keywordField = document.getElementById("keyword"); keywordField.value = "Your text here";')
-
-time.sleep(5)
-driver.quit()
-
+    
+print(surrouding_dict.get('WORL'))

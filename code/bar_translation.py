@@ -1,6 +1,10 @@
-import pyautogui
-from functions import *
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
+from functions import *
+from web_driver_init import driver
 from dictionary import *
 
 # Function to count even rows until an empty cell is encountered
@@ -30,7 +34,7 @@ def find_type(df, code):
         return None
 
 def add(hotel_rid):
-
+    
     # Load product library
     csv_path = 'products_lib.csv'
     product_lib_df = pd.read_csv(
@@ -78,7 +82,9 @@ def add(hotel_rid):
         if workbook:
             workbook.close() 
             
-
+    # collect error message        
+    error = []
+    
     # Start Looping!
     for keys in bars:
         # find type
@@ -89,27 +95,39 @@ def add(hotel_rid):
         key = url_parse(key)
         # Open webbrowser
         url = f'https://dataweb.accor.net/dotw-trans/translateHotelBar!input.action?actionType=translate&hotelBar.barType.code={bar_code}&hotelBar.name={key}&'
-        open_web(url)
-        find_logo()
+        driver.get(url)
+        # Wait for page to load
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="barsDescriptionsTable"]'))
+            )
         
-        # Click on translation button
-        find_and_click_on('img\\translate.png')
-        time.sleep(2)
+        # Click on Translate 
+        driver.execute_script(f"displayTranslateForm('translateInput','GB','{bar_code}','barsDescriptionsTable','true','true','GB','true');")
         
-        # Click on menu and locate Translate a restaurant input box
-        find_and_click_on(r'img\translate_bar.PNG')
+        # wait for form to appear
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="translateHotelBarFormJson"]'))
+            )
+        
+        # find description box
+        description_box = driver.find_element(By.ID, "hotelBarTranslate.description")
+        description_box.send_keys(description)
+        
+        script = """
+        document.getElementById('translateHotelBarForm.submitButton').click();
+        """
+        
+        driver.execute_script(script)
         time.sleep(1)
-        tabing(6)
-        
-        type_translate(2, description)
-        
-        # Translate and close the page
-        pyautogui.press('enter')
+        alert = driver.switch_to.alert
+        alert.accept()
         time.sleep(1)
-        pyautogui.press('enter')
-        time.sleep(1)
-        pyautogui.hotkey('ctrl', 'w')
-        
-        
+            
+        # get response
+        get_response(driver=driver, code=bar_code , error=error)
+         
     print(f'All Bar(s) has been loaded to {hotel_rid}!')
     print("don't forget to add description!")
+    if len(error) != 0:
+        for i in error:
+            print(f'[ERROR] - {i}')
