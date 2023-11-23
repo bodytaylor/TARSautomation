@@ -1,6 +1,33 @@
 import os
 import time
 from web_driver_init import *
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+def user_credential():
+    load_dotenv()
+
+    # Access the variables using os.environ.get()
+    username = os.environ.get("TARSUSER")
+    password = os.environ.get("PASSWORD")
+
+    # Check if .env file exists
+    if not (username and password):
+        print("No .env file found. Please provide your credentials:")
+        username = input("Username: ")
+        password = input("Password: ")
+
+        # Save the credentials to a new .env file
+        with open(".env", "w") as env_file:
+            env_file.write(f"TARSUSER={username}\n")
+            env_file.write(f"PASSWORD={password}\n")
+
+        print(".env file created with provided credentials.")
+    else:
+        print(f"Credentials loaded from .env file. Username: {username}")
+        
+    return username, password
 
 # Store Hotel RID for using in program
 hotel_rid = None
@@ -10,7 +37,7 @@ def set_hotel_rid():
     hotel_rid = str(input('Enter Hotel RID: '))
     hotel_rid = hotel_rid.upper()
     
-def login():
+def login(username, password):
         # Navigate to the login page
     driver.get("https://dataweb.accor.net/dotw-trans/login!input.action")
 
@@ -23,8 +50,7 @@ def login():
         username_field = driver.find_element(By.ID, "loginField")
         password_field = driver.find_element(By.NAME, "password")
 
-        username = "NANSAN"
-        password = "Welcome@2023"
+
         driver.execute_script("arguments[0].value = '';", username_field)
         username_field.send_keys(username)
         driver.execute_script("arguments[0].value = arguments[1];", password_field, password)
@@ -79,9 +105,6 @@ def hotel_search(hotel_rid):
             elif count == 5:
                 print('No Hotel Found!')
                 break
-            else:
-                print('No Hotel Found!')
-                break
             
     except ValueError as e:
         print(e)
@@ -91,9 +114,10 @@ def main():
     print("Welcome to TARS Automation Tool ver.1.0.2")
     print("[WARNING] - This Version for content book V.12, (Cell mean of Access at C84)\nOtherwise Use version 1.0.0")
     print("[INFO] - form v.16 and above delete 2 row above the Hotel address header")
+    username, password = user_credential()
     set_hotel_rid()
     clear_console()
-    login()
+    login(username, password)
     hotel_search(hotel_rid=hotel_rid)
     
     # Enter main menu
