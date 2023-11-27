@@ -111,7 +111,15 @@ def add(hotel_rid):
             for i in range(even_row_count):
                 description[sheet[f"C{cell_start}"].value] = (sheet[f"E{cell_start + 1}"].value)
                 cell_start += 2
-                
+
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        
+    finally:
+        # Close the workbook
+        if workbook:
+            workbook.close()
+            
         # Create df
         while True:
             df = pd.DataFrame(list(description.items()), columns=['meet_room', 'description'])
@@ -128,14 +136,6 @@ def add(hotel_rid):
             search_key = url_parse(str(key).strip())
             enter_description(keys=key, search_key=search_key, description=description)
             get_response(driver=driver, code=search_key, error=error)
-
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-        
-    finally:
-        # Close the workbook
-        if workbook:
-            workbook.close()
             
         print(f'Translation Added to all meeting rooms in {hotel_rid}')
         if len(error) != 0:

@@ -39,7 +39,7 @@ def add(hotel_rid):
     click_update ='document.getElementById("addressMessage.modifyButton").click();'
     update = 'var buttonElement = document.getElementById("addressMessage.updateButton"); if (buttonElement) { buttonElement.onclick(); }'
 
-    order = [add_email, select_email, enter_email, click_update, update, click_update]
+    order = [add_email, select_email, enter_email, update, click_update]
     for i in order:
         driver.execute_script(i)
         time.sleep(0.25)
