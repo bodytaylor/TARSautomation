@@ -5,8 +5,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from dotenv import load_dotenv
+import os
 import pandas as pd
-import functions as fn
 import time
 
 def get_data(element_id=str):
@@ -34,21 +36,46 @@ def get_dropdown(element_id=str):
         print(e)
 
 
-def login():
+# Load environment variables from .env file
+def user_credential():
+    load_dotenv()
+
+    # Access the variables using os.environ.get()
+    username = os.environ.get("TARSUSER")
+    password = os.environ.get("PASSWORD")
+
+    # Check if .env file exists
+    if not (username and password):
+        print("No .env file found. Please provide your credentials:")
+        username = input("Username: ")
+        password = input("Password: ")
+
+        # Save the credentials to a new .env file
+        with open(".env", "w") as env_file:
+            env_file.write(f"TARSUSER={username}\n")
+            env_file.write(f"PASSWORD={password}\n")
+
+        print(".env file created with provided credentials.")
+    else:
+        print(f"Credentials loaded from .env file. Username: {username}")
+        
+    return username, password
+
+def login(username, password):
         # Navigate to the login page
     driver.get("https://dataweb.accor.net/dotw-trans/login!input.action")
 
     # Wait for an element to be visible
     try:
-        username_field = WebDriverWait(driver, 5).until(
+        username_field = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.NAME, "login"))
         )
             # Find the username and password input fields and enter your credentials
         username_field = driver.find_element(By.ID, "loginField")
         password_field = driver.find_element(By.NAME, "password")
 
-        username = "NANSAN"
-        password = "Welcome@2023"
+
+        driver.execute_script("arguments[0].value = '';", username_field)
         username_field.send_keys(username)
         driver.execute_script("arguments[0].value = arguments[1];", password_field, password)
 
@@ -57,8 +84,10 @@ def login():
 
         # Click the button
         submit_button.click()
+        password_field.send_keys(Keys.RETURN)
     except ValueError as e:
         print(e)
+
         
 def response():
     try:
@@ -340,16 +369,19 @@ def get_checkout_time():
     except ValueError as e:
         print(e)  
 
-# Take Now Hotel    
-hotel_list = ['C1N7']
+# get hotel RID from user
+hotel_rid = input('input RID: ' )
+hotel_list = str(hotel_rid).split()
+
+# Setup Chrome Driver
+chrome_options = webdriver.ChromeOptions()
+# chrome_options.add_argument("--headless")  # Enable headless mode
+driver = webdriver.Chrome(options=chrome_options)
+username, password = user_credential()
+login(username, password)
 
 # write to csv
 for hotel in hotel_list:
-    # Setup Chrome Driver
-    chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument("--headless")  # Enable headless mode
-    driver = webdriver.Chrome(options=chrome_options)
-    login()
     hotel_search(hotel_rid=hotel)
     # get data
     driver.get('https://dataweb.accor.net/dotw-trans/displayHotelAddress!input.action')
@@ -361,8 +393,6 @@ for hotel in hotel_list:
     city_code = get_data('hotel.iataCityCode')
     city_name = get_data('hotel.address.city')
     country_code = get_data('hotel.address.country.code')
-        
-    driver.quit()
 
     # for input day 1 Galileo
     # Make sure you are in the right chain
@@ -382,3 +412,5 @@ for hotel in hotel_list:
     pa.press('enter')
     time.sleep(3)
     pa.screenshot(f"gds\galileo\{hotel}_galileo.png")
+
+driver.quit()

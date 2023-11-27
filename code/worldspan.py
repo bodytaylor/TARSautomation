@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from dotenv import load_dotenv
 import pandas as pd
 import time
 import csv
@@ -31,7 +33,33 @@ def get_dropdown(element_id=str):
         print(e)
 
 
-def login():
+# Load environment variables from .env file
+def user_credential():
+    load_dotenv()
+
+    # Access the variables using os.environ.get()
+    username = os.environ.get("TARSUSER")
+    password = os.environ.get("PASSWORD")
+
+    # Check if .env file exists
+    if not (username and password):
+        print("No .env file found. Please provide your credentials:")
+        username = input("Username: ")
+        password = input("Password: ")
+
+        # Save the credentials to a new .env file
+        with open(".env", "w") as env_file:
+            env_file.write(f"TARSUSER={username}\n")
+            env_file.write(f"PASSWORD={password}\n")
+
+        print(".env file created with provided credentials.")
+    else:
+        print(f"Credentials loaded from .env file. Username: {username}")
+        
+    return username, password
+
+# login
+def login(username, password):
         # Navigate to the login page
     driver.get("https://dataweb.accor.net/dotw-trans/login!input.action")
 
@@ -44,8 +72,8 @@ def login():
         username_field = driver.find_element(By.ID, "loginField")
         password_field = driver.find_element(By.NAME, "password")
 
-        username = "NANSAN"
-        password = "Welcome@2023"
+
+        driver.execute_script("arguments[0].value = '';", username_field)
         username_field.send_keys(username)
         driver.execute_script("arguments[0].value = arguments[1];", password_field, password)
 
@@ -54,8 +82,10 @@ def login():
 
         # Click the button
         submit_button.click()
+        password_field.send_keys(Keys.RETURN)
     except ValueError as e:
         print(e)
+
         
 def response():
     try:
@@ -351,8 +381,9 @@ chrome_options.add_experimental_option("prefs", prefs)
 # chrome_options.add_argument("--headless")  # Enable headless mode
 driver = webdriver.Chrome(options=chrome_options)
 
-# write to csv
-login()
+# Login
+username, password = user_credential()
+login(username, password)
 hotel_search(hotel_rid=hotel_rid)
 checkin = get_checkin_time()
 checkout = get_checkout_time()
@@ -435,7 +466,7 @@ check_available(hotel_rid=tars_check_code)
     
 driver.quit()
 
-file_path = f"gds\{hotel_rid} Worldspan.csv"
+file_path = f"gds\worldspan\{hotel_rid} Worldspan.csv"
 header = ['NAME', 'PRIM AIRPORT', 'ADDRESS', 'TRANS', 'FAM PLAN', 'ADDRESS_2', 'CHECK-IN',
           'ST', 'CNTRY', 'POSTAL CODE', 'CHECK OUT', 'PHONE', 'TELEX', 'COMM PERCENT',
           'FAX', 'RESV', 'MEAL PLAN', 'TAX RATE', 'PROPERTY TYPE CODES', 'CURR', 'TOTAL RMS',

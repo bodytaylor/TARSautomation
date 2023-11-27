@@ -16,7 +16,7 @@ else:
         if filename.endswith('.csv'):
             file_path = os.path.join(folder_path, filename)
             # Read each CSV file and append it to the data_frames list
-            data = pd.read_csv(file_path)
+            data = pd.read_csv(file_path, dtype=str)
             data_frames.append(data)
 
     # Concatenate all DataFrames in the list

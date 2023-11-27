@@ -3,10 +3,76 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 import functions as fn
 import csv
 import time
+from datetime import date
+from dotenv import load_dotenv
+import os
+import pandas as pd
+from datetime import date
 
+# Load environment variables from .env file
+def user_credential():
+    load_dotenv()
+
+    # Access the variables using os.environ.get()
+    username = os.environ.get("TARSUSER")
+    password = os.environ.get("PASSWORD")
+
+    # Check if .env file exists
+    if not (username and password):
+        print("No .env file found. Please provide your credentials:")
+        username = input("Username: ")
+        password = input("Password: ")
+
+        # Save the credentials to a new .env file
+        with open(".env", "w") as env_file:
+            env_file.write(f"TARSUSER={username}\n")
+            env_file.write(f"PASSWORD={password}\n")
+
+        print(".env file created with provided credentials.")
+    else:
+        print(f"Credentials loaded from .env file. Username: {username}")
+        
+    return username, password
+
+# merge csv file
+def merge_csv():
+    # get today date and format it into ddmmyyyy
+    today = date.today().strftime("%d%m%Y")
+    # Specific file path
+    folder_path = r'gds\amadeus'
+
+    # Check if the entered path is valid
+    if not os.path.isdir(folder_path):
+        print("Invalid folder path. Please provide a valid path.")
+    else:
+        # Initialize an empty list to store DataFrames
+        data_frames = []
+
+        # Loop through all files in the folder
+        for filename in os.listdir(folder_path):
+            if filename.endswith('.csv'):
+                file_path = os.path.join(folder_path, filename)
+                # Read each CSV file and append it to the data_frames list
+                data = pd.read_csv(file_path, dtype=str)
+                data_frames.append(data)
+                # Clean up temp file 
+                os.remove(file_path)
+
+        # Concatenate all DataFrames in the list
+        merged_data = pd.concat(data_frames, ignore_index=True)
+
+        # Save the merged data to a new CSV file in the same folder
+        output_path = os.path.join(folder_path, f'{today}_Amadeus Property creation.csv')
+        merged_data.to_csv(output_path, index=False)
+
+        print(f"CSV files in the folder have been merged into '{output_path}'")
+
+
+# get data from specific field in data web
 def get_data(element_id=str):
     try:
         element = WebDriverWait(driver, 10).until(
@@ -20,45 +86,45 @@ def get_data(element_id=str):
 
 # Chain Code
 chain_code = {
-    'BY': 'BAN',
-    'EN': '21C',
-    'EN': 'TWF',
-    'EN': 'DEL',
-    'EN': 'HYD',
-    'EN': 'MSH',
-    'EN': 'MOD',
-    'EN': 'TOR',
-    'EN': 'SLS',
-    'EN': 'SO',
-    'FA': 'FAR',
-    'SB': 'SOF',
-    'SB': 'MGR',
-    'PU': 'PUL',
-    'PU': 'PLL',
-    'YR': 'RAF',
-    'RX': 'RIX',
-    'SL': 'SWI',
-}
+    'BAN': 'BY', 
+    '21C': 'EN', 
+    'TWF': 'EN', 
+    'DEL': 'EN', 
+    'HYD': 'EN', 
+    'MSH': 'EN', 
+    'MOD': 'EN', 
+    'TOR': 'EN', 
+    'SLS': 'EN', 
+    'SO': 'EN', 
+    'FAR': 'FA', 
+    'SOF': 'SB', 
+    'MGR': 'SB', 
+    'PUL': 'PU', 
+    'PLL': 'PU', 
+    'RAF': 'YR', 
+    'RIX': 'RX', 
+    'SWI': 'SL'
+    }
 
 chrome_options = Options()
 # chrome_options.add_argument("--headless")  # Enable headless mode
 driver = webdriver.Chrome(options=chrome_options)
 
-def login():
+def login(username, password):
         # Navigate to the login page
     driver.get("https://dataweb.accor.net/dotw-trans/login!input.action")
 
     # Wait for an element to be visible
     try:
-        username_field = WebDriverWait(driver, 5).until(
+        username_field = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.NAME, "login"))
         )
             # Find the username and password input fields and enter your credentials
         username_field = driver.find_element(By.ID, "loginField")
         password_field = driver.find_element(By.NAME, "password")
 
-        username = "NANSAN"
-        password = "Welcome@2023"
+
+        driver.execute_script("arguments[0].value = '';", username_field)
         username_field.send_keys(username)
         driver.execute_script("arguments[0].value = arguments[1];", password_field, password)
 
@@ -67,9 +133,9 @@ def login():
 
         # Click the button
         submit_button.click()
-    except:
-        print("Page did not load correctly. Element not found.")
-        
+        password_field.send_keys(Keys.RETURN)
+    except ValueError as e:
+        print(e)
         
 def response():
     try:
@@ -80,11 +146,7 @@ def response():
         span_text = span_element.text
         return span_text
     except:
-        print("Response Message Not Found!.")
         return None
-    finally:
-        print(span_text)
-        
         
 def hotel_search(hotel_rid):
     driver.get('https://dataweb.accor.net/dotw-trans/selectHotelInput.action')
@@ -104,7 +166,7 @@ def hotel_search(hotel_rid):
             time.sleep(2)
             count += 1
             
-            if (action_res != 'No hotels found with the keywords used') or (count == 5):
+            if (action_res is None) or (count == 5):
                 break
     except:
         print("Page did not load correctly. Element not found.")       
@@ -169,12 +231,18 @@ def create_amadeus_code(hotel_rid):
     # Phone Number format (index) number
     p_index = get_data(element_id='hotel.address.indTel')
     p = get_data(element_id='hotel.address.tel')
-    phone = f'({p_index}) {p}'
+    if p != '':
+        phone = f'({p_index}) {p}'
+    else:
+        phone = ''
 
     # Fax Number format (index) number
     f_index = get_data(element_id='hotel.address.indFax')
     f = get_data(element_id='hotel.address.fax')
-    fax = f'({f_index}) {f}'
+    if f != '':
+        fax = f'({f_index}) {f}'
+    else:
+        fax = ''
 
     # get chain code
     hotel_chain = get_data(element_id='hotel.chain.code')
@@ -223,10 +291,10 @@ def create_amadeus_code(hotel_rid):
     print(amadeus_check_code)
 
     # write data to csv file
-    file_path = f"gds\{hotel_rid} Amadeus.csv"
-    header = ['Property Code', 'Property Name', 'Currency code', 'Location code', 
-            'Transportation code', 'AddressLine1', 'AddressLine2', 'CityName','State code', 'Zipcode', 
-            'Region code', 'Country code', 'Phone number', 'Fax number', 'Amadeus Check Code']
+    file_path = f"gds\\amadeus\{hotel_rid} Amadeus.csv"
+    header = ['Property Code (8-AN)', 'Property Name (1-40-AN)', 'Currency code (3-A)', 'Location code (3-A)', 
+            'Transportation code (1-A)', 'AddressLine1 (1-52-ANS)', 'AddressLine2 (1-52-ANS)', 'CityName (1-25-AS)','State code - Only AR, AU, BR, CA, US, IN (2-A)', 'Zipcode (1-14-ANS)', 
+            'Region code (1-52-A)', 'Country code (2-AN)', 'Phone number (1-25-ANS)', 'Fax number (1-25-ANS)', 'to be delete Amadeus Check Code']
 
     with open(file_path, mode="w", newline="") as csv_file:
 
@@ -236,12 +304,16 @@ def create_amadeus_code(hotel_rid):
                             aer1, address_1, address_2, city, '', zip_code,
                             '', country_code, phone, fax, amadeus_check_code])
 
+# get hotel RID from user
 hotel_rid = input('input RID: ' )
 hotel_rid_list = str(hotel_rid).split()
 
-login()
+# Let's roll! 
+username, password = user_credential()
+login(username, password)
 for hotel in hotel_rid_list:
     hotel_search(hotel_rid=hotel)
     create_amadeus_code(hotel_rid=hotel)
     
 driver.quit()
+merge_csv()
