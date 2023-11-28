@@ -1,2 +1,5 @@
 hotel_workbook/
+gds/amadeus/
+gds/worldspan/
+gds/galileo/
 .env

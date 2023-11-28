@@ -133,7 +133,7 @@ def login(username, password):
 
         # Click the button
         submit_button.click()
-        password_field.send_keys(Keys.RETURN)
+
     except ValueError as e:
         print(e)
         
@@ -170,7 +170,6 @@ def hotel_search(hotel_rid):
                 break
     except:
         print("Page did not load correctly. Element not found.")       
-        
          
 def create_amadeus_code(hotel_rid):
 
@@ -303,6 +302,8 @@ def create_amadeus_code(hotel_rid):
         csv_writer.writerow([amadeus_code, hotel_name, currency, cent_cap, 
                             aer1, address_1, address_2, city, '', zip_code,
                             '', country_code, phone, fax, amadeus_check_code])
+        
+
 
 # get hotel RID from user
 hotel_rid = input('input RID: ' )
