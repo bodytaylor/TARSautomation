@@ -2,7 +2,7 @@
 
 ## Overview
 
-Briefly describe the purpose and goals of the project. Outline what problem it solves and why it exists.
+The quest is to achieve 24 hours hotel onboarding with the help of pandas and openpyxl to transform data and inject the data with selenium in the DATA web. Currently version is beta 1.0.1, with 25 features, it is able to do 90% of onboarding process on the DATA web.
 
 ## Table of Contents
 
@@ -15,7 +15,6 @@ Briefly describe the purpose and goals of the project. Outline what problem it s
 - [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
-- [API Documentation](#api-documentation)
 - [Changelog](#changelog)
 - [License](#license)
 - [Contact Information](#contact-information)
@@ -24,45 +23,57 @@ Briefly describe the purpose and goals of the project. Outline what problem it s
 
 ## Getting Started
 
+This program designed for windows 10 operating system only.
+
 ### Prerequisites
 
-List any prerequisites, dependencies, or system requirements necessary for the project.
+ - python 3.8 x64 bit
+ - Microsoft Edge
+ - Google Chrome
 
 ### Installation
 
-Provide step-by-step instructions on how to set up the project locally. Include any commands or configurations needed for installation.
+Download source code from github or using git clone to local machine, then run the "run this first.bat" for setup environment. Be patient it might take time.
 
 ## Usage
 
-Explain how to use the project, including basic and advanced features.
+For onboarding process go to folder "hotel_workbook" and
+create a new folder name as RID, inside the folder requires.
+  1. Content creation book naming as "RID"
+  2. Pricing book v1.7 naming as "RID Pricing Book"
 
 ### Automation Process
 
-Describe the automation process using Selenium and PyAutoGUI. Include code snippets and examples.
+Start the program by double click on "tars_automation_run.bat" and it ready to Roll!
 
 ### Data Processing
 
-Explain how data processing is handled using Pandas. Provide code examples and explain any relevant configurations.
+Will update this section soonly!
 
 ## Configuration
 
-Document any configuration options and how users can customize them. Include information about environment variables or configuration files.
+On the first launch, the programe will ask for user credential of the DATAweb.
+Then user can input Hotel RID that user wish to working on.
+If user would like to switch the hotel, terminate the programe and start over.
 
 ## Troubleshooting
 
-Provide solutions for common issues that users might encounter. Include error messages and explanations for possible solutions. Link to relevant discussion forums or community support.
+It is critical to ensure all the data in a Content Creation kit is correct.
+With a current release, it able to handle Creation kit version 12 to 16.
+For Content Creation kit version 17 and newer, it needs to edit sheet "Address&Setup" by delete row 29.
+
+The main problem is login error and remote connection terminate, simply re-launch the program.
+
+Main service not load properly?
+re check the Content Creation kit, if descrition of the product not state as "Yes" the program will not read that line.
 
 ## Contributing
 
-Explain how others can contribute to the project. Include guidelines for bug reporting, feature requests, and code contributions. Mention coding standards, if applicable.
-
-## API Documentation
-
-If applicable, document the API, including endpoints, request/response formats, authentication, etc. Use tools like Swagger or OpenAPI if possible.
+Considering send me the user feedback, your voice is matter!
 
 ## Changelog
 
-Maintain a changelog that details the changes in each version of the project. Include release notes and any migration steps if necessary.
+28 November 2023 - release the first verion beta v1.0.1
 
 ## License
 
@@ -70,12 +81,12 @@ State the project's license and provide information about what others can and ca
 
 ## Contact Information
 
-Include ways for users and contributors to reach out for support or collaboration. Provide links to your project's issue tracker, forum, or any other relevant communication channels.
+For request new features and report any issue contact: nantawat.sangkarn@accor.com
 
 ## Acknowledgments
 
-Give credit to individuals or projects that have contributed to yours. Mention any external libraries or resources used in your project.
+Thank you for all creator of libraries listed on reqiurements.txt 
 
 ## Maintainer Information
 
-Include information about the project maintainers, their roles, and how to contact them.
+developer: nantawat.sangkarn@accor.com 

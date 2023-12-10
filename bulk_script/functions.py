@@ -397,26 +397,3 @@ def continue_program():
             print("Invalid input. Please enter 'y' or 'n'.")
 
 
-# New function for selenium
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-def get_response(driver, code, error=list):
-     # Get response
-            WebDriverWait(driver, 7).until(
-                EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
-                ) 
-            time.sleep(0.5)
-            try:
-                action_message_element = WebDriverWait(driver, 7).until(
-                    EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]'))
-                    )
-                action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
-                print(f'[INFO] - {action_message}')
-            except:
-                error_message = action_message_element = WebDriverWait(driver, 7).until(
-                    EC.visibility_of_element_located((By.XPATH, '//*[@id="errormessage"]'))
-                    )
-                error.append(f'{code}: {error_message.text}')
-                print(f'[INFO] - {error_message.text}')

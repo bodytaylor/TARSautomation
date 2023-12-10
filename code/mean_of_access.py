@@ -1,28 +1,7 @@
+import TarsAutomation as ta
 import time
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from web_driver_init import driver
-import re
-from functions import *
-
-# execute java script
-def input_text(element_id, text):
-    if text != None:
-        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-        time.sleep(0.1)
         
-def enter_data(data):
-    element_list = [
-        'hotelAccess.name', 'hotelAccess.direction', 'hotelAccess.line', 'hotelAccess.station'
-    ]
-    # Loop through the data and enter it
-    for i, value in enumerate(data):
-        if value != None:
-            input_text(element_id=element_list[i], text=value)
-            time.sleep(0.1)
-        
-# menu dict
+# Mean Of Access dict
 mean_of_acces_dict = {
     'RER': 'By RER',
     'BUSS': 'By bus',
@@ -55,133 +34,73 @@ mean_of_acces_dict = {
     'PBUS': 'Paying Shuttle',
     }
 
-def add(hotel_rid):
-    # Read data from Excel file
-    excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
-    sheet_name = "Address&Setup"
-    code_list = []
-    load_excel_file(excel_file_path, sheet_name)
+# Function for entering data in Tars Mean of Access
+def enter_data(data):
+    element_list = [
+        'hotelAccess.name', 'hotelAccess.direction', 'hotelAccess.line', 'hotelAccess.station'
+    ]
+    # Loop through the data and enter it
+    for i, value in enumerate(data):
+        if value != None:
+            ta.input_text(element_id=element_list[i], text=value)
 
-    # error
-    error = []
+def add(hotel_rid, hotel_content):
     # Open Webpage
     url = 'https://dataweb.accor.net/dotw-trans/accessTabs!input.action'
-    driver.get(url)
-    WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.XPATH, '//*[@id="hotelAccessesTable"]'))
-        )
+    ta.get(url)
+    ta.wait_for_element('hotelAccessesTable')
     
     # add
-    driver.execute_script("addBasicElement('ACCM','Means of access');")
-    WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.XPATH, '//*[@id="hotelAccessFormDiv"]'))
-        )
+    ta.driver.execute_script("addBasicElement('ACCM','Means of access');")
+    ta.wait_for_element('hotelAccessFormDiv')
+    
+    hotel_name = hotel_content.hotel_name
+    ta.input_text(element_id='hotelAccess.name', text=hotel_name)
+    ta.driver.execute_script("submitFormAccess();")
+    time.sleep(2)
+    
+    # add translation 
+    hotel_direction = hotel_content.hotel_direction         
+    hotel_name_url = str(hotel_name).replace(" ", "+")
+    url_translation = f'https://dataweb.accor.net/dotw-trans/translateHotelAccess!input.action?actionType=translate&hotelAccess.accessType.code=ACCM&hotelAccess.name={hotel_name_url}&'
+    ta.get(url_translation)
+    ta.wait_for_element('accessesDescriptionsTable')
 
-    # Enter Hotel name
-    try:
-        # Load Excel file and select the sheet
-        workbook, sheet = load_excel_file(excel_file_path, sheet_name)
+    # Add
+    ta.driver.execute_script(f"displayTranslateForm('translateInput','GB','ACCM','accessesDescriptionsTable','true','true','GB','true');")
+    time.sleep(1)
+    
+    # Input Translation
+    ta.input_text(element_id='hotelAccessTranslate.translatedDescription', text=hotel_direction)
+    
+    # Click on Translate button
+    ta.translate_hotel_product(element_id='translateHotelAccessForm')
+    
+    # get response
+    ta.get_response(hotel_rid, code='ACCM')
+ 
+    # Add another attraction
+    # Open Webpage
+    url = 'https://dataweb.accor.net/dotw-trans/accessTabs!input.action'
+    ta.get(url)
+    ta.wait_for_element('hotelAccessesTable')
+    mean_of_access_data = hotel_content.mean_of_access
+    for key in mean_of_access_data:
+        code = str(key).strip()
+        data = mean_of_access_data[key][0]
+        acc_name = mean_of_acces_dict.get(code)
         
-        if workbook and sheet:
-            hotel_name = sheet['C4'].value
-            input_text(element_id='hotelAccess.name', text=hotel_name)
-            driver.execute_script("submitFormAccess();")
-            time.sleep(2) 
-            
-            # add translation 
-            hotel_direction = sheet['C84'].value          
-            hotel_name_url = str(hotel_name).replace(" ", "+")
-            url_translation = f'https://dataweb.accor.net/dotw-trans/translateHotelAccess!input.action?actionType=translate&hotelAccess.accessType.code=ACCM&hotelAccess.name={hotel_name_url}&'
-            driver.get(url_translation)
-            WebDriverWait(driver, 10).until(
-                EC.visibility_of_element_located((By.XPATH, '//*[@id="accessesDescriptionsTable"]'))
-                )
-            # Add
-            driver.execute_script(f"displayTranslateForm('translateInput','GB','ACCM','accessesDescriptionsTable','true','true','GB','true');")
-            time.sleep(1)
-            # Input Translation
-            input_text(element_id='hotelAccessTranslate.translatedDescription', text=hotel_direction)
-            # Click on Translate button
-            script = """
-            document.getElementById('translateHotelAccessForm.submitButton').click();
-            """
-            driver.execute_script(script)
-            time.sleep(1)
-            alert = driver.switch_to.alert
-            alert.accept()
-            
-            # Print the response
-            WebDriverWait(driver, 7).until(
-                EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
-                ) 
-            time.sleep(0.5)
-            try:
-                action_message_element = WebDriverWait(driver, 7).until(
-                    EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]'))
-                    )
-                action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
-                print(f'[INFO] - {action_message}')
-            except:
-                error_message = action_message_element = WebDriverWait(driver, 7).until(
-                    EC.visibility_of_element_located((By.XPATH, '//*[@id="errormessage"]'))
-                    )
-                error.append(f'{code}: {error_message.text}')
-                print(f'[INFO] - {error_message.text}')
-            
-            # Add another attraction
-            # Open Webpage
-            url = 'https://dataweb.accor.net/dotw-trans/accessTabs!input.action'
-            driver.get(url)
-            WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="hotelAccessesTable"]'))
-            )
-            
-            for i in range(4):
-                if sheet[f'E{149 + i}'].value != None:
-                    pattern = r'([A-Z]+) -'
-                    code = re.findall(pattern, sheet[f'C{149 + i}'].value)[0]
-                    code_list.append(code)
-                    data = [sheet[f'E{149 + i}'].value,
-                            sheet[f'H{149 + i}'].value,
-                            sheet[f'I{149 + i}'].value,
-                            sheet[f'K{149 + i}'].value]
-                    
-                    acc_name = mean_of_acces_dict.get(code)
-                    
-                    # Add surrounding
-                    driver.execute_script(f"addBasicElement('{code}','{acc_name}');")
-                    enter_data(data)
-                    
-                    # Click add
-                    driver.execute_script("submitFormAccess();")
-                    
-                    # Print the response
-                    WebDriverWait(driver, 7).until(
-                        EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
-                        ) 
-                    time.sleep(0.5)
-                    try:
-                        action_message_element = WebDriverWait(driver, 7).until(
-                            EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]'))
-                            )
-                        action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
-                        print(f'[INFO] - {action_message}')
-                    except:
-                        error_message = action_message_element = WebDriverWait(driver, 7).until(
-                            EC.visibility_of_element_located((By.XPATH, '//*[@id="errormessage"]'))
-                            )
-                        error.append(f'{code}: {error_message.text}')
-                        print(f'[INFO] - {error_message.text}')
-                    
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-    finally:
-        # Close the workbook
-        if workbook:
-            workbook.close()
-            
-    print(f'Mean of Access has been added to {hotel_rid}!')
-    print('Next Step Add Surrounding Attractions')
-    if len(error) != 0:
-        for i in error:
-            print(f'[ERROR] - {i}')
+        # Add surrounding
+        ta.driver.execute_script(f"addBasicElement('{code}','{acc_name}');")
+        
+        # Wait for the form to appear
+        ta.wait_for_element('formTitle')
+        enter_data(data)
+        
+        # Click add
+        ta.driver.execute_script("submitFormAccess();")
+        
+        # Print the response
+        ta.get_response(hotel_rid, code)
+        
+        

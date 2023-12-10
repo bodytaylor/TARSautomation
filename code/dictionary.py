@@ -180,10 +180,10 @@ loggin_type_dict = {
 }
 
 lodging_type_dict = {
-    "HTL": 'Hotel',
-    "NHP": 'Non Hotel',
-    "RST": 'Resort hotel',
-    "APT": 'Serviced Apartment (Adagio)'
+    "Hotel": "HTL",
+    "Non Hotel": "NHP",
+    "Resort hotel": "RST",
+    "Serviced Apartment (Adagio)": "APT",
 }
 
 standard_dict = {
@@ -225,6 +225,7 @@ standard_dict = {
     "MONDRIAN": "LX",
     "MORGANS ORIGINALS": "LX",
     "Mövenpick": "UP",
+    "MOVENPICK": "UP",
     "MOVENPICK LIVING": "UP",
     "NOVOTEL": "FI",
     "NOVOTEL LIVING": "FI",

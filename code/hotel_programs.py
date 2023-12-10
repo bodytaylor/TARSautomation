@@ -1,8 +1,8 @@
-from functions import *
 import csv
 from datetime import date
+from TarsAutomation import logger
 
-def add(hotel_rid):
+def add(hotel_rid, hotel_content):
     # Create dict for mandatory program to load
     mandatory_program = {
         'TR': hotel_rid,
@@ -31,28 +31,13 @@ def add(hotel_rid):
     # Create loading dict
     loading_dict = mandatory_program
 
-
-    # Gathering nessesory information from content book Brand, Country, PMS, GPS not send
-    excel_file = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
-    info = get_excel_values(
-        file_path=excel_file, 
-        cell_addresses=['C6', 'J43', 'K15', 'K24'], 
-        sheet_name='Address&Setup'
-        )
-
-    # Get Restaurant infoation
-    restaurant_info = get_excel_values(
-        file_path=excel_file, 
-        cell_addresses=['B15'], 
-        sheet_name='Restaurant'
-    )
-
     # assign for condition check
-    brand = info[0]
-    country = info[1]
-    pms = info[2]
-    gps = info[3]
-    restaurant = restaurant_info[0]
+    brand = hotel_content.brand
+    country = hotel_content.country
+    gps = hotel_content.gps
+    
+    # Get Restaurant information if resturant is in the property will load dinning offer.
+    restaurant = hotel_content.restaurant
 
     # Condition Check and Add to loading dict
 
@@ -127,7 +112,6 @@ def add(hotel_rid):
         
         rows.append(row)
 
-
     # Write to csv file inside hotel folder
     csv_path = f'hotel_workbook\{hotel_rid}\H{hotel_rid}_Hotel_Programs_REG.csv'
 
@@ -139,6 +123,6 @@ def add(hotel_rid):
         writer.writerows(rows)
         
     # End of the program
-    print(f'H{hotel_rid}_Hotel_Programs_REG.csv has been created!')
+    logger.info(f'H{hotel_rid}_Hotel_Programs_REG.csv has been created!')
     print('Please upload it in Hotel Distribution -> Automate Upload\n-> Hotel Programs Registration\n')
     

@@ -1,125 +1,38 @@
 import os
-import time
-from web_driver_init import *
-from dotenv import load_dotenv
-import os
-
-# Load environment variables from .env file
-def user_credential():
-    load_dotenv()
-
-    # Access the variables using os.environ.get()
-    username = os.environ.get("TARSUSER")
-    password = os.environ.get("PASSWORD")
-
-    # Check if .env file exists
-    if not (username and password):
-        print("No .env file found. Please provide your credentials:")
-        username = input("Username: ")
-        password = input("Password: ")
-
-        # Save the credentials to a new .env file
-        with open(".env", "w") as env_file:
-            env_file.write(f"TARSUSER={username}\n")
-            env_file.write(f"PASSWORD={password}\n")
-
-        print(".env file created with provided credentials.")
-    else:
-        print(f"Credentials loaded from .env file. Username: {username}")
-        
-    return username, password
-
-# Store Hotel RID for using in program
-hotel_rid = None
+from TarsAutomation import driver, logger
+import TarsAutomation as ta
+from hotel_content import ContentBook
 
 def set_hotel_rid():
-    global hotel_rid
-    hotel_rid = str(input('Enter Hotel RID: '))
-    hotel_rid = hotel_rid.upper()
-    
-def login(username, password):
-        # Navigate to the login page
-    driver.get("https://dataweb.accor.net/dotw-trans/login!input.action")
-
-    # Wait for an element to be visible
-    try:
-        username_field = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.NAME, "login"))
-        )
-            # Find the username and password input fields and enter your credentials
-        username_field = driver.find_element(By.ID, "loginField")
-        password_field = driver.find_element(By.NAME, "password")
-
-
-        driver.execute_script("arguments[0].value = '';", username_field)
-        username_field.send_keys(username)
-        driver.execute_script("arguments[0].value = arguments[1];", password_field, password)
-
-        # Submit the login form
-        submit_button = driver.find_element(By.CSS_SELECTOR, 'input#login_0[value="Submit"].submit')
-
-        # Click the button
-        submit_button.click()
-        password_field.send_keys(Keys.RETURN)
-    except ValueError as e:
-        print(e)
-
-def response():
-    try:
-        element = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]/ul/li/span'))
-        )
-        span_element = element.find_element(By.XPATH, '//*[@id="actionmessage"]/ul/li/span')
-        span_text = span_element.text
-        return span_text
-    except:
-        return None
-    
-def hotel_search(hotel_rid):
-    driver.get('https://dataweb.accor.net/dotw-trans/selectHotelInput.action')
-    time.sleep(2)
-    try:
-        element = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="keyword"]'))
-        )
-        element = driver.find_element(By.XPATH, '//*[@id="keyword"]')
-        element.clear()
-        element.send_keys(f'{hotel_rid}')
-        search_button = driver.find_element(By.ID, 'searchButton')
-        count = 0
-        
-        while True:
-            search_button.send_keys(Keys.RETURN)
-            action_res = response()
-            time.sleep(2)
-            count += 1
-            
-            if action_res is None:
-                hotel_name = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.CLASS_NAME, 'hotelNameClass'))
-            )
-                hotel_name = driver.find_element(By.CLASS_NAME, 'hotelNameClass')
-                text = hotel_name.text
-                print(f'Selected Hotel: {text}')
-                break
-            elif count == 5:
-                print('No Hotel Found!')
-                break
-            
-    except ValueError as e:
-        print(e)
+    while True:
+        hotel_rid = input('Enter Hotel RID: ').upper()
+        if len(hotel_rid) == 4 and hotel_rid.isalnum():
+            break
+        print("Hotel RID should be a string of exactly four letters.")  
+    return hotel_rid
 
 def main():
     # Welcome message to user and get the rid
     print("Welcome to TARS Automation Tool ver.1.0.2")
     print("[WARNING] - This Version for content book V.12, (Cell mean of Access at C84)\nOtherwise Use version 1.0.0")
     print("[INFO] - form v.16 and above delete 2 row above the Hotel address header")
-    username, password = user_credential()
-    set_hotel_rid()
-    clear_console()
-    login(username, password)
-    hotel_search(hotel_rid=hotel_rid)
     
+    # Store Hotel RID for using in program
+    hotel_rid = set_hotel_rid()
+    
+    # load content book        
+    while True:
+        try:
+            hotel_content = ContentBook(filepath=f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm')
+            logger.info(f'{hotel_rid} : Content Book Loaded')
+            break
+        except FileNotFoundError:
+            print("Content Book not found for the provided RID. Please enter a valid RID.")
+            logger.error(f'{hotel_rid} : Content Book not found')
+            hotel_rid = set_hotel_rid()
+        
+    ta.login()
+    ta.hotel_search(hotel_rid)
     # Enter main menu
     while True:
         clear_console()
@@ -162,76 +75,82 @@ def main():
             add_language.add(hotel_rid)
         elif choice == '2':
             import hotel_programs
-            hotel_programs.add(hotel_rid)
+            hotel_programs.add(hotel_rid, hotel_content)
         elif choice == '3':
             import add_automation_representation
             add_automation_representation.add(hotel_rid)
         elif choice == '4':
             import distribution_method
-            distribution_method.add(hotel_rid)
+            distribution_method.add(hotel_rid, hotel_content)
         elif choice == '5':
             import address_and_setup
-            address_and_setup.add(hotel_rid)
+            address_and_setup.add(hotel_rid, hotel_content)
         elif choice == '6':
             import translate_name_and_address
-            translate_name_and_address.add(hotel_rid)
+            translate_name_and_address.add(hotel_rid, hotel_content)
         elif choice == '7':
             import general_info
-            general_info.add(hotel_rid)
+            general_info.add(hotel_rid, hotel_content)
         elif choice == '8':
             import special_rating
-            special_rating.add(hotel_rid)
+            special_rating.add(hotel_rid, hotel_content)
         elif choice == '9':
             import meal_options
-            meal_options.add(hotel_rid)
+            meal_options.add(hotel_rid, hotel_content)
         elif choice =='10':
             import rooms
-            rooms.add(hotel_rid)
+            rooms.add(hotel_rid, hotel_content)
         elif choice == '11':
             import room_translation
-            room_translation.add(hotel_rid)
+            room_translation.add(hotel_rid, hotel_content)
         elif choice == '12':
             import web_description
-            web_description.add(hotel_rid)
+            web_description.add(hotel_rid, hotel_content.web_description_df)
         elif choice == '13':
             import main_service
-            main_service.add(hotel_rid)
+            main_service.add(hotel_rid, hotel_content)
         elif choice == '14':
             import products
-            products.add(hotel_rid)
+            products.add(hotel_rid, hotel_content)
         elif choice == '15':
             import sports_and_leisure
-            sports_and_leisure.add(hotel_rid)
+            sports_and_leisure.add(hotel_rid, hotel_content)
         elif choice == '16':
             import restaurant
-            restaurant.add(hotel_rid)
+            restaurant.add(hotel_rid, hotel_content.restaurants)
         elif choice == '17':
             import restaurant_translation
-            restaurant_translation.add(hotel_rid)
+            restaurant_translation.add(hotel_rid, hotel_content.resaurant_description)
         elif choice == '18':
             import bar
-            bar.add(hotel_rid)
+            bar.add(hotel_rid, hotel_content.bars)
         elif choice == '19':
             import bar_translation
-            bar_translation.add(hotel_rid)
+            bar_translation.add(hotel_rid, hotel_content.bars)
         elif choice == '20':
             import meeting_room
-            meeting_room.add(hotel_rid)
+            meeting_room.add(hotel_rid, hotel_content.meeting_room)
         elif choice == '21':
             import meeting_room_translation
-            meeting_room_translation.add(hotel_rid)
+            meeting_room_translation.add(hotel_rid, hotel_content.meeting_room)
         elif choice == '22':
             import mean_of_access
-            mean_of_access.add(hotel_rid)
+            mean_of_access.add(hotel_rid, hotel_content)
         elif choice == '23':
             import main_attractions
             main_attractions.add(hotel_rid)
         elif choice == '24':
             import surrounding_attraction
-            surrounding_attraction.add(hotel_rid)  
+            surrounding_attraction.add(hotel_rid, hotel_content)  
         elif choice == '25':
             import hotel_contact
             hotel_contact.add(hotel_rid)    
+        elif choice == '26':
+            import guarantees
+            guarantees.add(hotel_rid)
+        elif choice == '27':
+            import payment
+            payment.add(hotel_rid)
                
         elif choice == "q":
             print("Exiting the program. Goodbye!")

@@ -50,7 +50,7 @@ premium_luxury = [
 
 # Make it read from internal pricing book instead
 
-file_path = input('Please enter Pricing Book file path: ')
+file_path = input('Please enter Pricing Book file path: ').replace('"', '')
 sheet_name = 'Set-up table'
 
 # get value from file

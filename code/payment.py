@@ -1,57 +1,50 @@
-from datetime import datetime
 from functions import *
 from dictionary import *
+from web_driver_init import *
 
 
 # input textbox
 def input_text(element_id, text):
     if text != None:
-        pyautogui.typewrite(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
+        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
         time.sleep(0.5)
-        pyautogui.press('enter')
-        
+
 # Click Add
 def add_element(element):
-    pyautogui.typewrite(f"addBasicElement('{element}');")
-    pyautogui.press('enter')
+    driver.execute_script(f"addBasicElement('{element}');")
     time.sleep(0.5)
 
 # tick box
 def tick_box_select(element_id):
-    pyautogui.typewrite(f'document.getElementById("{element_id}").checked = true;')
-    pyautogui.press('enter')
+    driver.execute_script(f'document.getElementById("{element_id}").checked = true;')
     time.sleep(0.5)
     
-# Click on
+# Click on element
 def click_on_element(element_id):
-    pyautogui.typewrite(f'document.getElementById("{element_id}").click();')
-    pyautogui.press('enter')
+    driver.execute_script(f'document.getElementById("{element_id}").click();')
     time.sleep(0.5)
 
-    
-# Ask user for RID    
-hotel_rid = str(input('Enter Hotel RID: '))
-# Make it All Cap
-hotel_rid = hotel_rid.upper()
+# Wait for element to load before continue the program
+def wait_element(element_id, wait_time=10):
+    WebDriverWait(driver, wait_time).until(
+        EC.visibility_of_element_located((By.ID, f"{element_id}"))
+        )
 
-# Tell user to open web console
-find_edge_console()
+def add(hotel_rid):
+    # Goto Target URL
+    driver.get("https://dataweb.accor.net/dotw-trans/secure/displayHotelPayments.action")
+    wait_element(element_id='paymentsTabs')
 
-# Fill data in console
-# Goto Target URL
-type_and_enter(text='window.location.href = "https://dataweb.accor.net/dotw-trans/secure/displayHotelPayments.action";')
-time.sleep(2.5)
-find_logo()
-# clear console
-press_ctrl_plus(key='l')
-
-# Let Rolls!
-payment_list = ['AX', 'CA', 'VI', 'WIRE', 'CREDIT', 'PCHECK', 'CR', 'CCHECK', 'PREPA1', 'PRCARD']
-for item in payment_list:
-    add_element(item)
-    if item not in ['CCHECK', 'PREPA1', 'PRCARD']:
-        tick_box_select('hotelPaymentForm_hotelPayment_availableOnGdsOrMedias')
-    click_on_element('addButton')
-    time.sleep(1)
-    
-print('Happy Looping')
+    response = []
+    # Let Rolls!
+    payment_list = ['AX', 'CA', 'VI', 'WIRE', 'CREDIT', 'PCHECK', 'CR', 'CCHECK', 'PREPA1', 'PRCARD']
+    for item in payment_list:
+        add_element(item)
+        if item not in ['CCHECK', 'PREPA1', 'PRCARD']:
+            tick_box_select('hotelPaymentForm_hotelPayment_availableOnGdsOrMedias')
+        click_on_element('addButton')
+        get_response(driver=driver, code=item, response=response)
+        
+    # Print mission report to user
+    for item in response:
+        print(f'{hotel_rid}: {item}')

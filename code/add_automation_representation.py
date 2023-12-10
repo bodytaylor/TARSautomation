@@ -1,9 +1,10 @@
 import time
-from web_driver_init import driver
+import TarsAutomation as ta
+from TarsAutomation import driver, logger
 
 def add(hotel_rid):
-    driver.get('https://dataweb.accor.net/dotw-trans/displayHotelAutomation!input.action')
-    time.sleep(5)
+    ta.get('https://dataweb.accor.net/dotw-trans/displayHotelAutomation!input.action')
+    ta.wait_for_element(element='automationTabs')
     # ready to roll!!
     automation_list = ['RT', 'DQ', 'GG', 'HO', 'TE']
 
@@ -19,6 +20,8 @@ def add(hotel_rid):
         for i in order:
             driver.execute_script(i)
             time.sleep(0.75)
+        ta.get_response(hotel_rid, code=item)
+
     # for DHISCO
     add = 'addGDSElement();'
     code = 'var inputElement = document.getElementById("system.systemCode"); inputElement.value = "WB";'
@@ -31,8 +34,9 @@ def add(hotel_rid):
     for i in order:
         driver.execute_script(i)
         time.sleep(0.75)
+    ta.get_response(hotel_rid, code=item)
 
-    print(f'ALL MANDATORY AUTOMATION SYSTEMS HAS BEEN ADDED TO {hotel_rid}')
+    logger.info(f'{hotel_rid} : ALL MANDATORY AUTOMATION SYSTEMS HAS BEEN ADDED')
 
 
 
