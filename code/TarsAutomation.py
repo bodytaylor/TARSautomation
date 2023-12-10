@@ -35,7 +35,6 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
 
-
 # driver init
 ieOptions = webdriver.IeOptions()
 ieOptions.add_additional_option("ie.edgechromium", True)
@@ -43,15 +42,18 @@ ieOptions.add_additional_option("ie.edgepath",'C:\Program Files (x86)\Microsoft\
 driver = webdriver.Ie(options=ieOptions)
 
 def get_response_time(url: str) -> Union[float, None]:
-    try:
-        start_time = time.time()
-        requests.get(url)
-        end_time = time.time()
-        response_time = end_time - start_time
-        return response_time
-    except requests.RequestException as e:
-        logger.error('Connection to DataWeb fail, Check User connection')
-        return None, str(e)
+    while True:
+        try:
+            start_time = time.time()
+            requests.get(url)
+            end_time = time.time()
+            response_time = end_time - start_time
+            break
+        except requests.RequestException as e:
+            logger.error('Connection to DataWeb fail, Check User connection')
+            time.sleep(10)
+            get_response_time(url)   
+    return response_time
 
 # set delay according to server response
 delay = get_response_time('https://dataweb.accor.net/')
@@ -81,7 +83,7 @@ def user_credential():
 
         print(".env file created with provided credentials.")
     else:
-        logger.info(f"Credentials loaded from .env file. Username: {username}")
+        logger.info(f"Credentials loaded Username: {username}")
         
     return username, password  
 

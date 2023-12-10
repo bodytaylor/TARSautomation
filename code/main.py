@@ -3,37 +3,51 @@ from TarsAutomation import driver, logger
 import TarsAutomation as ta
 from hotel_content import ContentBook
 
+# Constants
+VERSION = "1.0.2"
+
 def set_hotel_rid():
+    """Get and validate Hotel RID from the user."""
     while True:
         hotel_rid = input('Enter Hotel RID: ').upper()
         if len(hotel_rid) == 4 and hotel_rid.isalnum():
             break
-        print("Hotel RID should be a string of exactly four letters.")  
+        print("Hotel RID should be a string of exactly four letters.")
     return hotel_rid
 
-def main():
-    # Welcome message to user and get the rid
-    print("Welcome to TARS Automation Tool ver.1.0.2")
-    print("[WARNING] - This Version for content book V.12, (Cell mean of Access at C84)\nOtherwise Use version 1.0.0")
-    print("[INFO] - form v.16 and above delete 2 row above the Hotel address header")
-    
-    # Store Hotel RID for using in program
-    hotel_rid = set_hotel_rid()
-    
-    # load content book        
+def load_content_book(hotel_rid):
+    """Load the content book for the provided RID."""
     while True:
         try:
-            hotel_content = ContentBook(filepath=f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm')
+            hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid}.xlsm')
             logger.info(f'{hotel_rid} : Content Book Loaded')
             break
         except FileNotFoundError:
             print("Content Book not found for the provided RID. Please enter a valid RID.")
             logger.error(f'{hotel_rid} : Content Book not found')
             hotel_rid = set_hotel_rid()
-        
+    return hotel_rid, hotel_content
+
+# Clear console function
+def clear_console():
+    """Clear the console screen."""
+    os.system('cls')
+
+def main():
+    """Main function to run the program."""
+    print(f"Welcome to TARS Automation Tool ver.{VERSION}")
+
+    # Store Hotel RID for using in the program
+    hotel_rid = set_hotel_rid()
+
+    # Load content book
+    hotel_rid, hotel_content = load_content_book(hotel_rid)
+    
+    # Login and perform hotel search
     ta.login()
     ta.hotel_search(hotel_rid)
-    # Enter main menu
+
+    # Main menu loop
     while True:
         clear_console()
         print("Enter f for full automation.")
@@ -62,14 +76,16 @@ def main():
         print("23. Add Main Attraction")
         print("24. Add Surrounding Attraction")
         print("25. Add Hotel contact")
+        print("26. Add Guarantee")
+        print("27. Add Payment")
         print("Enter q for exit")
-        
+
         # User Choice
         choice = input("Select a task: ")
         clear_console()
+        
         if choice == "f":
-            pass
-            
+            run_full_automation(hotel_rid, hotel_content)
         elif choice == '1':
             import add_language
             add_language.add(hotel_rid)
@@ -138,7 +154,7 @@ def main():
             mean_of_access.add(hotel_rid, hotel_content)
         elif choice == '23':
             import main_attractions
-            main_attractions.add(hotel_rid)
+            main_attractions.add(hotel_rid, hotel_content)
         elif choice == '24':
             import surrounding_attraction
             surrounding_attraction.add(hotel_rid, hotel_content)  
@@ -165,10 +181,90 @@ def main():
             print("Exiting the program. Goodbye!")
             driver.quit()
             break
+        
+def run_full_automation(hotel_rid, hotel_content):
+    """Run full automation for the given hotel RID and content."""
+    # Note Adding function for asking user for all infomaion needed for full automation.
+    import add_language
+    add_language.add(hotel_rid)
 
-# Clear console function
-def clear_console():
-    os.system('cls')
+    import hotel_programs
+    hotel_programs.add(hotel_rid, hotel_content)
+
+    import add_automation_representation
+    add_automation_representation.add(hotel_rid)
+
+    import distribution_method
+    distribution_method.add(hotel_rid, hotel_content)
+
+    import address_and_setup
+    address_and_setup.add(hotel_rid, hotel_content)
+
+    import translate_name_and_address
+    translate_name_and_address.add(hotel_rid, hotel_content)
+
+    import general_info
+    general_info.add(hotel_rid, hotel_content)
+
+    import special_rating
+    special_rating.add(hotel_rid, hotel_content)
+
+    import meal_options
+    meal_options.add(hotel_rid, hotel_content)
+
+    import rooms
+    rooms.add(hotel_rid, hotel_content)
+
+    import room_translation
+    room_translation.add(hotel_rid, hotel_content)
+
+    import web_description
+    web_description.add(hotel_rid, hotel_content.web_description_df)
+
+    import main_service
+    main_service.add(hotel_rid, hotel_content)
+
+    import products
+    products.add(hotel_rid, hotel_content)
+
+    import sports_and_leisure
+    sports_and_leisure.add(hotel_rid, hotel_content)
+
+    import restaurant
+    restaurant.add(hotel_rid, hotel_content.restaurants)
+
+    import restaurant_translation
+    restaurant_translation.add(hotel_rid, hotel_content.resaurant_description)
+
+    import bar
+    bar.add(hotel_rid, hotel_content.bars)
+
+    import bar_translation
+    bar_translation.add(hotel_rid, hotel_content.bars)
+
+    import meeting_room
+    meeting_room.add(hotel_rid, hotel_content.meeting_room)
+
+    import meeting_room_translation
+    meeting_room_translation.add(hotel_rid, hotel_content.meeting_room)
+
+    import mean_of_access
+    mean_of_access.add(hotel_rid, hotel_content)
+
+    import main_attractions
+    main_attractions.add(hotel_rid, hotel_content)
+
+    import surrounding_attraction
+    surrounding_attraction.add(hotel_rid, hotel_content)  
+
+    import hotel_contact
+    hotel_contact.add(hotel_rid)    
+
+    import guarantees
+    guarantees.add(hotel_rid)
+
+    import payment
+    payment.add(hotel_rid)
 
 if __name__ == "__main__":
     main()

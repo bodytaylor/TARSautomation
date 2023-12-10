@@ -1154,3 +1154,164 @@
 2023-12-10 18:55:29,451 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
 2023-12-10 18:55:29,552 : INFO : Submitdata
 2023-12-10 18:55:32,900 : INFO : B4W2 : DARTS : Product already exists
+2023-12-11 00:48:17,241 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 00:52:02,304 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 00:54:24,250 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 00:54:34,278 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 00:54:44,299 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 00:54:54,323 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 00:55:04,359 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 00:55:14,388 : ERROR : Connection to DataWeb fail, Check User connection
+2023-12-11 01:01:03,070 : ERROR : 2134 : Content Book not found
+2023-12-11 01:01:07,986 : INFO : Credentials loaded from .env file. Username: NANSAN
+2023-12-11 01:03:57,925 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:03:57,925 : INFO : Credentials loaded from .env file. Username: NANSAN
+2023-12-11 01:04:14,515 : INFO : Login Success User: NANSAN
+2023-12-11 01:11:14,155 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:11:14,158 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:11:27,921 : INFO : Login Success User: NANSAN
+2023-12-11 01:11:39,274 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
+2023-12-11 01:12:04,508 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
+2023-12-11 01:18:44,234 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:18:44,244 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:18:58,950 : INFO : Login Success User: NANSAN
+2023-12-11 01:19:11,622 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
+2023-12-11 01:19:27,573 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
+2023-12-11 01:24:58,552 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:24:58,568 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:25:11,407 : INFO : Login Success User: NANSAN
+2023-12-11 01:25:23,141 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
+2023-12-11 01:27:25,395 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:27:25,395 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:27:37,560 : INFO : Login Success User: NANSAN
+2023-12-11 01:27:50,085 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
+2023-12-11 01:29:43,215 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:29:58,800 : INFO : Login Success User: NANSAN
+2023-12-11 01:30:12,706 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
+2023-12-11 01:36:49,692 : ERROR : DFAE : Content Book not found
+2023-12-11 01:37:03,470 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:37:03,470 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:37:19,828 : INFO : Login Success User: NANSAN
+2023-12-11 01:38:16,032 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
+2023-12-11 01:41:56,942 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:41:56,950 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:42:09,913 : INFO : Login Success User: NANSAN
+2023-12-11 01:42:21,320 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
+2023-12-11 01:42:45,689 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
+2023-12-11 01:44:52,033 : INFO : B4W2 : Content Book Loaded
+2023-12-11 01:44:52,041 : INFO : Credentials loaded Username: NANSAN
+2023-12-11 01:45:04,316 : INFO : Login Success User: NANSAN
+2023-12-11 01:45:15,527 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
+2023-12-11 01:45:33,544 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
+2023-12-11 01:45:36,302 : INFO : hotelIp.name : MCT
+2023-12-11 01:45:36,570 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-11 01:45:36,840 : INFO : hotelIp.walkingTime : 100
+2023-12-11 01:45:36,989 : INFO : hotelIp.carTime : 12
+2023-12-11 01:45:37,112 : INFO : hotelIp.orientation : NE
+2023-12-11 01:45:37,240 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:45:39,625 : INFO : B4W2 : AER1 : Surrounding attraction already exists
+2023-12-11 01:45:41,115 : INFO : hotelIp.name : MUSCAT INTERNATIONA
+2023-12-11 01:45:41,442 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2023-12-11 01:45:41,754 : INFO : hotelIp.walkingTime : 100
+2023-12-11 01:45:41,908 : INFO : hotelIp.carTime : 12
+2023-12-11 01:45:42,052 : INFO : hotelIp.orientation : NE
+2023-12-11 01:45:42,192 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:45:44,584 : INFO : B4W2 : APT1 : Surrounding attraction already exists
+2023-12-11 01:45:46,202 : INFO : hotelIp.name : MUSCAT 
+2023-12-11 01:45:46,521 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2023-12-11 01:45:46,812 : INFO : hotelIp.walkingTime : 120
+2023-12-11 01:45:46,952 : INFO : hotelIp.carTime : 13
+2023-12-11 01:45:47,101 : INFO : hotelIp.orientation : NE
+2023-12-11 01:45:47,238 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:45:49,601 : INFO : B4W2 : PCN : Surrounding attraction already exists
+2023-12-11 01:45:51,148 : INFO : hotelIp.name : MCT
+2023-12-11 01:45:51,459 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2023-12-11 01:45:51,731 : INFO : hotelIp.walkingTime : 120
+2023-12-11 01:45:51,891 : INFO : hotelIp.carTime : 13
+2023-12-11 01:45:52,034 : INFO : hotelIp.orientation : NE
+2023-12-11 01:45:52,180 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:45:54,591 : INFO : B4W2 : PCC : Surrounding attraction already exists
+2023-12-11 01:45:56,162 : INFO : hotelIp.name : MUSCAT
+2023-12-11 01:45:56,438 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2023-12-11 01:45:56,683 : INFO : hotelIp.walkingTime : 120
+2023-12-11 01:45:56,816 : INFO : hotelIp.carTime : 13
+2023-12-11 01:45:56,950 : INFO : hotelIp.orientation : NE
+2023-12-11 01:45:57,122 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:45:59,504 : INFO : B4W2 : NCN : Surrounding attraction already exists
+2023-12-11 01:46:01,068 : INFO : hotelIp.name : MCT
+2023-12-11 01:46:01,404 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2023-12-11 01:46:01,873 : INFO : hotelIp.walkingTime : 120
+2023-12-11 01:46:02,064 : INFO : hotelIp.carTime : 13
+2023-12-11 01:46:02,223 : INFO : hotelIp.orientation : NE
+2023-12-11 01:46:02,404 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:04,778 : INFO : B4W2 : NCC : Surrounding attraction already exists
+2023-12-11 01:46:06,253 : INFO : hotelIp.name : GRAND MOSQUE
+2023-12-11 01:46:06,566 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2023-12-11 01:46:06,846 : INFO : hotelIp.walkingTime : 50
+2023-12-11 01:46:06,986 : INFO : hotelIp.carTime : 6
+2023-12-11 01:46:07,130 : INFO : hotelIp.orientation : NE
+2023-12-11 01:46:07,308 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:09,754 : INFO : B4W2 : CTR1 : Surrounding attraction already exists
+2023-12-11 01:46:11,302 : INFO : hotelIp.name : CITY CENTER
+2023-12-11 01:46:11,577 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2023-12-11 01:46:11,863 : INFO : hotelIp.walkingTime : 120
+2023-12-11 01:46:12,052 : INFO : hotelIp.carTime : 13
+2023-12-11 01:46:12,189 : INFO : hotelIp.orientation : NE
+2023-12-11 01:46:12,344 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:14,718 : INFO : B4W2 : CENT : Surrounding attraction already exists
+2023-12-11 01:46:16,315 : INFO : hotelIp.name : SULTAN QABOOS ST
+2023-12-11 01:46:16,649 : INFO : hotelIp.walkingTime : 10
+2023-12-11 01:46:16,810 : INFO : hotelIp.carTime : 10
+2023-12-11 01:46:16,941 : INFO : hotelIp.orientation : NE
+2023-12-11 01:46:17,075 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:19,550 : INFO : B4W2 : HEXI : Surrounding attraction already exists
+2023-12-11 01:46:21,199 : INFO : hotelIp.name : QATAR AIRWAYS 
+2023-12-11 01:46:21,491 : INFO : hotelIp.walkingTime : 5
+2023-12-11 01:46:21,612 : INFO : hotelIp.carTime : 1
+2023-12-11 01:46:21,753 : INFO : hotelIp.orientation : W
+2023-12-11 01:46:21,892 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:24,347 : INFO : B4W2 : COMP : Surrounding attraction already exists
+2023-12-11 01:46:25,859 : INFO : hotelIp.name : OCEC
+2023-12-11 01:46:26,130 : INFO : hotelIp.walkingTime : 95
+2023-12-11 01:46:26,285 : INFO : hotelIp.carTime : 11
+2023-12-11 01:46:26,446 : INFO : hotelIp.orientation : E
+2023-12-11 01:46:26,606 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:29,070 : INFO : B4W2 : CONG : Surrounding attraction already exists
+2023-12-11 01:46:30,554 : INFO : hotelIp.name : OCEC
+2023-12-11 01:46:30,879 : INFO : hotelIp.walkingTime : 95
+2023-12-11 01:46:31,001 : INFO : hotelIp.carTime : 11
+2023-12-11 01:46:31,130 : INFO : hotelIp.orientation : E
+2023-12-11 01:46:31,276 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:33,638 : INFO : B4W2 : EXHI : Surrounding attraction already exists
+2023-12-11 01:46:35,213 : INFO : hotelIp.name : OCEC
+2023-12-11 01:46:35,545 : INFO : hotelIp.walkingTime : 95
+2023-12-11 01:46:35,726 : INFO : hotelIp.carTime : 11
+2023-12-11 01:46:35,878 : INFO : hotelIp.orientation : E
+2023-12-11 01:46:36,063 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-11 01:46:38,426 : INFO : B4W2 : EXPO : Surrounding attraction already exists
+2023-12-11 01:47:55,566 : INFO : Address and Set-up - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
+2023-12-11 01:47:55,710 : INFO : hotel.name : MOVENPICK HOTEL GHALA
+2023-12-11 01:47:55,848 : INFO : hotel.brand.code : MOV
+2023-12-11 01:47:55,985 : INFO : hotel.chain.code : MOV
+2023-12-11 01:47:56,138 : INFO : hotel.commercialName : Mövenpick Hotel and Hotel Apartments Ghala Muscat (Opening January 2024)
+2023-12-11 01:47:56,276 : INFO : hotel.shortName : TEST
+2023-12-11 01:47:56,425 : INFO : hotel.hotelManagementType.code : MG
+2023-12-11 01:47:56,615 : INFO : hotel.address.addresses[0] : Al Maaridh Street
+2023-12-11 01:47:56,762 : INFO : hotel.address.addresses[1] : Ghala Heights Complex
+2023-12-11 01:47:56,935 : INFO : hotel.address.addresses[2] : Adjacent to Sultan Qaboos St
+2023-12-11 01:47:57,092 : INFO : hotel.address.city : MUSCAT
+2023-12-11 01:47:57,251 : INFO : hotel.iataCityCode : ABC
+2023-12-11 01:47:57,395 : INFO : hotel.address.zipCode : 111
+2023-12-11 01:47:57,544 : INFO : hotel.address.indTel : 968
+2023-12-11 01:47:57,670 : INFO : hotel.address.tel : 22719999
+2023-12-11 01:47:57,809 : INFO : hotel.address.indFax : 968
+2023-12-11 01:47:57,965 : INFO : hotel.address.fax : 22719998
+2023-12-11 01:47:58,107 : INFO : hotel.indTelReservation : 968
+2023-12-11 01:47:58,246 : INFO : hotel.telReservation : 22719997
+2023-12-11 01:47:58,389 : INFO : hotel.indFaxReservation : 968
+2023-12-11 01:47:58,543 : INFO : hotel.placeCode : MCT
+2023-12-11 01:47:58,690 : INFO : hotel.segmentationType.code : TRACK
+2023-12-11 01:47:58,834 : INFO : hotel.tarsMode.code : O
+2023-12-11 01:47:58,973 : INFO : versionPmsInterface : 
+2023-12-11 01:47:59,151 : INFO : hotel.address.email : Movenpickghala.reservations@movenpick.com
+2023-12-11 01:47:59,301 : INFO : hotel.internetAddress : all.accor.com/B4W2
