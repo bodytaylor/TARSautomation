@@ -1,10 +1,5 @@
-import time
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from web_driver_init import driver
-from functions import *
-import pandas as pd
+import TarsAutomation as ta
+import re
 
 # attractions dict
 surrouding_dict = {
@@ -118,25 +113,15 @@ surrouding_dict = {
     'PZOO':	'Zoological park',
     }
 
-# execute java script
-def input_text(element_id, text):
-    if text != None:
-        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-
-# Tickbox in browser console
-def tick_box(element):
-    script = (f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
-    driver.execute_script(script)
-
-# select dropdown
-def select_dropdown(element_id, value):
-    if value != None:
-        driver.execute_script(f'var selectElement1 = document.getElementById("{element_id}"); selectElement1.value = "{value}";')
-
+def extract_capital_letters(input_string):
+    # Define the regular expression pattern to match capital letters
+    pattern = r'[A-Z]'
+    matches = re.findall(pattern, input_string)
+    capital_letters = ''.join(matches)
+    return capital_letters
+       
 # for data enter in add attraction page
-def enter_from_df(df, catagory, check_exist=list, unit_select=int):
-    # Collect Error
-    error = []
+def enter_from_df(df, catagory: str, check_exist: list, unit_select: str, hotel_rid):
     for index, row in df.iterrows():
         if row['name'] not in check_exist:
             code = catagory
@@ -152,119 +137,67 @@ def enter_from_df(df, catagory, check_exist=list, unit_select=int):
             
             # Add
             code_name = surrouding_dict.get(code)
-            driver.execute_script(f"addBasicElement('{code}','{code_name}');")
-            WebDriverWait(driver, 10).until(
-                EC.visibility_of_element_located((By.XPATH, '//*[@id="formTitle"]'))
-                )
-
+            ta.driver.execute_script(f"addBasicElement('{code}','{code_name}');")
+            ta.wait_for_element('formTitle')
+            
             # Name
-            input_text(element_id='hotelIp.name', text=row['name'])
+            ta.input_text(element_id='hotelIp.name', text=row['name'])
                             
             # Shuttle service
             if ((shuttle == 'Yes free') or (shuttle == 'Yes paying')): # Tick on Shuttle
-                driver.execute_script('var checkbox = document.getElementById("hotelIp.shuttle"); checkbox.checked = !checkbox.checked; changeShuttleValue();')
+                ta.driver.execute_script('var checkbox = document.getElementById("hotelIp.shuttle"); checkbox.checked = !checkbox.checked; changeShuttleValue();')
                 if shuttle_service_type == 'On call':
-                    tick_box(element='hotelIp.shuttle.onCall')
+                    ta.tick_box(element='hotelIp.shuttle.onCall')
 
                 if shuttle_service_type == 'Scheduled':
-                    tick_box(element='hotelIp.shuttle.scheduled')
+                    ta.tick_box(element='hotelIp.shuttle.scheduled')
                             
                 if shuttle == 'Yes free':
-                    tick_box(element='hotelIp.shuttle.free')
+                    ta.tick_box(element='hotelIp.shuttle.free')
                                     
             # Distance 
             if str(distance) != 'nan':
-                driver.execute_script(f'var DistanceInput = document.getElementById("{unit_select}"); DistanceInput.value = "{distance}"; (document.createEventObject ? DistanceInput.fireEvent("onchange", document.createEventObject()) : DistanceInput.dispatchEvent(new Event("change")));')
+                ta.driver.execute_script(f'var DistanceInput = document.getElementById("{unit_select}"); DistanceInput.value = "{distance}"; (document.createEventObject ? DistanceInput.fireEvent("onchange", document.createEventObject()) : DistanceInput.dispatchEvent(new Event("change")));')
        
             # Minute Walk
             if str(minute_walk) == 'nan':
-                input_text(element_id='hotelIp.walkingTime', text='99')
+                ta.input_text(element_id='hotelIp.walkingTime', text='99')
             else:
-                input_text(element_id='hotelIp.walkingTime', text=str(minute_walk))
+                ta.input_text(element_id='hotelIp.walkingTime', text=str(minute_walk))
                             
             # Minite Drive
             if str(minute_drive) == 'nan':
                 pass
             else:
-                input_text(element_id='hotelIp.carTime', text=str(minute_drive))
+                ta.input_text(element_id='hotelIp.carTime', text=str(minute_drive))
                             
             # Orientation to the hotel
             if ofi != 0:
-                select_dropdown(element_id='hotelIp.orientation', value=str(ofi))
+                ta.select_dropdown(element_id='hotelIp.orientation', value=str(ofi))
                             
             # Always Tick on Available on GDS and Media
-            tick_box(element='hotelIp.availableOnGdsMedia')
+            ta.tick_box(element='hotelIp.availableOnGdsMedia')
                             
             # Click Add
-            driver.execute_script('submitFormIp();')
-                            
-            # Print the response
-            get_response(driver=driver, code=code, error=error)
+            ta.driver.execute_script('submitFormIp();')
             
-    # Print error to user            
-    if len(error) != 0:
-        for i in error:
-            print(f'[ERROR] - {i}')
-
-def add(hotel_rid):
+            # Get response
+            ta.get_response(hotel_rid, code=row['name'])
+                            
+def add(hotel_rid, hotel_content):
+    main_attractions = []
+    for key in hotel_content.main_attractions:
+        main_attractions.append(hotel_content.main_attractions[key][0][0])
+    unit_select = hotel_content.unit_select
+    
     # set web target
     url = 'https://dataweb.accor.net/dotw-trans/ipTabs!input.action'
-    excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
-    # get all list in Main Attraction to re check already input item
-    cell_list = []
-    for i in range(11, 29):
-        cell_list.append(f'C{i}')
-        
-    main_attractions = get_excel_values(file_path=excel_file_path,
-                                        sheet_name='Main Attractions',
-                                        cell_addresses=cell_list)
-    # Get data
-    unit_select = get_excel_values(excel_file_path, sheet_name='Main Attractions', cell_addresses=['E8'])
-
-    # Read the Excel file, skipping the first 12 rows, and using the 13th row as column headers
-    df = pd.read_excel(excel_file_path, 
-                    sheet_name='Other Attractions', 
-                    header=12, 
-                    )
-    df.drop(df.columns[0:2], axis=1, inplace=True)
-    df.drop(df.columns[7], axis=1, inplace=True)
-
-    # Rename column
-    columns_name = ['name', 'shuttle', 'shuttle_service', 'orientation', 'distance', 'time_walk', 'time_drive']
-    df.columns = columns_name
-
-    # df for COMP
-    df_comp = df.iloc[0:9]
-    df_comp = df_comp[df_comp.iloc[:, 0].notna()]
-
-    # df for CONG
-    df_cong = df.iloc[10:18]
-    df_cong = df_cong[df_cong.iloc[:, 0].notna()]
-
-    # df for EXHI
-    df_exhi = df.iloc[19:27]
-    df_exhi = df_exhi[df_exhi.iloc[:, 0].notna()]
-
-    # df for EXPO
-    df_expo = df.iloc[28:34]
-    df_expo = df_expo[df_expo.iloc[:, 0].notna()]
-
-    # unit select
-    if unit_select[0] == 'Km':
-        unit_select = 'hotelIp.kilometerDistance'
-    else:
-        unit_select = 'hotelIp.milesDistance'
-
     # open target url
-    driver.get(url)
-    time.sleep(1)
-    page = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="allIpsTabLink"]'))
-        )
-    print(f'[INFO] - {page.text}')
-
+    ta.get(url)
+    ta.wait_for_element('allIpsTabLink')
+    
     # Enter Data for 4 df
-    enter_from_df(df_comp, catagory='COMP', check_exist=main_attractions, unit_select=unit_select)
-    enter_from_df(df_cong, catagory='CONG', check_exist=main_attractions, unit_select=unit_select)
-    enter_from_df(df_exhi, catagory='EXHI', check_exist=main_attractions, unit_select=unit_select)
-    enter_from_df(df_expo, catagory='EXPO', check_exist=main_attractions, unit_select=unit_select)   
+    enter_from_df(hotel_content.comp, catagory='COMP', check_exist=main_attractions, unit_select=unit_select, hotel_rid=hotel_rid)
+    enter_from_df(hotel_content.cong, catagory='CONG', check_exist=main_attractions, unit_select=unit_select, hotel_rid=hotel_rid)
+    enter_from_df(hotel_content.exhi, catagory='EXHI', check_exist=main_attractions, unit_select=unit_select, hotel_rid=hotel_rid)
+    enter_from_df(hotel_content.expo, catagory='EXPO', check_exist=main_attractions, unit_select=unit_select, hotel_rid=hotel_rid)   

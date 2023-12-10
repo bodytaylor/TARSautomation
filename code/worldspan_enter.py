@@ -5,14 +5,14 @@ import ast
 
 def find_gds_windows():
     time.sleep(1)
-    image = pyautogui.locateOnScreen(r"img\worldspan.PNG", confidence=0.8)
+    image = pyautogui.locateOnScreen(r"img\worldspan.PNG", confidence=0.75)
     print('Please Open GDS - Term Worldspan Prod')
     while image == None:
-        image = pyautogui.locateOnScreen(r"img\worldspan.PNG", confidence=0.8)
-        time.sleep(5)
+        image = pyautogui.locateOnScreen(r"img\worldspan.PNG", confidence=0.75)
+        time.sleep(1)
 
 hotel_rid = input('Please Enter Hotel RID: ')
-file_path = f"gds\{hotel_rid} Worldspan.csv"
+file_path = f"gds\worldspan\{hotel_rid} Worldspan.csv"
 df = pd.read_csv(file_path, dtype=str)
 
 # Print Code to User

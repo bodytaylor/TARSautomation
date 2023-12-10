@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import pandas as pd
 import time
 import csv
+import os
 
 def get_data(element_id=str):
     try:
@@ -82,7 +83,6 @@ def login(username, password):
 
         # Click the button
         submit_button.click()
-        password_field.send_keys(Keys.RETURN)
     except ValueError as e:
         print(e)
 
@@ -235,25 +235,25 @@ standard_dict = {
 }
 
 chain_code = {
-    'BY': 'BAN',
-    'EN': '21C',
-    'EN': 'TWF',
-    'EN': 'DEL',
-    'EN': 'HYD',
-    'EN': 'MSH',
-    'EN': 'MOD',
-    'EN': 'TOR',
-    'EN': 'SLS',
-    'EN': 'SO',
-    'FA': 'FAR',
-    'SB': 'SOF',
-    'SB': 'MGR',
-    'PU': 'PUL',
-    'PU': 'PLL',
-    'YR': 'RAF',
-    'RX': 'RIX',
-    'SL': 'SWI',
-}
+    'BAN': 'BY', 
+    '21C': 'EN', 
+    'TWF': 'EN', 
+    'DEL': 'EN', 
+    'HYD': 'EN', 
+    'MSH': 'EN', 
+    'MOD': 'EN', 
+    'TOR': 'EN', 
+    'SLS': 'EN', 
+    'SO': 'EN', 
+    'FAR': 'FA', 
+    'SOF': 'SB', 
+    'MGR': 'SB', 
+    'PUL': 'PU', 
+    'PLL': 'PU', 
+    'RAF': 'YR', 
+    'RIX': 'RX', 
+    'SWI': 'SL'
+    }
 
 # download excel data file
 def get_rate_level():

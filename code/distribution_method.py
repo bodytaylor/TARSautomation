@@ -1,26 +1,12 @@
-from functions import *
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from web_driver_init import driver
+import TarsAutomation as ta
+from TarsAutomation import driver
+import time
 
-def add(hotel_rid):
-    # Get Email from excel file
-    excel_file = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
-
-    email = get_excel_values(
-        file_path=excel_file, 
-        cell_addresses=['C45'], 
-        sheet_name='Address&Setup'
-    )[0]
-
+def add(hotel_rid, hotel_content):
+    email = hotel_content.hotel_email
     # Goto target URL
-    driver.get('https://dataweb.accor.net/dotw-trans/displayDistribMethod!input.action')
-    element = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.TAG_NAME, 'h2'))
-        )
-    print(element.text)
-
+    ta.get('https://dataweb.accor.net/dotw-trans/displayDistribMethod!input.action')
+   
     # Fill form
     select_1 = 'var selectElement = document.getElementById("hotTransmissionPartner.standardPartner.type"); selectElement.value = "B";'
     select_2 = 'var selectElement = document.getElementById("hotTransmissionPartner.recoveryPartner.type"); selectElement.value = "B";'
@@ -30,7 +16,6 @@ def add(hotel_rid):
     for i in order:
         driver.execute_script(i)
         time.sleep(0.25)
-        
     time.sleep(1)
 
     add_email = 'addAddressMessage()'
@@ -39,14 +24,11 @@ def add(hotel_rid):
     click_update ='document.getElementById("addressMessage.modifyButton").click();'
     update = 'var buttonElement = document.getElementById("addressMessage.updateButton"); if (buttonElement) { buttonElement.onclick(); }'
 
-    order = [add_email, select_email, enter_email, update, click_update]
+    order = [add_email, select_email, enter_email, click_update, update]
     for i in order:
         driver.execute_script(i)
         time.sleep(0.25)
-    action_message = WebDriverWait(driver, 5).until(
-            EC.visibility_of_element_located((By.CLASS_NAME, 'actionMessage'))
-        )
-    print(f'[INFO] - {action_message.text}')
+    ta.get_response(hotel_rid)
 
     select_gn = 'var selectElement = document.getElementById("hotel.reservationDistributionMethod.code"); selectElement.value = "GN";'
     send_update = "submitDistribMethodForm ($('distributionMethod'));"
@@ -55,10 +37,7 @@ def add(hotel_rid):
     time.sleep(2)
     for i in order:
         driver.execute_script(i)
-        time.sleep(0.25)
-    action_message = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.CLASS_NAME, 'actionMessage'))
-        )
-    print(f'[INFO] - {action_message.text}')
-        
+        time.sleep(0.25) 
+    ta.get_response(hotel_rid)
+    
     print(f'Distribution Method setup for {hotel_rid} is done!')

@@ -1,41 +1,31 @@
-import time
-import pandas as pd
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from web_driver_init import driver
-from functions import *
+import TarsAutomation as ta
+import openpyxl
 
-def tick_box(element):
-    driver.execute_script(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
-    time.sleep(0.15)
+# get multiple excel value and store it as list
+def get_excel_values(file_path=str, sheet_name=str, cell_addresses=list):
+    try:
+        # Open the Excel file
+        workbook = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
 
-def input_text(element_id, text):
-    if text != None:
-        driver.execute_script(f'var inputElement = document.getElementById("{element_id}"); if (inputElement)' '{ inputElement.value = 'f'"{text}";' ' }')
-        time.sleep(0.15)
+        # Select the specific sheet
+        sheet = workbook[sheet_name]
+        cell_values =[]
+        for cell in cell_addresses:
+            cell_values.append(sheet[cell].value)
+        return cell_values
+         
+    except Exception as e:
+        print(f"An error occurred while loading the Excel file: {str(e)}")
+        return None, None
+    finally:
+        # Close the workbook
+        if workbook:
+            workbook.close()
 
-# Search for product lib
-def add_product(code, df):
-    code = str(code).strip()
-    if code in df['code'].values:
-        result = df.loc[df['code'] == code].values[0].astype(str).tolist()
-        script = f"addBasicElement('{result[0]}','{result[1]}','{result[2]}','{result[3]}','{result[4]}','{result[5]}');"
-        return script
-    else:
-        return None
-
-def add(hotel_rid):
-    # Load product library
-    csv_path = 'products_lib.csv'
-    product_lib_df = pd.read_csv(
-        csv_path,
-        header=0,
-        sep=';'
-    )
+def add(hotel_rid, hotel_content):
 
     # mandatory meal option *** Add According to Pricing book Need to Update
-    meal_options_list = ['MBUFF']
+    meal_options_list = []
     
     meal_data = get_excel_values(file_path=f'hotel_workbook\{hotel_rid}\{hotel_rid} Pricing Book.xlsx',
                                  sheet_name='Set-up table',
@@ -49,6 +39,7 @@ def add(hotel_rid):
                                                  'E468',
                                                  'E475']
                                  )
+    
     # Append to meal option list
     mbreak = meal_data[0]
     mphb = meal_data[1]
@@ -80,50 +71,30 @@ def add(hotel_rid):
         meal_options_list.append('MBUFF')  
         
     # Print Data to user
-    print('Meal Plan to add to the Hotel')
-    print(meal_options_list)
+    ta.logger.info(f'Meal Plan to add to the Hotel: {meal_options_list}')
 
-    driver.get('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
-    page = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="classicTabName"]'))
-        )
-    print(f'[INFO] - {page.text}')
+    ta.get('https://dataweb.accor.net/dotw-trans/productTabs!input.action')
+    ta.wait_for_element(element='classicTabName')
     
-    error = []
     # start Loop!
     for item in meal_options_list:
-        add = (add_product(item, df=product_lib_df))
-        driver.execute_script(add)
+        add = (ta.add_product(item, df=hotel_content.product_lib_df))
+        ta.driver.execute_script(add)
         # Wait for page to load
-        WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="formTitle"]'))
-            )
+        ta.wait_for_element(element='formTitle')
         
         # Meal is paying product
-        tick_box(element='hotelProduct.paying')
-        input_text(element_id='hotelProduct.maxOccupancyTotal', text='1')
-        input_text(element_id='hotelProduct.maxQtyInRoom', text='1')
-        input_text(element_id='hotelProduct.orderInResaScreen', text='99')
-        input_text(element_id='hotelProduct.maxOccupancyAdult', text='1')
-        tick_box(element='hotelProduct.availableOnGDSMedia')
-        driver.execute_script('document.getElementById("hotelProduct.submitButton").click();')
+        ta.tick_box(element='hotelProduct.paying')
+        ta.input_text(element_id='hotelProduct.maxOccupancyTotal', text='1')
+        ta.input_text(element_id='hotelProduct.maxQtyInRoom', text='1')
+        ta.input_text(element_id='hotelProduct.orderInResaScreen', text='99')
+        ta.input_text(element_id='hotelProduct.maxOccupancyAdult', text='1')
+        ta.tick_box(element='hotelProduct.availableOnGDSMedia')
+        ta.click_button(element='hotelProduct.submitButton')
         
         # Wait for response
-        WebDriverWait(driver, 7).until(
-            EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
-            )
-        try:
-            action_message_element = driver.find_element(By.XPATH, '//*[@id="actionmessage"]')
-            action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
-            print(f'[INFO] - {action_message}')
-        except:
-            error_message = driver.find_element(By.XPATH, '//*[@id="errormessage"]')
-            error.append(f'{item}: {error_message.text}')
-            print(f'[INFO] - {error_message.text}')
+        ta.get_response(hotel_rid, code=item)
         
-    print(f'[INFO] - Mandatory Meal Option has been added to {hotel_rid}!')
-    if len(error) != 0:
-        print('##### Mission Report #####')
-        for i in error:
-            print(i)
+    ta.logger.info(f'{hotel_rid} : Mandatory Meal Option has been added')
+
         

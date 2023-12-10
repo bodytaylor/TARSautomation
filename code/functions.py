@@ -4,7 +4,6 @@ import webbrowser
 import openpyxl
 import urllib.parse
 import re
-import sys
 
 # Find web browser console
 def find_console():
@@ -77,7 +76,6 @@ def search_with_choice(text_search, choice=1):
     pyautogui.write(text_search)
     pyautogui.press('enter')
     time.sleep(1)
-
 
 
 # tab n time to navigate menu    
@@ -236,7 +234,7 @@ def check_text(df, col, row_shift=11):
         
 # Create a function to find non-matching characters
 def find_non_matching_chars(text):
-    pattern = r"[^a-zA-Z0-9*,-.:' ]"
+    pattern = r"[^a-zA-Z0-9*,-.:'& ]"
     return ''.join(re.findall(pattern, text))
 
 
@@ -306,28 +304,7 @@ def code_search(text_search):
     clear_search_box(6)
     pyautogui.write(text_search)
     pyautogui.press('enter')
-    
-# get excel value and store it as variable
-def get_excel_values(file_path=str, sheet_name=str, cell_addresses=list):
-    try:
-        # Open the Excel file
-        workbook = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
-
-        # Select the specific sheet
-        sheet = workbook[sheet_name]
-        cell_values =[]
-        for cell in cell_addresses:
-            cell_values.append(sheet[cell].value)
-        return cell_values
-    
-    except Exception as e:
-        print(f"An error occurred while loading the Excel file: {str(e)}")
-        return None, None
-    finally:
-        # Close the workbook
-        if workbook:
-            workbook.close()
-   
+       
 # Function for enter code in console
 
 def type_and_enter(text):
@@ -431,26 +408,34 @@ def continue_program():
         else:
             print("Invalid input. Please enter 'y' or 'n'.")
 
+def replace_none_with_zero(value):
+    return 0 if value is None else value
+
+# Get response
 # New function for selenium
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Get response
-def get_response(driver, code, error=list):
-            WebDriverWait(driver, 7).until(
-                EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
-                ) 
-            time.sleep(0.5)
-            try:
-                action_message_element = WebDriverWait(driver, 7).until(
-                    EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]'))
-                    )
-                action_message = action_message_element.find_element(By.TAG_NAME, 'span').text
-                print(f'[INFO] - {action_message}')
-            except:
-                error_message = action_message_element = WebDriverWait(driver, 7).until(
-                    EC.visibility_of_element_located((By.XPATH, '//*[@id="errormessage"]'))
-                    )
-                error.append(f'{code}: {error_message.text}')
-                print(f'[INFO] - {error_message.text}')
+def get_response(driver, code, response=list):
+    
+    WebDriverWait(driver, 7).until(
+        EC.visibility_of_element_located((By.XPATH, '//*[@id="messages"]'))
+        ) 
+    time.sleep(0.5)
+    try:
+        action_message_element = WebDriverWait(driver, 7).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="actionmessage"]'))
+            )
+        message = action_message_element.find_element(By.TAG_NAME, 'span').text
+
+    except:
+        error_message_element = action_message_element = WebDriverWait(driver, 7).until(
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="errormessage"]'))
+            )
+        message = error_message_element.text
+        
+    finally:
+        response.append(f'{code}: {message}')
+        print(f'[INFO] - {message}')
