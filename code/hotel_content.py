@@ -65,7 +65,7 @@ class ContentBook:
         self.hotel_name = sheet['C4'].value
         self.brand = sheet['C6'].value
         self.chain = sheet['J6'].value
-        self.hotel_commer_name = sheet['D32'].value
+        self.hotel_commercial_name = sheet['D32'].value
         self.open_date = sheet['K10'].value
         self.address1 = sheet['C34'].value
         self.address2 = sheet['J34'].value
@@ -81,6 +81,7 @@ class ContentBook:
         self.city = sheet['C39'].value
         self.phone = sheet['D41'].value
         self.fax = sheet['D43'].value
+        self.country = sheet['J41'].value
     
         # List data for general page
         self.construction_date = sheet['C57'].value
@@ -95,7 +96,7 @@ class ContentBook:
         self.nb_floors = sheet['C65'].value
         
         # rating data
-        self.local_star = sheet['C79'].value
+        self.local_rating = sheet['C79'].value
         self.north_star = sheet['J79'].value
         
         # GM name

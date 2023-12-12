@@ -88,7 +88,7 @@ def main():
             run_full_automation(hotel_rid, hotel_content)
         elif choice == '1':
             import add_language
-            add_language.add(hotel_rid)
+            add_language.add(hotel_rid, hotel_content)
         elif choice == '2':
             import hotel_programs
             hotel_programs.add(hotel_rid, hotel_content)
@@ -167,6 +167,10 @@ def main():
         elif choice == '27':
             import payment
             payment.add(hotel_rid)
+        elif choice == '28':
+            import set_hotel_limit
+            set_hotel_limit.add(hotel_rid)
+             
                
         elif choice == "q":
             print("Exiting the program. Goodbye!")
@@ -186,7 +190,7 @@ def run_full_automation(hotel_rid, hotel_content):
     """Run full automation for the given hotel RID and content."""
     # Note Adding function for asking user for all infomaion needed for full automation.
     import add_language
-    add_language.add(hotel_rid)
+    add_language.add(hotel_rid, hotel_content)
 
     import hotel_programs
     hotel_programs.add(hotel_rid, hotel_content)
@@ -208,6 +212,9 @@ def run_full_automation(hotel_rid, hotel_content):
 
     import special_rating
     special_rating.add(hotel_rid, hotel_content)
+    
+    import set_hotel_limit
+    set_hotel_limit.add(hotel_rid)
 
     import meal_options
     meal_options.add(hotel_rid, hotel_content)

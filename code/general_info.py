@@ -129,5 +129,5 @@ def add(hotel_rid, hotel_content):
     driver.execute_script('document.getElementById("gi.mesToHotelOnAH").checked = true;')
     
     # get response after click submit
-    ta.get_response(hotel_rid)
-    print('Automation Done Please Review The input data before click save! Thanks.')
+    ta.click_button('hotelTax.submitButton')
+    ta.get_response(hotel_rid, code="submitGeneralInformationForm")

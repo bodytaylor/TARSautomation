@@ -14,4 +14,5 @@ def add(hotel_rid, hotel_content):
     for key, value in contact_dict.items():
         ta.input_text(element_id=key, text=value)
 
-    print('Automation Done Please Review The input data before click save! Thanks.')
+    ta.driver.execute_script("createHotelContacts();")
+    ta.get_response(hotel_rid, code='createHotelContacts')

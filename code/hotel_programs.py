@@ -37,7 +37,7 @@ def add(hotel_rid, hotel_content):
     gps = hotel_content.gps
     
     # Get Restaurant information if resturant is in the property will load dinning offer.
-    restaurant = hotel_content.restaurant
+    restaurant = hotel_content.restaurants
 
     # Condition Check and Add to loading dict
 

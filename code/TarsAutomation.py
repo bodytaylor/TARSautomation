@@ -252,6 +252,10 @@ def tick_box(element, value='Checked'):
     if value is not None:
         driver.execute_script(f'var checkbox = document.getElementById("{element}"); checkbox.checked = !checkbox.checked;')
         logger.info(f'{element} : checkbox.checked')
+        
+def check_option(element):
+    driver.execute_script(f'document.getElementById("{element}").checked = true;')
+    logger.info(f'{element} : checked = true')
   
 # Search for product lib
 def add_product(code, df):
@@ -363,3 +367,13 @@ def find_type(df, code):
 def url_parse(input):
     url_encoded = urllib.parse.quote_plus(input)
     return url_encoded
+
+def accept_alert():
+    time.sleep(1)
+    alert = driver.switch_to.alert
+    alert.accept()
+    time.sleep(1)
+    
+def search_hotel_litmit():
+    driver.execute_script("searchHotelsLimits();")
+    time.sleep(delay)

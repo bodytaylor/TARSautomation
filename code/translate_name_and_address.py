@@ -6,7 +6,7 @@ from dictionary import *
 def add(hotel_rid, hotel_content):
     
     # Hotel Commercial Name D32
-    hotel_com_name = hotel_content.hotel_com_name
+    hotel_com_name = hotel_content.hotel_commercial_name
 
     # Provisional Opening date merge with commercial name K10
     open_date = hotel_content.open_date
@@ -44,5 +44,3 @@ def add(hotel_rid, hotel_content):
     alert = driver.switch_to.alert
     alert.accept()
     ta.get_response(hotel_rid, code='Display Name')
-
-    print('Translate Name and Address Done!')

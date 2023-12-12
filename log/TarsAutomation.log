@@ -1,1317 +1,279 @@
-2023-12-09 23:43:10,538 : INFO : B4W2 : Content Book Loaded
-2023-12-09 23:43:10,541 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-09 23:43:20,770 : INFO : Login Success User: NANSAN
-2023-12-09 23:44:31,583 : INFO : B4W2 : Content Book Loaded
-2023-12-09 23:44:31,587 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-09 23:44:40,753 : INFO : Login Success User: NANSAN
-2023-12-09 23:48:49,710 : INFO : B4W2 : Content Book Loaded
-2023-12-09 23:48:49,718 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-09 23:48:58,536 : INFO : Login Success User: NANSAN
-2023-12-09 23:49:08,058 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-09 23:49:32,049 : INFO : Address and Set-up - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-09 23:49:32,113 : INFO : hotel.name : MOVENPICK HOTEL GHALA
-2023-12-09 23:49:32,320 : INFO : hotel.brand.code : MOV
-2023-12-09 23:49:32,520 : INFO : hotel.chain.code : MOV
-2023-12-09 23:49:32,724 : INFO : hotel.commercialName : Mövenpick Hotel and Hotel Apartments Ghala Muscat (Opening January 2024)
-2023-12-09 23:49:32,928 : INFO : hotel.shortName : MOVENPICK MUSCAT
-2023-12-09 23:49:33,116 : INFO : hotel.hotelManagementType.code : MG
-2023-12-09 23:49:33,307 : INFO : hotel.address.addresses[0] : Al Maaridh Street
-2023-12-09 23:49:33,500 : INFO : hotel.address.addresses[1] : Ghala Heights Complex
-2023-12-09 23:49:33,730 : INFO : hotel.address.addresses[2] : Adjacent to Sultan Qaboos St
-2023-12-09 23:49:33,926 : INFO : hotel.address.city : MUSCAT
-2023-12-09 23:49:34,111 : INFO : hotel.iataCityCode : CAT
-2023-12-09 23:49:34,299 : INFO : hotel.address.zipCode : 111
-2023-12-09 23:49:34,499 : INFO : hotel.address.indTel : 968
-2023-12-09 23:49:34,687 : INFO : hotel.address.tel : 22719999
-2023-12-09 23:49:34,892 : INFO : hotel.address.indFax : 968
-2023-12-09 23:49:35,084 : INFO : hotel.address.fax : 22719998
-2023-12-09 23:49:35,280 : INFO : hotel.indTelReservation : 968
-2023-12-09 23:49:35,491 : INFO : hotel.telReservation : 22719997
-2023-12-09 23:49:35,690 : INFO : hotel.indFaxReservation : 968
-2023-12-09 23:49:35,883 : INFO : hotel.placeCode : MCT
-2023-12-09 23:49:36,096 : INFO : hotel.segmentationType.code : TRACK
-2023-12-09 23:49:36,319 : INFO : hotel.tarsMode.code : O
-2023-12-09 23:49:36,523 : INFO : versionPmsInterface : 
-2023-12-09 23:49:36,721 : INFO : hotel.address.email : Movenpickghala.reservations@movenpick.com
-2023-12-09 23:49:36,903 : INFO : hotel.internetAddress : all.accor.com/B4W2
-2023-12-10 01:31:06,120 : INFO : B4W2 : Content Book Loaded
-2023-12-10 01:31:06,137 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 01:31:14,901 : INFO : Login Success User: NANSAN
-2023-12-10 01:31:23,769 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 01:31:37,838 : INFO : Meal Plan to add to the Hotel: ['MBREAK', 'AMBREA', 'MPHB', 'AMPHB', 'DMBREA', 'DMPHB']
-2023-12-10 01:31:42,516 : INFO : Products - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -   
-2023-12-10 01:31:44,474 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 01:31:44,564 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 01:31:44,648 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 01:31:44,735 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 01:31:44,817 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 01:31:44,883 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 01:31:44,965 : INFO : SUBMIT DATA
-2023-12-10 01:31:50,051 : INFO : B4W2 : MBREAK : Product already exists
-2023-12-10 01:31:51,123 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 01:31:51,216 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 01:31:51,315 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 01:31:51,416 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 01:31:51,498 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 01:31:51,584 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 01:31:51,683 : INFO : SUBMIT DATA
-2023-12-10 01:31:56,731 : INFO : B4W2 : AMBREA : Product already exists
-2023-12-10 01:31:57,767 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 01:31:57,850 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 01:31:57,933 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 01:31:58,017 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 01:31:58,100 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 01:31:58,183 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 01:31:58,268 : INFO : SUBMIT DATA
-2023-12-10 01:32:03,329 : INFO : B4W2 : MPHB : Product already exists
-2023-12-10 01:32:04,383 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 01:32:04,480 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 01:32:04,567 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 01:32:04,654 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 01:32:04,748 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 01:32:04,831 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 01:32:04,914 : INFO : SUBMIT DATA
-2023-12-10 01:32:10,115 : INFO : B4W2 : AMPHB : Product already exists
-2023-12-10 01:32:11,186 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 01:32:11,266 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 01:32:11,351 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 01:32:11,450 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 01:32:11,532 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 01:32:11,599 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 01:32:11,683 : INFO : SUBMIT DATA
-2023-12-10 01:32:16,632 : INFO : B4W2 : DMBREA : Product 'DMBREA' has been added
-2023-12-10 01:32:17,682 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 01:32:17,768 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 01:32:17,851 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 01:32:17,949 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 01:32:18,032 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 01:32:18,099 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 01:32:18,179 : INFO : SUBMIT DATA
-2023-12-10 01:32:23,147 : INFO : B4W2 : DMPHB : Product 'DMPHB' has been added
-2023-12-10 01:32:23,147 : INFO : B4W2 : Mandatory Meal Option has been added
-2023-12-10 02:04:43,983 : INFO : B4W2 : Content Book Loaded
-2023-12-10 02:04:43,983 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 02:04:54,221 : INFO : Login Success User: NANSAN
-2023-12-10 02:05:04,355 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 02:07:18,083 : INFO : B4W2 : Content Book Loaded
-2023-12-10 02:07:18,083 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 02:07:26,885 : INFO : Login Success User: NANSAN
-2023-12-10 02:07:36,422 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 02:07:56,275 : INFO : Products - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -   
-2023-12-10 02:07:58,168 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:07:58,244 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:07:58,343 : INFO : hotelProduct.maxOccupancyTotal : 4
-2023-12-10 02:07:58,443 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:07:58,526 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:07:58,607 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:07:58,691 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:07:58,776 : INFO : hotelProduct.roomSizeInSquareMeter : 42
-2023-12-10 02:07:58,857 : INFO : hotelProduct.quantity : 55
-2023-12-10 02:07:58,959 : INFO : hotelProduct.pmsCode : KGB
-2023-12-10 02:07:59,059 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:07:59,158 : INFO : hotelProduct.orderInResaScreen : 1
-2023-12-10 02:07:59,242 : ERROR : An error occurred: Message: Error from JavaScript: Unable to get property 'click' of undefined or null reference
-
-2023-12-10 02:12:08,947 : INFO : B4W2 : Content Book Loaded
-2023-12-10 02:12:08,947 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 02:12:17,949 : INFO : Login Success User: NANSAN
-2023-12-10 02:12:27,498 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 02:15:41,855 : INFO : Products - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -   
-2023-12-10 02:15:44,431 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:15:44,502 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:15:44,570 : INFO : hotelProduct.maxOccupancyTotal : 4
-2023-12-10 02:15:44,637 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:15:44,705 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:15:44,785 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:15:44,871 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:15:44,971 : INFO : hotelProduct.roomSizeInSquareMeter : 42
-2023-12-10 02:15:45,036 : INFO : hotelProduct.quantity : 55
-2023-12-10 02:15:45,103 : INFO : hotelProduct.pmsCode : KGB
-2023-12-10 02:15:45,187 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:15:45,255 : INFO : hotelProduct.orderInResaScreen : 1
-2023-12-10 02:15:45,335 : INFO : Submitdata
-2023-12-10 02:15:50,247 : INFO : B4W2 : KGB : Product already exists
-2023-12-10 02:15:51,635 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:15:51,705 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:15:51,773 : INFO : hotelProduct.maxOccupancyTotal : 3
-2023-12-10 02:15:51,859 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:15:51,937 : INFO : hotelProduct.maxOccupancyChildren : 1
-2023-12-10 02:15:52,035 : INFO : hotelProduct.singleBebNumber : 2
-2023-12-10 02:15:52,120 : INFO : hotelProduct.doubleBebNumber : 0
-2023-12-10 02:15:52,204 : INFO : hotelProduct.roomSizeInSquareMeter : 42
-2023-12-10 02:15:52,287 : INFO : hotelProduct.quantity : 26
-2023-12-10 02:15:52,371 : INFO : hotelProduct.pmsCode : TWB
-2023-12-10 02:15:52,438 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:15:52,519 : INFO : hotelProduct.orderInResaScreen : 1
-2023-12-10 02:15:52,620 : INFO : Submitdata
-2023-12-10 02:15:57,437 : INFO : B4W2 : TWB : Product already exists
-2023-12-10 02:15:58,771 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:15:58,871 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:15:58,969 : INFO : hotelProduct.maxOccupancyTotal : 3
-2023-12-10 02:15:59,070 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:15:59,152 : INFO : hotelProduct.maxOccupancyChildren : 1
-2023-12-10 02:15:59,238 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:15:59,320 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:15:59,403 : INFO : hotelProduct.roomSizeInSquareMeter : 41
-2023-12-10 02:15:59,501 : INFO : hotelProduct.quantity : 6
-2023-12-10 02:15:59,620 : INFO : hotelProduct.pmsCode : KGBCIH
-2023-12-10 02:15:59,704 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:15:59,787 : INFO : hotelProduct.orderInResaScreen : 2
-2023-12-10 02:15:59,869 : INFO : Submitdata
-2023-12-10 02:16:04,644 : INFO : B4W2 : KGBCIH : Product already exists
-2023-12-10 02:16:05,977 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:06,062 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:06,139 : INFO : hotelProduct.maxOccupancyTotal : 4
-2023-12-10 02:16:06,222 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:16:06,319 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:16:06,387 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:16:06,472 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:16:06,555 : INFO : hotelProduct.roomSizeInSquareMeter : 42
-2023-12-10 02:16:06,654 : INFO : hotelProduct.quantity : 100
-2023-12-10 02:16:06,754 : INFO : hotelProduct.pmsCode : KGA
-2023-12-10 02:16:06,837 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:06,906 : INFO : hotelProduct.orderInResaScreen : 3
-2023-12-10 02:16:07,005 : INFO : Submitdata
-2023-12-10 02:16:11,903 : INFO : B4W2 : KGA : Product already exists
-2023-12-10 02:16:13,234 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:13,303 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:13,401 : INFO : hotelProduct.maxOccupancyTotal : 3
-2023-12-10 02:16:13,486 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:16:13,569 : INFO : hotelProduct.maxOccupancyChildren : 1
-2023-12-10 02:16:13,658 : INFO : hotelProduct.singleBebNumber : 2
-2023-12-10 02:16:13,736 : INFO : hotelProduct.doubleBebNumber : 0
-2023-12-10 02:16:13,818 : INFO : hotelProduct.roomSizeInSquareMeter : 42
-2023-12-10 02:16:13,904 : INFO : hotelProduct.quantity : 11
-2023-12-10 02:16:13,987 : INFO : hotelProduct.pmsCode : TWA
-2023-12-10 02:16:14,073 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:14,161 : INFO : hotelProduct.orderInResaScreen : 4
-2023-12-10 02:16:14,253 : INFO : Submitdata
-2023-12-10 02:16:19,089 : INFO : B4W2 : TWA : Product already exists
-2023-12-10 02:16:20,462 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:20,569 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:20,685 : INFO : hotelProduct.maxOccupancyTotal : 4
-2023-12-10 02:16:20,802 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:16:20,928 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:16:21,036 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:16:21,136 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:16:21,219 : INFO : hotelProduct.roomSizeInSquareMeter : 58
-2023-12-10 02:16:21,318 : INFO : hotelProduct.quantity : 42
-2023-12-10 02:16:21,402 : INFO : hotelProduct.pmsCode : SKD
-2023-12-10 02:16:21,503 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:21,584 : INFO : hotelProduct.orderInResaScreen : 5
-2023-12-10 02:16:21,686 : INFO : Submitdata
-2023-12-10 02:16:26,497 : INFO : B4W2 : SKD : Product already exists
-2023-12-10 02:16:27,801 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:27,869 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:27,950 : INFO : hotelProduct.maxOccupancyTotal : 4
-2023-12-10 02:16:28,020 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:16:28,100 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:16:28,169 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:16:28,253 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:16:28,336 : INFO : hotelProduct.roomSizeInSquareMeter : 42
-2023-12-10 02:16:28,402 : INFO : hotelProduct.quantity : 22
-2023-12-10 02:16:28,469 : INFO : hotelProduct.pmsCode : KGAEF
-2023-12-10 02:16:28,536 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:28,602 : INFO : hotelProduct.orderInResaScreen : 7
-2023-12-10 02:16:28,681 : INFO : Submitdata
-2023-12-10 02:16:33,534 : INFO : B4W2 : KGAEF : Product already exists
-2023-12-10 02:16:34,869 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:34,952 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:35,037 : INFO : hotelProduct.maxOccupancyTotal : 3
-2023-12-10 02:16:35,121 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:16:35,187 : INFO : hotelProduct.maxOccupancyChildren : 1
-2023-12-10 02:16:35,269 : INFO : hotelProduct.singleBebNumber : 2
-2023-12-10 02:16:35,335 : INFO : hotelProduct.doubleBebNumber : 0
-2023-12-10 02:16:35,420 : INFO : hotelProduct.roomSizeInSquareMeter : 42
-2023-12-10 02:16:35,503 : INFO : hotelProduct.quantity : 7
-2023-12-10 02:16:35,585 : INFO : hotelProduct.pmsCode : TWE
-2023-12-10 02:16:35,668 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:35,755 : INFO : hotelProduct.orderInResaScreen : 8
-2023-12-10 02:16:35,851 : INFO : Submitdata
-2023-12-10 02:16:40,638 : INFO : B4W2 : TWE : Product already exists
-2023-12-10 02:16:41,962 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:42,053 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:42,134 : INFO : hotelProduct.maxOccupancyTotal : 2
-2023-12-10 02:16:42,218 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:16:42,319 : INFO : hotelProduct.maxOccupancyChildren : 1
-2023-12-10 02:16:42,402 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:16:42,471 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:16:42,554 : INFO : hotelProduct.roomSizeInSquareMeter : 58
-2023-12-10 02:16:42,637 : INFO : hotelProduct.quantity : 7
-2023-12-10 02:16:42,720 : INFO : hotelProduct.pmsCode : SKDA
-2023-12-10 02:16:42,804 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:42,904 : INFO : hotelProduct.orderInResaScreen : 9
-2023-12-10 02:16:42,984 : INFO : Submitdata
-2023-12-10 02:16:47,780 : INFO : B4W2 : SKDA : Product already exists
-2023-12-10 02:16:49,082 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:49,153 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:49,235 : INFO : hotelProduct.maxOccupancyTotal : 5
-2023-12-10 02:16:49,320 : INFO : hotelProduct.maxOccupancyAdult : 3
-2023-12-10 02:16:49,402 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:16:49,485 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:16:49,567 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:16:49,635 : INFO : hotelProduct.roomSizeInSquareMeter : 83
-2023-12-10 02:16:49,703 : INFO : hotelProduct.quantity : 6
-2023-12-10 02:16:49,784 : INFO : hotelProduct.pmsCode : SLA
-2023-12-10 02:16:49,852 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:49,933 : INFO : hotelProduct.orderInResaScreen : 10
-2023-12-10 02:16:50,018 : INFO : Submitdata
-2023-12-10 02:16:54,805 : INFO : B4W2 : SLA : Product already exists
-2023-12-10 02:16:56,132 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:16:56,217 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:16:56,302 : INFO : hotelProduct.maxOccupancyTotal : 3
-2023-12-10 02:16:56,386 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:16:56,453 : INFO : hotelProduct.maxOccupancyChildren : 1
-2023-12-10 02:16:56,534 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:16:56,619 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:16:56,717 : INFO : hotelProduct.roomSizeInSquareMeter : 34
-2023-12-10 02:16:56,784 : INFO : hotelProduct.quantity : 24
-2023-12-10 02:16:56,851 : INFO : hotelProduct.pmsCode : AWC
-2023-12-10 02:16:56,935 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:16:57,002 : INFO : hotelProduct.orderInResaScreen : 11
-2023-12-10 02:16:57,098 : INFO : Submitdata
-2023-12-10 02:17:01,929 : INFO : B4W2 : AWC : Product already exists
-2023-12-10 02:17:03,242 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:17:03,318 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:17:03,401 : INFO : hotelProduct.maxOccupancyTotal : 3
-2023-12-10 02:17:03,484 : INFO : hotelProduct.maxOccupancyAdult : 2
-2023-12-10 02:17:03,568 : INFO : hotelProduct.maxOccupancyChildren : 1
-2023-12-10 02:17:03,666 : INFO : hotelProduct.singleBebNumber : 1
-2023-12-10 02:17:03,751 : INFO : hotelProduct.doubleBebNumber : 1
-2023-12-10 02:17:03,850 : INFO : hotelProduct.roomSizeInSquareMeter : 64
-2023-12-10 02:17:03,937 : INFO : hotelProduct.quantity : 24
-2023-12-10 02:17:04,018 : INFO : hotelProduct.pmsCode : AP1
-2023-12-10 02:17:04,117 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:17:04,199 : INFO : hotelProduct.orderInResaScreen : 12
-2023-12-10 02:17:04,281 : INFO : Submitdata
-2023-12-10 02:17:09,051 : INFO : B4W2 : AP1 : Product already exists
-2023-12-10 02:17:10,374 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:17:10,452 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:17:10,534 : INFO : hotelProduct.maxOccupancyTotal : 4
-2023-12-10 02:17:10,636 : INFO : hotelProduct.maxOccupancyAdult : 4
-2023-12-10 02:17:10,718 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:17:10,801 : INFO : hotelProduct.singleBebNumber : 2
-2023-12-10 02:17:10,869 : INFO : hotelProduct.doubleBebNumber : 2
-2023-12-10 02:17:10,950 : INFO : hotelProduct.roomSizeInSquareMeter : 84
-2023-12-10 02:17:11,033 : INFO : hotelProduct.quantity : 5
-2023-12-10 02:17:11,101 : INFO : hotelProduct.pmsCode : AP2
-2023-12-10 02:17:11,184 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:17:11,266 : INFO : hotelProduct.orderInResaScreen : 13
-2023-12-10 02:17:11,349 : INFO : Submitdata
-2023-12-10 02:17:16,202 : INFO : B4W2 : AP2 : Product already exists
-2023-12-10 02:17:17,545 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 02:17:17,636 : INFO : hotelProduct.bookable : checkbox.checked
-2023-12-10 02:17:17,733 : INFO : hotelProduct.maxOccupancyTotal : 4
-2023-12-10 02:17:17,832 : INFO : hotelProduct.maxOccupancyAdult : 4
-2023-12-10 02:17:17,933 : INFO : hotelProduct.maxOccupancyChildren : 2
-2023-12-10 02:17:18,031 : INFO : hotelProduct.singleBebNumber : 3
-2023-12-10 02:17:18,120 : INFO : hotelProduct.doubleBebNumber : 3
-2023-12-10 02:17:18,217 : INFO : hotelProduct.roomSizeInSquareMeter : 111
-2023-12-10 02:17:18,299 : INFO : hotelProduct.quantity : 5
-2023-12-10 02:17:18,399 : INFO : hotelProduct.pmsCode : AP3
-2023-12-10 02:17:18,491 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 02:17:18,583 : INFO : hotelProduct.orderInResaScreen : 14
-2023-12-10 02:17:18,679 : INFO : Submitdata
-2023-12-10 02:17:23,583 : INFO : B4W2 : AP3 : Product already exists
-2023-12-10 11:47:31,103 : INFO : B4W2 : Content Book Loaded
-2023-12-10 11:47:31,111 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 11:47:44,447 : INFO : Login Success User: NANSAN
-2023-12-10 11:47:57,307 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 11:48:29,046 : INFO : Products - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -   
-2023-12-10 11:49:50,131 : INFO : B4W2 : Content Book Loaded
-2023-12-10 11:49:50,131 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 11:50:03,728 : INFO : Login Success User: NANSAN
-2023-12-10 11:50:16,289 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 11:51:01,225 : INFO : Products - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -   
-2023-12-10 11:51:04,936 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:05,129 : INFO : Submitdata
-2023-12-10 11:51:10,031 : INFO : B4W2 : FIBERO : Product already exists
-2023-12-10 11:51:12,115 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:12,321 : INFO : Submitdata
-2023-12-10 11:51:17,009 : INFO : B4W2 : HIGHTR : Product already exists
-2023-12-10 11:51:19,059 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:19,274 : INFO : Submitdata
-2023-12-10 11:51:23,999 : INFO : B4W2 : RJ45 : Product already exists
-2023-12-10 11:51:26,158 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:26,373 : INFO : Submitdata
-2023-12-10 11:51:31,281 : INFO : B4W2 : WIFCOM : Product already exists
-2023-12-10 11:51:33,339 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:33,536 : INFO : Submitdata
-2023-12-10 11:51:38,293 : INFO : B4W2 : WIFI : Product already exists
-2023-12-10 11:51:40,429 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:40,642 : INFO : Submitdata
-2023-12-10 11:51:45,319 : INFO : B4W2 : WIFIBO : Product already exists
-2023-12-10 11:51:47,305 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:47,528 : INFO : Submitdata
-2023-12-10 11:51:52,309 : INFO : B4W2 : AIRC  : Product already exists
-2023-12-10 11:51:54,399 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:51:54,610 : INFO : Submitdata
-2023-12-10 11:51:59,161 : INFO : B4W2 : BILL : Product already exists
-2023-12-10 11:52:01,154 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:52:01,376 : INFO : Submitdata
-2023-12-10 11:52:05,922 : INFO : B4W2 : CHECK2 : Product already exists
-2023-12-10 11:52:07,867 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:52:08,064 : INFO : Submitdata
-2023-12-10 11:52:12,599 : INFO : B4W2 : COLORS : Product already exists
-2023-12-10 11:52:14,563 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:52:14,813 : INFO : Submitdata
-2023-12-10 11:52:19,651 : INFO : B4W2 : DATA : Product already exists
-2023-12-10 11:52:21,647 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:52:21,804 : INFO : Submitdata
-2023-12-10 11:52:26,328 : INFO : B4W2 : FERA  : Product already exists
-2023-12-10 11:52:28,337 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:52:28,513 : INFO : Submitdata
-2023-12-10 11:52:33,223 : INFO : B4W2 : SAFE : Product already exists
-2023-12-10 11:52:35,130 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 11:52:35,315 : INFO : Submitdata
-2023-12-10 11:52:39,809 : INFO : B4W2 : TVBEIN : Product already exists
-2023-12-10 11:56:17,555 : INFO : B4W2 : Content Book Loaded
-2023-12-10 11:56:17,558 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 11:56:30,881 : INFO : Login Success User: NANSAN
-2023-12-10 12:06:55,895 : INFO : B4W2 : Content Book Loaded
-2023-12-10 12:06:55,905 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 12:07:09,170 : INFO : Login Success User: NANSAN
-2023-12-10 12:07:20,713 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 12:23:38,996 : ERROR : FADS : Content Book not found
-2023-12-10 12:23:39,004 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 12:23:52,534 : INFO : Login Success User: NANSAN
-2023-12-10 12:28:21,340 : ERROR : SDFA : Content Book not found
-2023-12-10 12:28:33,960 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 12:28:46,359 : INFO : Login Success User: NANSAN
-2023-12-10 12:32:16,398 : INFO : B4W2 : Content Book Loaded
-2023-12-10 12:32:16,398 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 12:32:29,321 : INFO : Login Success User: NANSAN
-2023-12-10 12:32:40,647 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 12:33:15,864 : INFO : Products - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -   
-2023-12-10 12:33:18,769 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:19,039 : INFO : Submitdata
-2023-12-10 12:33:22,682 : INFO : B4W2 : FIBERO : Product already exists
-2023-12-10 12:33:24,126 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:24,301 : INFO : Submitdata
-2023-12-10 12:33:27,767 : INFO : B4W2 : HIGHTR : Product already exists
-2023-12-10 12:33:29,334 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:29,572 : INFO : Submitdata
-2023-12-10 12:33:32,966 : INFO : B4W2 : RJ45 : Product already exists
-2023-12-10 12:33:34,403 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:34,619 : INFO : Submitdata
-2023-12-10 12:33:38,070 : INFO : B4W2 : WIFCOM : Product already exists
-2023-12-10 12:33:39,654 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:39,835 : INFO : Submitdata
-2023-12-10 12:33:43,381 : INFO : B4W2 : WIFI : Product already exists
-2023-12-10 12:33:44,991 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:45,212 : INFO : Submitdata
-2023-12-10 12:33:48,955 : INFO : B4W2 : WIFIBO : Product already exists
-2023-12-10 12:33:50,696 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:50,935 : INFO : Submitdata
-2023-12-10 12:33:54,688 : INFO : B4W2 : AIRC  : Product already exists
-2023-12-10 12:33:56,339 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:33:56,546 : INFO : Submitdata
-2023-12-10 12:34:00,324 : INFO : B4W2 : BILL : Product already exists
-2023-12-10 12:34:02,026 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:02,238 : INFO : Submitdata
-2023-12-10 12:34:06,097 : INFO : B4W2 : CHECK2 : Product already exists
-2023-12-10 12:34:07,758 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:07,918 : INFO : Submitdata
-2023-12-10 12:34:11,354 : INFO : B4W2 : COLORS : Product already exists
-2023-12-10 12:34:12,982 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:13,191 : INFO : Submitdata
-2023-12-10 12:34:16,616 : INFO : B4W2 : DATA : Product already exists
-2023-12-10 12:34:18,226 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:18,401 : INFO : Submitdata
-2023-12-10 12:34:21,960 : INFO : B4W2 : FERA  : Product already exists
-2023-12-10 12:34:23,521 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:23,706 : INFO : Submitdata
-2023-12-10 12:34:27,137 : INFO : B4W2 : SAFE : Product already exists
-2023-12-10 12:34:28,619 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:28,788 : INFO : Submitdata
-2023-12-10 12:34:32,093 : INFO : B4W2 : TVBEIN : Product already exists
-2023-12-10 12:34:32,093 : ERROR : B4W2 : TVCAN Product not found in Product Library
-2023-12-10 12:34:33,615 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:33,801 : INFO : Submitdata
-2023-12-10 12:34:37,270 : INFO : B4W2 : VOLT2 : Product already exists
-2023-12-10 12:34:38,851 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:39,067 : INFO : Submitdata
-2023-12-10 12:34:42,628 : INFO : B4W2 : WATER : Product already exists
-2023-12-10 12:34:44,222 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:44,454 : INFO : Submitdata
-2023-12-10 12:34:47,940 : INFO : B4W2 : EQBATH : Product already exists
-2023-12-10 12:34:49,467 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:49,669 : INFO : Submitdata
-2023-12-10 12:34:53,158 : INFO : B4W2 : PHON4 : Product already exists
-2023-12-10 12:34:54,628 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:34:54,840 : INFO : Submitdata
-2023-12-10 12:34:58,232 : INFO : B4W2 : TEMPMA : Product already exists
-2023-12-10 12:34:59,871 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:00,127 : INFO : Submitdata
-2023-12-10 12:35:03,542 : INFO : B4W2 : WINDOW : Product already exists
-2023-12-10 12:35:05,162 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:05,346 : INFO : Submitdata
-2023-12-10 12:35:08,869 : INFO : B4W2 : WORK1 : Product already exists
-2023-12-10 12:35:10,479 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:10,651 : INFO : Submitdata
-2023-12-10 12:35:13,839 : INFO : B4W2 : BATH : Product already exists
-2023-12-10 12:35:15,190 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:15,369 : INFO : Submitdata
-2023-12-10 12:35:18,596 : INFO : B4W2 : HAIRD : Product already exists
-2023-12-10 12:35:19,983 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:20,137 : INFO : Submitdata
-2023-12-10 12:35:23,342 : INFO : B4W2 : SHOWER : Product already exists
-2023-12-10 12:35:24,741 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:24,912 : INFO : Submitdata
-2023-12-10 12:35:28,592 : INFO : B4W2 : MAKE : Product already exists
-2023-12-10 12:35:30,273 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:30,531 : INFO : Submitdata
-2023-12-10 12:35:33,758 : INFO : B4W2 : TOILET : Product already exists
-2023-12-10 12:35:35,290 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:35,439 : INFO : Submitdata
-2023-12-10 12:35:38,626 : INFO : B4W2 : AUDI : Product already exists
-2023-12-10 12:35:39,906 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:40,047 : INFO : Submitdata
-2023-12-10 12:35:43,251 : INFO : B4W2 : EMERGE : Product already exists
-2023-12-10 12:35:44,616 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:44,758 : INFO : Submitdata
-2023-12-10 12:35:47,970 : INFO : B4W2 : SMOKE : Product already exists
-2023-12-10 12:35:49,297 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:49,446 : INFO : Submitdata
-2023-12-10 12:35:52,580 : INFO : B4W2 : SPINKL : Product already exists
-2023-12-10 12:35:53,928 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:54,072 : INFO : Submitdata
-2023-12-10 12:35:57,404 : INFO : B4W2 : VIEW : Product already exists
-2023-12-10 12:35:58,758 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:35:58,876 : INFO : Submitdata
-2023-12-10 12:36:02,077 : INFO : B4W2 : VING : Product already exists
-2023-12-10 12:36:03,397 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:03,570 : INFO : Submitdata
-2023-12-10 12:36:06,902 : INFO : B4W2 : COFFE : Product already exists
-2023-12-10 12:36:08,386 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:08,563 : INFO : Submitdata
-2023-12-10 12:36:11,793 : INFO : B4W2 : KITCHE : Product already exists
-2023-12-10 12:36:13,235 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:13,422 : INFO : Submitdata
-2023-12-10 12:36:16,809 : INFO : B4W2 : MICRO : Product already exists
-2023-12-10 12:36:18,337 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:36:18,486 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:36:18,654 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:36:18,808 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:36:18,972 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:36:19,104 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:19,256 : INFO : Submitdata
-2023-12-10 12:36:22,553 : INFO : B4W2 : MINIBA : Product already exists
-2023-12-10 12:36:23,992 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:36:24,150 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:36:24,322 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:36:24,493 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:36:24,672 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:36:24,842 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:24,995 : INFO : Submitdata
-2023-12-10 12:36:28,201 : INFO : B4W2 : CORDPH : Product already exists
-2023-12-10 12:36:29,590 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:36:29,771 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:36:29,906 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:36:30,037 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:36:30,208 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:36:30,368 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:30,525 : INFO : Submitdata
-2023-12-10 12:36:33,733 : INFO : B4W2 : DIAL : Product already exists
-2023-12-10 12:36:35,152 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:35,310 : INFO : Submitdata
-2023-12-10 12:36:38,617 : INFO : B4W2 : ROOMSV : Product already exists
-2023-12-10 12:36:40,028 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:36:40,193 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:36:40,356 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:36:40,493 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:36:40,653 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:36:40,811 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:40,977 : INFO : Submitdata
-2023-12-10 12:36:44,205 : INFO : B4W2 : TVROOM : Product already exists
-2023-12-10 12:36:45,554 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:45,710 : INFO : Submitdata
-2023-12-10 12:36:48,980 : INFO : B4W2 : WEBTV  : Product already exists
-2023-12-10 12:36:50,325 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:50,469 : INFO : Submitdata
-2023-12-10 12:36:54,110 : INFO : B4W2 : PHON0 : Product already exists
-2023-12-10 12:36:55,782 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:36:55,955 : INFO : Submitdata
-2023-12-10 12:36:59,272 : INFO : B4W2 : PHONE : Product already exists
-2023-12-10 12:37:00,619 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:37:00,746 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:37:00,863 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:37:01,001 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:37:01,139 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:37:01,279 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:01,421 : INFO : Submitdata
-2023-12-10 12:37:04,437 : INFO : B4W2 : S.D.A. : Product already exists
-2023-12-10 12:37:05,746 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:05,874 : INFO : Submitdata
-2023-12-10 12:37:09,012 : INFO : B4W2 : RADIO : Product already exists
-2023-12-10 12:37:10,348 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:10,488 : INFO : Submitdata
-2023-12-10 12:37:13,779 : INFO : B4W2 : ALARM : Product already exists
-2023-12-10 12:37:15,182 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:15,341 : INFO : Submitdata
-2023-12-10 12:37:18,515 : INFO : B4W2 : MESSA : Product already exists
-2023-12-10 12:37:19,860 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:20,032 : INFO : Submitdata
-2023-12-10 12:37:23,490 : INFO : B4W2 : VOICE : Product already exists
-2023-12-10 12:37:25,051 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:25,235 : INFO : Submitdata
-2023-12-10 12:37:28,642 : INFO : B4W2 : WAKE : Product already exists
-2023-12-10 12:37:30,128 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:30,279 : INFO : Submitdata
-2023-12-10 12:37:33,437 : INFO : B4W2 : WAKE1 : Product already exists
-2023-12-10 12:37:33,439 : ERROR : B4W2 : CL 0-3 Product not found in Product Library
-2023-12-10 12:37:33,439 : ERROR : B4W2 : CL 3-6 Product not found in Product Library
-2023-12-10 12:37:33,439 : ERROR : B4W2 : CL 6-12  Product not found in Product Library
-2023-12-10 12:37:33,439 : ERROR : B4W2 : CL 4-6 Product not found in Product Library
-2023-12-10 12:37:34,783 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:37:34,939 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:37:35,123 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:37:35,260 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:37:35,408 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:37:35,552 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:35,696 : INFO : Submitdata
-2023-12-10 12:37:38,859 : INFO : B4W2 : NURSE : Product already exists
-2023-12-10 12:37:40,187 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:40,351 : INFO : Submitdata
-2023-12-10 12:37:43,508 : INFO : B4W2 : PKGECL : Product already exists
-2023-12-10 12:37:44,887 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:37:45,029 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:37:45,183 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:37:45,339 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:37:45,450 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:37:45,571 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:45,736 : INFO : Submitdata
-2023-12-10 12:37:48,911 : INFO : B4W2 : VALET : Product already exists
-2023-12-10 12:37:50,259 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:37:50,425 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:37:50,642 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:37:50,792 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:37:50,931 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:37:51,059 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:51,242 : INFO : Submitdata
-2023-12-10 12:37:54,488 : INFO : B4W2 : PARK1 : Product already exists
-2023-12-10 12:37:56,027 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:37:56,244 : INFO : Submitdata
-2023-12-10 12:37:59,721 : INFO : B4W2 : PARK3 : Product already exists
-2023-12-10 12:38:01,080 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:38:01,222 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:38:01,376 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:38:01,523 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:38:01,656 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:38:01,807 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:01,972 : INFO : Submitdata
-2023-12-10 12:38:05,129 : INFO : B4W2 : PARKIN : Product already exists
-2023-12-10 12:38:06,466 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:38:06,607 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:38:06,796 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:38:06,959 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:38:07,108 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:38:07,258 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:07,419 : INFO : Submitdata
-2023-12-10 12:38:10,774 : INFO : B4W2 : XPKCSI : Product already exists
-2023-12-10 12:38:12,235 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:12,388 : INFO : Submitdata
-2023-12-10 12:38:15,671 : INFO : B4W2 : WHEEL : Product already exists
-2023-12-10 12:38:17,043 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:17,197 : INFO : Submitdata
-2023-12-10 12:38:20,436 : INFO : B4W2 : BAGA : Product already exists
-2023-12-10 12:38:21,853 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:38:22,008 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:38:22,163 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:38:22,335 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:38:22,493 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:38:22,646 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:22,824 : INFO : Submitdata
-2023-12-10 12:38:26,204 : INFO : B4W2 : BLAN : Product already exists
-2023-12-10 12:38:27,624 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:38:27,813 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:38:28,052 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:38:28,273 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:38:28,502 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:38:28,671 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:28,851 : INFO : Submitdata
-2023-12-10 12:38:32,329 : INFO : B4W2 : BURE : Product already exists
-2023-12-10 12:38:33,697 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:38:33,837 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:38:34,005 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:38:34,173 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:38:34,345 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:38:34,523 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:34,705 : INFO : Submitdata
-2023-12-10 12:38:37,815 : INFO : B4W2 : BUSINA : Product already exists
-2023-12-10 12:38:39,264 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:39,429 : INFO : Submitdata
-2023-12-10 12:38:42,735 : INFO : B4W2 : BUSINE : Product already exists
-2023-12-10 12:38:44,086 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:38:44,228 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:38:44,345 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:38:44,486 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:38:44,646 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:38:44,823 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:45,001 : INFO : Submitdata
-2023-12-10 12:38:48,229 : INFO : B4W2 : CASHDI : Product already exists
-2023-12-10 12:38:49,576 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:38:49,709 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:38:49,882 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:38:50,021 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:38:50,152 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:38:50,302 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:50,460 : INFO : Submitdata
-2023-12-10 12:38:53,733 : INFO : B4W2 : COMPUT : Product already exists
-2023-12-10 12:38:55,217 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:38:55,383 : INFO : Submitdata
-2023-12-10 12:38:58,868 : INFO : B4W2 : CONC : Product already exists
-2023-12-10 12:39:00,368 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:39:00,526 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:39:00,675 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:39:00,808 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:39:00,964 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:39:01,107 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:01,272 : INFO : Submitdata
-2023-12-10 12:39:04,352 : INFO : B4W2 : COPY : Product already exists
-2023-12-10 12:39:05,644 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:05,800 : INFO : Submitdata
-2023-12-10 12:39:09,099 : INFO : B4W2 : SHOES2 : Product already exists
-2023-12-10 12:39:10,516 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:10,668 : INFO : Submitdata
-2023-12-10 12:39:14,166 : INFO : B4W2 : INTHD : Product already exists
-2023-12-10 12:39:15,616 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:39:15,816 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:39:15,981 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:39:16,148 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:39:16,315 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:39:16,481 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:16,642 : INFO : Submitdata
-2023-12-10 12:39:20,080 : INFO : B4W2 : REPASS : Product already exists
-2023-12-10 12:39:21,556 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:21,722 : INFO : Submitdata
-2023-12-10 12:39:25,330 : INFO : B4W2 : WIFI2 : Product already exists
-2023-12-10 12:39:27,043 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:27,241 : INFO : Submitdata
-2023-12-10 12:39:30,655 : INFO : B4W2 : OPENH : Product already exists
-2023-12-10 12:39:32,014 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:32,162 : INFO : Submitdata
-2023-12-10 12:39:35,397 : INFO : B4W2 : AIRCOM : Product already exists
-2023-12-10 12:39:36,789 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:36,947 : INFO : Submitdata
-2023-12-10 12:39:40,208 : INFO : B4W2 : DAYLIT : Product already exists
-2023-12-10 12:39:41,571 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:39:41,715 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:39:41,866 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:39:42,023 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:39:42,152 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:39:42,327 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:42,507 : INFO : Submitdata
-2023-12-10 12:39:45,741 : INFO : B4W2 : OVEPRO : Product already exists
-2023-12-10 12:39:47,113 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:39:47,269 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:39:47,422 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:39:47,553 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:39:47,681 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:39:47,830 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:47,975 : INFO : Submitdata
-2023-12-10 12:39:51,131 : INFO : B4W2 : PODIUM : Product already exists
-2023-12-10 12:39:52,462 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:39:52,610 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:39:52,755 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:39:52,904 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:39:53,040 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:39:53,201 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:53,438 : INFO : Submitdata
-2023-12-10 12:39:56,826 : INFO : B4W2 : SEMVID : Product already exists
-2023-12-10 12:39:58,369 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:39:58,509 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:39:58,661 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:39:58,816 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:39:58,960 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:39:59,111 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:39:59,265 : INFO : Submitdata
-2023-12-10 12:40:02,573 : INFO : B4W2 : SYNMAX : Product already exists
-2023-12-10 12:40:03,891 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 12:40:04,061 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 12:40:04,212 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 12:40:04,351 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 12:40:04,526 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 12:40:04,661 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:04,800 : INFO : Submitdata
-2023-12-10 12:40:07,952 : INFO : B4W2 : VIDCO : Product already exists
-2023-12-10 12:40:09,318 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:09,495 : INFO : Submitdata
-2023-12-10 12:40:12,791 : INFO : B4W2 : WIFI3 : Product already exists
-2023-12-10 12:40:14,207 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:14,463 : INFO : Submitdata
-2023-12-10 12:40:18,361 : INFO : B4W2 : DE : Product already exists
-2023-12-10 12:40:18,361 : ERROR : B4W2 : EN or GB Product not found in Product Library
-2023-12-10 12:40:19,881 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:20,039 : INFO : Submitdata
-2023-12-10 12:40:23,108 : INFO : B4W2 : FR : Product already exists
-2023-12-10 12:40:23,108 : ERROR : B4W2 : OTHER Product not found in Product Library
-2023-12-10 12:40:24,417 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:24,549 : INFO : Submitdata
-2023-12-10 12:40:27,651 : INFO : B4W2 : AIRCOL : Product already exists
-2023-12-10 12:40:28,974 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:29,141 : INFO : Submitdata
-2023-12-10 12:40:32,434 : INFO : B4W2 : DOORS : Product already exists
-2023-12-10 12:40:33,807 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:33,972 : INFO : Submitdata
-2023-12-10 12:40:37,356 : INFO : B4W2 : EMER1 : Product already exists
-2023-12-10 12:40:38,740 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 12:40:38,912 : INFO : Submitdata
-2023-12-10 12:40:42,093 : INFO : B4W2 : TURN : Product already exists
-2023-12-10 12:40:42,093 : WARNING : Please Manually Check this product: ['TVCAN', 'CL 0-3', 'CL 3-6', 'CL 6-12 ', 'CL 4-6', 'EN or GB', 'OTHER']
-2023-12-10 12:52:15,832 : INFO : B4W2 : Content Book Loaded
-2023-12-10 12:52:15,832 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 12:52:28,055 : INFO : Login Success User: NANSAN
-2023-12-10 12:52:40,792 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 13:12:06,362 : INFO : B4W2 : Content Book Loaded
-2023-12-10 13:12:06,362 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 13:12:15,784 : INFO : Login Success User: NANSAN
-2023-12-10 13:12:25,513 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 13:23:48,179 : INFO : B4W2 : Content Book Loaded
-2023-12-10 13:23:48,180 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 13:23:58,256 : INFO : Login Success User: NANSAN
-2023-12-10 13:24:41,304 : INFO : Restaurants
-2023-12-10 13:24:44,019 : INFO : hotelRestaurant.rank : 1
-2023-12-10 13:24:44,121 : INFO : hotelRestaurant.name : AMOUN
-2023-12-10 13:24:44,225 : INFO : hotelRestaurant.horaires : 06:30-23:30
-2023-12-10 13:24:44,321 : INFO : hotelRestaurant.cookType.code : INTERN
-2023-12-10 13:49:33,200 : INFO : B4W2 : Content Book Loaded
-2023-12-10 13:49:33,200 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 13:49:42,379 : INFO : Login Success User: NANSAN
-2023-12-10 13:49:50,711 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 13:50:05,611 : INFO : Restaurants - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen
-2023-12-10 13:50:08,128 : INFO : hotelRestaurant.rank : 1
-2023-12-10 13:50:08,229 : INFO : hotelRestaurant.name : AMOUN
-2023-12-10 13:50:08,363 : INFO : hotelRestaurant.horaires : 06:30-23:30
-2023-12-10 13:50:08,479 : INFO : hotelRestaurant.cookType.code : INTERN
-2023-12-10 13:50:08,577 : INFO : hotelRestaurant.mondayMidday : checkbox.checked
-2023-12-10 13:50:08,694 : INFO : hotelRestaurant.tuesdayMidday : checkbox.checked
-2023-12-10 13:50:08,793 : INFO : hotelRestaurant.wednesdayMidday : checkbox.checked
-2023-12-10 13:50:08,893 : INFO : hotelRestaurant.thursdayMidday : checkbox.checked
-2023-12-10 13:50:08,993 : INFO : hotelRestaurant.fridayMidday : checkbox.checked
-2023-12-10 13:50:09,094 : INFO : hotelRestaurant.saturdayMidday : checkbox.checked
-2023-12-10 13:50:09,211 : INFO : hotelRestaurant.sundayMidday : checkbox.checked
-2023-12-10 13:50:09,306 : INFO : hotelRestaurant.mondayEvening : checkbox.checked
-2023-12-10 13:50:09,428 : INFO : hotelRestaurant.tuesdayEvening : checkbox.checked
-2023-12-10 13:50:09,524 : INFO : hotelRestaurant.wednesdayEvening : checkbox.checked
-2023-12-10 13:50:09,627 : INFO : hotelRestaurant.thursdayEvening : checkbox.checked
-2023-12-10 13:50:09,745 : INFO : hotelRestaurant.fridayEvening : checkbox.checked
-2023-12-10 13:50:09,861 : INFO : hotelRestaurant.saturdayEvening : checkbox.checked
-2023-12-10 13:50:09,944 : INFO : hotelRestaurant.sundayEvening : checkbox.checked
-2023-12-10 13:50:10,042 : INFO : hotelRestaurant.cash : checkbox.checked
-2023-12-10 13:50:10,143 : INFO : hotelRestaurant.creditCard : checkbox.checked
-2023-12-10 13:50:10,241 : INFO : hotelRestaurant.check : checkbox.checked
-2023-12-10 13:50:10,345 : INFO : hotelRestaurant.othersLocalPaymentOptions : checkbox.checked
-2023-12-10 13:50:10,442 : INFO : hotelRestaurant.maximumSeating : 222
-2023-12-10 13:50:10,524 : INFO : hotelRestaurant.fullBoard : checkbox.checked
-2023-12-10 13:50:10,624 : INFO : hotelRestaurant.halfBoard : checkbox.checked
-2023-12-10 13:50:10,723 : INFO : hotelRestaurant.wheelChairAccess : checkbox.checked
-2023-12-10 13:50:10,828 : INFO : hotelRestaurant.airConditionning : checkbox.checked
-2023-12-10 13:50:10,924 : INFO : hotelRestaurant.nonSmoking : checkbox.checked
-2023-12-10 13:50:11,023 : INFO : hotelRestaurant.themeRestaurant : checkbox.checked
-2023-12-10 13:50:11,122 : INFO : hotelRestaurant.terrasse : checkbox.checked
-2023-12-10 13:50:11,225 : INFO : hotelRestaurant.childMenu : checkbox.checked
-2023-12-10 13:50:11,323 : INFO : hotelRestaurant.vegetarianMenu : checkbox.checked
-2023-12-10 13:50:11,408 : INFO : hotelRestaurant.halalMenu : checkbox.checked
-2023-12-10 13:50:11,510 : INFO : hotelRestaurant.brunchMenu : checkbox.checked
-2023-12-10 13:50:11,607 : INFO : hotelRestaurant.glutenFreeMenu : checkbox.checked
-2023-12-10 13:50:13,610 : INFO : B4W2 : RT : hotel.restaurant.error.alreadyExistsException
-2023-12-10 13:50:15,027 : INFO : hotelRestaurant.rank : 2
-2023-12-10 13:50:15,123 : INFO : hotelRestaurant.name : Dates & Co
-2023-12-10 13:50:15,243 : INFO : hotelRestaurant.horaires : 07:00-00:00
-2023-12-10 13:50:15,343 : INFO : hotelRestaurant.cookType.code : CAFE
-2023-12-10 13:50:15,460 : INFO : hotelRestaurant.mondayMidday : checkbox.checked
-2023-12-10 13:50:15,559 : INFO : hotelRestaurant.tuesdayMidday : checkbox.checked
-2023-12-10 13:50:15,676 : INFO : hotelRestaurant.wednesdayMidday : checkbox.checked
-2023-12-10 13:50:15,760 : INFO : hotelRestaurant.thursdayMidday : checkbox.checked
-2023-12-10 13:50:15,857 : INFO : hotelRestaurant.fridayMidday : checkbox.checked
-2023-12-10 13:50:15,960 : INFO : hotelRestaurant.saturdayMidday : checkbox.checked
-2023-12-10 13:50:16,057 : INFO : hotelRestaurant.sundayMidday : checkbox.checked
-2023-12-10 13:50:16,180 : INFO : hotelRestaurant.mondayEvening : checkbox.checked
-2023-12-10 13:50:16,277 : INFO : hotelRestaurant.tuesdayEvening : checkbox.checked
-2023-12-10 13:50:16,375 : INFO : hotelRestaurant.wednesdayEvening : checkbox.checked
-2023-12-10 13:50:16,495 : INFO : hotelRestaurant.thursdayEvening : checkbox.checked
-2023-12-10 13:50:16,610 : INFO : hotelRestaurant.fridayEvening : checkbox.checked
-2023-12-10 13:50:16,727 : INFO : hotelRestaurant.saturdayEvening : checkbox.checked
-2023-12-10 13:50:16,844 : INFO : hotelRestaurant.sundayEvening : checkbox.checked
-2023-12-10 13:50:16,926 : INFO : hotelRestaurant.cash : checkbox.checked
-2023-12-10 13:50:17,022 : INFO : hotelRestaurant.creditCard : checkbox.checked
-2023-12-10 13:50:17,144 : INFO : hotelRestaurant.check : checkbox.checked
-2023-12-10 13:50:17,227 : INFO : hotelRestaurant.othersLocalPaymentOptions : checkbox.checked
-2023-12-10 13:50:17,344 : INFO : hotelRestaurant.maximumSeating : 32
-2023-12-10 13:50:17,443 : INFO : hotelRestaurant.fullBoard : checkbox.checked
-2023-12-10 13:50:17,560 : INFO : hotelRestaurant.wheelChairAccess : checkbox.checked
-2023-12-10 13:50:17,658 : INFO : hotelRestaurant.airConditionning : checkbox.checked
-2023-12-10 13:50:17,758 : INFO : hotelRestaurant.nonSmoking : checkbox.checked
-2023-12-10 13:50:17,861 : INFO : hotelRestaurant.childMenu : checkbox.checked
-2023-12-10 13:50:17,976 : INFO : hotelRestaurant.saltFreeMenu : checkbox.checked
-2023-12-10 13:50:18,095 : INFO : hotelRestaurant.delightMenu : checkbox.checked
-2023-12-10 13:50:18,192 : INFO : hotelRestaurant.vegetarianMenu : checkbox.checked
-2023-12-10 13:50:18,310 : INFO : hotelRestaurant.halalMenu : checkbox.checked
-2023-12-10 13:50:18,459 : INFO : hotelRestaurant.glutenFreeMenu : checkbox.checked
-2023-12-10 13:50:20,409 : INFO : B4W2 : RT : hotel.restaurant.error.alreadyExistsException
-2023-12-10 13:50:21,793 : INFO : hotelRestaurant.rank : 3
-2023-12-10 13:50:21,910 : INFO : hotelRestaurant.name : Butcher House
-2023-12-10 13:50:22,007 : INFO : hotelRestaurant.horaires : 12:00-00:00
-2023-12-10 13:50:22,127 : INFO : hotelRestaurant.cookType.code : THEMA
-2023-12-10 13:50:22,223 : INFO : hotelRestaurant.mondayMidday : checkbox.checked
-2023-12-10 13:50:22,326 : INFO : hotelRestaurant.tuesdayMidday : checkbox.checked
-2023-12-10 13:50:22,425 : INFO : hotelRestaurant.wednesdayMidday : checkbox.checked
-2023-12-10 13:50:22,506 : INFO : hotelRestaurant.thursdayMidday : checkbox.checked
-2023-12-10 13:50:22,627 : INFO : hotelRestaurant.fridayMidday : checkbox.checked
-2023-12-10 13:50:22,723 : INFO : hotelRestaurant.saturdayMidday : checkbox.checked
-2023-12-10 13:50:22,827 : INFO : hotelRestaurant.sundayMidday : checkbox.checked
-2023-12-10 13:50:22,926 : INFO : hotelRestaurant.mondayEvening : checkbox.checked
-2023-12-10 13:50:23,024 : INFO : hotelRestaurant.tuesdayEvening : checkbox.checked
-2023-12-10 13:50:23,127 : INFO : hotelRestaurant.wednesdayEvening : checkbox.checked
-2023-12-10 13:50:23,222 : INFO : hotelRestaurant.thursdayEvening : checkbox.checked
-2023-12-10 13:50:23,324 : INFO : hotelRestaurant.fridayEvening : checkbox.checked
-2023-12-10 13:50:23,443 : INFO : hotelRestaurant.saturdayEvening : checkbox.checked
-2023-12-10 13:50:23,577 : INFO : hotelRestaurant.sundayEvening : checkbox.checked
-2023-12-10 13:50:23,694 : INFO : hotelRestaurant.cash : checkbox.checked
-2023-12-10 13:50:23,811 : INFO : hotelRestaurant.creditCard : checkbox.checked
-2023-12-10 13:50:23,926 : INFO : hotelRestaurant.check : checkbox.checked
-2023-12-10 13:50:24,044 : INFO : hotelRestaurant.othersLocalPaymentOptions : checkbox.checked
-2023-12-10 13:50:24,160 : INFO : hotelRestaurant.maximumSeating : 85
-2023-12-10 13:50:24,261 : INFO : hotelRestaurant.wheelChairAccess : checkbox.checked
-2023-12-10 13:50:24,376 : INFO : hotelRestaurant.airConditionning : checkbox.checked
-2023-12-10 13:50:24,491 : INFO : hotelRestaurant.nonSmoking : checkbox.checked
-2023-12-10 13:50:24,611 : INFO : hotelRestaurant.terrasse : checkbox.checked
-2023-12-10 13:50:24,706 : INFO : hotelRestaurant.halalMenu : checkbox.checked
-2023-12-10 13:50:26,576 : INFO : B4W2 : RT : hotel.restaurant.error.alreadyExistsException
-2023-12-10 13:50:27,944 : INFO : hotelRestaurant.rank : 4
-2023-12-10 13:50:28,060 : INFO : hotelRestaurant.name : Club Lounge
-2023-12-10 13:50:28,160 : INFO : hotelRestaurant.horaires : 07:00-00:00
-2023-12-10 13:50:28,258 : INFO : hotelRestaurant.cookType.code : INTERN
-2023-12-10 13:50:28,359 : INFO : hotelRestaurant.mondayMidday : checkbox.checked
-2023-12-10 13:50:28,510 : INFO : hotelRestaurant.tuesdayMidday : checkbox.checked
-2023-12-10 13:50:28,644 : INFO : hotelRestaurant.wednesdayMidday : checkbox.checked
-2023-12-10 13:50:28,761 : INFO : hotelRestaurant.thursdayMidday : checkbox.checked
-2023-12-10 13:50:28,859 : INFO : hotelRestaurant.fridayMidday : checkbox.checked
-2023-12-10 13:50:28,961 : INFO : hotelRestaurant.saturdayMidday : checkbox.checked
-2023-12-10 13:50:29,076 : INFO : hotelRestaurant.sundayMidday : checkbox.checked
-2023-12-10 13:50:29,212 : INFO : hotelRestaurant.mondayEvening : checkbox.checked
-2023-12-10 13:50:29,291 : INFO : hotelRestaurant.tuesdayEvening : checkbox.checked
-2023-12-10 13:50:29,390 : INFO : hotelRestaurant.wednesdayEvening : checkbox.checked
-2023-12-10 13:50:29,494 : INFO : hotelRestaurant.thursdayEvening : checkbox.checked
-2023-12-10 13:50:29,593 : INFO : hotelRestaurant.fridayEvening : checkbox.checked
-2023-12-10 13:50:29,711 : INFO : hotelRestaurant.saturdayEvening : checkbox.checked
-2023-12-10 13:50:29,806 : INFO : hotelRestaurant.sundayEvening : checkbox.checked
-2023-12-10 13:50:29,892 : INFO : hotelRestaurant.cash : checkbox.checked
-2023-12-10 13:50:29,989 : INFO : hotelRestaurant.creditCard : checkbox.checked
-2023-12-10 13:50:30,089 : INFO : hotelRestaurant.check : checkbox.checked
-2023-12-10 13:50:30,189 : INFO : hotelRestaurant.othersLocalPaymentOptions : checkbox.checked
-2023-12-10 13:50:30,309 : INFO : hotelRestaurant.maximumSeating : 50
-2023-12-10 13:50:30,426 : INFO : hotelRestaurant.wheelChairAccess : checkbox.checked
-2023-12-10 13:50:30,543 : INFO : hotelRestaurant.airConditionning : checkbox.checked
-2023-12-10 13:50:30,623 : INFO : hotelRestaurant.nonSmoking : checkbox.checked
-2023-12-10 13:50:30,725 : INFO : hotelRestaurant.childMenu : checkbox.checked
-2023-12-10 13:50:30,824 : INFO : hotelRestaurant.saltFreeMenu : checkbox.checked
-2023-12-10 13:50:30,944 : INFO : hotelRestaurant.delightMenu : checkbox.checked
-2023-12-10 13:50:31,026 : INFO : hotelRestaurant.vegetarianMenu : checkbox.checked
-2023-12-10 13:50:31,123 : INFO : hotelRestaurant.halalMenu : checkbox.checked
-2023-12-10 13:50:31,223 : INFO : hotelRestaurant.glutenFreeMenu : checkbox.checked
-2023-12-10 13:50:33,226 : INFO : B4W2 : RT : hotel.restaurant.error.alreadyExistsException
-2023-12-10 18:08:32,311 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:08:32,322 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:08:42,635 : INFO : Login Success User: NANSAN
-2023-12-10 18:08:51,660 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:23:11,535 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:23:11,535 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:23:21,173 : INFO : Login Success User: NANSAN
-2023-12-10 18:23:30,249 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:25:23,486 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:25:23,497 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:25:32,107 : INFO : Login Success User: NANSAN
-2023-12-10 18:25:41,095 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:29:12,529 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:29:12,529 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:29:21,626 : INFO : Login Success User: NANSAN
-2023-12-10 18:29:30,661 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:30:48,015 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:30:48,025 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:30:56,656 : INFO : Login Success User: NANSAN
-2023-12-10 18:31:06,260 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:31:22,057 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-10 18:32:15,075 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:32:15,079 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:32:25,315 : INFO : Login Success User: NANSAN
-2023-12-10 18:32:34,426 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:32:45,305 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-10 18:33:34,316 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:33:34,332 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:33:43,421 : INFO : Login Success User: NANSAN
-2023-12-10 18:33:52,319 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:34:06,243 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-10 18:34:08,304 : INFO : hotelIp.name : OPERA HOUSE
-2023-12-10 18:34:08,521 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:08,622 : INFO : hotelIp.carTime : 10
-2023-12-10 18:34:08,722 : INFO : hotelIp.orientation : NE
-2023-12-10 18:34:08,837 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:10,526 : INFO : B4W2 : OPERA HOUSE : Surrounding attraction already exists
-2023-12-10 18:34:11,679 : INFO : hotelIp.name : SOUQ MUTTRAH
-2023-12-10 18:34:11,900 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:11,998 : INFO : hotelIp.carTime : 16
-2023-12-10 18:34:12,097 : INFO : hotelIp.orientation : E
-2023-12-10 18:34:12,214 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:13,843 : INFO : B4W2 : SOUQ MUTTRAH : Surrounding attraction already exists
-2023-12-10 18:34:14,968 : INFO : hotelIp.name : MUSEUM
-2023-12-10 18:34:15,183 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:15,279 : INFO : hotelIp.carTime : 22
-2023-12-10 18:34:15,380 : INFO : hotelIp.orientation : SE
-2023-12-10 18:34:15,499 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:17,108 : INFO : B4W2 : MUSEUM : Surrounding attraction already exists
-2023-12-10 18:34:18,229 : INFO : hotelIp.name : ALAM PALACE MUSCAT
-2023-12-10 18:34:18,440 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:18,548 : INFO : hotelIp.carTime : 22
-2023-12-10 18:34:18,648 : INFO : hotelIp.orientation : E
-2023-12-10 18:34:18,765 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:20,379 : INFO : B4W2 : ALAM PALACE MUSCAT : Surrounding attraction already exists
-2023-12-10 18:34:21,525 : INFO : hotelIp.name : GRAND MOSQUE
-2023-12-10 18:34:21,749 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:21,864 : INFO : hotelIp.carTime : 5
-2023-12-10 18:34:21,962 : INFO : hotelIp.orientation : SE
-2023-12-10 18:34:22,049 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:23,564 : INFO : B4W2 : GRAND MOSQUE : Surrounding attraction 'COMP' has been added
-2023-12-10 18:34:24,692 : INFO : hotelIp.name : NAKAHA HOT SPRING 
-2023-12-10 18:34:24,900 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:24,995 : INFO : hotelIp.carTime : 60
-2023-12-10 18:34:25,098 : INFO : hotelIp.orientation : SW
-2023-12-10 18:34:25,195 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:26,797 : INFO : B4W2 : NAKAHA HOT SPRING  : Surrounding attraction already exists
-2023-12-10 18:34:27,921 : INFO : hotelIp.name : SUR WADI
-2023-12-10 18:34:28,124 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:28,230 : INFO : hotelIp.carTime : 25
-2023-12-10 18:34:28,329 : INFO : hotelIp.orientation : E
-2023-12-10 18:34:28,429 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:30,106 : INFO : B4W2 : SUR WADI : Surrounding attraction already exists
-2023-12-10 18:34:31,245 : INFO : hotelIp.name : OMAN CONVENTION CEN
-2023-12-10 18:34:31,448 : INFO : hotelIp.walkingTime : 99
-2023-12-10 18:34:31,532 : INFO : hotelIp.carTime : 20
-2023-12-10 18:34:31,629 : INFO : hotelIp.orientation : SW
-2023-12-10 18:34:31,729 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-10 18:34:33,330 : INFO : B4W2 : OMAN CONVENTION CEN : Surrounding attraction already exists
-2023-12-10 18:36:02,981 : INFO : Bars - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen
-2023-12-10 18:36:05,019 : INFO : hotelBar.name : The Watchtower
-2023-12-10 18:36:05,135 : INFO : hotelBar.openingHours : 12:00-01:00
-2023-12-10 18:36:05,244 : INFO : hotelBar.maxSeats : 126
-2023-12-10 18:36:05,343 : INFO : hotelBar.lightMeal : checkbox.checked
-2023-12-10 18:36:05,442 : INFO : hotelBar.musicalAnimation : checkbox.checked
-2023-12-10 18:36:05,526 : INFO : hotelBar.happyHour : checkbox.checked
-2023-12-10 18:36:05,626 : INFO : hotelBar.mondayMidday : checkbox.checked
-2023-12-10 18:36:05,733 : INFO : hotelBar.tuesdayMidday : checkbox.checked
-2023-12-10 18:36:05,825 : INFO : hotelBar.wednesdayMidday : checkbox.checked
-2023-12-10 18:36:05,941 : INFO : hotelBar.thursdayMidday : checkbox.checked
-2023-12-10 18:36:06,057 : INFO : hotelBar.fridayMidday : checkbox.checked
-2023-12-10 18:36:06,159 : INFO : hotelBar.saturdayMidday : checkbox.checked
-2023-12-10 18:36:06,277 : INFO : hotelBar.sundayMidday : checkbox.checked
-2023-12-10 18:36:06,421 : INFO : hotelBar.mondayEvening : checkbox.checked
-2023-12-10 18:36:06,541 : INFO : hotelBar.tuesdayEvening : checkbox.checked
-2023-12-10 18:36:06,643 : INFO : hotelBar.wednesdayEvening : checkbox.checked
-2023-12-10 18:36:06,759 : INFO : hotelBar.thursdayEvening : checkbox.checked
-2023-12-10 18:36:06,877 : INFO : hotelBar.fridayEvening : checkbox.checked
-2023-12-10 18:36:06,993 : INFO : hotelBar.saturdayEvening : checkbox.checked
-2023-12-10 18:36:07,107 : INFO : hotelBar.sundayEvening : checkbox.checked
-2023-12-10 18:36:07,208 : INFO : hotelBar.rank : 1
-2023-12-10 18:36:08,886 : INFO : B4W2 : BAR : Bar already exists
-2023-12-10 18:37:20,326 : INFO : Lounges - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen
-2023-12-10 18:38:53,165 : ERROR : B999 : Content Book not found
-2023-12-10 18:39:01,003 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:39:09,785 : INFO : Login Success User: NANSAN
-2023-12-10 18:39:18,700 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:45:44,971 : ERROR : B999 : Content Book not found
-2023-12-10 18:45:57,962 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:45:57,962 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:46:07,123 : INFO : Login Success User: NANSAN
-2023-12-10 18:46:15,244 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:52:44,078 : ERROR : B666 : Content Book not found
-2023-12-10 18:52:56,855 : INFO : B4W2 : Content Book Loaded
-2023-12-10 18:52:56,855 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-10 18:53:06,009 : INFO : Login Success User: NANSAN
-2023-12-10 18:53:14,556 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-10 18:53:52,321 : INFO : Lounges - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen
-2023-12-10 18:53:54,835 : INFO : hotelLounge.name : Al Falaj Ballroom
-2023-12-10 18:53:54,955 : INFO : hotelLounge.surface : 0
-2023-12-10 18:53:55,068 : INFO : hotelLounge.maxNumberPax : 450
-2023-12-10 18:53:55,170 : INFO : hotelLounge.ceilingHeight : 0
-2023-12-10 18:53:55,268 : INFO : hotelLounge.floorCover : Carpet
-2023-12-10 18:53:55,368 : INFO : hotelLounge.nbPaxBoardRoom : 0
-2023-12-10 18:53:55,466 : INFO : hotelLounge.nbPaxInU : 0
-2023-12-10 18:53:55,569 : INFO : hotelLounge.nbPaxClassRoom : 216
-2023-12-10 18:53:55,667 : INFO : hotelLounge.nbPaxInV : 0
-2023-12-10 18:53:55,770 : INFO : hotelLounge.nbPaxTheater : 0
-2023-12-10 18:53:55,870 : INFO : hotelLounge.nbPaxRoundTables : 450
-2023-12-10 18:53:55,967 : INFO : hotelLounge.nbPaxRoundTablesOff : 400
-2023-12-10 18:53:56,053 : INFO : hotelLounge.nbPaxRoundTablesDc : 336
-2023-12-10 18:53:56,154 : INFO : hotelLounge.nbPaxRoundTablesOffDc : 312
-2023-12-10 18:53:56,251 : INFO : hotelLounge.buffet : checkbox.checked
-2023-12-10 18:53:56,369 : INFO : hotelLounge.buffetDc : checkbox.checked
-2023-12-10 18:53:56,496 : INFO : hotelLounge.cocktail : checkbox.checked
-2023-12-10 18:53:56,603 : INFO : hotelLounge.exposition : checkbox.checked
-2023-12-10 18:53:58,566 : INFO : B4W2 : Al Falaj Ballroom : Lounge already existing
-2023-12-10 18:53:59,888 : INFO : hotelLounge.name : Al Batinah Meeting Room
-2023-12-10 18:54:00,004 : INFO : hotelLounge.surface : 0
-2023-12-10 18:54:00,123 : INFO : hotelLounge.maxNumberPax : 24
-2023-12-10 18:54:00,237 : INFO : hotelLounge.ceilingHeight : 0
-2023-12-10 18:54:00,334 : INFO : hotelLounge.floorCover : Carpet
-2023-12-10 18:54:00,418 : INFO : hotelLounge.nbPaxBoardRoom : 24
-2023-12-10 18:54:00,517 : INFO : hotelLounge.nbPaxInU : 22
-2023-12-10 18:54:00,602 : INFO : hotelLounge.nbPaxClassRoom : 40
-2023-12-10 18:54:00,701 : INFO : hotelLounge.nbPaxInV : 0
-2023-12-10 18:54:00,800 : INFO : hotelLounge.nbPaxTheater : 0
-2023-12-10 18:54:00,927 : INFO : hotelLounge.nbPaxRoundTables : 0
-2023-12-10 18:54:01,035 : INFO : hotelLounge.nbPaxRoundTablesOff : 0
-2023-12-10 18:54:01,120 : INFO : hotelLounge.nbPaxRoundTablesDc : 0
-2023-12-10 18:54:01,216 : INFO : hotelLounge.nbPaxRoundTablesOffDc : 0
-2023-12-10 18:54:03,087 : INFO : B4W2 : Al Batinah Meeting Room : Lounge already existing
-2023-12-10 18:54:04,448 : INFO : hotelLounge.name : Al Dakhiliyah Meeting Room
-2023-12-10 18:54:04,549 : INFO : hotelLounge.surface : 0
-2023-12-10 18:54:04,651 : INFO : hotelLounge.maxNumberPax : 24
-2023-12-10 18:54:04,749 : INFO : hotelLounge.ceilingHeight : 0
-2023-12-10 18:54:04,849 : INFO : hotelLounge.floorCover : Carpet
-2023-12-10 18:54:04,952 : INFO : hotelLounge.nbPaxBoardRoom : 24
-2023-12-10 18:54:05,050 : INFO : hotelLounge.nbPaxInU : 22
-2023-12-10 18:54:05,152 : INFO : hotelLounge.nbPaxClassRoom : 40
-2023-12-10 18:54:05,235 : INFO : hotelLounge.nbPaxInV : 0
-2023-12-10 18:54:05,334 : INFO : hotelLounge.nbPaxTheater : 0
-2023-12-10 18:54:05,437 : INFO : hotelLounge.nbPaxRoundTables : 0
-2023-12-10 18:54:05,518 : INFO : hotelLounge.nbPaxRoundTablesOff : 0
-2023-12-10 18:54:05,617 : INFO : hotelLounge.nbPaxRoundTablesDc : 0
-2023-12-10 18:54:05,703 : INFO : hotelLounge.nbPaxRoundTablesOffDc : 0
-2023-12-10 18:54:07,612 : INFO : B4W2 : Al Dakhiliyah Meeting Room : Lounge already existing
-2023-12-10 18:54:08,978 : INFO : hotelLounge.name : Al Sharqiyah Meeting Room
-2023-12-10 18:54:09,085 : INFO : hotelLounge.surface : 0
-2023-12-10 18:54:09,183 : INFO : hotelLounge.maxNumberPax : 20
-2023-12-10 18:54:09,303 : INFO : hotelLounge.ceilingHeight : 0
-2023-12-10 18:54:09,402 : INFO : hotelLounge.floorCover : Carpet
-2023-12-10 18:54:09,502 : INFO : hotelLounge.nbPaxBoardRoom : 20
-2023-12-10 18:54:09,599 : INFO : hotelLounge.nbPaxInU : 18
-2023-12-10 18:54:09,699 : INFO : hotelLounge.nbPaxClassRoom : 36
-2023-12-10 18:54:09,800 : INFO : hotelLounge.nbPaxInV : 0
-2023-12-10 18:54:09,900 : INFO : hotelLounge.nbPaxTheater : 0
-2023-12-10 18:54:10,002 : INFO : hotelLounge.nbPaxRoundTables : 0
-2023-12-10 18:54:10,100 : INFO : hotelLounge.nbPaxRoundTablesOff : 0
-2023-12-10 18:54:10,186 : INFO : hotelLounge.nbPaxRoundTablesDc : 0
-2023-12-10 18:54:10,285 : INFO : hotelLounge.nbPaxRoundTablesOffDc : 0
-2023-12-10 18:54:12,141 : INFO : B4W2 : Al Sharqiyah Meeting Room : Lounge already existing
-2023-12-10 18:54:50,436 : INFO : Products - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -   
-2023-12-10 18:54:52,996 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:54:53,082 : INFO : Submitdata
-2023-12-10 18:54:56,410 : INFO : B4W2 : POOL : Product already exists
-2023-12-10 18:54:57,826 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 18:54:57,898 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 18:54:58,004 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 18:54:58,101 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 18:54:58,198 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 18:54:58,282 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:54:58,365 : INFO : Submitdata
-2023-12-10 18:55:01,727 : INFO : B4W2 : POOL1 : Product already exists
-2023-12-10 18:55:03,075 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 18:55:03,183 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 18:55:03,271 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 18:55:03,367 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 18:55:03,449 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 18:55:03,533 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:55:03,613 : INFO : Submitdata
-2023-12-10 18:55:06,883 : INFO : B4W2 : FITE : Product already exists
-2023-12-10 18:55:08,187 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 18:55:08,282 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 18:55:08,372 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 18:55:08,450 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 18:55:08,532 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 18:55:08,599 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:55:08,681 : INFO : Submitdata
-2023-12-10 18:55:11,973 : INFO : B4W2 : JACUZZ : Product already exists
-2023-12-10 18:55:13,319 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 18:55:13,413 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 18:55:13,499 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 18:55:13,581 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 18:55:13,664 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 18:55:13,747 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:55:13,827 : INFO : Submitdata
-2023-12-10 18:55:17,129 : INFO : B4W2 : MASS : Product already exists
-2023-12-10 18:55:18,493 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 18:55:18,565 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 18:55:18,662 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 18:55:18,753 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 18:55:18,848 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 18:55:18,931 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:55:19,028 : INFO : Submitdata
-2023-12-10 18:55:22,327 : INFO : B4W2 : SAUN : Product already exists
-2023-12-10 18:55:23,682 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 18:55:23,780 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 18:55:23,865 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 18:55:23,953 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 18:55:24,064 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 18:55:24,147 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:55:24,229 : INFO : Submitdata
-2023-12-10 18:55:27,552 : INFO : B4W2 : BIKRAC : Product already exists
-2023-12-10 18:55:28,953 : INFO : hotelProduct.paying : checkbox.checked
-2023-12-10 18:55:29,052 : INFO : hotelProduct.maxOccupancyTotal : 1
-2023-12-10 18:55:29,133 : INFO : hotelProduct.maxQtyInRoom : 1
-2023-12-10 18:55:29,237 : INFO : hotelProduct.orderInResaScreen : 99
-2023-12-10 18:55:29,355 : INFO : hotelProduct.maxOccupancyAdult : 1
-2023-12-10 18:55:29,451 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
-2023-12-10 18:55:29,552 : INFO : Submitdata
-2023-12-10 18:55:32,900 : INFO : B4W2 : DARTS : Product already exists
-2023-12-11 00:48:17,241 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 00:52:02,304 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 00:54:24,250 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 00:54:34,278 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 00:54:44,299 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 00:54:54,323 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 00:55:04,359 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 00:55:14,388 : ERROR : Connection to DataWeb fail, Check User connection
-2023-12-11 01:01:03,070 : ERROR : 2134 : Content Book not found
-2023-12-11 01:01:07,986 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-11 01:03:57,925 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:03:57,925 : INFO : Credentials loaded from .env file. Username: NANSAN
-2023-12-11 01:04:14,515 : INFO : Login Success User: NANSAN
-2023-12-11 01:11:14,155 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:11:14,158 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:11:27,921 : INFO : Login Success User: NANSAN
-2023-12-11 01:11:39,274 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-11 01:12:04,508 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-11 01:18:44,234 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:18:44,244 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:18:58,950 : INFO : Login Success User: NANSAN
-2023-12-11 01:19:11,622 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-11 01:19:27,573 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-11 01:24:58,552 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:24:58,568 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:25:11,407 : INFO : Login Success User: NANSAN
-2023-12-11 01:25:23,141 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-11 01:27:25,395 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:27:25,395 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:27:37,560 : INFO : Login Success User: NANSAN
-2023-12-11 01:27:50,085 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-11 01:29:43,215 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:29:58,800 : INFO : Login Success User: NANSAN
-2023-12-11 01:30:12,706 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-11 01:36:49,692 : ERROR : DFAE : Content Book not found
-2023-12-11 01:37:03,470 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:37:03,470 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:37:19,828 : INFO : Login Success User: NANSAN
-2023-12-11 01:38:16,032 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-11 01:41:56,942 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:41:56,950 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:42:09,913 : INFO : Login Success User: NANSAN
-2023-12-11 01:42:21,320 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-11 01:42:45,689 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-11 01:44:52,033 : INFO : B4W2 : Content Book Loaded
-2023-12-11 01:44:52,041 : INFO : Credentials loaded Username: NANSAN
-2023-12-11 01:45:04,316 : INFO : Login Success User: NANSAN
-2023-12-11 01:45:15,527 : INFO : Selected Hotel : B4W2 - MOVENPICK HOTEL GHALA
-2023-12-11 01:45:33,544 : INFO : Surrounding Attractions - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-11 01:45:36,302 : INFO : hotelIp.name : MCT
-2023-12-11 01:45:36,570 : INFO : hotelIp.shuttle.onCall : checkbox.checked
-2023-12-11 01:45:36,840 : INFO : hotelIp.walkingTime : 100
-2023-12-11 01:45:36,989 : INFO : hotelIp.carTime : 12
-2023-12-11 01:45:37,112 : INFO : hotelIp.orientation : NE
-2023-12-11 01:45:37,240 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:45:39,625 : INFO : B4W2 : AER1 : Surrounding attraction already exists
-2023-12-11 01:45:41,115 : INFO : hotelIp.name : MUSCAT INTERNATIONA
-2023-12-11 01:45:41,442 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
-2023-12-11 01:45:41,754 : INFO : hotelIp.walkingTime : 100
-2023-12-11 01:45:41,908 : INFO : hotelIp.carTime : 12
-2023-12-11 01:45:42,052 : INFO : hotelIp.orientation : NE
-2023-12-11 01:45:42,192 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:45:44,584 : INFO : B4W2 : APT1 : Surrounding attraction already exists
-2023-12-11 01:45:46,202 : INFO : hotelIp.name : MUSCAT 
-2023-12-11 01:45:46,521 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
-2023-12-11 01:45:46,812 : INFO : hotelIp.walkingTime : 120
-2023-12-11 01:45:46,952 : INFO : hotelIp.carTime : 13
-2023-12-11 01:45:47,101 : INFO : hotelIp.orientation : NE
-2023-12-11 01:45:47,238 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:45:49,601 : INFO : B4W2 : PCN : Surrounding attraction already exists
-2023-12-11 01:45:51,148 : INFO : hotelIp.name : MCT
-2023-12-11 01:45:51,459 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
-2023-12-11 01:45:51,731 : INFO : hotelIp.walkingTime : 120
-2023-12-11 01:45:51,891 : INFO : hotelIp.carTime : 13
-2023-12-11 01:45:52,034 : INFO : hotelIp.orientation : NE
-2023-12-11 01:45:52,180 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:45:54,591 : INFO : B4W2 : PCC : Surrounding attraction already exists
-2023-12-11 01:45:56,162 : INFO : hotelIp.name : MUSCAT
-2023-12-11 01:45:56,438 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
-2023-12-11 01:45:56,683 : INFO : hotelIp.walkingTime : 120
-2023-12-11 01:45:56,816 : INFO : hotelIp.carTime : 13
-2023-12-11 01:45:56,950 : INFO : hotelIp.orientation : NE
-2023-12-11 01:45:57,122 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:45:59,504 : INFO : B4W2 : NCN : Surrounding attraction already exists
-2023-12-11 01:46:01,068 : INFO : hotelIp.name : MCT
-2023-12-11 01:46:01,404 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
-2023-12-11 01:46:01,873 : INFO : hotelIp.walkingTime : 120
-2023-12-11 01:46:02,064 : INFO : hotelIp.carTime : 13
-2023-12-11 01:46:02,223 : INFO : hotelIp.orientation : NE
-2023-12-11 01:46:02,404 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:04,778 : INFO : B4W2 : NCC : Surrounding attraction already exists
-2023-12-11 01:46:06,253 : INFO : hotelIp.name : GRAND MOSQUE
-2023-12-11 01:46:06,566 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
-2023-12-11 01:46:06,846 : INFO : hotelIp.walkingTime : 50
-2023-12-11 01:46:06,986 : INFO : hotelIp.carTime : 6
-2023-12-11 01:46:07,130 : INFO : hotelIp.orientation : NE
-2023-12-11 01:46:07,308 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:09,754 : INFO : B4W2 : CTR1 : Surrounding attraction already exists
-2023-12-11 01:46:11,302 : INFO : hotelIp.name : CITY CENTER
-2023-12-11 01:46:11,577 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
-2023-12-11 01:46:11,863 : INFO : hotelIp.walkingTime : 120
-2023-12-11 01:46:12,052 : INFO : hotelIp.carTime : 13
-2023-12-11 01:46:12,189 : INFO : hotelIp.orientation : NE
-2023-12-11 01:46:12,344 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:14,718 : INFO : B4W2 : CENT : Surrounding attraction already exists
-2023-12-11 01:46:16,315 : INFO : hotelIp.name : SULTAN QABOOS ST
-2023-12-11 01:46:16,649 : INFO : hotelIp.walkingTime : 10
-2023-12-11 01:46:16,810 : INFO : hotelIp.carTime : 10
-2023-12-11 01:46:16,941 : INFO : hotelIp.orientation : NE
-2023-12-11 01:46:17,075 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:19,550 : INFO : B4W2 : HEXI : Surrounding attraction already exists
-2023-12-11 01:46:21,199 : INFO : hotelIp.name : QATAR AIRWAYS 
-2023-12-11 01:46:21,491 : INFO : hotelIp.walkingTime : 5
-2023-12-11 01:46:21,612 : INFO : hotelIp.carTime : 1
-2023-12-11 01:46:21,753 : INFO : hotelIp.orientation : W
-2023-12-11 01:46:21,892 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:24,347 : INFO : B4W2 : COMP : Surrounding attraction already exists
-2023-12-11 01:46:25,859 : INFO : hotelIp.name : OCEC
-2023-12-11 01:46:26,130 : INFO : hotelIp.walkingTime : 95
-2023-12-11 01:46:26,285 : INFO : hotelIp.carTime : 11
-2023-12-11 01:46:26,446 : INFO : hotelIp.orientation : E
-2023-12-11 01:46:26,606 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:29,070 : INFO : B4W2 : CONG : Surrounding attraction already exists
-2023-12-11 01:46:30,554 : INFO : hotelIp.name : OCEC
-2023-12-11 01:46:30,879 : INFO : hotelIp.walkingTime : 95
-2023-12-11 01:46:31,001 : INFO : hotelIp.carTime : 11
-2023-12-11 01:46:31,130 : INFO : hotelIp.orientation : E
-2023-12-11 01:46:31,276 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:33,638 : INFO : B4W2 : EXHI : Surrounding attraction already exists
-2023-12-11 01:46:35,213 : INFO : hotelIp.name : OCEC
-2023-12-11 01:46:35,545 : INFO : hotelIp.walkingTime : 95
-2023-12-11 01:46:35,726 : INFO : hotelIp.carTime : 11
-2023-12-11 01:46:35,878 : INFO : hotelIp.orientation : E
-2023-12-11 01:46:36,063 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
-2023-12-11 01:46:38,426 : INFO : B4W2 : EXPO : Surrounding attraction already exists
-2023-12-11 01:47:55,566 : INFO : Address and Set-up - Hotel upgraded to HOTEL DESCRIPTION. Updates not authorized in this screen -
-2023-12-11 01:47:55,710 : INFO : hotel.name : MOVENPICK HOTEL GHALA
-2023-12-11 01:47:55,848 : INFO : hotel.brand.code : MOV
-2023-12-11 01:47:55,985 : INFO : hotel.chain.code : MOV
-2023-12-11 01:47:56,138 : INFO : hotel.commercialName : Mövenpick Hotel and Hotel Apartments Ghala Muscat (Opening January 2024)
-2023-12-11 01:47:56,276 : INFO : hotel.shortName : TEST
-2023-12-11 01:47:56,425 : INFO : hotel.hotelManagementType.code : MG
-2023-12-11 01:47:56,615 : INFO : hotel.address.addresses[0] : Al Maaridh Street
-2023-12-11 01:47:56,762 : INFO : hotel.address.addresses[1] : Ghala Heights Complex
-2023-12-11 01:47:56,935 : INFO : hotel.address.addresses[2] : Adjacent to Sultan Qaboos St
-2023-12-11 01:47:57,092 : INFO : hotel.address.city : MUSCAT
-2023-12-11 01:47:57,251 : INFO : hotel.iataCityCode : ABC
-2023-12-11 01:47:57,395 : INFO : hotel.address.zipCode : 111
-2023-12-11 01:47:57,544 : INFO : hotel.address.indTel : 968
-2023-12-11 01:47:57,670 : INFO : hotel.address.tel : 22719999
-2023-12-11 01:47:57,809 : INFO : hotel.address.indFax : 968
-2023-12-11 01:47:57,965 : INFO : hotel.address.fax : 22719998
-2023-12-11 01:47:58,107 : INFO : hotel.indTelReservation : 968
-2023-12-11 01:47:58,246 : INFO : hotel.telReservation : 22719997
-2023-12-11 01:47:58,389 : INFO : hotel.indFaxReservation : 968
-2023-12-11 01:47:58,543 : INFO : hotel.placeCode : MCT
-2023-12-11 01:47:58,690 : INFO : hotel.segmentationType.code : TRACK
-2023-12-11 01:47:58,834 : INFO : hotel.tarsMode.code : O
-2023-12-11 01:47:58,973 : INFO : versionPmsInterface : 
-2023-12-11 01:47:59,151 : INFO : hotel.address.email : Movenpickghala.reservations@movenpick.com
-2023-12-11 01:47:59,301 : INFO : hotel.internetAddress : all.accor.com/B4W2
+2023-12-12 15:18:52,655 : INFO : C0C1 : Content Book Loaded
+2023-12-12 15:18:52,661 : INFO : Credentials loaded Username: NANSAN
+2023-12-12 15:19:05,809 : INFO : Login Success User: NANSAN
+2023-12-12 15:19:17,078 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-12 15:19:20,184 : INFO : Language to add : ['DE', 'ES', 'IT', 'NL', 'PT', 'ZH', 'BR', 'ID', 'JA', 'KO', 'RU', 'TR', 'AR']
+2023-12-12 15:19:24,531 : INFO : Hotel Languages Definition
+2023-12-12 15:19:24,687 : INFO : DE Added
+2023-12-12 15:19:25,775 : INFO : ES Added
+2023-12-12 15:19:26,848 : INFO : IT Added
+2023-12-12 15:19:27,968 : INFO : NL Added
+2023-12-12 15:19:29,054 : INFO : PT Added
+2023-12-12 15:19:30,159 : INFO : ZH Added
+2023-12-12 15:19:31,278 : INFO : BR Added
+2023-12-12 15:19:32,384 : INFO : ID Added
+2023-12-12 15:19:33,490 : INFO : JA Added
+2023-12-12 15:19:34,574 : INFO : KO Added
+2023-12-12 15:19:35,692 : INFO : RU Added
+2023-12-12 15:19:36,768 : INFO : TR Added
+2023-12-12 15:19:37,867 : INFO : AR Added
+2023-12-12 15:19:38,787 : INFO : C0C1 : Language Setup Done.
+2023-12-12 15:19:38,825 : INFO : HC0C1_Hotel_Programs_REG.csv has been created!
+2023-12-12 15:19:44,084 : INFO : Automation representation
+2023-12-12 15:19:52,113 : INFO : C0C1 : RT : System has been added
+2023-12-12 15:19:58,943 : INFO : C0C1 : DQ : System has been added
+2023-12-12 15:20:05,716 : INFO : C0C1 : GG : System has been added
+2023-12-12 15:20:12,431 : INFO : C0C1 : HO : System has been added
+2023-12-12 15:20:19,211 : INFO : C0C1 : TE : System has been added
+2023-12-12 15:20:26,829 : INFO : C0C1 : TE : System has been added
+2023-12-12 15:20:26,830 : INFO : C0C1 : ALL MANDATORY AUTOMATION SYSTEMS HAS BEEN ADDED
+2023-12-12 15:20:31,928 : INFO : Distribution Method
+2023-12-12 15:20:39,173 : INFO : C0C1 :  : Address has been updated
+2023-12-12 15:20:44,077 : INFO : C0C1 :  : An E-mail or a fax number is required
+2023-12-12 15:23:10,687 : INFO : Address and Set-up -
+2023-12-12 15:23:10,844 : INFO : hotel.name : MOVENPICK LIVING SAKLIVADI
+2023-12-12 15:23:11,013 : INFO : hotel.brand.code : MOV
+2023-12-12 15:23:11,155 : INFO : hotel.chain.code : MOL
+2023-12-12 15:23:11,292 : INFO : hotel.commercialName : Mövenpick Living Istanbul Saklivadi (Opening January 2024)
+2023-12-12 15:23:11,436 : INFO : hotel.shortName : MOVENPICK LIVING IST
+2023-12-12 15:23:11,593 : INFO : hotel.hotelManagementType.code : FR
+2023-12-12 15:23:11,748 : INFO : hotel.address.addresses[0] : Ayazaga Mahallesi 215 Sokak
+2023-12-12 15:23:11,902 : INFO : hotel.address.addresses[1] : No 10 B
+2023-12-12 15:23:12,042 : INFO : hotel.address.addresses[2] : Sariyer
+2023-12-12 15:23:12,183 : INFO : hotel.address.city : ISTANBUL
+2023-12-12 15:23:12,324 : INFO : hotel.iataCityCode : IST
+2023-12-12 15:23:12,466 : INFO : hotel.address.country.code : TR
+2023-12-12 15:23:12,606 : INFO : hotel.placeCode : IST
+2023-12-12 15:23:12,745 : INFO : hotel.segmentationType.code : TRACK
+2023-12-12 15:23:12,886 : INFO : hotel.tarsMode.code : O
+2023-12-12 15:23:13,026 : INFO : versionPmsInterface : 
+2023-12-12 15:23:13,167 : INFO : hotel.address.email : HC0C1@accor.com
+2023-12-12 15:23:13,322 : INFO : hotel.internetAddress : all.accor.com/C0C1
+2023-12-12 15:23:15,599 : INFO : C0C1 : updateHotelAddress : Address has been updated
+2023-12-12 15:23:24,550 : INFO : General Information
+2023-12-12 15:23:24,688 : INFO : gi_constructionDate : 01/11/2023
+2023-12-12 15:23:24,827 : INFO : gi_lastRenovDate : 01/11/2023
+2023-12-12 15:23:24,968 : INFO : gi_tarsCreatDate : 01/12/2023
+2023-12-12 15:23:25,109 : INFO : gi_openingDate : 01/01/2024
+2023-12-12 15:23:25,249 : INFO : gi.limitHour : 23:59
+2023-12-12 15:23:25,389 : INFO : gi.nbOfHours : =2
+2023-12-12 15:23:25,532 : INFO : gi.nbOfLifts : 5
+2023-12-12 15:23:25,670 : INFO : gi.nbOfRooms : 164
+2023-12-12 15:23:25,812 : INFO : gi.nbOfFloors : 20
+2023-12-12 15:23:25,935 : INFO : selectLodging : HTL
+2023-12-12 15:23:26,061 : INFO : selectStandard : UP
+2023-12-12 15:23:26,201 : INFO : selectEnvironment : CIT
+2023-12-12 15:23:26,340 : INFO : selectLocation : BUSD
+2023-12-12 15:23:26,481 : INFO : selectCurrency : EUR
+2023-12-12 15:23:26,621 : INFO : selectPmsCurrency : EUR
+2023-12-12 15:23:26,933 : INFO : Submitdata
+2023-12-12 15:23:30,445 : INFO : C0C1 : submitGeneralInformationForm : 
+2023-12-12 15:25:43,115 : INFO : C0C1 : Content Book Loaded
+2023-12-12 15:25:43,122 : INFO : Credentials loaded Username: NANSAN
+2023-12-12 15:25:55,492 : INFO : Login Success User: NANSAN
+2023-12-12 15:26:07,011 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-12 15:26:18,241 : INFO : Special Rating Classification
+2023-12-12 15:29:03,704 : INFO : C0C1 : Content Book Loaded
+2023-12-12 15:29:03,709 : INFO : Credentials loaded Username: NANSAN
+2023-12-12 15:29:14,751 : INFO : Login Success User: NANSAN
+2023-12-12 15:29:25,761 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-12 15:29:37,302 : INFO : Special Rating Classification
+2023-12-12 15:31:46,609 : INFO : C0C1 : Content Book Loaded
+2023-12-12 15:31:46,613 : INFO : Credentials loaded Username: NANSAN
+2023-12-12 15:31:57,761 : INFO : Login Success User: NANSAN
+2023-12-12 15:32:09,589 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-12 15:32:22,858 : INFO : Special Rating Classification
+2023-12-12 15:32:25,335 : INFO : hotelStanding.nb : 5
+2023-12-12 15:32:28,024 : INFO : C0C1 :  : Standing 'Local star rating' has been added
+2023-12-12 15:32:28,025 : INFO : Automation Add Rating Done
+2023-12-12 15:34:10,131 : INFO : Meal Plan to add to the Hotel: ['MBREAK', 'AMBREA', 'MBUFF']
+2023-12-12 15:34:17,741 : INFO : Products -   
+2023-12-12 15:34:20,739 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 15:34:21,020 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-12 15:34:21,282 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-12 15:34:21,544 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-12 15:34:21,808 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-12 15:34:22,057 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 15:34:22,353 : INFO : Submitdata
+2023-12-12 15:34:26,082 : INFO : C0C1 : MBREAK : Product 'MBREAK' has been added
+2023-12-12 15:34:27,791 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 15:34:27,993 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-12 15:34:28,211 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-12 15:34:28,409 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-12 15:34:28,624 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-12 15:34:28,855 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 15:34:29,086 : INFO : Submitdata
+2023-12-12 15:34:33,177 : INFO : C0C1 : AMBREA : Product 'AMBREA' has been added
+2023-12-12 15:34:34,975 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 15:34:35,162 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-12 15:34:35,363 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-12 15:34:35,567 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-12 15:34:35,753 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-12 15:34:35,968 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 15:34:36,221 : INFO : Submitdata
+2023-12-12 15:34:40,318 : INFO : C0C1 : MBUFF : Product 'MBUFF' has been added
+2023-12-12 15:34:40,318 : INFO : C0C1 : Mandatory Meal Option has been added
+2023-12-12 15:37:00,755 : INFO : Hotels limits
+2023-12-12 15:37:03,404 : INFO : hotelsLimits.nbProdHotel : 1000
+2023-12-12 15:37:03,576 : INFO : hotelsLimits.maxExtra : 500
+2023-12-12 15:37:03,746 : INFO : hotelsLimits.maxRooms : 50
+2023-12-12 16:01:05,417 : INFO : C0C1 : Content Book Loaded
+2023-12-12 16:01:05,425 : INFO : Credentials loaded Username: NANSAN
+2023-12-12 16:01:17,732 : INFO : Login Success User: NANSAN
+2023-12-12 16:01:29,126 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-12 16:03:59,579 : INFO : Hotels limits
+2023-12-12 16:04:00,807 : INFO : searchKeyword : C0C1
+2023-12-12 16:04:03,289 : INFO : hotelsLimits.nbProdHotel : 1000
+2023-12-12 16:04:03,381 : INFO : hotelsLimits.maxExtra : 500
+2023-12-12 16:04:03,457 : INFO : hotelsLimits.maxRooms : 50
+2023-12-12 16:04:05,434 : INFO : C0C1 : Hotel Product limit Set : You cannot set a number of Paying Product prior to existing Product in hotel
+2023-12-12 16:04:05,512 : INFO : rateLimit : checked = true
+2023-12-12 16:04:08,126 : INFO : hotelsLimits.nbRateHotel : 1000
+2023-12-12 16:04:09,926 : INFO : C0C1 : Hotel Rate Level Limit Set : Hotels limits set
+2023-12-12 16:04:10,034 : INFO : indexRateLimit : checked = true
+2023-12-12 16:04:12,507 : INFO : hotelsLimits.nbRateIndex : 1000
+2023-12-12 16:04:14,237 : INFO : C0C1 : Hotel Indexed Rates Limit Set : Hotels limits set
+2023-12-12 16:04:14,313 : INFO : referenceRateLimit : checked = true
+2023-12-12 16:04:16,816 : INFO : hotelsLimits.maxRateRef : 100
+2023-12-12 16:04:18,596 : INFO : C0C1 : Hotel Indexed Rates Limit Set : Hotels limits set
+2023-12-12 16:05:51,973 : INFO : Products -   
+2023-12-12 16:05:54,408 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:05:54,484 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:05:54,562 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-12 16:05:54,655 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-12 16:05:54,732 : INFO : hotelProduct.maxOccupancyChildren : 0
+2023-12-12 16:05:54,810 : INFO : hotelProduct.singleBebNumber : 1
+2023-12-12 16:05:54,889 : INFO : hotelProduct.doubleBebNumber : 0
+2023-12-12 16:05:54,966 : INFO : hotelProduct.roomSizeInSquareMeter : 22
+2023-12-12 16:05:55,043 : INFO : hotelProduct.quantity : 2
+2023-12-12 16:05:55,121 : INFO : hotelProduct.pmsCode : AAA
+2023-12-12 16:05:55,197 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:05:55,276 : INFO : hotelProduct.orderInResaScreen : 1
+2023-12-12 16:05:55,354 : INFO : Submitdata
+2023-12-12 16:05:58,417 : INFO : C0C1 : AAA : Product 'AAA' has been added
+2023-12-12 16:05:59,766 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:05:59,981 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:00,140 : INFO : hotelProduct.maxOccupancyTotal : 2
+2023-12-12 16:06:00,430 : INFO : hotelProduct.maxOccupancyAdult : 2
+2023-12-12 16:06:00,507 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:00,586 : INFO : hotelProduct.singleBebNumber : 1
+2023-12-12 16:06:00,677 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:00,785 : INFO : hotelProduct.roomSizeInSquareMeter : 58
+2023-12-12 16:06:00,879 : INFO : hotelProduct.quantity : 66
+2023-12-12 16:06:00,958 : INFO : hotelProduct.pmsCode : AP1
+2023-12-12 16:06:01,035 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:01,110 : INFO : hotelProduct.orderInResaScreen : 2
+2023-12-12 16:06:01,188 : INFO : Submitdata
+2023-12-12 16:06:05,995 : INFO : C0C1 : AP1 : Product 'AP1' has been added
+2023-12-12 16:06:07,460 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:07,554 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:07,646 : INFO : hotelProduct.maxOccupancyTotal : 2
+2023-12-12 16:06:07,740 : INFO : hotelProduct.maxOccupancyAdult : 2
+2023-12-12 16:06:07,880 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:08,004 : INFO : hotelProduct.singleBebNumber : 2
+2023-12-12 16:06:08,115 : INFO : hotelProduct.doubleBebNumber : 0
+2023-12-12 16:06:08,191 : INFO : hotelProduct.roomSizeInSquareMeter : 58
+2023-12-12 16:06:08,270 : INFO : hotelProduct.quantity : 20
+2023-12-12 16:06:08,349 : INFO : hotelProduct.pmsCode : ATB
+2023-12-12 16:06:08,441 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:08,519 : INFO : hotelProduct.orderInResaScreen : 3
+2023-12-12 16:06:08,597 : INFO : Submitdata
+2023-12-12 16:06:11,762 : INFO : C0C1 : ATB : Product 'ATB' has been added
+2023-12-12 16:06:13,099 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:13,195 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:13,286 : INFO : hotelProduct.maxOccupancyTotal : 2
+2023-12-12 16:06:13,365 : INFO : hotelProduct.maxOccupancyAdult : 2
+2023-12-12 16:06:13,444 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:13,538 : INFO : hotelProduct.singleBebNumber : 1
+2023-12-12 16:06:13,615 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:13,710 : INFO : hotelProduct.roomSizeInSquareMeter : 62
+2023-12-12 16:06:13,803 : INFO : hotelProduct.quantity : 16
+2023-12-12 16:06:13,896 : INFO : hotelProduct.pmsCode : AP1Z
+2023-12-12 16:06:13,990 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:14,083 : INFO : hotelProduct.orderInResaScreen : 4
+2023-12-12 16:06:14,177 : INFO : Submitdata
+2023-12-12 16:06:17,252 : INFO : C0C1 : AP1Z : Product 'AP1Z' has been added
+2023-12-12 16:06:18,630 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:18,722 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:18,831 : INFO : hotelProduct.maxOccupancyTotal : 4
+2023-12-12 16:06:18,924 : INFO : hotelProduct.maxOccupancyAdult : 4
+2023-12-12 16:06:19,019 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:19,112 : INFO : hotelProduct.singleBebNumber : 3
+2023-12-12 16:06:19,220 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:19,314 : INFO : hotelProduct.roomSizeInSquareMeter : 83
+2023-12-12 16:06:19,423 : INFO : hotelProduct.quantity : 18
+2023-12-12 16:06:19,531 : INFO : hotelProduct.pmsCode : AP2
+2023-12-12 16:06:19,658 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:19,766 : INFO : hotelProduct.orderInResaScreen : 5
+2023-12-12 16:06:19,860 : INFO : Submitdata
+2023-12-12 16:06:23,050 : INFO : C0C1 : AP2 : Product 'AP2' has been added
+2023-12-12 16:06:24,414 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:24,508 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:24,602 : INFO : hotelProduct.maxOccupancyTotal : 4
+2023-12-12 16:06:24,680 : INFO : hotelProduct.maxOccupancyAdult : 4
+2023-12-12 16:06:24,757 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:24,834 : INFO : hotelProduct.singleBebNumber : 3
+2023-12-12 16:06:24,914 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:24,989 : INFO : hotelProduct.roomSizeInSquareMeter : 109
+2023-12-12 16:06:25,066 : INFO : hotelProduct.quantity : 34
+2023-12-12 16:06:25,144 : INFO : hotelProduct.pmsCode : AP2A
+2023-12-12 16:06:25,224 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:25,300 : INFO : hotelProduct.orderInResaScreen : 6
+2023-12-12 16:06:25,441 : INFO : Submitdata
+2023-12-12 16:06:28,593 : INFO : C0C1 : AP2A : Product 'AP2A' has been added
+2023-12-12 16:06:29,948 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:30,041 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:30,134 : INFO : hotelProduct.maxOccupancyTotal : 4
+2023-12-12 16:06:30,228 : INFO : hotelProduct.maxOccupancyAdult : 4
+2023-12-12 16:06:30,337 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:30,431 : INFO : hotelProduct.singleBebNumber : 3
+2023-12-12 16:06:30,539 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:30,649 : INFO : hotelProduct.roomSizeInSquareMeter : 146
+2023-12-12 16:06:30,741 : INFO : hotelProduct.quantity : 2
+2023-12-12 16:06:30,819 : INFO : hotelProduct.pmsCode : AP2HV
+2023-12-12 16:06:30,912 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:31,005 : INFO : hotelProduct.orderInResaScreen : 7
+2023-12-12 16:06:31,098 : INFO : Submitdata
+2023-12-12 16:06:35,013 : INFO : C0C1 : AP2HV : Product 'AP2HV' has been added
+2023-12-12 16:06:36,497 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:36,606 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:36,715 : INFO : hotelProduct.maxOccupancyTotal : 6
+2023-12-12 16:06:36,793 : INFO : hotelProduct.maxOccupancyAdult : 6
+2023-12-12 16:06:36,871 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:36,963 : INFO : hotelProduct.singleBebNumber : 3
+2023-12-12 16:06:37,042 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:37,118 : INFO : hotelProduct.roomSizeInSquareMeter : 151
+2023-12-12 16:06:37,197 : INFO : hotelProduct.quantity : 2
+2023-12-12 16:06:37,275 : INFO : hotelProduct.pmsCode : AP3
+2023-12-12 16:06:37,352 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:37,429 : INFO : hotelProduct.orderInResaScreen : 8
+2023-12-12 16:06:37,505 : INFO : Submitdata
+2023-12-12 16:06:40,576 : INFO : C0C1 : AP3 : Product 'AP3' has been added
+2023-12-12 16:06:41,876 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:41,954 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:42,034 : INFO : hotelProduct.maxOccupancyTotal : 8
+2023-12-12 16:06:42,113 : INFO : hotelProduct.maxOccupancyAdult : 8
+2023-12-12 16:06:42,175 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:42,252 : INFO : hotelProduct.singleBebNumber : 3
+2023-12-12 16:06:42,331 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:42,409 : INFO : hotelProduct.roomSizeInSquareMeter : 182
+2023-12-12 16:06:42,501 : INFO : hotelProduct.quantity : 2
+2023-12-12 16:06:42,594 : INFO : hotelProduct.pmsCode : S4A
+2023-12-12 16:06:42,686 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:42,764 : INFO : hotelProduct.orderInResaScreen : 9
+2023-12-12 16:06:42,855 : INFO : Submitdata
+2023-12-12 16:06:45,980 : INFO : C0C1 : S4A : Product 'S4A' has been added
+2023-12-12 16:06:47,299 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-12 16:06:47,377 : INFO : hotelProduct.bookable : checkbox.checked
+2023-12-12 16:06:47,454 : INFO : hotelProduct.maxOccupancyTotal : 8
+2023-12-12 16:06:47,533 : INFO : hotelProduct.maxOccupancyAdult : 8
+2023-12-12 16:06:47,611 : INFO : hotelProduct.maxOccupancyChildren : 1
+2023-12-12 16:06:47,689 : INFO : hotelProduct.singleBebNumber : 3
+2023-12-12 16:06:47,767 : INFO : hotelProduct.doubleBebNumber : 1
+2023-12-12 16:06:47,844 : INFO : hotelProduct.roomSizeInSquareMeter : 205
+2023-12-12 16:06:47,923 : INFO : hotelProduct.quantity : 2
+2023-12-12 16:06:48,001 : INFO : hotelProduct.pmsCode : S4B
+2023-12-12 16:06:48,079 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-12 16:06:48,156 : INFO : hotelProduct.orderInResaScreen : 10
+2023-12-12 16:06:48,250 : INFO : Submitdata
+2023-12-12 16:06:51,337 : INFO : C0C1 : S4B : Product 'S4B' has been added

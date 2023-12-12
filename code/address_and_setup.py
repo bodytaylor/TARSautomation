@@ -16,7 +16,7 @@ def add(hotel_rid, hotel_content):
     chain_key = search_key(chian_dict, chain)
 
     # Hotel Commercial Brand D32
-    hotel_com_name = hotel_content.hotel_commer_name
+    hotel_com_name = hotel_content.hotel_commercial_name
 
     # Provisional Opening date merge with commercial name K10
     open_date = hotel_content.open_date
@@ -88,8 +88,9 @@ def add(hotel_rid, hotel_content):
     # internet Access -> all.accor.com/rid
     inter_acc = f'all.accor.com/{hotel_rid}'
 
-    # Tell user to open web console
-
+    # Country
+    country = hotel_content.country
+    country_code = country_dict.get(country)
 
     # Goto Target URL
     ta.get('https://dataweb.accor.net/dotw-trans/displayHotelAddress!input.action')
@@ -145,6 +146,9 @@ def add(hotel_rid, hotel_content):
     ta.input_text(element_id="hotel.telReservation", text=resa_phone)
     ta.input_text(element_id="hotel.indFaxReservation", text=phone_country_code)
     ta.input_text(element_id="hotel.faxReservation", text=resa_fax)
+    
+    # Select Country
+    ta.select_dropdown(element_id="hotel.address.country.code", value=country_code)
 
     # Hotel Code Place
     ta.input_text(element_id="hotel.placeCode", text=code_place)
@@ -164,5 +168,7 @@ def add(hotel_rid, hotel_content):
     # Internet Address
     ta.input_text(element_id="hotel.internetAddress", text=inter_acc)
 
-    # Run code
-    print('Automation Done Please Review The input data before click save! Thanks.')
+    # Update and get response
+    ta.driver.execute_script("submitHotelAddressForm ('updateHotelAddress.action');")
+    ta.get_response(hotel_rid, code='updateHotelAddress')
+    
