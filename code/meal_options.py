@@ -27,7 +27,7 @@ def add(hotel_rid, hotel_content):
     # mandatory meal option *** Add According to Pricing book Need to Update
     meal_options_list = []
     
-    meal_data = get_excel_values(file_path=f'hotel_workbook\{hotel_rid}\{hotel_rid} Pricing Book.xlsx',
+    meal_data = get_excel_values(file_path=f'hotel_workbook\{hotel_rid}\{hotel_rid} Pricing Book Hotel Creation v1.7.xlsx',
                                  sheet_name='Set-up table',
                                  cell_addresses=['E459',
                                                  'E460',

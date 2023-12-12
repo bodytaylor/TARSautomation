@@ -19,7 +19,7 @@ def load_content_book(hotel_rid):
     """Load the content book for the provided RID."""
     while True:
         try:
-            hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid}.xlsm')
+            hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
             logger.info(f'{hotel_rid} : Content Book Loaded')
             break
         except FileNotFoundError:

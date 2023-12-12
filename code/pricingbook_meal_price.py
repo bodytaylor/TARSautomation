@@ -8,6 +8,23 @@ def discount_cal(discount, data):
         return round((data * discount / 100), 2)
     else:
         return None
+    
+# get excel value and store it as variable
+def get_excel_values(file_path=str, sheet_name=str, cell_addresses=list):
+    try:
+        # Open the Excel file
+        workbook = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
+
+        # Select the specific sheet
+        sheet = workbook[sheet_name]
+        cell_values =[]
+        for cell in cell_addresses:
+            cell_values.append(sheet[cell].value)
+        return cell_values
+    
+    except Exception as e:
+        print(f"An error occurred while loading the Excel file: {str(e)}")
+        return None, None
 
 # Get meal plan price and write it to dictionary
 
