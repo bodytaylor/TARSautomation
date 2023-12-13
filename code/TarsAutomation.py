@@ -196,8 +196,11 @@ def get_response(hotel_rid: str, code: str = ""):
     wait_for_element(element='//*[@id="messages"]', by=By.XPATH)
     action_message = get_message()
     error_message = get_error_message()
-    message = action_message or error_message
-    logger.info(f'{hotel_rid} : {code} : {message}')
+
+    if action_message:
+        logger.info(f'{hotel_rid} : {code} : {action_message}')
+    if error_message:
+        logger.error(f'{hotel_rid} : {code} : {error_message}')
 
 def get_message() -> str:
     try:
@@ -353,7 +356,6 @@ def product_description(code: str, type: str, description: str, marketing: str, 
         marketing_box.send_keys(marketing)
         time.sleep(0.5)
         
-    
 # find type of product
 def find_type(df, code):
     code = str(code).strip()

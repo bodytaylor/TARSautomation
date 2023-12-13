@@ -711,3 +711,38 @@
 2023-12-13 14:48:42,312 : INFO : hotelRestaurant.halalMenu : checkbox.checked
 2023-12-13 14:48:42,390 : INFO : hotelRestaurant.glutenFreeMenu : checkbox.checked
 2023-12-13 14:48:43,737 : INFO : C0C1 : RT : Restaurant 'RT' has been added
+2023-12-13 14:52:28,812 : INFO : C0C1 : Content Book Loaded
+2023-12-13 14:52:28,816 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 14:52:36,391 : INFO : Login Success User: NANSAN
+2023-12-13 14:52:44,162 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 14:52:55,069 : INFO : Restaurant descriptions
+2023-12-13 14:53:02,119 : INFO : C0C1 : RT : Restaurant descriptions has been translated with selected languages
+2023-12-13 14:53:47,924 : INFO : Accesses
+2023-12-13 14:53:49,870 : INFO : hotelAccess.name : MOVENPICK LIVING SAKLIVADI
+2023-12-13 14:53:55,575 : INFO : Access descriptions
+2023-12-13 14:53:57,648 : INFO : hotelAccessTranslate.translatedDescription : From Istanbul International Airport follow the road to Istanbul from Tayakadin Ihsaniye Yolu. Get on D020 in Ihsaniye. Follow D020. Take the exit toward Aricilar Kagithane D010 from D020. Use the left lane to turn slightly left for Aricilar Kagithane. At the roundabout, take the 1st exit to Selcuklu Cd. Turn right towards 215. Sk. You will see the hotel on your right.
+2023-12-13 14:54:01,547 : INFO : C0C1 : ACCM : Access has been translated
+2023-12-13 14:54:04,970 : INFO : Accesses
+2023-12-13 14:54:06,920 : INFO : hotelAccess.name : V
+2023-12-13 14:54:06,999 : INFO : hotelAccess.direction : a
+2023-12-13 14:54:07,076 : INFO : hotelAccess.line : d
+2023-12-13 14:54:07,156 : INFO : hotelAccess.station : i
+2023-12-13 15:09:45,090 : INFO : C0C1 : Content Book Loaded
+2023-12-13 15:09:45,094 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 15:09:52,563 : INFO : Login Success User: NANSAN
+2023-12-13 15:10:00,914 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 15:10:09,731 : INFO : Accesses
+2023-12-13 15:10:11,683 : INFO : hotelAccess.name : MOVENPICK LIVING SAKLIVADI
+2023-12-13 15:10:17,482 : INFO : Access descriptions
+2023-12-13 15:10:19,530 : INFO : hotelAccessTranslate.translatedDescription : From Istanbul International Airport follow the road to Istanbul from Tayakadin Ihsaniye Yolu. Get on D020 in Ihsaniye. Follow D020. Take the exit toward Aricilar Kagithane D010 from D020. Use the left lane to turn slightly left for Aricilar Kagithane. At the roundabout, take the 1st exit to Selcuklu Cd. Turn right towards 215. Sk. You will see the hotel on your right.
+2023-12-13 15:10:23,444 : INFO : C0C1 : ACCM : Access has been translated
+2023-12-13 15:10:26,733 : INFO : Accesses
+2023-12-13 15:10:28,663 : INFO : hotelAccess.name : Vadistanbul
+2023-12-13 15:10:28,727 : INFO : hotelAccess.direction : N
+2023-12-13 15:10:28,790 : INFO : hotelAccess.line : M11
+2023-12-13 15:10:30,646 : INFO : C0C1 : METR : Tecnical Error: on addHotelAccessType, cause : SQLException errorCode 2402Error converting characters into server's character set. Some character(s) could not be converted.
+2023-12-13 15:10:31,725 : INFO : hotelAccess.name : Otogar (Esenler)
+2023-12-13 15:10:31,803 : INFO : hotelAccess.direction : N
+2023-12-13 15:10:31,880 : INFO : hotelAccess.line : HVIST-5
+2023-12-13 15:10:31,956 : INFO : hotelAccess.station : Hasdal
+2023-12-13 15:10:33,527 : INFO : C0C1 : BUSS : Access 'BUSS' has been added

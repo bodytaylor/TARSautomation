@@ -87,7 +87,7 @@ def add(hotel_rid, hotel_content):
     mean_of_access_data = hotel_content.mean_of_access
     for key in mean_of_access_data:
         code = str(key).strip()
-        data = mean_of_access_data[key][0]
+        data = mean_of_access_data[key]
         acc_name = mean_of_acces_dict.get(code)
         
         # Add surrounding
