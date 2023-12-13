@@ -30,7 +30,7 @@ if __name__ == "__main__":
         hotel_rid, hotel_content = load_content_book(hotel_rid)
         print(hotel_content.hotel_direction)
         
-        user_choice = input('press x for exit')
+        user_choice = input('press x for exit: ')
         if user_choice == 'x':
             break
         

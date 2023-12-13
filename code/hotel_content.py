@@ -636,9 +636,7 @@ class ContentBook:
         sheet = self.contentbook[sheet_name]
         access_data = {}
         if sheet:
-            self.hotel_name = sheet['C4'].value
             self.hotel_direction = sheet['C84'].value 
-            self.hotel_name_url = str(self.hotel_name).replace(" ", "+")
             for i in range(4):
                 if sheet[f'E{149 + i}'].value != None:
                     pattern = r'([A-Z]+) -'
@@ -805,3 +803,161 @@ class ContentBook:
             sep=';'
         )
    
+class ContentBook_v10(ContentBook):
+    def __init__(self, filepath):
+        super().__init__(filepath)
+        
+    def _address_setup_data(self):
+        # Local Star
+        sheet_name = 'Address&Setup'
+        sheet = self.contentbook[sheet_name]
+        
+        # data for Address and Setup page
+        self.hotel_name = sheet['C4'].value
+        self.brand = sheet['C6'].value
+        self.chain = sheet['J6'].value
+        self.hotel_commercial_name = sheet['D32'].value
+        self.open_date = sheet['K10'].value
+        self.address1 = sheet['C34'].value
+        self.address2 = sheet['J34'].value
+        self.address3 = sheet['C37'].value
+        self.state = sheet['J39'].value
+        self.resa_phone = sheet['K43'].value
+        self.resa_fax = sheet['K45'].value
+        self.logging_type = sheet['C47'].value
+        self.zip_code = sheet['K37'].value
+        self.phone_country_code = sheet['C41'].value
+        self.hotel_email = sheet['C45'].value
+        self.code_place = sheet['C49'].value
+        self.city = sheet['C39'].value
+        self.phone = sheet['D41'].value
+        self.fax = sheet['D43'].value
+        self.country = sheet['J41'].value
+    
+        # List data for general page
+        self.construction_date = sheet['C57'].value
+        self.reno_date = sheet['J57'].value
+        self.distribute_tars_date = sheet['D12'].value
+        self.lodging_type = sheet['J63'].value
+        self.environment = sheet['C61'].value
+        self.location = sheet['J59'].value
+        self.currency = sheet['C59'].value
+        self.nb_lifts = sheet['K65'].value
+        self.nb_rooms = sheet['C63'].value
+        self.nb_floors = sheet['C65'].value
+        
+        # rating data
+        self.local_rating = sheet['G65'].value
+        self.north_star = None   
+
+        # GM name
+        gm_title = sheet['E53'].value
+        gm_name = sheet['J55'].value
+        gm_surname = sheet['J53'].value
+
+        # GM name
+        self.gm = self.accor_name(gm_title, gm_name, gm_surname)
+        
+        # GPS not send
+        self.gps = sheet['K24'].value
+        
+        # Hotel Currency 3 digits
+        self.currency_3digits = self.extract_currency(self.currency)
+        
+    def _mean_of_access_data(self):
+        sheet_name = "Address&Setup"
+        sheet = self.contentbook[sheet_name]
+        access_data = {}
+        if sheet:
+            self.hotel_direction = sheet['C79'].value 
+            for i in range(4):
+                if sheet[f'E{149 + i}'].value != None:
+                    pattern = r'([A-Z]+) -'
+                    code = re.findall(pattern, sheet[f'C{144 + i}'].value)[0]
+                    data = [sheet[f'E{144 + i}'].value,
+                            sheet[f'H{144 + i}'].value,
+                            sheet[f'I{144 + i}'].value,
+                            sheet[f'K{144 + i}'].value]
+                    access_data[code] = data
+                    
+        self.mean_of_access = access_data
+        
+class ContentBook_v17(ContentBook):
+    def __init__(self, filepath):
+        super().__init__(filepath)
+        
+    def _address_setup_data(self):
+        # Local Star
+        sheet_name = 'Address&Setup'
+        sheet = self.contentbook[sheet_name]
+        
+        # data for Address and Setup page
+        self.hotel_name = sheet['C4'].value
+        self.brand = sheet['C6'].value
+        self.chain = sheet['J6'].value
+        self.hotel_commercial_name = sheet['D33'].value
+        self.open_date = sheet['K10'].value
+        self.address1 = sheet['C35'].value
+        self.address2 = sheet['J35'].value
+        self.address3 = sheet['C36'].value
+        self.state = sheet['J40'].value
+        self.resa_phone = sheet['K44'].value
+        self.resa_fax = sheet['K46'].value
+        self.logging_type = sheet['C48'].value
+        self.zip_code = sheet['K38'].value
+        self.phone_country_code = sheet['C42'].value
+        self.hotel_email = sheet['C46'].value
+        self.code_place = sheet['C50'].value
+        self.city = sheet['C40'].value
+        self.phone = sheet['D42'].value
+        self.fax = sheet['D44'].value
+        self.country = sheet['J42'].value
+    
+        # List data for general page
+        self.construction_date = sheet['C58'].value
+        self.reno_date = sheet['J58'].value
+        self.distribute_tars_date = sheet['D12'].value
+        self.lodging_type = sheet['J64'].value
+        self.environment = sheet['C62'].value
+        self.location = sheet['J60'].value
+        self.currency = sheet['C60'].value
+        self.nb_lifts = sheet['K66'].value
+        self.nb_rooms = sheet['C64'].value
+        self.nb_floors = sheet['C66'].value
+        
+        # rating data
+        self.local_rating = sheet['C80'].value
+        self.north_star = sheet['J80'].value
+        
+        # GM name
+        gm_title = sheet['E54'].value
+        gm_name = sheet['J56'].value
+        gm_surname = sheet['J54'].value
+
+        # GM name
+        self.gm = self.accor_name(gm_title, gm_name, gm_surname)
+        
+        # GPS not send
+        self.gps = sheet['K24'].value
+        
+        # Hotel Currency 3 digits
+        self.currency_3digits = self.extract_currency(self.currency)
+        
+    def _mean_of_access_data(self):
+        sheet_name = "Address&Setup"
+        sheet = self.contentbook[sheet_name]
+        access_data = {}
+        if sheet:
+            self.hotel_direction = sheet['C85'].value 
+            for i in range(4):
+                if sheet[f'E{150 + i}'].value != None:
+                    pattern = r'([A-Z]+) -'
+                    code = re.findall(pattern, sheet[f'C{150 + i}'].value)[0]
+                    data = [sheet[f'E{150 + i}'].value,
+                            sheet[f'H{150 + i}'].value,
+                            sheet[f'I{150 + i}'].value,
+                            sheet[f'K{150 + i}'].value]
+                    access_data[code] = data
+                    
+        self.mean_of_access = access_data
+

@@ -388,3 +388,4 @@ def add_element(element):
 def input_description_box(element_id: str, text: str):
     description_box = driver.find_element(By.ID, element_id)
     description_box.send_keys(text)
+    

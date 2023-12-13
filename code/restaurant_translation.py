@@ -9,9 +9,10 @@ def add(hotel_rid, hotel_content):
         rt_name = df.iloc[i, 0]
         search_key = rt_name.upper()
         search_key = ta.url_parse(search_key)
-        
+
         # Open webbrowser
         url = f'https://dataweb.accor.net/dotw-trans/translateHotelRestaurant!input.action?actionType=translate&hotelRestaurant.type.code=RT&hotelRestaurant.name={search_key}&hotelRestaurant.codeRest=R00{i + 1}&'
+
         ta.get(url)
         # Wait for page to load
         ta.wait_for_element('restaurantsDescriptionsTable')
@@ -34,5 +35,4 @@ def add(hotel_rid, hotel_content):
             
         # get response
         ta.get_response(hotel_rid, code='RT')
-        
         
