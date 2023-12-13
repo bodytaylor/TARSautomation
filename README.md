@@ -37,9 +37,9 @@ This program designed for windows 10 operating system only.
 
 1. Download source code from github or using git clone to local machine. 
 2. Open CMD and install pip using command 
-`code` python get-pip.py
+`code`python get-pip.py
 3. Install virtualenv by run this command
-`code` pip install virtualenv
+`code`pip install virtualenv
 4. Then run the "run this first.bat" for setup environment. Be patient it might take time.
 
 ## Usage
