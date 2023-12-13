@@ -9,7 +9,7 @@ def add(hotel_rid, hotel_content):
     for i in range(len(df)):
         # Get room code
         room_code = df.iloc[i, 0]
-        room_type = find_type(df=hotel_content.product_lib_df, code=room_code)
+        room_type = ta.find_type(df=hotel_content.product_lib_df, code=room_code)
         
         # Open Web Browser on translate page and wait for webpage load
         url = f'https://dataweb.accor.net/dotw-trans/translateHotelProduct!input.action?actionType=translate&hotelProduct.code={room_code}&hotelProduct.type.code={room_type}&hotelProduct.centralUse=true&'
