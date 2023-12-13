@@ -61,7 +61,7 @@ def add(hotel_rid, hotel_content):
     
     # add translation 
     hotel_direction = hotel_content.hotel_direction         
-    hotel_name_url = str(hotel_name).replace(" ", "+")
+    hotel_name_url = ta.url_parse(hotel_name)
     url_translation = f'https://dataweb.accor.net/dotw-trans/translateHotelAccess!input.action?actionType=translate&hotelAccess.accessType.code=ACCM&hotelAccess.name={hotel_name_url}&'
     ta.get(url_translation)
     ta.wait_for_element('accessesDescriptionsTable')
@@ -71,7 +71,7 @@ def add(hotel_rid, hotel_content):
     time.sleep(1)
     
     # Input Translation
-    ta.input_text(element_id='hotelAccessTranslate.translatedDescription', text=hotel_direction)
+    ta.input_description_box(element_id='hotelAccessTranslate.translatedDescription', text=hotel_direction)
     
     # Click on Translate button
     ta.translate_hotel_product(element_id='translateHotelAccessForm')

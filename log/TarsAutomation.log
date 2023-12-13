@@ -746,3 +746,310 @@
 2023-12-13 15:10:31,880 : INFO : hotelAccess.line : HVIST-5
 2023-12-13 15:10:31,956 : INFO : hotelAccess.station : Hasdal
 2023-12-13 15:10:33,527 : INFO : C0C1 : BUSS : Access 'BUSS' has been added
+2023-12-13 15:18:51,219 : INFO : C0C1 : Content Book Loaded
+2023-12-13 15:18:51,223 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 15:19:00,442 : INFO : Login Success User: NANSAN
+2023-12-13 15:19:08,172 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 15:19:21,577 : INFO : Products -   
+2023-12-13 15:19:23,679 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-13 15:19:23,756 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-13 15:19:23,837 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-13 15:19:23,914 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-13 15:19:23,976 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-13 15:19:24,054 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 15:19:24,132 : INFO : Submitdata
+2023-12-13 15:19:26,794 : ERROR : C0C1 : GOLF : Product already exists
+2023-12-13 15:19:27,887 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 15:19:27,963 : INFO : Submitdata
+2023-12-13 15:56:11,969 : INFO : C0C1 : Content Book Loaded
+2023-12-13 15:56:11,975 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 15:56:19,606 : INFO : Login Success User: NANSAN
+2023-12-13 15:56:26,917 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 15:56:47,849 : INFO : Accesses
+2023-12-13 15:56:50,056 : INFO : hotelAccess.name : MOVENPICK LIVING SAKLIVADI
+2023-12-13 15:56:55,766 : INFO : Access descriptions
+2023-12-13 15:56:58,004 : INFO : hotelAccessTranslate.translatedDescription : From Istanbul International Airport follow the road to Istanbul from Tayakadin Ihsaniye Yolu. Get on D020 in Ihsaniye. Follow D020. Take the exit toward Aricilar Kagithane D010 from D020. Use the left lane to turn slightly left for Aricilar Kagithane. At the roundabout, take the 1st exit to Selcuklu Cd. Turn right towards 215. Sk. You will see the hotel on your right.
+2023-12-13 15:57:02,136 : INFO : C0C1 : ACCM : Access has been translated
+2023-12-13 15:57:05,727 : INFO : Accesses
+2023-12-13 15:57:07,969 : INFO : hotelAccess.name : Vadistanbul
+2023-12-13 15:57:08,032 : INFO : hotelAccess.direction : N
+2023-12-13 15:57:08,117 : INFO : hotelAccess.line : M11
+2023-12-13 15:57:10,120 : ERROR : C0C1 : METR : Tecnical Error: on addHotelAccessType, cause : SQLException errorCode 2402Error converting characters into server's character set. Some character(s) could not be converted.
+2023-12-13 15:57:11,309 : INFO : hotelAccess.name : Otogar (Esenler)
+2023-12-13 15:57:11,377 : INFO : hotelAccess.direction : N
+2023-12-13 15:57:11,461 : INFO : hotelAccess.line : HVIST-5
+2023-12-13 15:57:11,542 : INFO : hotelAccess.station : Hasdal
+2023-12-13 15:57:13,447 : ERROR : C0C1 : BUSS : The hotel access already exists
+2023-12-13 15:57:30,294 : INFO : Surrounding Attractions -
+2023-12-13 15:57:32,523 : INFO : hotelIp.name : IST
+2023-12-13 15:57:32,687 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:32,839 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:32,903 : INFO : hotelIp.carTime : 30
+2023-12-13 15:57:32,971 : INFO : hotelIp.orientation : NW
+2023-12-13 15:57:33,039 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:34,555 : INFO : C0C1 : AER1 : Surrounding attraction 'AER1' has been added
+2023-12-13 15:57:35,748 : INFO : hotelIp.name : ISTANBUL AIRPORT
+2023-12-13 15:57:35,915 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:36,071 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:36,148 : INFO : hotelIp.carTime : 30
+2023-12-13 15:57:36,232 : INFO : hotelIp.orientation : NW
+2023-12-13 15:57:36,331 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:37,837 : INFO : C0C1 : APT1 : Surrounding attraction 'APT1' has been added
+2023-12-13 15:57:39,042 : INFO : hotelIp.name : ISTANBUL
+2023-12-13 15:57:39,194 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:39,342 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:39,419 : INFO : hotelIp.carTime : 50
+2023-12-13 15:57:39,507 : INFO : hotelIp.orientation : SW
+2023-12-13 15:57:39,605 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:41,095 : INFO : C0C1 : PCN : Surrounding attraction 'PCN' has been added
+2023-12-13 15:57:42,303 : INFO : hotelIp.name : IST
+2023-12-13 15:57:42,479 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:42,621 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:42,696 : INFO : hotelIp.carTime : 50
+2023-12-13 15:57:42,772 : INFO : hotelIp.orientation : SW
+2023-12-13 15:57:42,848 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:44,352 : INFO : C0C1 : PCC : Surrounding attraction 'PCC' has been added
+2023-12-13 15:57:45,556 : INFO : hotelIp.name : TEKIRDAG
+2023-12-13 15:57:45,704 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:45,838 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:45,904 : INFO : hotelIp.carTime : 140
+2023-12-13 15:57:45,972 : INFO : hotelIp.orientation : W
+2023-12-13 15:57:46,038 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:47,519 : INFO : C0C1 : NCN : Surrounding attraction 'NCN' has been added
+2023-12-13 15:57:48,720 : INFO : hotelIp.name : TEQ
+2023-12-13 15:57:48,870 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:49,003 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:49,070 : INFO : hotelIp.carTime : 140
+2023-12-13 15:57:49,134 : INFO : hotelIp.orientation : W
+2023-12-13 15:57:49,213 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:50,704 : INFO : C0C1 : NCC : Surrounding attraction 'NCC' has been added
+2023-12-13 15:57:51,892 : INFO : hotelIp.name : VADISTANBUL
+2023-12-13 15:57:52,055 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:52,223 : INFO : hotelIp.walkingTime : 12
+2023-12-13 15:57:52,307 : INFO : hotelIp.carTime : 2
+2023-12-13 15:57:52,390 : INFO : hotelIp.orientation : E
+2023-12-13 15:57:52,475 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:53,956 : INFO : C0C1 : CTR1 : Surrounding attraction 'CTR1' has been added
+2023-12-13 15:57:55,157 : INFO : hotelIp.name : TAKSIM
+2023-12-13 15:57:55,320 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:55,497 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:55,581 : INFO : hotelIp.carTime : 30
+2023-12-13 15:57:55,682 : INFO : hotelIp.orientation : S
+2023-12-13 15:57:55,752 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:57:57,218 : INFO : C0C1 : CENT : Surrounding attraction 'CENT' has been added
+2023-12-13 15:57:58,420 : INFO : hotelIp.name : SIRKECI
+2023-12-13 15:57:58,570 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:57:58,705 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:57:58,788 : INFO : hotelIp.carTime : 40
+2023-12-13 15:57:58,870 : INFO : hotelIp.orientation : S
+2023-12-13 15:57:58,936 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:00,434 : INFO : C0C1 : GARE : Surrounding attraction 'GARE' has been added
+2023-12-13 15:58:01,661 : INFO : hotelIp.name : VADISTANBUL SUBWAY
+2023-12-13 15:58:01,853 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:58:02,010 : INFO : hotelIp.walkingTime : 12
+2023-12-13 15:58:02,110 : INFO : hotelIp.carTime : 4
+2023-12-13 15:58:02,187 : INFO : hotelIp.orientation : E
+2023-12-13 15:58:02,274 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:03,762 : INFO : C0C1 : STAT : Surrounding attraction 'STAT' has been added
+2023-12-13 15:58:04,962 : INFO : hotelIp.name : ISTANBUL AIRPORT
+2023-12-13 15:58:05,133 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:58:05,264 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:05,349 : INFO : hotelIp.carTime : 30
+2023-12-13 15:58:05,454 : INFO : hotelIp.orientation : NW
+2023-12-13 15:58:05,536 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:07,019 : INFO : C0C1 : NPT1 : Surrounding attraction 'NPT1' has been added
+2023-12-13 15:58:08,237 : INFO : hotelIp.name : KABATAS
+2023-12-13 15:58:08,422 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:58:08,570 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:08,639 : INFO : hotelIp.carTime : 35
+2023-12-13 15:58:08,701 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:08,770 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:10,288 : INFO : C0C1 : FERR : Surrounding attraction 'FERR' has been added
+2023-12-13 15:58:11,461 : INFO : hotelIp.name : E80
+2023-12-13 15:58:11,630 : INFO : hotelIp.walkingTime : 10
+2023-12-13 15:58:11,709 : INFO : hotelIp.carTime : 4
+2023-12-13 15:58:11,777 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:13,334 : INFO : C0C1 : HEXI : Surrounding attraction 'HEXI' has been added
+2023-12-13 15:58:14,538 : INFO : hotelIp.name : SOCAR
+2023-12-13 15:58:14,701 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:58:14,838 : INFO : hotelIp.walkingTime : 11
+2023-12-13 15:58:14,902 : INFO : hotelIp.carTime : 3
+2023-12-13 15:58:14,970 : INFO : hotelIp.orientation : E
+2023-12-13 15:58:15,039 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:16,589 : INFO : C0C1 : COMP : Surrounding attraction 'COMP' has been added
+2023-12-13 15:58:17,793 : INFO : hotelIp.name : LUTFU KIRDAR
+2023-12-13 15:58:17,962 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:58:18,146 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:18,224 : INFO : hotelIp.carTime : 23
+2023-12-13 15:58:18,293 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:18,362 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:19,904 : INFO : C0C1 : CONG : Surrounding attraction 'CONG' has been added
+2023-12-13 15:58:21,128 : INFO : hotelIp.name : LUTFU KIRDAR
+2023-12-13 15:58:21,295 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:58:21,444 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:21,528 : INFO : hotelIp.carTime : 23
+2023-12-13 15:58:21,597 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:21,676 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:23,208 : INFO : C0C1 : EXHI : Surrounding attraction 'EXHI' has been added
+2023-12-13 15:58:24,430 : INFO : hotelIp.name : LUTFU KIRDAR
+2023-12-13 15:58:24,609 : INFO : hotelIp.shuttle.onCall : checkbox.checked
+2023-12-13 15:58:24,770 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:24,839 : INFO : hotelIp.carTime : 23
+2023-12-13 15:58:24,908 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:24,987 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:26,489 : INFO : C0C1 : EXPO : Surrounding attraction 'EXPO' has been added
+2023-12-13 15:58:37,647 : INFO : Surrounding Attractions -
+2023-12-13 15:58:39,902 : INFO : hotelIp.name : SOCAR
+2023-12-13 15:58:40,054 : INFO : hotelIp.walkingTime : 11
+2023-12-13 15:58:40,117 : INFO : hotelIp.carTime : 3
+2023-12-13 15:58:40,185 : INFO : hotelIp.orientation : E
+2023-12-13 15:58:40,247 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:41,974 : ERROR : C0C1 : SOCAR : Surrounding attraction already exists
+2023-12-13 15:58:43,178 : INFO : hotelIp.name : BORUSAN OTO
+2023-12-13 15:58:43,341 : INFO : hotelIp.walkingTime : 9
+2023-12-13 15:58:43,424 : INFO : hotelIp.carTime : 2
+2023-12-13 15:58:43,494 : INFO : hotelIp.orientation : W
+2023-12-13 15:58:43,578 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:45,068 : INFO : C0C1 : BORUSAN OTO : Surrounding attraction 'COMP' has been added
+2023-12-13 15:58:46,271 : INFO : hotelIp.name : VADISTANBUL MALL
+2023-12-13 15:58:46,445 : INFO : hotelIp.walkingTime : 12
+2023-12-13 15:58:46,518 : INFO : hotelIp.carTime : 4
+2023-12-13 15:58:46,586 : INFO : hotelIp.orientation : E
+2023-12-13 15:58:46,652 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:48,121 : INFO : C0C1 : VADISTANBUL MALL : Surrounding attraction 'COMP' has been added
+2023-12-13 15:58:49,322 : INFO : hotelIp.name : LUTFU KIRDAR
+2023-12-13 15:58:49,493 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:49,575 : INFO : hotelIp.carTime : 23
+2023-12-13 15:58:49,654 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:49,729 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:51,411 : ERROR : C0C1 : LUTFU KIRDAR : Surrounding attraction already exists
+2023-12-13 15:58:52,616 : INFO : hotelIp.name : HALIC KONGRE MER
+2023-12-13 15:58:52,785 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:52,865 : INFO : hotelIp.carTime : 16
+2023-12-13 15:58:52,932 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:53,017 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:54,522 : INFO : C0C1 : HALIC KONGRE MER : Surrounding attraction 'CONG' has been added
+2023-12-13 15:58:55,723 : INFO : hotelIp.name : LUTFU KIRDAR
+2023-12-13 15:58:55,911 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:56,002 : INFO : hotelIp.carTime : 23
+2023-12-13 15:58:56,066 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:56,146 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:58:57,831 : ERROR : C0C1 : LUTFU KIRDAR : Surrounding attraction already exists
+2023-12-13 15:58:59,066 : INFO : hotelIp.name : HALIC KONGRE MER
+2023-12-13 15:58:59,218 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:58:59,304 : INFO : hotelIp.carTime : 16
+2023-12-13 15:58:59,403 : INFO : hotelIp.orientation : S
+2023-12-13 15:58:59,466 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:59:00,970 : INFO : C0C1 : HALIC KONGRE MER : Surrounding attraction 'EXHI' has been added
+2023-12-13 15:59:02,158 : INFO : hotelIp.name : TUYAP
+2023-12-13 15:59:02,327 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:59:02,411 : INFO : hotelIp.carTime : 47
+2023-12-13 15:59:02,490 : INFO : hotelIp.orientation : SW
+2023-12-13 15:59:02,574 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:59:04,075 : INFO : C0C1 : TUYAP : Surrounding attraction 'EXHI' has been added
+2023-12-13 15:59:05,286 : INFO : hotelIp.name : CNR EXPO CENTER
+2023-12-13 15:59:05,435 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:59:05,541 : INFO : hotelIp.carTime : 35
+2023-12-13 15:59:05,619 : INFO : hotelIp.orientation : SW
+2023-12-13 15:59:05,720 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:59:07,210 : INFO : C0C1 : CNR EXPO CENTER : Surrounding attraction 'EXPO' has been added
+2023-12-13 15:59:08,446 : INFO : hotelIp.name : TUYAP
+2023-12-13 15:59:08,630 : INFO : hotelIp.walkingTime : 99
+2023-12-13 15:59:08,710 : INFO : hotelIp.carTime : 47
+2023-12-13 15:59:08,794 : INFO : hotelIp.orientation : SW
+2023-12-13 15:59:08,862 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2023-12-13 15:59:10,352 : INFO : C0C1 : TUYAP : Surrounding attraction 'EXPO' has been added
+2023-12-13 16:03:34,375 : INFO : C0C1 : Content Book Loaded
+2023-12-13 16:03:34,375 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 16:03:43,199 : INFO : Login Success User: NANSAN
+2023-12-13 16:03:52,201 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 16:04:06,578 : INFO : Hotel Contacts
+2023-12-13 16:04:07,597 : INFO : hotelContactsForm_hotelStaffManagers_generalManager_name : Mr Ozgur DOGAN
+2023-12-13 16:04:09,001 : INFO : C0C1 : createHotelContacts : Hotel contacts have been created
+2023-12-13 16:29:23,065 : INFO : C0C1 : Content Book Loaded
+2023-12-13 16:29:23,082 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 16:29:33,621 : INFO : Login Success User: NANSAN
+2023-12-13 16:29:45,461 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 16:37:38,575 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:00:49,235 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:00:49,235 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 17:00:56,997 : INFO : Login Success User: NANSAN
+2023-12-13 17:01:05,044 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 17:04:04,997 : INFO : Guarantees
+2023-12-13 17:08:32,698 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:09:02,814 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:09:35,745 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:09:35,745 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 17:09:43,573 : INFO : Login Success User: NANSAN
+2023-12-13 17:09:51,136 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 17:12:58,756 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:12:58,764 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 17:13:05,962 : INFO : Login Success User: NANSAN
+2023-12-13 17:13:14,772 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 17:13:34,885 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:14:00,196 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:14:34,616 : INFO : Hotel Contacts
+2023-12-13 17:14:35,427 : INFO : hotelContactsForm_hotelStaffManagers_generalManager_name : Mr Ozgur HIIIIIIIIIIIIIII
+2023-12-13 17:14:36,688 : INFO : C0C1 : createHotelContacts : Hotel contacts have been created
+2023-12-13 17:14:47,718 : INFO : Guarantees
+2023-12-13 17:14:49,175 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:14:49,291 : INFO : Submitdata
+2023-12-13 17:14:51,404 : INFO : C0C1 : AX : Guarantee has been added
+2023-12-13 17:14:52,112 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:14:52,200 : INFO : Submitdata
+2023-12-13 17:14:54,399 : INFO : C0C1 : CA : Guarantee has been added
+2023-12-13 17:14:55,064 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:14:55,160 : INFO : Submitdata
+2023-12-13 17:14:57,267 : INFO : C0C1 : VI : Guarantee has been added
+2023-12-13 17:14:57,955 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:14:58,053 : INFO : Submitdata
+2023-12-13 17:15:00,084 : INFO : C0C1 : WIRE : Guarantee has been added
+2023-12-13 17:15:00,749 : INFO : hotelGuarantee.qualified : checkbox.checked
+2023-12-13 17:15:00,822 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:15:00,901 : INFO : Submitdata
+2023-12-13 17:15:02,936 : INFO : C0C1 : IATA : Guarantee has been added
+2023-12-13 17:15:03,622 : INFO : Submitdata
+2023-12-13 17:15:05,691 : INFO : C0C1 : PCHECK : Guarantee has been added
+2023-12-13 17:15:06,366 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:15:06,435 : INFO : Submitdata
+2023-12-13 17:15:08,471 : INFO : C0C1 : CASH : Guarantee has been added
+2023-12-13 17:15:09,139 : INFO : Submitdata
+2023-12-13 17:15:11,181 : INFO : C0C1 : CCHECK : Guarantee has been added
+2023-12-13 17:15:11,877 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:15:11,968 : INFO : Submitdata
+2023-12-13 17:15:14,001 : INFO : C0C1 : PREP1 : Guarantee has been added
+2023-12-13 17:15:14,687 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2023-12-13 17:15:14,767 : INFO : Submitdata
+2023-12-13 17:15:17,041 : INFO : C0C1 : GTO : Guarantee has been added
+2023-12-13 17:16:32,634 : INFO : Payments
+2023-12-13 17:16:34,072 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2023-12-13 17:16:34,151 : INFO : Submitdata
+2023-12-13 17:16:36,241 : INFO : C0C1 : AX : Payment has been added
+2023-12-13 17:16:36,929 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2023-12-13 17:16:37,028 : INFO : Submitdata
+2023-12-13 17:16:39,098 : INFO : C0C1 : CA : Payment has been added
+2023-12-13 17:16:39,807 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2023-12-13 17:16:39,883 : INFO : Submitdata
+2023-12-13 17:16:41,930 : INFO : C0C1 : VI : Payment has been added
+2023-12-13 17:16:42,598 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2023-12-13 17:16:42,680 : INFO : Submitdata
+2023-12-13 17:16:44,721 : INFO : C0C1 : WIRE : Payment has been added
+2023-12-13 17:16:45,394 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2023-12-13 17:16:45,484 : INFO : Submitdata
+2023-12-13 17:16:47,507 : INFO : C0C1 : CREDIT : Payment has been added
+2023-12-13 17:16:48,163 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2023-12-13 17:16:48,250 : INFO : Submitdata
+2023-12-13 17:16:50,338 : INFO : C0C1 : PCHECK : Payment has been added
+2023-12-13 17:16:51,038 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2023-12-13 17:16:51,118 : INFO : Submitdata
+2023-12-13 17:16:53,167 : INFO : C0C1 : CR : Payment has been added
+2023-12-13 17:16:53,878 : INFO : Submitdata
+2023-12-13 17:16:55,886 : INFO : C0C1 : CCHECK : Payment has been added
+2023-12-13 17:16:56,564 : INFO : Submitdata
+2023-12-13 17:16:58,623 : INFO : C0C1 : PREPA1 : Payment has been added
+2023-12-13 17:16:59,315 : INFO : Submitdata
+2023-12-13 17:17:01,334 : INFO : C0C1 : PRCARD : Payment has been added
+2023-12-13 17:17:10,448 : INFO : C0C1 : Content Book Loaded
+2023-12-13 17:17:22,659 : INFO : Hotel Contacts
+2023-12-13 17:17:23,493 : INFO : hotelContactsForm_hotelStaffManagers_generalManager_name : Mr Ozgur DOGAN
+2023-12-13 17:17:24,695 : INFO : C0C1 : createHotelContacts : Hotel contacts have been created

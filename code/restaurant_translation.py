@@ -7,7 +7,8 @@ def add(hotel_rid, hotel_content):
     # Start looping!
     for i in range(len(df)):
         rt_name = df.iloc[i, 0]
-        search_key = str(rt_name).replace(' ', '+')
+        search_key = rt_name.upper()
+        search_key = ta.url_parse(search_key)
         
         # Open webbrowser
         url = f'https://dataweb.accor.net/dotw-trans/translateHotelRestaurant!input.action?actionType=translate&hotelRestaurant.type.code=RT&hotelRestaurant.name={search_key}&hotelRestaurant.codeRest=R00{i + 1}&'

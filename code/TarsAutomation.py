@@ -379,3 +379,12 @@ def accept_alert():
 def search_hotel_litmit():
     driver.execute_script("searchHotelsLimits();")
     time.sleep(delay)
+    
+def add_element(element):
+    # for payment and guarantee page only
+    driver.execute_script(f"addBasicElement('{element}');")
+    time.sleep(0.5)
+    
+def input_description_box(element_id: str, text: str):
+    description_box = driver.find_element(By.ID, element_id)
+    description_box.send_keys(text)

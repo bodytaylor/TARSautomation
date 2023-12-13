@@ -48,7 +48,7 @@ def add(hotel_rid, hotel_content):
                             
                 # room size
                 room_size = str(row['Room size m²*']).strip()
-                ta.input_text(element_id='hotelProduct.roomSizeInSquareMeter', text=room_size)
+                ta.driver.execute_script(f"document.getElementById('hotelProduct.roomSizeInSquareMeter').value = '{room_size}'; document.getElementById('hotelProduct.roomSizeInSquareMeter').onchange();")
                         
                 # Quantity of product
                 quantity = str(row['Quantity\nof product *']).strip()

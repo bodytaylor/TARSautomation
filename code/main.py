@@ -1,8 +1,7 @@
 import os
-from TarsAutomation import driver, logger
 import TarsAutomation as ta
 from hotel_content import ContentBook
-
+    
 # Constants
 VERSION = "1.0.2"
 
@@ -20,11 +19,11 @@ def load_content_book(hotel_rid):
     while True:
         try:
             hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
-            logger.info(f'{hotel_rid} : Content Book Loaded')
+            ta.logger.info(f'{hotel_rid} : Content Book Loaded')
             break
         except FileNotFoundError:
             print("Content Book not found for the provided RID. Please enter a valid RID.")
-            logger.error(f'{hotel_rid} : Content Book not found')
+            ta.logger.error(f'{hotel_rid} : Content Book not found')
             hotel_rid = set_hotel_rid()
     return hotel_rid, hotel_content
 
@@ -46,7 +45,7 @@ def main():
     # Login and perform hotel search
     ta.login()
     ta.hotel_search(hotel_rid)
-
+    
     # Main menu loop
     while True:
         clear_console()
@@ -78,6 +77,7 @@ def main():
         print("25. Add Hotel contact")
         print("26. Add Guarantee")
         print("27. Add Payment")
+        print("99. Re-Load Content Book")
         print("Enter q for exit")
 
         # User Choice
@@ -160,7 +160,7 @@ def main():
             surrounding_attraction.add(hotel_rid, hotel_content)  
         elif choice == '25':
             import hotel_contact
-            hotel_contact.add(hotel_rid)    
+            hotel_contact.add(hotel_rid, hotel_content)    
         elif choice == '26':
             import guarantees
             guarantees.add(hotel_rid)
@@ -170,11 +170,12 @@ def main():
         elif choice == '28':
             import set_hotel_limit
             set_hotel_limit.add(hotel_rid)
+        elif choice == '99':
+            hotel_rid, hotel_content = load_content_book(hotel_rid)
              
-               
         elif choice == "q":
             print("Exiting the program. Goodbye!")
-            driver.quit()
+            ta.driver.quit()
             break
         else:
             print("Invalid choice. Please input Valid Value.")
@@ -183,7 +184,7 @@ def main():
         user_choice = input("Do you want to perform another task? (y/n): ")
         if user_choice.lower() != "y":
             print("Exiting the program. Goodbye!")
-            driver.quit()
+            ta.driver.quit()
             break
         
 def run_full_automation(hotel_rid, hotel_content):
@@ -212,10 +213,10 @@ def run_full_automation(hotel_rid, hotel_content):
 
     import special_rating
     special_rating.add(hotel_rid, hotel_content)
-    
+
     import set_hotel_limit
     set_hotel_limit.add(hotel_rid)
-
+    
     import meal_options
     meal_options.add(hotel_rid, hotel_content)
 
@@ -226,7 +227,7 @@ def run_full_automation(hotel_rid, hotel_content):
     room_translation.add(hotel_rid, hotel_content)
 
     import web_description
-    web_description.add(hotel_rid, hotel_content.web_description_df)
+    web_description.add(hotel_rid, hotel_content)
 
     import main_service
     main_service.add(hotel_rid, hotel_content)
@@ -265,7 +266,7 @@ def run_full_automation(hotel_rid, hotel_content):
     surrounding_attraction.add(hotel_rid, hotel_content)  
 
     import hotel_contact
-    hotel_contact.add(hotel_rid)    
+    hotel_contact.add(hotel_rid, hotel_content)    
 
     import guarantees
     guarantees.add(hotel_rid)
