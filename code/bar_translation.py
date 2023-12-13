@@ -1,6 +1,5 @@
 import TarsAutomation as ta
 from selenium.webdriver.common.by import By
-from dictionary import bar_dic
 
 def add(hotel_rid, hotel_content):
     bars = hotel_content.bars
@@ -8,7 +7,6 @@ def add(hotel_rid, hotel_content):
     for keys in bars:
         # find type
         bar_code = bars[f'{keys}'][0]['Code']
-        code_type = bar_dic[bar_code]
         description = bars[f'{keys}'][7]['Description']
         key = keys.upper()
         key = ta.url_parse(key)

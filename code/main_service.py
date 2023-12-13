@@ -29,7 +29,7 @@ def add(hotel_rid, hotel_content):
                     ta.input_text(element_id='hotelProduct.quantity', text=amount)
                 
                 # always yes on GDS
-                ta.tick_box('availableOnGDSMedia')
+                ta.tick_box(element='hotelProduct.availableOnGDSMedia')
                 
                 # Click add
                 ta.click_button(element='hotelProduct.submitButton')

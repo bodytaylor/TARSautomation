@@ -46,5 +46,6 @@ def add(hotel_rid, hotel_content):
             mk_label = row['Marketing']
             ta.product_description(code=code, description=des, marketing=mk_label, type=type, hotel_rid=hotel_rid)
             ta.translate_hotel_product()
+            ta.get_response(hotel_rid, code)
             
     

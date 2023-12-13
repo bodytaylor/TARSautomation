@@ -277,3 +277,196 @@
 2023-12-12 16:06:48,156 : INFO : hotelProduct.orderInResaScreen : 10
 2023-12-12 16:06:48,250 : INFO : Submitdata
 2023-12-12 16:06:51,337 : INFO : C0C1 : S4B : Product 'S4B' has been added
+2023-12-13 14:02:44,231 : INFO : C0C1 : Content Book Loaded
+2023-12-13 14:02:44,236 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 14:02:53,626 : INFO : Login Success User: NANSAN
+2023-12-13 14:03:02,914 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 14:09:54,929 : INFO : Product descriptions
+2023-12-13 14:10:02,662 : INFO : C0C1 : AAA : Product has been translated
+2023-12-13 14:10:06,508 : INFO : Product descriptions
+2023-12-13 14:10:14,231 : INFO : C0C1 : AP1 : Product has been translated
+2023-12-13 14:10:18,032 : INFO : Product descriptions
+2023-12-13 14:10:25,685 : INFO : C0C1 : ATB : Product has been translated
+2023-12-13 14:10:29,311 : INFO : Product descriptions
+2023-12-13 14:10:36,923 : INFO : C0C1 : AP1Z : Product has been translated
+2023-12-13 14:10:40,606 : INFO : Product descriptions
+2023-12-13 14:10:48,199 : INFO : C0C1 : AP2 : Product has been translated
+2023-12-13 14:10:51,723 : INFO : Product descriptions
+2023-12-13 14:10:59,238 : INFO : C0C1 : AP2A : Product has been translated
+2023-12-13 14:11:02,933 : INFO : Product descriptions
+2023-12-13 14:11:10,591 : INFO : C0C1 : AP2HV : Product has been translated
+2023-12-13 14:11:14,074 : INFO : Product descriptions
+2023-12-13 14:11:21,613 : INFO : C0C1 : AP3 : Product has been translated
+2023-12-13 14:11:25,147 : INFO : Product descriptions
+2023-12-13 14:11:32,774 : INFO : C0C1 : S4A : Product has been translated
+2023-12-13 14:11:36,295 : INFO : Product descriptions
+2023-12-13 14:11:44,014 : INFO : C0C1 : S4B : Product has been translated
+2023-12-13 14:11:44,015 : INFO : C0C1 : Room Translation Complete
+2023-12-13 14:14:41,051 : INFO : C0C1 : Content Book Loaded
+2023-12-13 14:14:41,055 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 14:14:51,585 : INFO : Login Success User: NANSAN
+2023-12-13 14:14:59,080 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 14:15:11,002 : INFO : Products -   
+2023-12-13 14:22:46,279 : INFO : C0C1 : Content Book Loaded
+2023-12-13 14:22:46,281 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 14:22:54,816 : INFO : Login Success User: NANSAN
+2023-12-13 14:23:02,799 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 14:23:19,473 : INFO : Products -   
+2023-12-13 14:23:21,540 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:23:21,617 : INFO : Submitdata
+2023-12-13 14:23:24,227 : INFO : C0C1 : ATOUT1 : Product 'ATOUT1' has been added
+2023-12-13 14:23:25,330 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:23:25,407 : INFO : Submitdata
+2023-12-13 14:23:28,003 : INFO : C0C1 : ATOUT2 : Product 'ATOUT2' has been added
+2023-12-13 14:23:29,104 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:23:29,183 : INFO : Submitdata
+2023-12-13 14:23:31,766 : INFO : C0C1 : ATOUT3 : Product 'ATOUT3' has been added
+2023-12-13 14:23:32,888 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:23:32,967 : INFO : Submitdata
+2023-12-13 14:23:35,550 : INFO : C0C1 : ATOUT4 : Product 'ATOUT4' has been added
+2023-12-13 14:23:36,672 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:23:36,751 : INFO : Submitdata
+2023-12-13 14:23:39,334 : INFO : C0C1 : ATOUT5 : Product 'ATOUT5' has been added
+2023-12-13 14:23:40,452 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:23:40,530 : INFO : Submitdata
+2023-12-13 14:23:43,081 : INFO : C0C1 : DWINFO : Product 'DWINFO' has been added
+2023-12-13 14:23:44,201 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:23:44,279 : INFO : Submitdata
+2023-12-13 14:23:46,849 : INFO : C0C1 : DWDEST : Product 'DWDEST' has been added
+2023-12-13 14:23:50,329 : INFO : Product descriptions
+2023-12-13 14:23:58,904 : INFO : Product descriptions
+2023-12-13 14:24:07,349 : INFO : Product descriptions
+2023-12-13 14:24:16,252 : INFO : Product descriptions
+2023-12-13 14:24:25,216 : INFO : Product descriptions
+2023-12-13 14:24:34,087 : INFO : Product descriptions
+2023-12-13 14:24:41,897 : INFO : Product descriptions
+2023-12-13 14:25:59,085 : INFO : Products -   
+2023-12-13 14:26:01,160 : INFO : hotelProduct.quantity : 1
+2023-12-13 14:38:48,966 : INFO : C0C1 : Content Book Loaded
+2023-12-13 14:38:48,970 : INFO : Credentials loaded Username: NANSAN
+2023-12-13 14:38:57,399 : INFO : Login Success User: NANSAN
+2023-12-13 14:39:06,036 : INFO : Selected Hotel : C0C1 - MOVENPICK LIVING SAKLIVADI
+2023-12-13 14:39:26,698 : INFO : Products -   
+2023-12-13 14:39:28,613 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:39:28,692 : INFO : Submitdata
+2023-12-13 14:39:31,232 : INFO : C0C1 : ATOUT1 : Product already exists
+2023-12-13 14:39:32,263 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:39:32,342 : INFO : Submitdata
+2023-12-13 14:39:34,878 : INFO : C0C1 : ATOUT2 : Product already exists
+2023-12-13 14:39:35,918 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:39:35,996 : INFO : Submitdata
+2023-12-13 14:39:38,514 : INFO : C0C1 : ATOUT3 : Product already exists
+2023-12-13 14:39:39,543 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:39:39,622 : INFO : Submitdata
+2023-12-13 14:39:42,160 : INFO : C0C1 : ATOUT4 : Product already exists
+2023-12-13 14:39:43,220 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:39:43,313 : INFO : Submitdata
+2023-12-13 14:39:45,899 : INFO : C0C1 : ATOUT5 : Product already exists
+2023-12-13 14:39:46,988 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:39:47,081 : INFO : Submitdata
+2023-12-13 14:39:49,668 : INFO : C0C1 : DWINFO : Product already exists
+2023-12-13 14:39:50,696 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:39:50,774 : INFO : Submitdata
+2023-12-13 14:39:53,312 : INFO : C0C1 : DWDEST : Product already exists
+2023-12-13 14:39:56,759 : INFO : Product descriptions
+2023-12-13 14:40:03,258 : INFO : C0C1 : ATOUT1 : Product has been translated
+2023-12-13 14:40:06,880 : INFO : Product descriptions
+2023-12-13 14:40:12,970 : INFO : C0C1 : ATOUT2 : Product has been translated
+2023-12-13 14:40:16,806 : INFO : Product descriptions
+2023-12-13 14:40:23,341 : INFO : C0C1 : ATOUT3 : Product has been translated
+2023-12-13 14:40:26,893 : INFO : Product descriptions
+2023-12-13 14:40:33,806 : INFO : C0C1 : ATOUT4 : Product has been translated
+2023-12-13 14:40:37,658 : INFO : Product descriptions
+2023-12-13 14:40:44,155 : INFO : C0C1 : ATOUT5 : Product has been translated
+2023-12-13 14:40:47,916 : INFO : Product descriptions
+2023-12-13 14:40:53,422 : INFO : C0C1 : DWINFO : Product has been translated
+2023-12-13 14:40:57,096 : INFO : Product descriptions
+2023-12-13 14:41:03,590 : INFO : C0C1 : DWDEST : Product has been translated
+2023-12-13 14:41:15,579 : INFO : Products -   
+2023-12-13 14:41:17,508 : INFO : hotelProduct.quantity : 1
+2023-12-13 14:41:17,587 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:17,666 : INFO : Submitdata
+2023-12-13 14:41:20,045 : INFO : C0C1 : HDRNMB : Product 'HDRNMB' has been added
+2023-12-13 14:41:21,084 : INFO : hotelProduct.quantity : 33
+2023-12-13 14:41:21,162 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:21,240 : INFO : Submitdata
+2023-12-13 14:41:23,604 : INFO : C0C1 : FAMRNB : Product 'FAMRNB' has been added
+2023-12-13 14:41:24,648 : INFO : hotelProduct.quantity : 164
+2023-12-13 14:41:24,726 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:24,804 : INFO : Submitdata
+2023-12-13 14:41:27,182 : INFO : C0C1 : NSRNMB : Product 'NSRNMB' has been added
+2023-12-13 14:41:28,242 : INFO : hotelProduct.quantity : 164
+2023-12-13 14:41:28,322 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:28,399 : INFO : Submitdata
+2023-12-13 14:41:30,784 : INFO : C0C1 : NOSMOK : Product 'NOSMOK' has been added
+2023-12-13 14:41:31,823 : INFO : hotelProduct.quantity : 164
+2023-12-13 14:41:31,915 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:31,993 : INFO : Submitdata
+2023-12-13 14:41:34,805 : INFO : C0C1 : NSRNMB : Product already exists
+2023-12-13 14:41:35,988 : INFO : hotelProduct.quantity : 33
+2023-12-13 14:41:36,065 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:36,159 : INFO : Submitdata
+2023-12-13 14:41:38,896 : INFO : C0C1 : CONRNB : Product 'CONRNB' has been added
+2023-12-13 14:41:39,999 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:40,092 : INFO : Submitdata
+2023-12-13 14:41:42,494 : INFO : C0C1 : IXTADB : Product 'IXTADB' has been added
+2023-12-13 14:41:43,537 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:43,630 : INFO : Submitdata
+2023-12-13 14:41:46,090 : INFO : C0C1 : IXTCHB : Product 'IXTCHB' has been added
+2023-12-13 14:41:47,177 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:47,269 : INFO : Submitdata
+2023-12-13 14:41:49,711 : INFO : C0C1 : IXTCR : Product 'IXTCR' has been added
+2023-12-13 14:41:50,771 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:50,847 : INFO : Submitdata
+2023-12-13 14:41:53,478 : INFO : C0C1 : MBUFF : Product already exists
+2023-12-13 14:41:54,570 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:54,679 : INFO : Submitdata
+2023-12-13 14:41:57,076 : INFO : C0C1 : CHIMB1 : Product 'CHIMB1' has been added
+2023-12-13 14:41:58,160 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:41:58,238 : INFO : Submitdata
+2023-12-13 14:42:00,677 : INFO : C0C1 : CHIMB2 : Product 'CHIMB2' has been added
+2023-12-13 14:42:01,762 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:01,855 : INFO : Submitdata
+2023-12-13 14:42:04,253 : INFO : C0C1 : CHIMB3 : Product 'CHIMB3' has been added
+2023-12-13 14:42:20,540 : INFO : Products -   
+2023-12-13 14:42:22,714 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:22,806 : INFO : Submitdata
+2023-12-13 14:42:25,215 : INFO : C0C1 : FIBERO : Product 'FIBERO' has been added
+2023-12-13 14:42:26,286 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:26,379 : INFO : Submitdata
+2023-12-13 14:42:28,873 : INFO : C0C1 : FAX : Product 'FAX' has been added
+2023-12-13 14:42:29,919 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:30,011 : INFO : Submitdata
+2023-12-13 14:42:32,392 : INFO : C0C1 : HIGHTR : Product 'HIGHTR' has been added
+2023-12-13 14:42:33,449 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:33,527 : INFO : Submitdata
+2023-12-13 14:42:36,063 : INFO : C0C1 : PRINTE : Product 'PRINTE' has been added
+2023-12-13 14:42:37,133 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:37,226 : INFO : Submitdata
+2023-12-13 14:42:39,672 : INFO : C0C1 : RJ11 : Product 'RJ11' has been added
+2023-12-13 14:42:40,730 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:40,824 : INFO : Submitdata
+2023-12-13 14:42:43,302 : INFO : C0C1 : RJ45 : Product 'RJ45' has been added
+2023-12-13 14:42:44,390 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:44,483 : INFO : Submitdata
+2023-12-13 14:42:46,930 : INFO : C0C1 : WIFCOM : Product 'WIFCOM' has been added
+2023-12-13 14:42:48,037 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:48,130 : INFO : Submitdata
+2023-12-13 14:42:50,634 : INFO : C0C1 : WIFI : Product 'WIFI' has been added
+2023-12-13 14:42:51,741 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:51,835 : INFO : Submitdata
+2023-12-13 14:42:54,294 : INFO : C0C1 : WIFIBO : Product 'WIFIBO' has been added
+2023-12-13 14:42:55,404 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:55,510 : INFO : Submitdata
+2023-12-13 14:42:57,894 : INFO : C0C1 : AIRC  : Product 'AIRC' has been added
+2023-12-13 14:42:58,981 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:42:59,074 : INFO : Submitdata
+2023-12-13 14:43:01,523 : INFO : C0C1 : COLORS : Product 'COLORS' has been added
+2023-12-13 14:43:02,565 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:02,659 : INFO : Submitdata
+2023-12-13 14:43:05,118 : INFO : C0C1 : DATA : Product 'DATA' has been added
+2023-12-13 14:43:06,190 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:06,283 : INFO : Submitdata
+2023-12-13 14:43:08,756 : INFO : C0C1 : FERA  : Product 'FERA' has been added
+2023-12-13 14:43:09,812 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:09,890 : INFO : Submitdata

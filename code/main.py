@@ -121,7 +121,7 @@ def main():
             room_translation.add(hotel_rid, hotel_content)
         elif choice == '12':
             import web_description
-            web_description.add(hotel_rid, hotel_content.web_description_df)
+            web_description.add(hotel_rid, hotel_content)
         elif choice == '13':
             import main_service
             main_service.add(hotel_rid, hotel_content)
