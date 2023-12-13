@@ -8,7 +8,7 @@ cd /d "%~dp0"
 call .venv\Scripts\activate.bat
 
 :: Run the Python script with the provided arguments
-python "code\main.py"
+python3 "code\main.py"
 
 :: Deactivate the virtual environment
 call pricing_env\Scripts\deactivate.bat
