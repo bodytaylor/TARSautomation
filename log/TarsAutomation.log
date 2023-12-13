@@ -470,3 +470,244 @@
 2023-12-13 14:43:08,756 : INFO : C0C1 : FERA  : Product 'FERA' has been added
 2023-12-13 14:43:09,812 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
 2023-12-13 14:43:09,890 : INFO : Submitdata
+2023-12-13 14:43:12,676 : INFO : C0C1 : ICE : Product 'ICE' has been added
+2023-12-13 14:43:13,796 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:13,888 : INFO : Submitdata
+2023-12-13 14:43:16,406 : INFO : C0C1 : PRESS  : Product 'PRESS' has been added
+2023-12-13 14:43:17,527 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:17,635 : INFO : Submitdata
+2023-12-13 14:43:20,325 : INFO : C0C1 : SAFE : Product 'SAFE' has been added
+2023-12-13 14:43:21,516 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:21,641 : INFO : Submitdata
+2023-12-13 14:43:24,310 : INFO : C0C1 : VOLT2 : Product 'VOLT2' has been added
+2023-12-13 14:43:25,461 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:25,568 : INFO : Submitdata
+2023-12-13 14:43:28,094 : INFO : C0C1 : WATER : Product 'WATER' has been added
+2023-12-13 14:43:29,169 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:29,262 : INFO : Submitdata
+2023-12-13 14:43:31,766 : INFO : C0C1 : EQBATH : Product 'EQBATH' has been added
+2023-12-13 14:43:32,839 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:32,932 : INFO : Submitdata
+2023-12-13 14:43:35,378 : INFO : C0C1 : PHON4 : Product 'PHON4' has been added
+2023-12-13 14:43:36,457 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:36,549 : INFO : Submitdata
+2023-12-13 14:43:38,968 : INFO : C0C1 : TEMPMA : Product 'TEMPMA' has been added
+2023-12-13 14:43:40,026 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:40,120 : INFO : Submitdata
+2023-12-13 14:43:42,592 : INFO : C0C1 : WINDOW : Product 'WINDOW' has been added
+2023-12-13 14:43:43,652 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:43,731 : INFO : Submitdata
+2023-12-13 14:43:46,141 : INFO : C0C1 : WORK1 : Product 'WORK1' has been added
+2023-12-13 14:43:47,216 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:47,309 : INFO : Submitdata
+2023-12-13 14:43:49,726 : INFO : C0C1 : BATH : Product 'BATH' has been added
+2023-12-13 14:43:50,782 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:50,904 : INFO : Submitdata
+2023-12-13 14:43:53,358 : INFO : C0C1 : HAIRD : Product 'HAIRD' has been added
+2023-12-13 14:43:54,413 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:54,506 : INFO : Submitdata
+2023-12-13 14:43:56,961 : INFO : C0C1 : MAKE : Product 'MAKE' has been added
+2023-12-13 14:43:58,065 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:43:58,172 : INFO : Submitdata
+2023-12-13 14:44:00,554 : INFO : C0C1 : TOILET : Product 'TOILET' has been added
+2023-12-13 14:44:01,581 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:01,673 : INFO : Submitdata
+2023-12-13 14:44:04,055 : INFO : C0C1 : AUDI : Product 'AUDI' has been added
+2023-12-13 14:44:05,078 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:05,156 : INFO : Submitdata
+2023-12-13 14:44:07,524 : INFO : C0C1 : BOLT : Product 'BOLT' has been added
+2023-12-13 14:44:08,568 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:08,648 : INFO : Submitdata
+2023-12-13 14:44:11,029 : INFO : C0C1 : EMERGE : Product 'EMERGE' has been added
+2023-12-13 14:44:12,057 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:12,133 : INFO : Submitdata
+2023-12-13 14:44:14,529 : INFO : C0C1 : SMOKE : Product 'SMOKE' has been added
+2023-12-13 14:44:15,591 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:15,670 : INFO : Submitdata
+2023-12-13 14:44:18,049 : INFO : C0C1 : SPINKL : Product 'SPINKL' has been added
+2023-12-13 14:44:19,082 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:19,161 : INFO : Submitdata
+2023-12-13 14:44:21,526 : INFO : C0C1 : VIEW : Product 'VIEW' has been added
+2023-12-13 14:44:22,571 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:22,633 : INFO : Submitdata
+2023-12-13 14:44:25,024 : INFO : C0C1 : VING : Product 'VING' has been added
+2023-12-13 14:44:26,063 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:26,142 : INFO : Submitdata
+2023-12-13 14:44:28,519 : INFO : C0C1 : COFFE : Product 'COFFE' has been added
+2023-12-13 14:44:29,546 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:29,640 : INFO : Submitdata
+2023-12-13 14:44:32,007 : INFO : C0C1 : KITCHE : Product 'KITCHE' has been added
+2023-12-13 14:44:33,033 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:33,125 : INFO : Submitdata
+2023-12-13 14:44:35,544 : INFO : C0C1 : MICRO : Product 'MICRO' has been added
+2023-12-13 14:44:36,600 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:36,677 : INFO : Submitdata
+2023-12-13 14:44:39,046 : INFO : C0C1 : DIAL : Product 'DIAL' has been added
+2023-12-13 14:44:40,088 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:40,167 : INFO : Submitdata
+2023-12-13 14:44:42,563 : INFO : C0C1 : PHON0 : Product 'PHON0' has been added
+2023-12-13 14:44:43,605 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:43,684 : INFO : Submitdata
+2023-12-13 14:44:46,071 : INFO : C0C1 : PHONE : Product 'PHONE' has been added
+2023-12-13 14:44:47,096 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:47,174 : INFO : Submitdata
+2023-12-13 14:44:49,572 : INFO : C0C1 : ALARM : Product 'ALARM' has been added
+2023-12-13 14:44:50,619 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:50,697 : INFO : Submitdata
+2023-12-13 14:44:53,085 : INFO : C0C1 : MESSA : Product 'MESSA' has been added
+2023-12-13 14:44:54,127 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:54,204 : INFO : Submitdata
+2023-12-13 14:44:56,604 : INFO : C0C1 : VOICE : Product 'VOICE' has been added
+2023-12-13 14:44:57,633 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:44:57,725 : INFO : Submitdata
+2023-12-13 14:45:00,107 : INFO : C0C1 : WAKE : Product 'WAKE' has been added
+2023-12-13 14:45:01,149 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-13 14:45:01,226 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-13 14:45:01,304 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-13 14:45:01,367 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-13 14:45:01,446 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-13 14:45:01,524 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:01,602 : INFO : Submitdata
+2023-12-13 14:45:03,967 : INFO : C0C1 : NURSE : Product 'NURSE' has been added
+2023-12-13 14:45:05,011 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:05,087 : INFO : Submitdata
+2023-12-13 14:45:07,452 : INFO : C0C1 : PKGECL : Product 'PKGECL' has been added
+2023-12-13 14:45:08,483 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:08,578 : INFO : Submitdata
+2023-12-13 14:45:10,948 : INFO : C0C1 : VALET : Product 'VALET' has been added
+2023-12-13 14:45:11,993 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:12,072 : INFO : Submitdata
+2023-12-13 14:45:14,454 : INFO : C0C1 : PARK : Product 'PARK' has been added
+2023-12-13 14:45:15,506 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:15,584 : INFO : Submitdata
+2023-12-13 14:45:17,934 : INFO : C0C1 : PARK1 : Product 'PARK1' has been added
+2023-12-13 14:45:18,979 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:19,058 : INFO : Submitdata
+2023-12-13 14:45:21,429 : INFO : C0C1 : PARK3 : Product 'PARK3' has been added
+2023-12-13 14:45:22,470 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:22,550 : INFO : Submitdata
+2023-12-13 14:45:24,944 : INFO : C0C1 : PARK5 : Product 'PARK5' has been added
+2023-12-13 14:45:25,989 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:26,082 : INFO : Submitdata
+2023-12-13 14:45:28,468 : INFO : C0C1 : PARKIN : Product 'PARKIN' has been added
+2023-12-13 14:45:29,480 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:29,573 : INFO : Submitdata
+2023-12-13 14:45:31,958 : INFO : C0C1 : XPKCSI : Product 'XPKCSI' has been added
+2023-12-13 14:45:32,981 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:33,073 : INFO : Submitdata
+2023-12-13 14:45:35,471 : INFO : C0C1 : HANDIC : Product 'HANDIC' has been added
+2023-12-13 14:45:36,484 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:36,560 : INFO : Submitdata
+2023-12-13 14:45:38,953 : INFO : C0C1 : WHEEL : Product 'WHEEL' has been added
+2023-12-13 14:45:39,994 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:40,087 : INFO : Submitdata
+2023-12-13 14:45:42,516 : INFO : C0C1 : BAGA : Product 'BAGA' has been added
+2023-12-13 14:45:43,620 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-13 14:45:43,697 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-13 14:45:43,775 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-13 14:45:43,870 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-13 14:45:43,962 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-13 14:45:44,042 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:44,121 : INFO : Submitdata
+2023-12-13 14:45:46,506 : INFO : C0C1 : BLAN : Product 'BLAN' has been added
+2023-12-13 14:45:47,562 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:47,639 : INFO : Submitdata
+2023-12-13 14:45:50,022 : INFO : C0C1 : CONC : Product 'CONC' has been added
+2023-12-13 14:45:51,067 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:51,144 : INFO : Submitdata
+2023-12-13 14:45:53,530 : INFO : C0C1 : COPY : Product 'COPY' has been added
+2023-12-13 14:45:54,557 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:54,636 : INFO : Submitdata
+2023-12-13 14:45:57,020 : INFO : C0C1 : SHOES2 : Product 'SHOES2' has been added
+2023-12-13 14:45:58,048 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:45:58,126 : INFO : Submitdata
+2023-12-13 14:46:00,527 : INFO : C0C1 : INTHD : Product 'INTHD' has been added
+2023-12-13 14:46:01,587 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:01,679 : INFO : Submitdata
+2023-12-13 14:46:04,059 : INFO : C0C1 : REPASS : Product 'REPASS' has been added
+2023-12-13 14:46:05,103 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:05,181 : INFO : Submitdata
+2023-12-13 14:46:07,588 : INFO : C0C1 : WIFI2 : Product 'WIFI2' has been added
+2023-12-13 14:46:08,625 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:08,718 : INFO : Submitdata
+2023-12-13 14:46:11,121 : INFO : C0C1 : OPENH : Product 'OPENH' has been added
+2023-12-13 14:46:12,161 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:12,241 : INFO : Submitdata
+2023-12-13 14:46:14,611 : INFO : C0C1 : DAYLIT : Product 'DAYLIT' has been added
+2023-12-13 14:46:15,649 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:15,726 : INFO : Submitdata
+2023-12-13 14:46:18,108 : INFO : C0C1 : WIFI3 : Product 'WIFI3' has been added
+2023-12-13 14:46:18,109 : ERROR : C0C1 : EN or GB Product not found in Product Library
+2023-12-13 14:46:19,153 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:19,245 : INFO : Submitdata
+2023-12-13 14:46:21,612 : INFO : C0C1 : AIRCOL : Product 'AIRCOL' has been added
+2023-12-13 14:46:22,669 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:22,747 : INFO : Submitdata
+2023-12-13 14:46:25,150 : INFO : C0C1 : DOORS : Product 'DOORS' has been added
+2023-12-13 14:46:26,194 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:26,272 : INFO : Submitdata
+2023-12-13 14:46:28,654 : INFO : C0C1 : EMER1 : Product 'EMER1' has been added
+2023-12-13 14:46:29,681 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:29,774 : INFO : Submitdata
+2023-12-13 14:46:32,170 : INFO : C0C1 : AUTAIR : Product 'AUTAIR' has been added
+2023-12-13 14:46:33,198 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:46:33,291 : INFO : Submitdata
+2023-12-13 14:46:35,706 : INFO : C0C1 : SUITV : Product 'SUITV' has been added
+2023-12-13 14:46:35,707 : WARNING : Please Manually Check this product: ['EN or GB']
+2023-12-13 14:47:56,956 : INFO : Products -   
+2023-12-13 14:47:58,898 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-13 14:47:58,977 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-13 14:47:59,054 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-13 14:47:59,115 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-13 14:47:59,192 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-13 14:47:59,271 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:47:59,349 : INFO : Submitdata
+2023-12-13 14:48:01,759 : INFO : C0C1 : GOLF : Product 'GOLF' has been added
+2023-12-13 14:48:02,783 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:48:02,861 : INFO : Submitdata
+2023-12-13 14:48:05,209 : INFO : C0C1 : POOLNB : Product 'POOLNB' has been added
+2023-12-13 14:48:06,247 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:48:06,338 : INFO : Submitdata
+2023-12-13 14:48:08,674 : INFO : C0C1 : POOL : Product 'POOL' has been added
+2023-12-13 14:48:09,683 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:48:09,762 : INFO : Submitdata
+2023-12-13 14:48:12,128 : INFO : C0C1 : POOL2 : Product 'POOL2' has been added
+2023-12-13 14:48:13,154 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:48:13,233 : INFO : Submitdata
+2023-12-13 14:48:15,584 : INFO : C0C1 : FITE : Product 'FITE' has been added
+2023-12-13 14:48:16,582 : INFO : hotelProduct.paying : checkbox.checked
+2023-12-13 14:48:16,645 : INFO : hotelProduct.maxOccupancyTotal : 1
+2023-12-13 14:48:16,724 : INFO : hotelProduct.maxQtyInRoom : 1
+2023-12-13 14:48:16,786 : INFO : hotelProduct.orderInResaScreen : 99
+2023-12-13 14:48:16,849 : INFO : hotelProduct.maxOccupancyAdult : 1
+2023-12-13 14:48:16,927 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:48:17,005 : INFO : Submitdata
+2023-12-13 14:48:19,356 : INFO : C0C1 : MASS : Product 'MASS' has been added
+2023-12-13 14:48:20,369 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2023-12-13 14:48:20,446 : INFO : Submitdata
+2023-12-13 14:48:22,813 : INFO : C0C1 : SAUN : Product 'SAUN' has been added
+2023-12-13 14:48:39,030 : INFO : Restaurants
+2023-12-13 14:48:40,881 : INFO : hotelRestaurant.rank : 1
+2023-12-13 14:48:40,960 : INFO : hotelRestaurant.name : Hotel Cafe
+2023-12-13 14:48:41,038 : INFO : hotelRestaurant.horaires : 07:00-12:00
+2023-12-13 14:48:41,100 : INFO : hotelRestaurant.cookType.code : INTERN
+2023-12-13 14:48:41,176 : INFO : hotelRestaurant.mondayMidday : checkbox.checked
+2023-12-13 14:48:41,252 : INFO : hotelRestaurant.tuesdayMidday : checkbox.checked
+2023-12-13 14:48:41,330 : INFO : hotelRestaurant.wednesdayMidday : checkbox.checked
+2023-12-13 14:48:41,407 : INFO : hotelRestaurant.thursdayMidday : checkbox.checked
+2023-12-13 14:48:41,471 : INFO : hotelRestaurant.fridayMidday : checkbox.checked
+2023-12-13 14:48:41,532 : INFO : hotelRestaurant.saturdayMidday : checkbox.checked
+2023-12-13 14:48:41,595 : INFO : hotelRestaurant.sundayMidday : checkbox.checked
+2023-12-13 14:48:41,657 : INFO : hotelRestaurant.cash : checkbox.checked
+2023-12-13 14:48:41,719 : INFO : hotelRestaurant.creditCard : checkbox.checked
+2023-12-13 14:48:41,781 : INFO : hotelRestaurant.maximumSeating : 0
+2023-12-13 14:48:41,844 : INFO : hotelRestaurant.wheelChairAccess : checkbox.checked
+2023-12-13 14:48:41,921 : INFO : hotelRestaurant.airConditionning : checkbox.checked
+2023-12-13 14:48:41,982 : INFO : hotelRestaurant.nonSmoking : checkbox.checked
+2023-12-13 14:48:42,046 : INFO : hotelRestaurant.childMenu : checkbox.checked
+2023-12-13 14:48:42,123 : INFO : hotelRestaurant.saltFreeMenu : checkbox.checked
+2023-12-13 14:48:42,187 : INFO : hotelRestaurant.delightMenu : checkbox.checked
+2023-12-13 14:48:42,250 : INFO : hotelRestaurant.vegetarianMenu : checkbox.checked
+2023-12-13 14:48:42,312 : INFO : hotelRestaurant.halalMenu : checkbox.checked
+2023-12-13 14:48:42,390 : INFO : hotelRestaurant.glutenFreeMenu : checkbox.checked
+2023-12-13 14:48:43,737 : INFO : C0C1 : RT : Restaurant 'RT' has been added

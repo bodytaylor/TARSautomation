@@ -25,6 +25,7 @@ class ContentBook:
         self._main_attractions_data()
         self._surrounding_attracition_data()
         self._product_lib_df()
+        self._resaurant_description()
     
     def close_workbook(self):
         if self.contentbook:
