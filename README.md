@@ -27,20 +27,27 @@ This program designed for windows 10 operating system only.
 
 ### Prerequisites
 
- - python 3.8 x64 bit
+ - python 3.8.1 x64 bit
+ - pip 23.2.1
+ - virtualenv
  - Microsoft Edge
  - Google Chrome
 
 ### Installation
 
-Download source code from github or using git clone to local machine, then run the "run this first.bat" for setup environment. Be patient it might take time.
+1. Download source code from github or using git clone to local machine. 
+2. Open CMD and install pip using command 
+`python get-pip.py`
+3. Install virtualenv by run this command
+`pip install virtualenv`
+4. Then run the "run this first.bat" for setup environment. Be patient it might take time.
 
 ## Usage
 
 For onboarding process go to folder "hotel_workbook" and
 create a new folder name as RID, inside the folder requires.
-  1. Content creation book naming as "RID"
-  2. Pricing book v1.7 naming as "RID Pricing Book"
+  1. Content creation book naming as "{hotel_rid} Content Book Hotel Creation.xlsm"
+  2. Pricing book v1.7 naming as "{hotel_rid} Pricing Book Hotel Creation v1.7.xlsx"
 
 ### Automation Process
 
