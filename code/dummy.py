@@ -1,41 +1,38 @@
-import requests
-from bs4 import BeautifulSoup
-from requests.auth import HTTPBasicAuth
-# Create a session
-session = requests.Session()
+def generate_unique_code(full_name, existing_codes):
+    # Split the full name into words
+    words = full_name.split()
 
-url_login = 'https://myaccor.service-now.com/login.do'
-username = 'nantawat.sangkarn@accor.com'
-password = 'Ink295*968KK'
+    # Take the first letter from each word and concatenate them
+    code = ''.join(word[0] for word in words)
 
-# Login to ServiceNow
-login_payload = {
-    'user': username,
-    'password': password,
-    'sysparm_login': 'Log in',
-}
+    # Ensure the code is exactly 3 characters by truncating or padding with 'X'
+    code = (code + 'XXX')[:3]
 
-login_response = session.post(url_login, data=login_payload)
+    # Check if the code is already in the database
+    while code.upper() in existing_codes:
+        # If the code is a duplicate, modify it using available characters in the name
+        code = modify_code(code, words)
 
-# Check if login was successful (you might need to inspect the response content or status code)
-if login_response.ok:
-    print("Login successful!")
-    # Now you can make requests with the authenticated session
+    return code.upper()
 
-    # Example: Get data from a ServiceNow page
-    url_target = 'https://myaccor.service-now.com/sys_report_display.do?sysparm_report_id=33d66650871f7d9c97d7b9d09bbb35c8'
-    response = session.get(url_target)
-
-    if response.ok:
-        print("Request successful!")
+def modify_code(code, words):
+    # Increment the last character in the code
+    last_char = code[-1]
+    if last_char.isalpha():
+        code = code[:-1] + chr((ord(last_char) - ord('A') + 1) % 26 + ord('A'))
     else:
-        print(f"Failed to retrieve the target webpage. Status code: {response.status_code}")
-else:
-    print(f"Login failed. Status code: {login_response.status_code}")
-    
-html_content = response.content
-soup = BeautifulSoup(html_content, 'html.parser')
-report_content_element = soup.find('div', class_='report_content list_report_content')
-report = report_content_element.text.strip()
+        code = code[:-1] + 'A'
 
-print(report)
+    # Take the first letter from each word and concatenate them
+    code += ''.join(word[0] for word in words)
+
+    # Ensure the code is exactly 3 characters by truncating or padding with 'X'
+    code = (code + 'XXX')[:3]
+
+    return code
+
+# Example usage:
+existing_codes = {'ABC', 'DEF', 'GHI'}  # Replace this with your actual database of codes
+full_name = input("Enter your full name: ")
+result_code = generate_unique_code(full_name, existing_codes)
+print("Generated code:", result_code)

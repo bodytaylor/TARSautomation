@@ -9,8 +9,14 @@ import TarsAutomation as ta
 import csv
 import pandas as pd
 
-# Extraction
+# Todo Test the code
 
+# Extraction
+def job_extraction():
+    # path = input('Input report path: ').replace('"', '')
+    path = r"D:\NSANGKARN\Downloads\sc_req_item (1).csv"
+    df = pd.read_csv(path, dtype=str, encoding='ISO-8859-1')
+    return df
 
 # Google api setting
 class AskGoogle():
@@ -177,14 +183,24 @@ def create_hotel_rid(google: AskGoogle, input: str):
     address = address.replace(zipcode, '')
 
     address = split_text(address)
-    address1 = address[0]
-    address2 = address[1]
-    address3 = address[2]
+    address1, address2, address3 = None, None, None
+    if len(address) >= 1: 
+        address1 = address[0]
+    if len(address) >= 2:
+        address2 = address[1]
+    if len(address) >= 3:
+        address3 = address[2]
 
     # Hotel Commercial name
     open_date = data['Opening date']
-    date_format = "%d/%m/%Y"
-    date_object = datetime.strptime(open_date, date_format)
+    try:
+        date_format = "%d/%m/%Y"
+        date_object = datetime.strptime(open_date, date_format)
+    except ValueError:
+        date_format = '%m/%d/%Y'
+        date_object = datetime.strptime(open_date, date_format)  
+
+    open_date = date_object.strftime("%d/%m/%Y")
     open_date_text = date_object.strftime("%B %Y")
     hotel_com_name = f'{hotel_name} (Opening {open_date_text})'
 
@@ -260,16 +276,16 @@ if __name__ == '__main__':
     google = AskGoogle()
 
     # Change file path to extraction file
-    df = pd.read_excel('/content/sc_req_item.xlsx')
-    open_ticket = df[df['State'] == 'Open']
-    for index, row in open_ticket.iterrows():
-        Description = row['Description']
-        req_number = row['Number']
-        rid, name = create_hotel_rid(google, input=Description)
+    df = job_extraction()
+    for index, row in df.iterrows():
+        description = row['description']
+        req_number = row['number']
+        rid, name = create_hotel_rid(google, input=description)
         
         # Job report reqiure hotel RID and Ticket Number for next task.
         job_report = [req_number, rid, name, google.create_response(rid, name)]
         create_csv(file_path, data=job_report)
+        
         
     
 

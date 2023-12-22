@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 import csv
 import time
 from datetime import date
@@ -77,9 +78,10 @@ def get_data(element_id=str):
         )
         data = element.get_attribute("value")
         print(data)
+        return data
     except:
         print("Page did not load correctly. Element not found.")
-    return data
+        return None
 
 # Chain Code
 chain_code = {
@@ -103,9 +105,14 @@ chain_code = {
     'SWI': 'SL'
     }
 
-chrome_options = Options()
+# Setup Chrome Driver
+chrome_options = webdriver.ChromeOptions()
+### Will test and upgrade this line soon ###
+prefs = {"download.default_directory": r"C:\Users\NSANGKARN\bodytaylor\TARSautomation\temp"}
+chrome_options.add_experimental_option("prefs", prefs)
 # chrome_options.add_argument("--headless")  # Enable headless mode
 driver = webdriver.Chrome(options=chrome_options)
+
 
 def login(username, password):
         # Navigate to the login page
@@ -166,11 +173,38 @@ def hotel_search(hotel_rid):
             if (action_res is None) or (count == 5):
                 break
     except:
-        print("Page did not load correctly. Element not found.")       
+        print("Page did not load correctly. Element not found.")   
+        
+def get_surrounding():
+    driver.get('https://dataweb.accor.net/dotw-trans/ipTabs!input.action')
+    time.sleep(2)
+    try:
+        download_button = WebDriverWait(driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//a[img[@title="Excel"]]'))
+        )    
+        time.sleep(1)    
+        download_button = driver.find_element(By.XPATH, '//a[img[@title="Excel"]]')
+        download_button.click()
+        time.sleep(1.5)
+        file_path = 'temp\\table-data.xls'
+        df = pd.read_excel(file_path)
+        # remove file
+        import os
+        os.remove(file_path)
+        return df
+    except TimeoutException as e:
+        get_surrounding()    
          
 def create_amadeus_code(hotel_rid):
-
-    # Navigate to the page
+    
+    # get surrounding
+    surrounding_df = get_surrounding()
+    filter_df = surrounding_df[surrounding_df['Code'] == 'CENT']
+    orientation = filter_df['Orientation']
+    cent_cap = orientation.tolist()
+    cent_cap = cent_cap[0]
+    
+    # Navigate to the General page
     driver.get('https://dataweb.accor.net/dotw-trans/displayHotelAddress!input.action')
 
     # Property code get from data web
@@ -186,22 +220,7 @@ def create_amadeus_code(hotel_rid):
         
     # Property name
     hotel_name = get_data(element_id='hotel.name')
-        
-    # Currency 3 letter
-    from hotel_content import ContentBook
-    hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
-
-    cent = hotel_content.main_attractions['CENT'][1]
-    if cent is not None:
-        cent_cap = ""
-        for char in cent:
-            if char.isupper():
-                cent_cap += char
-    elif cent == 0:
-        cent_cap = 'N'
-    else:
-        cent_cap = 'N'
-
+    
     # Surrounding Attraction  - Use Orientation information of code AER1 Defult T
     aer1 = 'T'
 
@@ -270,6 +289,8 @@ def create_amadeus_code(hotel_rid):
         print(span_text)
     except:
         print("Page did not load correctly. Element not found.")
+        span_text = None
+        hotel_longcode = f'**{hotel_longcode} Not Available'
     finally:
         if span_text != 'No hotels found with the keywords used':
             code_not_available[hotel_rid] = hotel_longcode
@@ -297,8 +318,6 @@ def create_amadeus_code(hotel_rid):
                             aer1, address_1, address_2, city, '', zip_code,
                             '', country_code, phone, fax, amadeus_check_code])
         
-
-
 # get hotel RID from user
 hotel_rid = input('input RID: ' )
 hotel_rid_list = str(hotel_rid).split()
@@ -311,4 +330,6 @@ for hotel in hotel_rid_list:
     create_amadeus_code(hotel_rid=hotel)
     
 driver.quit()
+
+# If process in batch merge to csv
 merge_csv()

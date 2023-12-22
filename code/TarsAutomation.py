@@ -392,40 +392,65 @@ def input_description_box(element_id: str, text: str):
 def new_hotel():
     driver.execute_script("window.location.replace('/dotw-trans/secure/displayNewHotel.action');")
     
-def hotel_alpha_code(hotel_name: str, iata_code: str):
-    hotel_name = hotel_name.split()
-    if len(hotel_name) >= 3:
-        hotel_name = hotel_name.split()
-        hotel_3_digits = hotel_name[0][0] + hotel_name[1][0] + hotel_name[2][0] 
+def hotel_alpha_code(hotel_name: str, iata_code: str, code=None):
+    if code is None:
+        hotel_3_digits = generate_code(hotel_name)
+        hotel_long_code = f'{iata_code}/{hotel_3_digits}'
     else:
-        hotel_3_digits = hotel_name[0][0] + hotel_name[1][0] + hotel_name[1][1] 
+        hotel_long_code = f'{iata_code}/{code}'
         
-    hotel_long_code = f'{iata_code}/{hotel_3_digits}'
-    
-    textbox = driver.find_element(By.ID, 'hotel.longCode')
-    textbox.send_keys(hotel_long_code, Keys.TAB)
     try:
+        textbox = driver.find_element(By.ID, 'hotel.longCode')
+        textbox.clear()
+        textbox.send_keys(hotel_long_code, Keys.TAB)
         WebDriverWait(driver, 5 * delay).until(
             EC.presence_of_element_located((By.ID, 'validImg'))
         )
-
         logger.info(f'Hotel Long Code is Valid {hotel_long_code}')
     except:
-        logger.error(f'Hotel Long Code is Invalid {hotel_long_code}')
-        log_out()
-        
+        logger.error(f'Hotel Long Code is Invalid {hotel_long_code}, Try new code')
+        user_input = input(f'{hotel_name} Please suggest 3 digits: ')
+        hotel_alpha_code(hotel_name, iata_code, user_input)
+
+def generate_code(full_name):
+    words = full_name.split()
+    code = ''.join(word[0] for word in words)
+    # Ensure the code is exactly 3 characters by truncating or padding with 'X'
+    code = (code + 'XXX')[:3]
+    
+    return code.upper()
 
 def get_hotel_name():
-    wait_for_element('row_hotel_banner')
-    name = driver.find_element(By.CLASS_NAME, "hotelNameClass").get_attribute("value")
-    rid = name[:4]
-    name = name.replace(rid, '')
-    name = name.replace('-', '').strip()
+    wait = WebDriverWait(driver, 10 * delay)
+    element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'hotelNameClass')))
+    hotel_name = element.text
+    rid = hotel_name[:4]
+    hotel_name = hotel_name.replace(rid, '')
+    hotel_name = hotel_name.replace('-', '').strip()
     logger.info(f'Hotel RID Created: {rid}')
-    return rid, name
+    return rid, hotel_name
     
 def log_out():
     driver.get("https://dataweb.accor.net/dotw-trans/logout.action")
     wait_for_element('loginField')
     logger.info('Logout Successfully')
     
+def get_surrounding():
+    driver.get('https://dataweb.accor.net/dotw-trans/ipTabs!input.action')
+    time.sleep(2)
+    try:
+        download_button = WebDriverWait(driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, '//a[img[@title="Excel"]]'))
+        )    
+        time.sleep(1)    
+        download_button = driver.find_element(By.XPATH, '//a[img[@title="Excel"]]')
+        download_button.click()
+        time.sleep(1.5)
+        file_path = 'temp\\table-data.xls'
+        df = pd.read_excel(file_path)
+        # remove file
+        import os
+        os.remove(file_path)
+        return df
+    except TimeoutException as e:
+        get_surrounding()

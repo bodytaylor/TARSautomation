@@ -1126,3 +1126,145 @@
 2023-12-21 16:21:03,076 : INFO : Credentials loaded Username: NANSAN
 2023-12-21 16:21:10,478 : INFO : Login Success User: NANSAN
 2023-12-21 16:21:12,310 : INFO : Logout Successfully
+2023-12-22 12:23:00,221 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:23:09,626 : INFO : Login Success User: NANSAN
+2023-12-22 12:26:55,605 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:27:03,768 : INFO : Login Success User: NANSAN
+2023-12-22 12:29:14,774 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:29:22,879 : INFO : Login Success User: NANSAN
+2023-12-22 12:34:01,492 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:34:08,562 : INFO : Login Success User: NANSAN
+2023-12-22 12:34:13,002 : INFO : Hotel Long Code is Valid CXR/FCR
+2023-12-22 12:34:13,092 : INFO : hotel.name : FAIRMONT CAM RANH RESIDENCES (TNG)
+2023-12-22 12:34:13,159 : INFO : hotel.chain.code : FAI
+2023-12-22 12:34:13,226 : INFO : hotel.brand.code : FAI
+2023-12-22 12:34:13,293 : INFO : hotel.commercialName : FAIRMONT CAM RANH RESIDENCES (TNG) (Opening January 2029)
+2023-12-22 12:34:13,359 : INFO : hotel.address.addresses[0] : Cam Hai Dong  CAM RANH Vietnam
+2023-12-22 12:34:13,442 : INFO : hotel.address.city : CAM RANH
+2023-12-22 12:34:13,528 : INFO : hotel.address.zipCode : 650000
+2023-12-22 12:34:13,594 : INFO : hotel.hotelManagementType.code : MG
+2023-12-22 12:34:13,675 : INFO : Submitdata
+2023-12-22 12:37:16,736 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:37:24,785 : INFO : Login Success User: NANSAN
+2023-12-22 12:37:32,868 : INFO : Selected Hotel : C1W1 - NOVOTEL LIVING SAIGON SOUTH
+2023-12-22 12:39:57,397 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:40:06,255 : INFO : Login Success User: NANSAN
+2023-12-22 12:40:14,048 : INFO : Selected Hotel : C1W1 - NOVOTEL LIVING SAIGON SOUTH
+2023-12-22 12:40:34,701 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:40:43,661 : INFO : Login Success User: NANSAN
+2023-12-22 12:40:59,606 : INFO : Hotel RID Created: C1W1
+2023-12-22 12:51:32,337 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:51:40,175 : INFO : Login Success User: NANSAN
+2023-12-22 12:51:44,837 : INFO : Hotel Long Code is Valid NRT/RTO
+2023-12-22 12:51:44,943 : INFO : hotel.name : RAFFLES TOKYO
+2023-12-22 12:51:45,037 : INFO : hotel.chain.code : RAF
+2023-12-22 12:51:45,116 : INFO : hotel.brand.code : RAF
+2023-12-22 12:51:45,192 : INFO : hotel.commercialName : RAFFLES TOKYO (Opening December 2029)
+2023-12-22 12:51:45,270 : INFO : hotel.address.addresses[0] : 2-4-1 Hamamatsucho, Minato-ku,
+2023-12-22 12:51:45,362 : INFO : hotel.address.addresses[1] : Tokyo 105-00 TOKYO Japan
+2023-12-22 12:51:45,437 : INFO : hotel.address.city : TOKYO
+2023-12-22 12:51:45,514 : INFO : hotel.address.zipCode : 13
+2023-12-22 12:51:45,592 : INFO : hotel.address.country.code : JP
+2023-12-22 12:51:45,685 : INFO : hotel.hotelManagementType.code : MG
+2023-12-22 12:51:45,794 : INFO : Submitdata
+2023-12-22 12:51:58,186 : INFO : Hotel RID Created: C2W5
+2023-12-22 12:52:06,875 : INFO : General Information
+2023-12-22 12:52:06,952 : INFO : gi_openingDate : 01/12/2029
+2023-12-22 12:52:07,043 : INFO : gi.mesToHotelOnAH : checkbox.checked
+2023-12-22 12:52:07,105 : INFO : gi.stHotCode : LX
+2023-12-22 12:52:07,183 : INFO : gi.nbOfRooms : 130
+2023-12-22 12:52:07,259 : INFO : gi.currency : JPY
+2023-12-22 12:52:07,353 : INFO : Submitdata
+2023-12-22 12:52:09,741 : INFO : C2W5 : RID CREATION : General information has been updated
+2023-12-22 12:52:11,849 : INFO : Logout Successfully
+2023-12-22 12:53:44,285 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 12:53:51,425 : INFO : Login Success User: NANSAN
+2023-12-22 12:54:00,050 : ERROR : Hotel Long Code is Invalid CXR/FCR
+2023-12-22 12:54:02,889 : INFO : Logout Successfully
+2023-12-22 12:54:02,982 : INFO : hotel.name : FAIRMONT CAM RANH (TNG)
+2023-12-22 17:13:49,189 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:13:57,597 : INFO : Login Success User: NANSAN
+2023-12-22 17:16:24,443 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:16:32,950 : INFO : Login Success User: NANSAN
+2023-12-22 17:16:40,864 : ERROR : Hotel Long Code is Invalid CXR/FCR, Try new code
+2023-12-22 17:18:11,731 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:18:21,228 : INFO : Login Success User: NANSAN
+2023-12-22 17:18:30,395 : ERROR : Hotel Long Code is Invalid CXR/FCR, Try new code
+2023-12-22 17:20:15,134 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:20:23,435 : INFO : Login Success User: NANSAN
+2023-12-22 17:20:32,156 : ERROR : Hotel Long Code is Invalid CXR/FCR, Try new code
+2023-12-22 17:20:45,485 : ERROR : Hotel Long Code is Invalid CXR/FAI, Try new code
+2023-12-22 17:21:53,139 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:22:02,509 : INFO : Login Success User: NANSAN
+2023-12-22 17:22:10,331 : ERROR : Hotel Long Code is Invalid CXR/FCR, Try new code
+2023-12-22 17:22:19,757 : ERROR : Hotel Long Code is Invalid CXR/FAI, Try new code
+2023-12-22 17:23:52,755 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:24:00,434 : INFO : Login Success User: NANSAN
+2023-12-22 17:24:08,347 : ERROR : Hotel Long Code is Invalid CXR/FCR, Try new code
+2023-12-22 17:24:45,119 : ERROR : Hotel Long Code is Invalid CXR/FAI, Try new code
+2023-12-22 17:25:00,031 : INFO : Hotel Long Code is Valid CXR/FAI
+2023-12-22 17:25:00,101 : INFO : hotel.name : FAIRMONT CAM RANH (TNG)
+2023-12-22 17:25:00,184 : INFO : hotel.chain.code : FAI
+2023-12-22 17:25:00,252 : INFO : hotel.brand.code : FAI
+2023-12-22 17:25:00,320 : INFO : hotel.commercialName : FAIRMONT CAM RANH (TNG) (Opening January 2029)
+2023-12-22 17:25:00,388 : INFO : hotel.address.addresses[0] : Cam Hai Dong  CAM RANH Vietnam
+2023-12-22 17:25:00,471 : INFO : hotel.address.city : CAM RANH
+2023-12-22 17:25:00,537 : INFO : hotel.address.zipCode : 650000
+2023-12-22 17:25:00,603 : INFO : hotel.hotelManagementType.code : MG
+2023-12-22 17:25:00,701 : INFO : Submitdata
+2023-12-22 17:25:10,781 : INFO : Hotel RID Created: C2X4
+2023-12-22 17:25:14,067 : INFO : General Information
+2023-12-22 17:25:14,182 : INFO : gi_openingDate : 01/01/2029
+2023-12-22 17:25:14,254 : INFO : gi.mesToHotelOnAH : checkbox.checked
+2023-12-22 17:25:14,333 : INFO : gi.stHotCode : FI
+2023-12-22 17:25:14,402 : INFO : gi.nbOfRooms : 180
+2023-12-22 17:25:14,484 : INFO : gi.currency : VND
+2023-12-22 17:25:14,586 : INFO : Submitdata
+2023-12-22 17:25:16,728 : INFO : C2X4 : RID CREATION : General information has been updated
+2023-12-22 17:25:18,995 : INFO : Logout Successfully
+2023-12-22 17:25:22,633 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:25:30,190 : INFO : Login Success User: NANSAN
+2023-12-22 17:25:34,656 : INFO : Hotel Long Code is Valid CEB/PTR
+2023-12-22 17:25:34,731 : INFO : hotel.name : PULLMAN TAMBULI RESIDENCES
+2023-12-22 17:25:34,795 : INFO : hotel.chain.code : PUL
+2023-12-22 17:25:34,884 : INFO : hotel.brand.code : PUL
+2023-12-22 17:25:34,957 : INFO : hotel.commercialName : PULLMAN TAMBULI RESIDENCES (Opening December 2026)
+2023-12-22 17:25:35,033 : INFO : hotel.address.addresses[0] : Buyong Road, Maribago, Lapu-Lapu
+2023-12-22 17:25:35,109 : INFO : hotel.address.addresses[1] : City, Cebu Lapu-Lapu Philippines
+2023-12-22 17:25:35,183 : INFO : hotel.address.city : Lapu-Lapu
+2023-12-22 17:25:35,256 : INFO : hotel.address.zipCode : 6015
+2023-12-22 17:25:35,325 : INFO : hotel.address.country.code : PH
+2023-12-22 17:25:35,400 : INFO : hotel.hotelManagementType.code : MG
+2023-12-22 17:25:35,493 : INFO : Submitdata
+2023-12-22 17:25:46,428 : INFO : Hotel RID Created: C2X5
+2023-12-22 17:25:49,349 : INFO : General Information
+2023-12-22 17:25:49,426 : INFO : gi_openingDate : 16/12/2026
+2023-12-22 17:25:49,500 : INFO : gi.mesToHotelOnAH : checkbox.checked
+2023-12-22 17:25:49,589 : INFO : gi.stHotCode : LX
+2023-12-22 17:25:49,669 : INFO : gi.nbOfRooms : 900
+2023-12-22 17:25:49,745 : INFO : gi.currency : PHP
+2023-12-22 17:25:49,844 : INFO : Submitdata
+2023-12-22 17:25:51,986 : INFO : C2X5 : RID CREATION : General information has been updated
+2023-12-22 17:25:54,039 : INFO : Logout Successfully
+2023-12-22 17:32:27,143 : INFO : Credentials loaded Username: NANSAN
+2023-12-22 17:32:34,563 : INFO : Login Success User: NANSAN
+2023-12-22 17:32:39,305 : INFO : Hotel Long Code is Valid VKG/MPT
+2023-12-22 17:32:39,403 : INFO : hotel.name : MERCURE PHAN THIET
+2023-12-22 17:32:39,518 : INFO : hotel.chain.code : MER
+2023-12-22 17:32:39,619 : INFO : hotel.brand.code : MER
+2023-12-22 17:32:39,703 : INFO : hotel.commercialName : MERCURE PHAN THIET (Opening December 2024)
+2023-12-22 17:32:39,787 : INFO : hotel.address.addresses[0] : Ke Ga  PHAN THIET Vietnam
+2023-12-22 17:32:39,886 : INFO : hotel.address.city : PHAN THIET
+2023-12-22 17:32:39,967 : INFO : hotel.address.zipCode : 100000
+2023-12-22 17:32:40,051 : INFO : hotel.hotelManagementType.code : MG
+2023-12-22 17:32:40,168 : INFO : Submitdata
+2023-12-22 17:32:51,339 : INFO : Hotel RID Created: C2X6
+2023-12-22 17:32:54,656 : INFO : General Information
+2023-12-22 17:32:54,749 : INFO : gi_openingDate : 12/31/2024
+2023-12-22 17:32:54,837 : INFO : gi.mesToHotelOnAH : checkbox.checked
+2023-12-22 17:32:54,919 : INFO : gi.stHotCode : LX
+2023-12-22 17:32:55,001 : INFO : gi.nbOfRooms : 180
+2023-12-22 17:32:55,084 : INFO : gi.currency : VND
+2023-12-22 17:32:55,201 : INFO : Submitdata
+2023-12-22 17:32:59,669 : INFO : Logout Successfully
+2023-12-22 17:33:04,024 : INFO : Credentials loaded Username: NANSAN

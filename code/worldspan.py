@@ -444,7 +444,7 @@ if __name__ == "__main__":
     if country_code == 'JP':
         tax_rate = '0'
     else:
-        tax_rate = '00'
+        tax_rate = '15'
     # PROPERTY TYPE CODE EY, LH, MD, UP
     brand_code = get_dropdown('hotel.brand.code')
     property_type = standard_dict.get(brand_code)
