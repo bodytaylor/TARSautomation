@@ -26,7 +26,8 @@ class ContentBook:
         self._surrounding_attracition_data()
         self._product_lib_df()
         self._resaurant_description()
-    
+        self._all_web_adress()
+                
     def close_workbook(self):
         if self.contentbook:
             self.contentbook.close()
@@ -63,6 +64,7 @@ class ContentBook:
         sheet = self.contentbook[sheet_name]
         
         # data for Address and Setup page
+        self.hotel_rid = sheet['K4'].value
         self.hotel_name = sheet['C4'].value
         self.brand = sheet['C6'].value
         self.chain = sheet['J6'].value
@@ -112,8 +114,54 @@ class ContentBook:
         self.gps = sheet['K24'].value
         
         # Hotel Currency 3 digits
-        self.currency_3digits = self.extract_currency(self.currency)
+        self.currency_code = self.extract_currency(self.currency)
         
+    def _all_web_adress(self):
+        self.hotel_url = f'all.accor.com/{self.hotel_rid}'
+        
+    def get_chain_code(self):
+        from dictionary import chain_dict
+        chain_code = chain_dict.get(self.chain)
+        return chain_code
+    
+    def get_country_code(self):
+        from dictionary import country_dict
+        code = country_dict.get(self.country)
+        return code
+    
+    def remove_special_char(self, input_string):
+    # Use regex to remove all non-alphanumeric characters
+        result_string = re.sub(r'[^a-zA-Z0-9\s]', '', input_string)
+        return result_string
+    
+    def get_partner_chain_code(self):
+        partner_code = {
+            'BAN': 'BY', 
+            '21C': 'EN', 
+            'TWF': 'EN', 
+            'DEL': 'EN', 
+            'HYD': 'EN', 
+            'MSH': 'EN', 
+            'MOD': 'EN', 
+            'TOR': 'EN', 
+            'SLS': 'EN', 
+            'SO': 'EN', 
+            'FAR': 'FA', 
+            'SOF': 'SB', 
+            'MGR': 'SB', 
+            'PUL': 'PU', 
+            'PLL': 'PU', 
+            'RAF': 'YR', 
+            'RIX': 'RX', 
+            'SWI': 'SL'
+            }
+        hotel_chain = self.get_chain_code()
+        code = partner_code.get(hotel_chain)
+        
+        if code is None:
+            code = 'RT'
+        return code
+    
     def extract_currency(self, input):
         pattern = r'-(.+)'
         match = re.search(pattern, input)
@@ -470,7 +518,6 @@ class ContentBook:
     
         self.resaurant_description = pd.DataFrame(list(temp.items()), columns=['rt_name', 'description'])
         
-        
     def _bar_data(self):
         sheet_name = "Bar"  
         bars = {}
@@ -672,7 +719,7 @@ class ContentBook:
                     if sheet[f'G{cell_start + i}'].value != None:
                         ofi = self.extract_capital_letters(sheet[f'G{cell_start + i}'].value)
                     else:
-                        ofi = 0
+                        ofi = None
                     shuttle = str(sheet[f'D{cell_start + i}'].value)
                     shuttle_service_type = str(sheet[f'E{cell_start + i}'].value)
                     distance = (sheet[f'I{cell_start + i}'].value)
@@ -813,6 +860,7 @@ class ContentBook_v10(ContentBook):
         sheet = self.contentbook[sheet_name]
         
         # data for Address and Setup page
+        self.hotel_rid = sheet['K4'].value
         self.hotel_name = sheet['C4'].value
         self.brand = sheet['C6'].value
         self.chain = sheet['J6'].value
@@ -862,7 +910,7 @@ class ContentBook_v10(ContentBook):
         self.gps = sheet['K24'].value
         
         # Hotel Currency 3 digits
-        self.currency_3digits = self.extract_currency(self.currency)
+        self.currency_code = self.extract_currency(self.currency)
         
     def _mean_of_access_data(self):
         sheet_name = "Address&Setup"
@@ -892,6 +940,7 @@ class ContentBook_v17(ContentBook):
         sheet = self.contentbook[sheet_name]
         
         # data for Address and Setup page
+        self.hotel_rid = sheet['K4'].value
         self.hotel_name = sheet['C4'].value
         self.brand = sheet['C6'].value
         self.chain = sheet['J6'].value
@@ -941,7 +990,7 @@ class ContentBook_v17(ContentBook):
         self.gps = sheet['K24'].value
         
         # Hotel Currency 3 digits
-        self.currency_3digits = self.extract_currency(self.currency)
+        self.currency_code = self.extract_currency(self.currency)
         
     def _mean_of_access_data(self):
         sheet_name = "Address&Setup"

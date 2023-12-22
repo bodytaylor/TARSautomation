@@ -1054,3 +1054,75 @@
 2023-12-13 17:17:23,493 : INFO : hotelContactsForm_hotelStaffManagers_generalManager_name : Mr Ozgur DOGAN
 2023-12-13 17:17:24,695 : INFO : C0C1 : createHotelContacts : Hotel contacts have been created
 2023-12-13 18:43:29,396 : ERROR : B7T7 : Content Book not found
+2023-12-14 15:49:07,753 : ERROR : B9F8 : Content Book not found
+2023-12-14 15:50:07,199 : INFO : B9F8 : Content Book Loaded
+2023-12-14 15:55:33,637 : INFO : B9F8 : Content Book Loaded
+2023-12-14 15:56:17,373 : INFO : B9F8 : Content Book Loaded
+2023-12-14 15:59:58,951 : INFO : B9F8 : Content Book Loaded
+2023-12-19 15:43:29,543 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 15:43:38,779 : INFO : Login Success User: NANSAN
+2023-12-19 16:08:31,653 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 16:08:41,132 : INFO : Login Success User: NANSAN
+2023-12-19 16:13:05,384 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 16:13:13,967 : INFO : Login Success User: NANSAN
+2023-12-19 16:14:54,323 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 16:15:02,317 : INFO : Login Success User: NANSAN
+2023-12-19 17:14:49,244 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 17:14:58,321 : INFO : Login Success User: NANSAN
+2023-12-19 17:15:02,940 : INFO : Hotel Long Code is Valid CEB/TRE
+2023-12-19 17:45:47,234 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 17:46:36,853 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 17:46:45,134 : INFO : Login Success User: NANSAN
+2023-12-19 17:46:49,813 : INFO : Hotel Long Code is Valid CEB/TRE
+2023-12-19 17:46:49,907 : INFO : hotel.name : TAMBULI RESIDENCES
+2023-12-19 17:46:50,016 : INFO : hotel.chain.code : PUL
+2023-12-19 17:46:50,125 : INFO : hotel.brand.code : PUL
+2023-12-19 17:46:50,217 : INFO : hotel.commercialName : TAMBULI RESIDENCES (Opening December 2026)
+2023-12-19 17:46:50,312 : INFO : hotel.address.addresses[0] : Buyong Road, Maribago, Lapu-Lapu
+2023-12-19 17:46:50,422 : INFO : hotel.address.addresses[1] : City, Cebu 6015 Lapu-Lapu
+2023-12-19 17:46:50,516 : INFO : hotel.address.addresses[2] : Philippines
+2023-12-19 17:46:50,610 : INFO : hotel.address.city : Lapu-Lapu
+2023-12-19 17:46:50,704 : INFO : hotel.address.zipCode : 6015
+2023-12-19 17:46:50,798 : INFO : hotel.address.country.code : PH
+2023-12-19 17:46:50,907 : INFO : hotel.hotelManagementType.code : MG
+2023-12-19 17:53:11,060 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 17:54:33,716 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 17:54:41,676 : INFO : Login Success User: NANSAN
+2023-12-19 17:54:46,156 : INFO : Hotel Long Code is Valid CEB/TRE
+2023-12-19 17:54:46,249 : INFO : hotel.name : TAMBULI RESIDENCES
+2023-12-19 17:54:46,343 : INFO : hotel.chain.code : PUL
+2023-12-19 17:54:46,421 : INFO : hotel.brand.code : PUL
+2023-12-19 17:54:46,515 : INFO : hotel.commercialName : TAMBULI RESIDENCES (Opening December 2026)
+2023-12-19 17:54:46,608 : INFO : hotel.address.addresses[0] : Buyong Road, Maribago, Lapu-Lapu
+2023-12-19 17:54:46,718 : INFO : hotel.address.addresses[1] : City, Cebu 6015 Lapu-Lapu
+2023-12-19 17:54:46,827 : INFO : hotel.address.addresses[2] : Philippines
+2023-12-19 17:54:46,920 : INFO : hotel.address.city : Lapu-Lapu
+2023-12-19 17:54:47,030 : INFO : hotel.address.zipCode : 6015
+2023-12-19 17:54:47,137 : INFO : hotel.address.country.code : PH
+2023-12-19 17:54:47,229 : INFO : hotel.hotelManagementType.code : MG
+2023-12-19 18:01:04,395 : INFO : Credentials loaded Username: NANSAN
+2023-12-19 18:01:12,433 : INFO : Login Success User: NANSAN
+2023-12-19 18:01:16,979 : INFO : Hotel Long Code is Valid CEB/TRE
+2023-12-19 18:01:17,057 : INFO : hotel.name : TAMBULI RESIDENCES
+2023-12-19 18:01:17,151 : INFO : hotel.chain.code : PUL
+2023-12-19 18:01:17,245 : INFO : hotel.brand.code : PUL
+2023-12-19 18:01:17,339 : INFO : hotel.commercialName : TAMBULI RESIDENCES (Opening December 2026)
+2023-12-19 18:01:17,435 : INFO : hotel.address.addresses[0] : Buyong Road, Maribago, Lapu-Lapu
+2023-12-19 18:01:17,527 : INFO : hotel.address.addresses[1] : City, Cebu 6015 Lapu-Lapu
+2023-12-19 18:01:17,635 : INFO : hotel.address.addresses[2] : Philippines
+2023-12-19 18:01:17,728 : INFO : hotel.address.city : Lapu-Lapu
+2023-12-19 18:01:17,806 : INFO : hotel.address.zipCode : 6015
+2023-12-19 18:01:17,900 : INFO : hotel.address.country.code : PH
+2023-12-19 18:01:17,977 : INFO : hotel.hotelManagementType.code : MG
+2023-12-19 18:01:18,070 : INFO : Submitdata
+2023-12-21 11:35:34,678 : INFO : Credentials loaded Username: NANSAN
+2023-12-21 11:35:44,303 : INFO : Login Success User: NANSAN
+2023-12-21 11:35:52,277 : INFO : Choose a hotel
+2023-12-21 11:35:52,379 : INFO : gi_openingDate : 16/12/2026
+2023-12-21 16:13:33,817 : INFO : Credentials loaded Username: NANSAN
+2023-12-21 16:13:42,203 : INFO : Login Success User: NANSAN
+2023-12-21 16:20:28,721 : INFO : Credentials loaded Username: NANSAN
+2023-12-21 16:20:36,560 : INFO : Login Success User: NANSAN
+2023-12-21 16:21:03,076 : INFO : Credentials loaded Username: NANSAN
+2023-12-21 16:21:10,478 : INFO : Login Success User: NANSAN
+2023-12-21 16:21:12,310 : INFO : Logout Successfully

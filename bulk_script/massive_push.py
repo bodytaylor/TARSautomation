@@ -16,10 +16,7 @@ def find_inputbox():
     pyautogui.moveTo(x - 50, y, 0.1)
     pyautogui.click()
     
-hotel_list = ['9778','A545','B682','C2B8','C1P3','C1R2','C1I6',
-              'C1P2','C1R1','C1Q8','C1P4','C1P0','C1Q1','C1Q3',
-              'C1Q7','C1P6','C1P9','C1Q2','C1Q5','C1P7','C1N8',
-              'C1N7','C1P5','C1N6','C1Q6',]
+hotel_list = input('Enter Hotel RID (sperate by space): ').split()
     
 find_dbm()
 

@@ -13,7 +13,7 @@ def add(hotel_rid, hotel_content):
 
     # Chain J6
     chain = hotel_content.chain
-    chain_key = search_key(chian_dict, chain)
+    chain_key = chain_dict.get(chain)
 
     # Hotel Commercial Brand D32
     hotel_com_name = hotel_content.hotel_commercial_name

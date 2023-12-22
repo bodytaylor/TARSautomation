@@ -98,7 +98,7 @@ def add(hotel_rid, hotel_content):
 
     # Operation area : None
     # TARS currency : C59
-    currency_value = hotel_content.currency_3digits
+    currency_value = hotel_content.currency_code
 
     # PMS currency : C59
     pms_currency_value = currency_value

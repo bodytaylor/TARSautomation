@@ -17,7 +17,7 @@ call %VENV_FOLDER%\Scripts\activate
 
 :: Upgrade pip
 echo Upgrade pip
-python3 -m pip install --upgrade pip
+python -m pip install --upgrade pip
 
 echo Installing required packages...
 :: Install your required packages using pip

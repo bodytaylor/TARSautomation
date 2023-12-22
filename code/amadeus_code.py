@@ -3,8 +3,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-import functions as fn
 import csv
 import time
 from datetime import date
@@ -70,7 +68,6 @@ def merge_csv():
         merged_data.to_csv(output_path, index=False)
 
         print(f"CSV files in the folder have been merged into '{output_path}'")
-
 
 # get data from specific field in data web
 def get_data(element_id=str):
@@ -191,20 +188,17 @@ def create_amadeus_code(hotel_rid):
     hotel_name = get_data(element_id='hotel.name')
         
     # Currency 3 letter
-    path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+    from hotel_content import ContentBook
+    hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
 
-    # Surrounding Attraction /Use Orientation information of code CENT
-    location_data = fn.get_excel_values(file_path=path,
-                                        sheet_name='Main Attractions',
-                                        cell_addresses=['G18']
-                                        )
-
-    cent = location_data[0] 
+    cent = hotel_content.main_attractions['CENT'][1]
     if cent is not None:
         cent_cap = ""
         for char in cent:
             if char.isupper():
                 cent_cap += char
+    elif cent == 0:
+        cent_cap = 'N'
     else:
         cent_cap = 'N'
 

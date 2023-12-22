@@ -2,12 +2,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import TimeoutException
 from dotenv import load_dotenv
 import pandas as pd
 import time
 import csv
 import os
+
+def create_directory(directory_path):
+    # Check if the directory already exists
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
 
 def get_data(element_id=str):
     try:
@@ -101,8 +106,6 @@ def response():
         print(text)
         return None
 
-        
-        
 def hotel_search(hotel_rid):
     driver.get('https://dataweb.accor.net/dotw-trans/selectHotelInput.action')
     time.sleep(2)
@@ -260,7 +263,7 @@ def get_rate_level():
     driver.get('https://dataweb.accor.net/dotw-trans/displayHotelRates.action')
     time.sleep(2)
     try:
-        download_button = WebDriverWait(driver, 10).until(
+        download_button = WebDriverWait(driver, 20).until(
             EC.visibility_of_element_located((By.XPATH, '//a[img[@title="Excel"]]'))
         )
         time.sleep(1)
@@ -273,8 +276,8 @@ def get_rate_level():
         import os
         os.remove(file_path)
         return df
-    except ValueError as e:
-        print(e)
+    except TimeoutException as e:
+        get_rate_level()
 
 def meal_plan(df):
     meal_option = []
@@ -312,8 +315,8 @@ def get_surrounding():
         import os
         os.remove(file_path)
         return df
-    except ValueError as e:
-        print(e)
+    except TimeoutException as e:
+        get_surrounding()
         
 def get_checkin_time():
     driver.get('https://dataweb.accor.net/dotw-trans/secure/displayHotelSalesConditions!input.action?&salesConditionTypeSelected=CINPOL')
@@ -338,8 +341,8 @@ def get_checkin_time():
         checkin_time = filtered_df['Start'].values[0]
         checkin_time = str(checkin_time).replace(':', '')
         return checkin_time
-    except ValueError as e:
-        print(e)    
+    except TimeoutException as e: 
+        get_checkin_time() 
     
 def get_checkout_time():
     driver.get('https://dataweb.accor.net/dotw-trans/secure/displayHotelSalesConditions!input.action?&salesConditionTypeSelected=COUPOL')
@@ -364,121 +367,126 @@ def get_checkout_time():
         checkout_time = filtered_df['Start'].values[0]
         checkout_time = str(checkout_time).replace(':', '')
         return checkout_time
-    except ValueError as e:
-        print(e)  
+    except TimeoutException as e:
+        get_checkout_time()
 
 
+if __name__ == "__main__":     
+    
+    # create code
+    hotel_rid = input('Please Input Hotel RID: ')
+    hotel_rid = hotel_rid.upper()
+    amadeus = input(f'Please Input Amadeus Code for {hotel_rid}: ')
+
+    # Setup Chrome Driver
+    chrome_options = webdriver.ChromeOptions()
+    ### Will test and upgrade this line soon ###
+    prefs = {"download.default_directory": r"C:\Users\NSANGKARN\bodytaylor\TARSautomation\temp"}
+    chrome_options.add_experimental_option("prefs", prefs)
+    # chrome_options.add_argument("--headless")  # Enable headless mode
+    driver = webdriver.Chrome(options=chrome_options)
+
+    # Login
+    username, password = user_credential()
+    login(username, password)
+    hotel_search(hotel_rid=hotel_rid)
+    checkin = get_checkin_time()
+    checkout = get_checkout_time()
+    # get data
+    driver.get('https://dataweb.accor.net/dotw-trans/displayHotelAddress!input.action')
+    time.sleep(1)
+    # chain
+    hotel_chain = get_data(element_id='hotel.chain.code')
+    # Chain Code
+    amadeus_chain_code = chain_code.get(hotel_chain)
+    if amadeus_chain_code is None:
+        amadeus_chain_code = 'RT'
         
-# create code
-hotel_rid = input('Please Input Hotel RID: ')
-hotel_rid = hotel_rid.upper()
-amadeus = input(f'Please Input Amadeus Code for {hotel_rid}: ')
+    worldspan_code = amadeus_chain_code + amadeus[3:5] + amadeus[0:3]
+    tars_check_code = 'tw*' + amadeus[3:5] + amadeus[0:3]
+    # name
+    hotel_name = get_data('hotel.name')
+    # primary airport
+    # address 1st line street name and number only
+    address_1 = get_data('hotel.address.addresses[0]')
+    address_1 = str(address_1).replace('-', ' ')
+    address_2 = get_data('hotel.address.addresses[1]')
+    address_2 = str(address_2).replace('-', ' ')
+    address_3 = get_data('hotel.address.addresses[2]')
+    address_3 = str(address_3).replace('-', ' ')
 
-# Setup Chrome Driver
-chrome_options = webdriver.ChromeOptions()
-prefs = {"download.default_directory": r"C:\Users\NSANGKARN\bodytaylor\TARSautomation\temp"}
-chrome_options.add_experimental_option("prefs", prefs)
-# chrome_options.add_argument("--headless")  # Enable headless mode
-driver = webdriver.Chrome(options=chrome_options)
+    # tran (Y) if hotel check shuttle available for AER1
+    # FAM PLAN (Y) if CHIPOL at H level is set
+    # adress 2nd line city + country + zipcode
+    city = get_data('hotel.address.city')
+    country_code = get_data('hotel.address.country.code')
+    zip_code = get_data('hotel.address.zipCode')
+    zip_code = str(zip_code).replace('-', '')
+    country = get_dropdown('hotel.address.country.code')
 
-# Login
-username, password = user_credential()
-login(username, password)
-hotel_search(hotel_rid=hotel_rid)
-checkin = get_checkin_time()
-checkout = get_checkout_time()
-# get data
-driver.get('https://dataweb.accor.net/dotw-trans/displayHotelAddress!input.action')
-time.sleep(1)
-# chain
-hotel_chain = get_data(element_id='hotel.chain.code')
-# Chain Code
-amadeus_chain_code = chain_code.get(hotel_chain)
-if amadeus_chain_code is None:
-    amadeus_chain_code = 'RT'
-    
-worldspan_code = amadeus_chain_code + amadeus[3:5] + amadeus[0:3]
-tars_check_code = 'tw*' + amadeus[3:5] + amadeus[0:3]
-# name
-hotel_name = get_data('hotel.name')
-# primary airport
-# address 1st line street name and number only
-address_1 = get_data('hotel.address.addresses[0]')
-address_1 = str(address_1).replace('-', ' ')
-address_2 = get_data('hotel.address.addresses[1]')
-address_2 = str(address_2).replace('-', ' ')
-address_3 = get_data('hotel.address.addresses[2]')
-address_3 = str(address_3).replace('-', ' ')
+    # Checkin time format 0000
+    # ST skip
+    # CTRY C + 2 letters country code
+    ctry = 'C' + country_code
+    # POSTAL CODE is the zip code?
+    # Checkout time format 0000
+    # Phone 
+    phone_index = get_data('hotel.address.indTel')
+    phone = get_data('hotel.address.tel')
+    f_phone = str(phone_index) + str(phone)
+    # COMM PERCENT 10
+    commission = '10'
+    # FAX 
+    fax = get_data('hotel.address.fax')
+    f_fax = str(phone_index) + str(fax)
+    # MEAL PLAN
+    # TAX RATE 00 except JAPAN 0
+    if country_code == 'JP':
+        tax_rate = '0'
+    else:
+        tax_rate = '00'
+    # PROPERTY TYPE CODE EY, LH, MD, UP
+    brand_code = get_dropdown('hotel.brand.code')
+    property_type = standard_dict.get(brand_code)
 
-# tran (Y) if hotel check shuttle available for AER1
-# FAM PLAN (Y) if CHIPOL at H level is set
-# adress 2nd line city + country + zipcode
-city = get_data('hotel.address.city')
-country_code = get_data('hotel.address.country.code')
-zip_code = get_data('hotel.address.zipCode')
-zip_code = str(zip_code).replace('-', '')
-country = get_dropdown('hotel.address.country.code')
+    surrounding = get_surrounding()
+    result = surrounding[surrounding['Code'] == 'AER1']
+    primary_airport = result['Name'].values[0]
+    shuttle_service = result['Shuttle'].values[0]
+    if shuttle_service == False:
+        shuttle = 'N'
+    else:
+        shuttle = 'Y'
 
-# Checkin time format 0000
-# ST skip
-# CTRY C + 2 letters country code
-ctry = 'C' + country_code
-# POSTAL CODE is the zip code?
-# Checkout time format 0000
-# Phone 
-phone_index = get_data('hotel.address.indTel')
-phone = get_data('hotel.address.tel')
-f_phone = str(phone_index) + str(phone)
-# COMM PERCENT 10
-commission = '10'
-# FAX 
-fax = get_data('hotel.address.fax')
-f_fax = str(phone_index) + str(fax)
-# MEAL PLAN
-# TAX RATE 00 except JAPAN 0
-if country_code == 'JP':
-    tax_rate = '0'
-else:
-    tax_rate = '00'
-# PROPERTY TYPE CODE EY, LH, MD, UP
-brand_code = get_dropdown('hotel.brand.code')
-property_type = standard_dict.get(brand_code)
+    address_line2 = f'{city} {country} {zip_code}'
 
-surrounding = get_surrounding()
-result = surrounding[surrounding['Code'] == 'AER1']
-primary_airport = result['Name'].values[0]
-shuttle_service = result['Shuttle'].values[0]
-if shuttle_service == False:
-    shuttle = 'N'
-else:
-    shuttle = 'Y'
+    check_meal = get_rate_level()
+    meal_option = meal_plan(check_meal)
 
-address_line2 = f'{city} {country} {zip_code}'
+    get_general_page()
+    currency = get_data('selectCurrency')
+    total_room = get_data('gi.nbOfRooms')
 
-check_meal = get_rate_level()
-meal_option = meal_plan(check_meal)
+    check_available(hotel_rid=tars_check_code)
+        
+    driver.quit()
 
-get_general_page()
-currency = get_data('selectCurrency')
-total_room = get_data('gi.nbOfRooms')
+    # Check file directory
+    directory_path = r"gds\worldspan"
+    create_directory(directory_path)
 
-check_available(hotel_rid=tars_check_code)
-    
-driver.quit()
+    # write to csv
+    file_path = f"gds\worldspan\{hotel_rid} Worldspan.csv"
+    header = ['NAME', 'PRIM AIRPORT', 'ADDRESS', 'TRANS', 'FAM PLAN', 'ADDRESS_2', 'CHECK-IN',
+            'ST', 'CNTRY', 'POSTAL CODE', 'CHECK OUT', 'PHONE', 'TELEX', 'COMM PERCENT',
+            'FAX', 'RESV', 'MEAL PLAN', 'TAX RATE', 'PROPERTY TYPE CODES', 'CURR', 'TOTAL RMS',
+            'RA', 'RC', 'CR', 'EX', 'EC', 'worldspan code', 'Check availability']
 
-file_path = f"gds\worldspan\{hotel_rid} Worldspan.csv"
-header = ['NAME', 'PRIM AIRPORT', 'ADDRESS', 'TRANS', 'FAM PLAN', 'ADDRESS_2', 'CHECK-IN',
-          'ST', 'CNTRY', 'POSTAL CODE', 'CHECK OUT', 'PHONE', 'TELEX', 'COMM PERCENT',
-          'FAX', 'RESV', 'MEAL PLAN', 'TAX RATE', 'PROPERTY TYPE CODES', 'CURR', 'TOTAL RMS',
-          'RA', 'RC', 'CR', 'EX', 'EC', 'worldspan code', 'Check availability']
-
-with open(file_path, mode="w", newline="") as csv_file:
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(header)
-    csv_writer.writerow([hotel_name, primary_airport, address_1, shuttle, 'Y', address_line2, str(checkin),
-                         '', ctry, str(zip_code), str(checkout), str(f_phone), '', '10', 
-                         str(f_fax), '', meal_option, str(tax_rate), property_type, currency, total_room,
-                         'K', 'K', 'K', 'K', 'K', worldspan_code, f'HHPC{worldspan_code}'])
-
-
+    with open(file_path, mode="w", newline="") as csv_file:
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow(header)
+        csv_writer.writerow([hotel_name, primary_airport, address_1, shuttle, 'Y', address_line2, str(checkin),
+                            '', ctry, str(zip_code), str(checkout), str(f_phone), '', '10', 
+                            str(f_fax), '', meal_option, str(tax_rate), property_type, currency, total_room,
+                            'K', 'K', 'K', 'K', 'K', worldspan_code, f'HHPC{worldspan_code}'])
 

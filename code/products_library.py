@@ -1,14 +1,12 @@
 from functions import *
 import pandas as pd
 
-
 csv_path = 'products_lib.csv'
 df = pd.read_csv(
     csv_path,
     header=0,
     sep=';'
 )
-
 
 def product_search(code, df):
     if code in df['code'].values:
@@ -17,8 +15,6 @@ def product_search(code, df):
         return joined
     else:
         return None
-
-
 
 search = product_search('AIRC', df)
 print(search)

@@ -1,6 +1,5 @@
 hotel_workbook/
-gds/amadeus/
-gds/worldspan/
-gds/galileo/
 .env
 bulk_script/esm_create.py
+worldspan/
+amadeus/

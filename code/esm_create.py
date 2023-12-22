@@ -63,7 +63,7 @@ def user_credential():
         password = input("ESM Password: ")
 
         # Save the credentials to a new .env file
-        with open(".env", "a") as env_file:
+        with open(".env", "w") as env_file:
             env_file.write(f"ESMUSER={username}\n")
             env_file.write(f"ESMPASSWORD={password}\n")
 

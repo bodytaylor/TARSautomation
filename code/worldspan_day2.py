@@ -9,6 +9,9 @@ import time
 import pyautogui
 import functions as f
 import datetime
+import os
+
+# Further update will be text processing. worldspan has limit per line input!!
 
 # find opposite direction
 def find_opposite_dir(direction):
@@ -125,7 +128,7 @@ def login(username, password):
 
         # Click the button
         submit_button.click()
-        password_field.send_keys(Keys.RETURN)
+
     except ValueError as e:
         print(e)
 
@@ -228,7 +231,8 @@ def get_surrounding():
 
 # create code
 hotel_rid = input('Please Enter Hotel RID: ')
-file_path = f"gds\{hotel_rid} Worldspan.csv"
+hotel_rid = str(hotel_rid).upper()
+file_path = f"gds\worldspan\{hotel_rid} Worldspan.csv"
 df = pd.read_csv(file_path, dtype=str)
 
 worldspan_code = df['worldspan code'].iloc[0]

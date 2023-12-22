@@ -3,6 +3,23 @@ import pandas as pd
 from functions import *
 import ast
 
+## Further update add function for checking data quality before enter to prevent error 
+## Meal plan mapping to Worldspan meal plan code
+"""
+AP-AMERICAN PLAN                                                
+BB-BED AND BREAKFAST                                            
+BP-BERMUDA PLAN                                                 
+CB-CARIBBEAN PLAN                                               
+CP-CONTINENTAL PLAN                                             
+DB-DINNER BED AND BREAKFAST                                     
+EP-EUROPEAN PLAN                                                
+FB-FULL BREAKFAST                                               
+FP-FAMILY PLAN                                                  
+MA-MODIFIED AMERICAN PLAN                                       
+RO-ROOM ONLY
+"""
+
+
 def find_gds_windows():
     time.sleep(1)
     image = pyautogui.locateOnScreen(r"img\worldspan.PNG", confidence=0.75)

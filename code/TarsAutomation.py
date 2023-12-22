@@ -389,3 +389,43 @@ def input_description_box(element_id: str, text: str):
     description_box = driver.find_element(By.ID, element_id)
     description_box.send_keys(text)
     
+def new_hotel():
+    driver.execute_script("window.location.replace('/dotw-trans/secure/displayNewHotel.action');")
+    
+def hotel_alpha_code(hotel_name: str, iata_code: str):
+    hotel_name = hotel_name.split()
+    if len(hotel_name) >= 3:
+        hotel_name = hotel_name.split()
+        hotel_3_digits = hotel_name[0][0] + hotel_name[1][0] + hotel_name[2][0] 
+    else:
+        hotel_3_digits = hotel_name[0][0] + hotel_name[1][0] + hotel_name[1][1] 
+        
+    hotel_long_code = f'{iata_code}/{hotel_3_digits}'
+    
+    textbox = driver.find_element(By.ID, 'hotel.longCode')
+    textbox.send_keys(hotel_long_code, Keys.TAB)
+    try:
+        WebDriverWait(driver, 5 * delay).until(
+            EC.presence_of_element_located((By.ID, 'validImg'))
+        )
+
+        logger.info(f'Hotel Long Code is Valid {hotel_long_code}')
+    except:
+        logger.error(f'Hotel Long Code is Invalid {hotel_long_code}')
+        log_out()
+        
+
+def get_hotel_name():
+    wait_for_element('row_hotel_banner')
+    name = driver.find_element(By.CLASS_NAME, "hotelNameClass").get_attribute("value")
+    rid = name[:4]
+    name = name.replace(rid, '')
+    name = name.replace('-', '').strip()
+    logger.info(f'Hotel RID Created: {rid}')
+    return rid, name
+    
+def log_out():
+    driver.get("https://dataweb.accor.net/dotw-trans/logout.action")
+    wait_for_element('loginField')
+    logger.info('Logout Successfully')
+    
