@@ -217,6 +217,14 @@ def get_error_message() -> str:
         return message
     except:
         return None
+    
+def general_page():
+    try:
+        get('https://dataweb.accor.net/dotw-trans/displayGeneralInformation!input.action')
+        
+    except TimeoutException:
+        logger.warning('Failed to display general page')
+        general_page()
 
 # go to specific url and wait for page title to load
 def get(url: str):
@@ -402,6 +410,7 @@ def hotel_alpha_code(hotel_name: str, iata_code: str, code=None):
     try:
         textbox = driver.find_element(By.ID, 'hotel.longCode')
         textbox.clear()
+        time.sleep(1)
         textbox.send_keys(hotel_long_code, Keys.TAB)
         WebDriverWait(driver, 5 * delay).until(
             EC.presence_of_element_located((By.ID, 'validImg'))

@@ -9,7 +9,7 @@ hotel_rid = hotel_rid.upper()
 
 # get room type information
 # Gathering nessesory information from content book Brand, Country, PMS, GPS not send
-excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid}.xlsm'
+excel_file_path = f'hotel_workbook\{hotel_rid}\{hotel_rid} Content Book Hotel Creation.xlsm'
 sheet_name = "Roomtypes"
 
 df = pd.read_excel(excel_file_path, sheet_name=sheet_name)

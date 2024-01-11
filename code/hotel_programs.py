@@ -2,6 +2,9 @@ import csv
 from datetime import date
 from TarsAutomation import logger
 
+# In the future add fuction
+# Check region of the hotel if hotel located in Pacific use MS instead of MC.
+
 def add(hotel_rid, hotel_content):
     # Create dict for mandatory program to load
     mandatory_program = {

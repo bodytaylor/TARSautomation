@@ -4,12 +4,12 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.alert import Alert
 from dotenv import load_dotenv
 import os
 import time
+import re
 from hotel_content import ContentBook
-
-hotel_content = ContentBook(r"C:\Users\NSANGKARN\bodytaylor\TARSautomation\hotel_workbook\B9F8\B9F8 Content Book Hotel Creation.xlsm")
 
 # Load environment variables from .env file
 def user_credential():
@@ -38,7 +38,7 @@ def user_credential():
 
 def wait_element(element_id: str, limit: int = 30):
     wait = WebDriverWait(driver, limit)
-    wait.until(EC.presence_of_all_elements_located((By.ID, element_id)))
+    wait.until(EC.visibility_of_element_located((By.ID, element_id)))
 
 def sebre_login(username, password):
     driver.get('https://hotels.cert.sabre.com/login.jsp')
@@ -56,16 +56,24 @@ def sebre_login(username, password):
     affiliate.send_keys('ACCOR')
     submit_button.click()
 
+# Extract sabre id from alert text
+def extract_number(text: str):
+    numbers = re.findall(r'\d+', text)
+
+    if numbers:
+        extracted_number = int(numbers[0])
+        return extracted_number
+    else:
+        print("No numbers found in the text.")
+
 
 ## Need to work on this
 def select_dropdown(element_id: str, value: str = None):
     if value:
+        dropdown = driver.find_element(By.NAME, element_id)
+        select = Select(dropdown)
+        select.select_by_value(value)
 
-        options = driver.find_elements(By.CSS_SELECTOR, "#null")
-
-        for option in options:
-            print(option.text)
-            
 def input_text(element_id: str, text: str = None):
     if text:
         text_area = driver.find_element(By.ID, element_id)
@@ -73,7 +81,7 @@ def input_text(element_id: str, text: str = None):
 
 def input_text_by_name(element_name: str, text: str = None):
     if text:
-        text_area = driver.find_element(By.ID, element_name)
+        text_area = driver.find_element(By.NAME, element_name)
         text_area.send_keys(text)
         
 def create_property(hotel_content):
@@ -112,16 +120,17 @@ def data_entry(hotel_content):
     # State/Province (Dropdown) -> skip for now
     
     # Postal Code
-    postal_code = hotel_content.postal_code
+    postal_code = str(hotel_content.zip_code)
     postal_code = hotel_content.remove_special_char(postal_code)
+    input_text_by_name('postalCode', postal_code)
     
     # Phone
-    phone = hotel_content.phone_country_code + hotel_content.phone
+    phone = str(hotel_content.phone_country_code) + str(hotel_content.phone)
     phone = hotel_content.remove_special_char(phone)
     input_text_by_name('phone', phone)
     
     # Fax
-    fax = hotel_content.phone_country_code + hotel_content.fax
+    fax = str(hotel_content.phone_country_code) + str(hotel_content.fax)
     if len(fax) >= 3:
         input_text_by_name('fax', fax)
     
@@ -135,11 +144,47 @@ def data_entry(hotel_content):
     iata_code = hotel_content.main_attractions['AER1'][0]
     direction = hotel_content.main_attractions['AER1'][1]
     distance = hotel_content.main_attractions['AER1'][4]
-    distance_mile = str((round((int(distance) * 0.621371), 0)))
+    distance_mile = str((int((int(distance) * 0.621371))))
     
     input_text('Airport_0', iata_code)
     select_dropdown('Direction_0', direction)
     input_text('Miles_0', distance_mile)
+    
+    # submit
+    driver.execute_script('commitPressed();')
+    time.sleep(3)
+    
+    # Read browser aleart
+    alert = Alert(driver)
+    message = alert.text
+    print(message)
+    alert.accept()
+    sabre_id = extract_number(message)
+    return sabre_id
+    
+def active_property(sabre_id: str):
+    driver.execute_script("submitNavigForm('propertySearch', 'PropertySearch', '', '', 'true', '');")
+    wait_element(element_id='searchCriteria')
+    input_text_by_name('propertyNbr', sabre_id)
+    
+    # Search and wait for element
+    driver.execute_script("searchPressed();")
+    wait_element(element_id='displayTableModelTable')
+    
+    # tickbox 
+    driver.execute_script("document.querySelector('input[name=SELECT]').checked = true;")
+    
+    # Modify property
+    driver.execute_script('modifyPressed();')
+    
+    # Change dropdown to property
+    wait_element(element_id='disableCode')
+    dropdown = driver.find_element(By.NAME, 'disableCode')
+    select = Select(dropdown)
+    select.select_by_index(0)
+    
+    # Submit
+    driver.execute_script('commitPressed();')
     
 if __name__ == "__main__":
     
@@ -147,10 +192,17 @@ if __name__ == "__main__":
     # chrome_options.add_argument("--headless")  # Enable headless mode
     driver = webdriver.Chrome(options=chrome_options)
     
+    # Migrate the code to Accor repo for better workflow, sometime we get a request from Audit team
+    rid = str(input('Input Hotel RID: '))
+    hotel_content = ContentBook(f"hotel_workbook\{rid}\{rid} Content Book Hotel Creation.xlsm")
+    
     # Automation process
     username, password = user_credential()
     sebre_login(username, password)
-    create_property(hotel_content)
+    # sabre_id = create_property(hotel_content)
+    sabre_id = data_entry(hotel_content)
+    active_property(sabre_id)
     
-    time.sleep(100)
+    # Job Summary part
+    # Create Logfile here
     driver.quit()

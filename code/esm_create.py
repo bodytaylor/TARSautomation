@@ -5,10 +5,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from datetime import date
 from dotenv import load_dotenv
 import os
 import pandas as pd
 import time
+
+# Further Update will connect to database for ESM creation 
+# Generate form for Hotel relation for ESM user approval from VPO
 
 def driver_init():
     # Setup Chrome Driver
@@ -320,7 +324,6 @@ def get_screenshot(df):
     
     df['result'] = df['EMAIL 1'] == df['esm_email']
     df['result'] = df['result'].apply(bool_check)
-    print(df)
     return df
     
 def bool_check(value):
@@ -345,11 +348,12 @@ if __name__ == "__main__":
     rid_list = df['RID'].tolist()
     for rid in rid_list:
         write_response(df=df, hotel_rid=rid, response=check_esm_user(rid))
-        
-    print(df)
     
-    # change this path
-    excel_file_path = r'D:\NSANGKARN\OneDrive - ACCOR\Desktop\test.xlsx'
+    # Write result to Excel file
+    # get today date and format it into ddmmyyyy
+    today = date.today().strftime("%d%m%Y")
+    folder_path = 'esm'
+    excel_file_path = os.path.join(folder_path, f'{today}_esm_creation.csv')
     
     # export and write again will remove this in the future
     df.to_excel(excel_file_path, index=False)
@@ -369,13 +373,11 @@ if __name__ == "__main__":
     # if esm check is "The search returned no results." create new = True, else false
     df['new_account'] = df['ems_check'].str.contains('The search returned no results.', case=False)
 
-    
     # create delete first then create
     delete_then_create = df.query('new_account == False and duplicate_check == False')
-    print(delete_then_create)
+    
     # create new account
     create_new = df.query('new_account == True and duplicate_check == False')
-    print(create_new)
     create_account(create_new)
     
     # delete account
@@ -383,11 +385,9 @@ if __name__ == "__main__":
     create_account(delete_then_create)
     
     # get result with screen shot and write it to excel file
-    
     result_df = get_screenshot(df=df)
     result_df.to_excel(excel_file_path, index=False)
+    
     # Exit driver end of automation
     driver.quit()
-
-
 

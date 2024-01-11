@@ -16,9 +16,24 @@ def set_hotel_rid():
 
 def load_content_book(hotel_rid):
     """Load the content book for the provided RID."""
+    content_book_version = input('Identify Content Book Version: ')
+
     while True:
         try:
-            hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
+            if content_book_version == '10':
+                from hotel_content import ContentBook_v10
+                ta.logger.info('Load content Book version 10')
+                hotel_content = ContentBook_v10(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
+            elif content_book_version == '17':
+                from hotel_content import ContentBook_v17
+                ta.logger.info('Load content Book version 17')
+                hotel_content = ContentBook_v17(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
+            elif content_book_version == '16':
+                from hotel_content import ContentBook_v16
+                ta.logger.info('Load content Book version 16')
+                hotel_content = ContentBook_v16(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
+            else:
+                hotel_content = ContentBook(filepath=f'hotel_workbook/{hotel_rid}/{hotel_rid} Content Book Hotel Creation.xlsm')
             ta.logger.info(f'{hotel_rid} : Content Book Loaded')
             break
         except FileNotFoundError:
@@ -190,6 +205,9 @@ def main():
 def run_full_automation(hotel_rid, hotel_content):
     """Run full automation for the given hotel RID and content."""
     # Note Adding function for asking user for all infomaion needed for full automation.
+    import set_hotel_limit
+    set_hotel_limit.add(hotel_rid)
+    
     import add_language
     add_language.add(hotel_rid, hotel_content)
 
@@ -213,9 +231,6 @@ def run_full_automation(hotel_rid, hotel_content):
 
     import special_rating
     special_rating.add(hotel_rid, hotel_content)
-
-    import set_hotel_limit
-    set_hotel_limit.add(hotel_rid)
     
     import meal_options
     meal_options.add(hotel_rid, hotel_content)

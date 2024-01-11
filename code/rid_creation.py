@@ -10,11 +10,10 @@ import csv
 import pandas as pd
 
 # Todo Test the code
-
-# Extraction
+# Extraction will rewrite to full automate extraction directly from Welcome Now
 def job_extraction():
     # path = input('Input report path: ').replace('"', '')
-    path = r"D:\NSANGKARN\Downloads\sc_req_item (1).csv"
+    path = r"D:\NSANGKARN\Downloads\sc_req_item.csv"
     df = pd.read_csv(path, dtype=str, encoding='ISO-8859-1')
     return df
 
@@ -94,8 +93,12 @@ def extract_zipcode(text):
     
     # Convert the matched strings to integers
     numbers = [int(num) for num in numbers]
+    if len(numbers) >= 1:
+        zip_code = str(numbers[-1])
+    else:
+        zip_code = '00000'
     
-    return str(numbers[-1])
+    return zip_code
 
 def text_to_dict(text):
     data_dict = {}
@@ -171,12 +174,13 @@ def create_hotel_rid(google: AskGoogle, input: str):
     data['iata_code'] = iata_code
 
     # Hotel name and general information
+    sign = data['Sign']
     hotel_name = data['Establishment name']
     chain_code = find_best_match(data['Sign'], chain_dict)[0]
     brand_code = find_best_match(data['Sign'], brands_dict)[2]
-    brand = find_best_match(data['Sign'], brands_dict)[0]
-    if brand not in hotel_name:
-        hotel_name = f'{brand} {hotel_name}'
+    # brand = find_best_match(data['Sign'], brands_dict)[0]
+    if sign not in hotel_name:
+        hotel_name = f'{sign} {hotel_name}'
 
     address = data['Address']
     zipcode = extract_zipcode(data["Address"])
@@ -242,8 +246,7 @@ def create_hotel_rid(google: AskGoogle, input: str):
     rid, name = ta.get_hotel_name()
 
     # General page
-    ta.get('https://dataweb.accor.net/dotw-trans/displayGeneralInformation!input.action')
-    # wait for element
+    ta.general_page()
 
     # Open date
     ta.input_text('gi_openingDate', open_date)
@@ -285,6 +288,9 @@ if __name__ == '__main__':
         # Job report reqiure hotel RID and Ticket Number for next task.
         job_report = [req_number, rid, name, google.create_response(rid, name)]
         create_csv(file_path, data=job_report)
+    
+    # Close Browser
+    ta.quit()
         
         
     

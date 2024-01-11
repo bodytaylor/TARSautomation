@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import csv
 import time
-from datetime import date
 from dotenv import load_dotenv
 import os
 import pandas as pd
@@ -108,6 +107,7 @@ chain_code = {
 # Setup Chrome Driver
 chrome_options = webdriver.ChromeOptions()
 ### Will test and upgrade this line soon ###
+## Update how the script located file path ##
 prefs = {"download.default_directory": r"C:\Users\NSANGKARN\bodytaylor\TARSautomation\temp"}
 chrome_options.add_experimental_option("prefs", prefs)
 # chrome_options.add_argument("--headless")  # Enable headless mode
@@ -319,7 +319,7 @@ def create_amadeus_code(hotel_rid):
                             '', country_code, phone, fax, amadeus_check_code])
         
 # get hotel RID from user
-hotel_rid = input('input RID: ' )
+hotel_rid = input('input RID (Multi Creation input RID seperate by space): ' )
 hotel_rid_list = str(hotel_rid).split()
 
 # Let's roll! 

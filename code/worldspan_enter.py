@@ -19,7 +19,6 @@ MA-MODIFIED AMERICAN PLAN
 RO-ROOM ONLY
 """
 
-
 def find_gds_windows():
     time.sleep(1)
     image = pyautogui.locateOnScreen(r"img\worldspan.PNG", confidence=0.75)
