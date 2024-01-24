@@ -28,7 +28,7 @@ def split_csv(input_file, output_folder, lines_per_file):
                     writer.writerow(header)
 
 if __name__ == "__main__":
-    input_file_path = input('enter target file path: ')  # Change this to your input CSV file path
+    input_file_path = input('enter target file path: ').replace('"', "")  # Change this to your input CSV file path
     output_folder_path = input('insert path for outputfile: ')  # Change this to the desired output folder path
     lines_per_file = int(input('enter lines limit per file: '))  # Change this to the desired number of lines per output file
 

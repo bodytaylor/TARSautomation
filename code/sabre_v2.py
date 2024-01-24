@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 import os
 import time
 import re
-from hotel_content import ContentBook
+from accor_repo import AccorRepo
 
 # Load environment variables from .env file
 def user_credential():
@@ -84,19 +84,58 @@ def input_text_by_name(element_name: str, text: str = None):
         text_area = driver.find_element(By.NAME, element_name)
         text_area.send_keys(text)
         
-def create_property(hotel_content):
+def create_property(rid):
     wait_element(element_id='footer0')
     driver.execute_script("submitNavigForm('propertyCreate', 'PropertyList', 'create', '', 'true', '');")
     wait_element('level0')
-    data_entry(hotel_content)
+    data_entry(rid)
     
-def data_entry(hotel_content):
+def get_partner_chain_code(hotel_chain):
+    partner_code = {
+        'BAN': 'BY', 
+        '21C': 'EN', 
+        'TWF': 'EN', 
+        'DEL': 'EN', 
+        'HYD': 'EN', 
+        'MSH': 'EN', 
+        'MOD': 'EN', 
+        'TOR': 'EN', 
+        'SLS': 'EN', 
+        'SO': 'EN', 
+        'FAR': 'FA', 
+        'SOF': 'SB', 
+        'MGR': 'SB', 
+        'PUL': 'PU', 
+        'PLL': 'PU', 
+        'RAF': 'YR', 
+        'RIX': 'RX', 
+        'SWI': 'SL'
+        }
+
+    code = partner_code.get(hotel_chain)
+    
+    if code is None:
+        code = 'RT'
+    return code
+
+def remove_special_char(input_string):
+# Use regex to remove all non-alphanumeric characters
+    result_string = re.sub(r'[^a-zA-Z0-9\s]', '', input_string)
+    return result_string
+    
+# Update data source from content book to accor repo
+def data_entry(rid):
+    hotel_content = AccorRepo(rid)
     # Owning Property Group (Dropdown)
-    sabre_chain = hotel_content.get_partner_chain_code()
+    hotel_content.get_hotel_info()
+    hotel_content.get_hotel_address()
+    
+    hotel_chain = hotel_content.brand_code
+    sabre_chain = get_partner_chain_code(hotel_chain)
     select_dropdown('propertyGroup', value=sabre_chain)
     
     # Cross Reference
-    input_text_by_name('crossRef', hotel_content.hotel_rid)
+    input_text_by_name('crossRef', rid)
     
     # Property Name
     input_text_by_name('propertyName', hotel_content.hotel_name)
@@ -107,45 +146,48 @@ def data_entry(hotel_content):
     # Address1
     input_text_by_name('address1', hotel_content.address1)
     # Address2
-    input_text_by_name('address2', hotel_content.address2)
+    if hotel_content.address2 is not None:
+        input_text_by_name('address2', hotel_content.address2)
     # Address3
-    input_text_by_name('address3', hotel_content.address3)
+    if hotel_content.address3 is not None:
+        input_text_by_name('address3', hotel_content.address3)
     
     # City
     input_text_by_name('city', hotel_content.city)
     
     # Country (Dropdown)
-    country_code = hotel_content.get_country_code()
+    country_code = hotel_content.country_code
     select_dropdown('countryCode', value=country_code)
     
     # State/Province (Dropdown) -> skip for now
     
     # Postal Code
-    postal_code = str(hotel_content.zip_code)
-    postal_code = hotel_content.remove_special_char(postal_code)
+    postal_code = str(hotel_content.post_code)
+    postal_code = remove_special_char(postal_code)
     input_text_by_name('postalCode', postal_code)
     
     # Phone
-    phone = str(hotel_content.phone_country_code) + str(hotel_content.phone)
-    phone = hotel_content.remove_special_char(phone)
+    phone = str(hotel_content.phone_code) + str(hotel_content.phone)
+    phone = remove_special_char(phone)
     input_text_by_name('phone', phone)
     
     # Fax
-    fax = str(hotel_content.phone_country_code) + str(hotel_content.fax)
-    if len(fax) >= 3:
+    if hotel_content.fax is not None:
+        fax = str(hotel_content.phone_code) + str(hotel_content.fax)
         input_text_by_name('fax', fax)
     
     # currency (Dropdown)
-    select_dropdown('currency', value=hotel_content.currency_code)
+    select_dropdown('currency', value=hotel_content.currency)
     
     # URL
-    input_text_by_name('url', hotel_content.hotel_url)
+    hotel_web_address = f'http://all.accor.com/{rid}'
+    input_text_by_name('url', hotel_web_address)
     
     # Airport km -> mile
-    iata_code = hotel_content.main_attractions['AER1'][0]
-    direction = hotel_content.main_attractions['AER1'][1]
-    distance = hotel_content.main_attractions['AER1'][4]
-    distance_mile = str((int((int(distance) * 0.621371))))
+    hotel_content.get_iata()
+    iata_code = hotel_content.airport_name
+    direction = hotel_content.airport_direction
+    distance_mile = str(hotel_content.airport_distance_m)
     
     input_text('Airport_0', iata_code)
     select_dropdown('Direction_0', direction)
@@ -171,7 +213,7 @@ def active_property(sabre_id: str):
     
     # Search and wait for element
     driver.execute_script("searchPressed();")
-    wait_element(element_id='displayTableModelTable')
+    time.sleep(2)
     
     # tickbox 
     driver.execute_script("document.querySelector('input[name=SELECT]').checked = true;")
@@ -180,13 +222,16 @@ def active_property(sabre_id: str):
     driver.execute_script('modifyPressed();')
     
     # Change dropdown to property
-    wait_element(element_id='disableCode')
+    wait_element(element_id='level1')
+    time.sleep(1)
     dropdown = driver.find_element(By.NAME, 'disableCode')
     select = Select(dropdown)
     select.select_by_index(0)
     
     # Submit
     driver.execute_script('commitPressed();')
+    time.sleep(1)
+    print(f'{sabre_id} Property has been activated on Sabre.')
     
 if __name__ == "__main__":
     
@@ -196,12 +241,11 @@ if __name__ == "__main__":
     
     # Migrate the code to Accor repo for better workflow, sometime we get a request from Audit team
     rid = str(input('Input Hotel RID: '))
-    hotel_content = ContentBook(f"hotel_workbook\{rid}\{rid} Content Book Hotel Creation.xlsm")
     
     # Automation process
     username, password = user_credential()
     sebre_login(username, password)
-    sabre_id = create_property(hotel_content)
+    sabre_id = create_property(rid)
     active_property(sabre_id)
     
     # Job Summary part

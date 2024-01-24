@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 from dotenv import load_dotenv
+import pandas as pd
 import time
 import requests
 import logging
@@ -96,7 +97,6 @@ def wait_for_element(element: str, by: By = By.ID, timeout: int = 10):
     except TimeoutError as e:
         logging.error(e)
 
-
 def login():
     # Unpack Credential from function
     username, password = user_credential()
@@ -152,7 +152,7 @@ def hotel_search(hotel_rid: str):
     try:
         # Locating and interacting with the search input field
         search_input = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="keyword"]')))
-        search_input.clear()
+        driver.execute_script("arguments[0].value = '';", search_input)
         search_input.send_keys(f'{hotel_rid}')
 
         # Locating and interacting with the search button
@@ -162,7 +162,6 @@ def hotel_search(hotel_rid: str):
         # Attempting to perform the search and retrieve the hotel name
         while True:
             action_res = response()
-
             if action_res is None:
                 # Retrieving the hotel name if found
                 hotel_name = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'hotelNameClass')))
@@ -181,17 +180,16 @@ def hotel_search(hotel_rid: str):
     except TimeoutException as e:
         # Logging TimeoutError in case of element not found within the specified time
         logging.info(e)
-
-        
+          
 def response():
     try:
-        wait_for_element(element='//*[@id="actionmessage"]/ul/li/span', by=By.XPATH)
-        span_element = driver.find_element(By.XPATH, '//*[@id="actionmessage"]/ul/li/span')
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#actionmessage > ul > li > span')))
+        span_element = driver.find_element(By.CSS_SELECTOR, '#actionmessage > ul > li > span')
         span_text = span_element.text
         return span_text
     except:
         return None
-
+    
 def get_response(hotel_rid: str, code: str = ""):
     wait_for_element(element='//*[@id="messages"]', by=By.XPATH)
     action_message = get_message()
@@ -463,3 +461,46 @@ def get_surrounding():
         return df
     except TimeoutException as e:
         get_surrounding()
+      
+        
+def check_available(code: str, system: str, max_attempts: int = 2) -> bool:
+    """
+    Check if a given world span code is available for a specific system.
+
+    Args:
+        code (str): The world span code to check.
+        system (str): The system to check the code for. Must be one of '1a' or 'tw'.
+        max_attempts (int, optional): The maximum number of attempts to search for the code. Defaults to 2.
+
+    Returns:
+        bool: True if the code is available, False otherwise.
+    """
+    valid_systems = {'1a', 'tw'}
+    driver.get('https://dataweb.accor.net/dotw-trans/selectHotelInput.action')
+    wait = WebDriverWait(driver, 10 * delay)
+
+    if system not in valid_systems:
+        logger.warning(f'Invalid system code: {system}. Please use a valid system code.')
+        return False
+
+    for _ in range(max_attempts):
+        try:
+            search_input = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="keyword"]')))
+            driver.execute_script("arguments[0].value = '';", search_input)
+            search_input.send_keys(f'{system}*{code}')
+            search_input.send_keys(Keys.RETURN)
+            action_res = response()
+            if action_res == 'No hotels found with the keywords used':
+                logger.info(f'World span code is valid: {code}')
+                return True
+            else:
+                logger.warning(f'{code} Code not available. Please use another one.')
+                return False
+        except ValueError as e:
+            logger.error(e)
+            return False
+
+    logger.warning(f'Max attempts reached for code {code}. Please use another one.')
+    return False
+
+

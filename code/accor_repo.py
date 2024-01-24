@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from typing import Optional
 import time
+import pandas as pd
 
 class AccorRepo():
     def __init__(self, hotel_rid: str):
@@ -44,7 +45,7 @@ class AccorRepo():
         self.longitude = self._get_field('HotelInfo', 'Position', 'Longitude')
         return self.longitude
     
-    def get_ref_point(self):
+    def get_iata(self):
         segment_data = self.hotel_repo.find('AreaInfo')
         fields_data = segment_data.find('RefPoints')
 
@@ -59,6 +60,10 @@ class AccorRepo():
                 self.airport_direction = item['Direction']
                 self.airport_distance = item['Distance']
                 self.airport_unit = item['DistanceUnitName']
+                if self.airport_unit == 'Km':
+                    self.airport_distance_m = round((float(self.airport_distance) * 0.621371))
+                else:
+                    self.airport_distance_m = self.airport_distance
 
             elif point_code == '5': # City
                 self.primary_city_name = item['Name']
@@ -71,10 +76,10 @@ class AccorRepo():
         self.brand_name = self.hotel_repo['BrandName']
         self.timezone = self.hotel_repo['TimeZone']
         self.currency = self.hotel_repo['CurrencyCode']
-        self.hotel_name = self.hotel_repo['HotelName']
-        self.hotel_short_name = self._get_field('HotelInfo', 'HotelName', 'HotelShortName')
+        self.hotel_commercial_name = self.hotel_repo['HotelName']
+        self.hotel_name = self._get_field('HotelInfo', 'HotelName', 'HotelShortName')
         
-    def hotel_address(self):
+    def get_hotel_address(self):
         xml_address = self.hotel_repo.find('ContactInfos') 
         adress_lines = xml_address.find_all('AddressLine')
         
@@ -89,12 +94,18 @@ class AccorRepo():
         phone_detail = xml_address.find('Phones')
         phone = phone_detail.find('Phone', {'PhoneLocationType': '6',
                                    'PhoneTechType': '1'})
-        self.phone_code, self.phone = self.seperate_text(phone['PhoneNumber'])
+        
+        try:
+            self.phone_code, self.phone = self.seperate_text(phone['PhoneNumber'])
+        except TypeError:
+            self.phone_code, self.phone = None, None
         
         fax = phone_detail.find('Phone', {'PhoneLocationType': '6',
                                    'PhoneTechType': '3'})
-        
-        self.fax_code, self.fax = self.seperate_text(fax['PhoneNumber'])
+        try:
+            self.fax_code, self.fax = self.seperate_text(fax['PhoneNumber'])
+        except TypeError:
+            self.fax_code, self.fax = None, None
         
         # Country
         tag_country = xml_address.find('CountryName')
@@ -149,18 +160,132 @@ class AccorRepo():
         for data in structured_data:
             if data['Code'] == 'ALL':
                 structured_data.remove(data)
-            print(data)       
+                
+        return structured_data
     
-# Testing      
-end_time = time.perf_counter()
+    def checkin_time(self):
+        """Return Hotel Checkin time in format hh:mm"""
+        policies = self.hotel_repo.find('Policies') 
+        checkin_time = policies.find('PolicyInfo', {'CheckInTime': True})
+        str_time = checkin_time['CheckInTime']
+        str_time = str_time[:-3]
+        return str_time
+        
+    def checkout_time(self):
+        """Return Hotel Checkout time in format hh:mm"""
+        policies = self.hotel_repo.find('Policies') 
+        checkout_time = policies.find('PolicyInfo', {'CheckOutTime': True})
+        str_time = checkout_time['CheckOutTime']
+        str_time = str_time[:-3]
+        return str_time
+    
+    def hotel_brand(self):
+        """Return 3 letters Hotel Brand Code"""
+        brand = self.hotel_repo['BrandCode']
+        return brand
+    
+    def get_attractions(self):
+        """Return dataframe of Attractions near by the Hotel"""
+        area_info = self.hotel_repo.find('AreaInfo')
+        attractions = area_info.find_all('Attractions')
+        
+        attraction_category_codes = []
+        attraction_names = []
+        directions = []
+        distances = []
+        distance_units = []
+        index_point_codes = []
+        to_from_list = []
 
-hotel_list = ['0563']
-for hotel in hotel_list:
-    repo = AccorRepo(hotel)
-    repo.get_roooms()
+        # Iterate through Attraction elements
+        for attraction_elem in attractions:
+            for attraction in attraction_elem.find_all('Attraction'):
+                attraction_category_code = attraction['AttractionCategoryCode']
+                attraction_name = attraction['AttractionName']
+                attraction_category_codes.append(attraction_category_code)
+                attraction_names.append(attraction_name)
 
-# time the code
-start_time = time.perf_counter()
-elapsed_time = start_time - end_time
+            # Iterate through RefPoint elements
+            for ref_point_elem in attraction_elem.find_all('RefPoint'):
+                direction = ref_point_elem.get('Direction')
+                distance = ref_point_elem.get('Distance')
+                distance_unit = ref_point_elem.get('DistanceUnitName')
+                index_point_code = ref_point_elem.get('IndexPointCode')
+                to_from = ref_point_elem.get('ToFrom')
 
-print(f"Elapsed time: {elapsed_time} seconds")
+                # Append data to lists
+                directions.append(direction)
+                distances.append(distance)
+                distance_units.append(distance_unit)
+                index_point_codes.append(index_point_code)
+                to_from_list.append(to_from)
+
+        # Create a DataFrame
+        df = pd.DataFrame({
+            'AttractionCategoryCode': attraction_category_codes,
+            'AttractionName': attraction_names,
+            'Direction': directions,
+            'Distance': distances,
+            'DistanceUnitName': distance_units,
+            'IndexPointCode': index_point_codes,
+            'ToFrom': to_from_list
+        })
+        
+        # Add new column with mile distance
+        df['DistanceMiles'] = df.apply(lambda row: round((float(row['Distance']) * 0.621371), 0) if row['DistanceUnitName'] == 'Km' else row['Distance'], axis=1)
+        return df
+    
+    def get_ref_point(self):
+        """Return dataframe of Attractions near by the Hotel"""
+        area_info = self.hotel_repo.find('RefPoints')
+        attractions = area_info.find_all('RefPoint')
+        
+        names = []
+        direction_list = []
+        distances = []
+        distance_units = []
+        index_point_codes = []
+        primary_indicaters= []
+        shuttle_service = []
+        # Parse XML and fill DataFrame
+        for xml_element in attractions:
+            name = xml_element.get('Name')
+            direction = xml_element.get('Direction')
+            distance = xml_element.get('Distance')        
+            distance_unit = xml_element.get('DistanceUnitName')
+            index_point_code = xml_element.get('IndexPointCode')
+            primary_indicater = xml_element.get('PrimaryIndicator')
+            shuttle = xml_element.find('Transportation', {"TransportationCode": "17"})
+            
+            # append to list
+            names.append(name)
+            direction_list.append(direction)
+            distances.append(distance)
+            distance_units.append(distance_unit)
+            index_point_codes.append(index_point_code)
+            primary_indicaters.append(primary_indicater)
+            
+            if shuttle:
+                shuttle_service.append(True)
+            else:
+                shuttle_service.append(False)
+     
+                # Create a DataFrame
+        df = pd.DataFrame({
+            'RefPointName': names,
+            'Direction': direction_list,
+            'Distance': distances,
+            'DistanceUnitName': distance_units,
+            'IndexPointCode': index_point_codes,
+            'ShuttleService' : shuttle_service,
+            'PrimaryIndicator': primary_indicaters,
+        })
+        
+        df['DistanceMiles'] = df.apply(lambda row: round((float(row['Distance']) * 0.621371), 0) if row['DistanceUnitName'] == 'Km' else row['Distance'], axis=1)
+        return df
+    
+    def total_room(self):
+        """Get the number of available rooms at this hotel."""
+        total_room = self.hotel_repo.find('GuestRoomInfo', {"Code" : "28"})
+        return total_room.get('Quantity')
+

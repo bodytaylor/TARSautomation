@@ -321,14 +321,15 @@ time.sleep(2)
 save()
 time.sleep(1.5)
 
-
-
 # ADD Surrounding
 c_country = df['CNTRY'].iloc[0]
 
 ctr1 = surrounding[surrounding['Code'] == 'CTR1']
 ctr1_name = ctr1['Name'].values[0]
+
 ctr1_dis = ctr1['Miles'].values[0]
+if ctr1_dis is None:
+    ctr1_dis = 0
 ctr1_dis = str(int(round(ctr1_dis)))
 ctr1_dir = ctr1['Orientation'].values[0]
 ctri_opp_dir = find_opposite_dir(direction=ctr1_dir)

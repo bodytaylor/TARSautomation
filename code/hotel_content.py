@@ -134,34 +134,6 @@ class ContentBook:
         result_string = re.sub(r'[^a-zA-Z0-9\s]', '', input_string)
         return result_string
     
-    def get_partner_chain_code(self):
-        partner_code = {
-            'BAN': 'BY', 
-            '21C': 'EN', 
-            'TWF': 'EN', 
-            'DEL': 'EN', 
-            'HYD': 'EN', 
-            'MSH': 'EN', 
-            'MOD': 'EN', 
-            'TOR': 'EN', 
-            'SLS': 'EN', 
-            'SO': 'EN', 
-            'FAR': 'FA', 
-            'SOF': 'SB', 
-            'MGR': 'SB', 
-            'PUL': 'PU', 
-            'PLL': 'PU', 
-            'RAF': 'YR', 
-            'RIX': 'RX', 
-            'SWI': 'SL'
-            }
-        hotel_chain = self.get_chain_code()
-        code = partner_code.get(hotel_chain)
-        
-        if code is None:
-            code = 'RT'
-        return code
-    
     def extract_currency(self, input):
         pattern = r'-(.+)'
         match = re.search(pattern, input)

@@ -25,7 +25,6 @@ def get_data(element_id=str):
     except ValueError as e:
         print(e)
     
-
 def get_dropdown(element_id=str):
     try:
         select = WebDriverWait(driver, 10).until(
@@ -37,7 +36,6 @@ def get_dropdown(element_id=str):
         return selected_option_text
     except ValueError as e:
         print(e)
-
 
 # Load environment variables from .env file
 def user_credential():
@@ -289,15 +287,15 @@ def meal_plan(df):
     rf = df[df['Rate level code'].str.contains('RF')]
     ri = df[df['Rate level code'].str.contains('RI')]
     if len(ra) != 0:
-        meal_option.append('EP')
+        meal_option.append('RO')
     if len(rb) != 0:
         meal_option.append('BB')
     if len(rh) != 0:
-        meal_option.append('HB')
+        meal_option.append('DB')
     if len(rf) != 0:
         meal_option.append('FB')
     if len(ri) != 0:
-        meal_option.append('FB')
+        meal_option.append('FP')
     return meal_option
 
 def get_surrounding():
