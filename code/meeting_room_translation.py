@@ -15,7 +15,7 @@ def enter_description(keys, search_key, description):
         
     # Enter Translations
     textarea = ta.driver.find_element(By.ID, "hotelLoungeTranslation.description.text")
-    textarea.send_keys(description[keys])
+    textarea.send_keys(description)
     time.sleep(1)
 
     ta.translate_hotel_product(element_id='translateHotelLoungeForm')

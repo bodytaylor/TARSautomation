@@ -294,6 +294,16 @@ def translate_hotel_product(option: int = 1, element_id='translateHotelProductFo
         """
         driver.execute_script(script)
         time.sleep(1)
+        
+def accept_alert():
+    time.sleep(1)
+    alert = driver.switch_to.alert
+    message = alert.text
+    logger.info(message)
+    alert.accept()
+    logger.info('Alert Accepted')
+    time.sleep(1)
+    
 
 # for product translation
 def clear_marketing_box():

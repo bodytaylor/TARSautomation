@@ -12,7 +12,8 @@ def add(hotel_rid):
     ta.input_text('hotelsLimits.nbProdHotel', text='1000')
     ta.input_text('hotelsLimits.maxExtra', text='500')
     ta.input_text('hotelsLimits.maxRooms', text='50')
-    ta.driver.execute_script("submitHotelLimit('setHotelsLimits.action?',false);")
+    ta.driver.execute_script("submitHotelLimit('incrementHotelsLimits.action?',true);")
+    ta.accept_alert()
     ta.get_response(hotel_rid, code='Hotel Product limit Set')
     
     # Increase Rate Level Limit

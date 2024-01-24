@@ -2,7 +2,7 @@ import TarsAutomation as ta
 from selenium.webdriver.common.by import By
 
 def add(hotel_rid, hotel_content):
-    bars = hotel_content.bars
+    bars = hotel_content
     # Start Looping!
     for keys in bars:
         # find type

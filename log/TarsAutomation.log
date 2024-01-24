@@ -3018,3 +3018,845 @@
 2024-01-23 17:46:13,629 : INFO : Load content Book version 16
 2024-01-23 17:46:16,713 : INFO : C2F8 : Content Book Loaded
 2024-01-23 17:46:16,718 : INFO : Credentials loaded Username: NANSAN
+2024-01-24 09:50:41,376 : INFO : Load content Book version 16
+2024-01-24 09:50:44,828 : INFO : C2F8 : Content Book Loaded
+2024-01-24 09:50:44,828 : INFO : Credentials loaded Username: NANSAN
+2024-01-24 09:50:53,710 : INFO : Login Success User: NANSAN
+2024-01-24 09:51:08,047 : INFO : Selected Hotel : C2F8 - NOVOTEL KOH SI CHANG RESORT
+2024-01-24 09:51:19,060 : INFO : Hotels limits
+2024-01-24 09:51:20,030 : INFO : searchKeyword : C2F8
+2024-01-24 09:51:21,954 : INFO : hotelsLimits.nbProdHotel : 1000
+2024-01-24 09:51:22,021 : INFO : hotelsLimits.maxExtra : 500
+2024-01-24 09:51:22,113 : INFO : hotelsLimits.maxRooms : 50
+2024-01-24 09:51:26,082 : INFO : C2F8 : Hotel Product limit Set : The limit has been updated
+2024-01-24 09:51:26,150 : INFO : rateLimit : checked = true
+2024-01-24 09:51:28,186 : INFO : hotelsLimits.nbRateHotel : 1000
+2024-01-24 09:51:29,488 : INFO : C2F8 : Hotel Rate Level Limit Set : Hotels limits set
+2024-01-24 09:51:29,558 : INFO : indexRateLimit : checked = true
+2024-01-24 09:51:31,480 : INFO : hotelsLimits.nbRateIndex : 1000
+2024-01-24 09:51:32,820 : INFO : C2F8 : Hotel Indexed Rates Limit Set : Hotels limits set
+2024-01-24 09:51:32,884 : INFO : referenceRateLimit : checked = true
+2024-01-24 09:51:34,826 : INFO : hotelsLimits.maxRateRef : 100
+2024-01-24 09:51:36,127 : INFO : C2F8 : Hotel Indexed Rates Limit Set : Hotels limits set
+2024-01-24 09:51:36,474 : INFO : Language to add : ['DE', 'ES', 'IT', 'NL', 'PT', 'ZH', 'TH']
+2024-01-24 09:51:40,251 : INFO : Hotel Languages Definition
+2024-01-24 09:51:40,320 : INFO : DE Added
+2024-01-24 09:51:41,242 : INFO : ES Added
+2024-01-24 09:51:42,145 : INFO : IT Added
+2024-01-24 09:51:43,048 : INFO : NL Added
+2024-01-24 09:51:43,923 : INFO : PT Added
+2024-01-24 09:51:44,801 : INFO : ZH Added
+2024-01-24 09:51:45,686 : INFO : TH Added
+2024-01-24 09:51:46,475 : INFO : C2F8 : Language Setup Done.
+2024-01-24 09:51:46,505 : INFO : HC2F8_Hotel_Programs_REG.csv has been created!
+2024-01-24 09:51:50,113 : INFO : Automation representation
+2024-01-24 09:51:56,540 : INFO : C2F8 : RT : System has been added
+2024-01-24 09:52:02,069 : INFO : C2F8 : DQ : System has been added
+2024-01-24 09:52:07,555 : INFO : C2F8 : GG : System has been added
+2024-01-24 09:52:13,058 : INFO : C2F8 : HO : System has been added
+2024-01-24 09:52:18,525 : INFO : C2F8 : TE : System has been added
+2024-01-24 09:52:24,862 : INFO : C2F8 : TE : System has been added
+2024-01-24 09:52:24,862 : INFO : C2F8 : ALL MANDATORY AUTOMATION SYSTEMS HAS BEEN ADDED
+2024-01-24 09:52:28,827 : INFO : Distribution Method
+2024-01-24 09:52:34,495 : INFO : C2F8 :  : Address has been updated
+2024-01-24 09:52:38,439 : INFO : C2F8 :  : Hotel automation has been updated
+2024-01-24 09:53:50,207 : INFO : Address and Set-up -
+2024-01-24 09:53:50,271 : INFO : hotel.name : NOVOTEL KOH SI CHANG
+2024-01-24 09:53:50,338 : INFO : hotel.brand.code : NOV
+2024-01-24 09:53:50,407 : INFO : hotel.chain.code : NOV
+2024-01-24 09:53:50,470 : INFO : hotel.commercialName : NOVOTEL KOH SI CHANG (Opening October 2024)
+2024-01-24 09:53:50,538 : INFO : hotel.shortName : NOVOTEL KOH SI CHANG
+2024-01-24 09:53:50,609 : INFO : hotel.hotelManagementType.code : MG
+2024-01-24 09:53:50,672 : INFO : hotel.address.addresses[0] : 339 Jerm Jom Phon road
+2024-01-24 09:53:50,751 : INFO : hotel.address.addresses[1] : Sriracha
+2024-01-24 09:53:50,823 : INFO : hotel.address.city : CHONBURI
+2024-01-24 09:53:50,886 : INFO : hotel.iataCityCode : UTP
+2024-01-24 09:53:50,954 : INFO : hotel.address.zipCode : 20110
+2024-01-24 09:53:51,023 : INFO : hotel.address.indTel : 66
+2024-01-24 09:53:51,108 : INFO : hotel.address.tel : 33265800
+2024-01-24 09:53:51,171 : INFO : hotel.address.indFax : 66
+2024-01-24 09:53:51,241 : INFO : hotel.address.fax : 33265871
+2024-01-24 09:53:51,307 : INFO : hotel.indTelReservation : 66
+2024-01-24 09:53:51,371 : INFO : hotel.telReservation : 33265800
+2024-01-24 09:53:51,439 : INFO : hotel.indFaxReservation : 66
+2024-01-24 09:53:51,508 : INFO : hotel.faxReservation : 33265871
+2024-01-24 09:53:51,583 : INFO : hotel.address.country.code : TH
+2024-01-24 09:53:51,655 : INFO : hotel.placeCode : UTP
+2024-01-24 09:53:51,723 : INFO : hotel.segmentationType.code : TRACK
+2024-01-24 09:53:51,786 : INFO : hotel.tarsMode.code : O
+2024-01-24 09:53:51,855 : INFO : versionPmsInterface : 
+2024-01-24 09:53:51,924 : INFO : hotel.address.email : H9775-RE@accor.com
+2024-01-24 09:53:52,009 : INFO : hotel.internetAddress : all.accor.com/C2F8
+2024-01-24 09:53:56,806 : INFO : Translated Name and Address
+2024-01-24 09:53:58,991 : INFO : hotelDataTranslate.translatedCommercialName : NOVOTEL KOH SI CHANG (Opening October 2024)
+2024-01-24 09:53:59,067 : INFO : hotelDataTranslate.translatedCity : CHONBURI
+2024-01-24 09:53:59,145 : INFO : hotelDataTranslate.translatedAddress1 : 339 Jerm Jom Phon road
+2024-01-24 09:53:59,234 : INFO : hotelDataTranslate.translatedAddress2 : Sriracha
+2024-01-24 09:54:03,114 : INFO : C2F8 : Display Name : Hotel data has been translated
+2024-01-24 09:54:42,811 : INFO : General Information
+2024-01-24 09:54:42,879 : INFO : gi_constructionDate : 27/02/2020
+2024-01-24 09:54:42,939 : INFO : gi_lastRenovDate : 27/02/2020
+2024-01-24 09:54:43,015 : INFO : gi_tarsCreatDate : 31/01/2024
+2024-01-24 09:54:43,076 : INFO : gi_openingDate : 01/10/2024
+2024-01-24 09:54:43,138 : INFO : gi.limitHour : 23:59
+2024-01-24 09:54:43,200 : INFO : gi.nbOfHours : +6
+2024-01-24 09:54:43,262 : INFO : gi.nbOfLifts : 1
+2024-01-24 09:54:43,333 : INFO : gi.nbOfRooms : 40
+2024-01-24 09:54:43,396 : INFO : gi.nbOfFloors : 3
+2024-01-24 09:54:43,478 : INFO : selectLodging : RST
+2024-01-24 09:54:43,540 : INFO : selectStandard : FI
+2024-01-24 09:54:43,603 : INFO : selectEnvironment : SEA
+2024-01-24 09:54:43,665 : INFO : selectLocation : RESO
+2024-01-24 09:54:43,728 : INFO : selectCurrency : THB
+2024-01-24 09:54:43,790 : INFO : selectPmsCurrency : THB
+2024-01-24 09:54:43,946 : INFO : Submitdata
+2024-01-24 09:54:46,405 : INFO : C2F8 : submitGeneralInformationForm : General information has been updated
+2024-01-24 09:54:49,206 : INFO : Special Rating Classification
+2024-01-24 09:54:52,004 : INFO : hotelStanding.nb : 4
+2024-01-24 09:54:53,801 : INFO : C2F8 : hotelStanding : Standing 'Local star rating' has been added
+2024-01-24 09:54:54,828 : INFO : hotelStanding.nb : 4
+2024-01-24 09:54:56,643 : INFO : C2F8 : hotelStanding : Standing 'Northstar Travel Media' has been added
+2024-01-24 09:54:56,643 : INFO : Automation Add Rating Done
+2024-01-24 09:54:57,071 : INFO : Meal Plan to add to the Hotel: ['MBREAK', 'AMBREA', 'DMBREA', 'MBUFF']
+2024-01-24 09:55:00,765 : INFO : Products -   
+2024-01-24 09:55:02,695 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 09:55:02,773 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 09:55:02,851 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 09:55:02,912 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 09:55:02,975 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 09:55:03,038 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 09:55:03,114 : INFO : Submitdata
+2024-01-24 09:55:05,582 : INFO : C2F8 : MBREAK : Product 'MBREAK' has been added
+2024-01-24 09:55:06,616 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 09:55:06,703 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 09:55:06,781 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 09:55:06,841 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 09:55:06,910 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 09:55:06,971 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 09:55:07,034 : INFO : Submitdata
+2024-01-24 09:55:09,631 : INFO : C2F8 : AMBREA : Product 'AMBREA' has been added
+2024-01-24 09:55:10,784 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 09:55:10,847 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 09:55:10,925 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 09:55:10,988 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 09:55:11,050 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 09:55:11,129 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 09:55:11,224 : INFO : Submitdata
+2024-01-24 09:55:13,819 : INFO : C2F8 : DMBREA : Product 'DMBREA' has been added
+2024-01-24 09:55:14,949 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 09:55:15,058 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 09:55:15,152 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 09:55:15,233 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 09:55:15,328 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 09:55:15,423 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 09:55:15,516 : INFO : Submitdata
+2024-01-24 09:55:18,081 : INFO : C2F8 : MBUFF : Product 'MBUFF' has been added
+2024-01-24 09:55:18,081 : INFO : C2F8 : Mandatory Meal Option has been added
+2024-01-24 09:55:21,725 : INFO : Products -   
+2024-01-24 09:55:22,645 : ERROR : C2F8: TWOAS Product Not Found in Product Library.
+2024-01-24 09:55:23,749 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 09:55:23,826 : INFO : hotelProduct.bookable : checkbox.checked
+2024-01-24 09:55:23,918 : INFO : hotelProduct.maxOccupancyTotal : 4
+2024-01-24 09:55:23,995 : INFO : hotelProduct.maxOccupancyAdult : 3
+2024-01-24 09:55:24,072 : INFO : hotelProduct.maxOccupancyChildren : 1
+2024-01-24 09:55:24,149 : INFO : hotelProduct.singleBebNumber : 2
+2024-01-24 09:55:24,259 : INFO : hotelProduct.doubleBebNumber : 0
+2024-01-24 09:55:24,430 : INFO : hotelProduct.quantity : 12
+2024-01-24 09:55:24,491 : INFO : hotelProduct.pmsCode : VCB
+2024-01-24 09:55:24,570 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 09:55:24,646 : INFO : hotelProduct.orderInResaScreen : 2
+2024-01-24 09:55:24,737 : INFO : Submitdata
+2024-01-24 09:55:27,246 : INFO : C2F8 : VCB : Product 'VCB' has been added
+2024-01-24 09:55:28,354 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 09:55:28,448 : INFO : hotelProduct.bookable : checkbox.checked
+2024-01-24 09:55:28,526 : INFO : hotelProduct.maxOccupancyTotal : 4
+2024-01-24 09:55:28,618 : INFO : hotelProduct.maxOccupancyAdult : 3
+2024-01-24 09:55:28,696 : INFO : hotelProduct.maxOccupancyChildren : 1
+2024-01-24 09:55:28,782 : INFO : hotelProduct.singleBebNumber : 1
+2024-01-24 09:55:28,881 : INFO : hotelProduct.doubleBebNumber : 1
+2024-01-24 09:55:29,064 : INFO : hotelProduct.quantity : 3
+2024-01-24 09:55:29,147 : INFO : hotelProduct.pmsCode : V1B
+2024-01-24 09:55:29,233 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 09:55:29,303 : INFO : hotelProduct.orderInResaScreen : 3
+2024-01-24 09:55:29,379 : INFO : Submitdata
+2024-01-24 09:55:32,145 : INFO : C2F8 : V1B : Product 'V1B' has been added
+2024-01-24 09:55:33,298 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 09:55:33,382 : INFO : hotelProduct.bookable : checkbox.checked
+2024-01-24 09:55:33,478 : INFO : hotelProduct.maxOccupancyTotal : 7
+2024-01-24 09:55:33,564 : INFO : hotelProduct.maxOccupancyAdult : 5
+2024-01-24 09:55:33,658 : INFO : hotelProduct.maxOccupancyChildren : 2
+2024-01-24 09:55:33,750 : INFO : hotelProduct.singleBebNumber : 2
+2024-01-24 09:55:33,845 : INFO : hotelProduct.doubleBebNumber : 1
+2024-01-24 09:55:34,018 : INFO : hotelProduct.quantity : 1
+2024-01-24 09:55:34,113 : INFO : hotelProduct.pmsCode : V2A
+2024-01-24 09:55:34,210 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 09:55:34,303 : INFO : hotelProduct.orderInResaScreen : 4
+2024-01-24 09:55:34,397 : INFO : Submitdata
+2024-01-24 09:55:36,949 : INFO : C2F8 : V2A : Product 'V2A' has been added
+2024-01-24 10:02:47,273 : INFO : Load content Book version 16
+2024-01-24 10:02:52,015 : INFO : C2F8 : Content Book Loaded
+2024-01-24 10:02:52,015 : INFO : Credentials loaded Username: NANSAN
+2024-01-24 10:03:01,661 : INFO : Login Success User: NANSAN
+2024-01-24 10:03:15,852 : INFO : Selected Hotel : C2F8 - NOVOTEL KOH SI CHANG
+2024-01-24 10:03:39,427 : INFO : Products -   
+2024-01-24 10:03:42,010 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:03:42,109 : INFO : hotelProduct.bookable : checkbox.checked
+2024-01-24 10:03:42,210 : INFO : hotelProduct.maxOccupancyTotal : 4
+2024-01-24 10:03:42,311 : INFO : hotelProduct.maxOccupancyAdult : 3
+2024-01-24 10:03:42,414 : INFO : hotelProduct.maxOccupancyChildren : 1
+2024-01-24 10:03:42,509 : INFO : hotelProduct.singleBebNumber : 2
+2024-01-24 10:03:42,593 : INFO : hotelProduct.doubleBebNumber : 0
+2024-01-24 10:03:42,772 : INFO : hotelProduct.quantity : 24
+2024-01-24 10:03:42,893 : INFO : hotelProduct.pmsCode : TWBSV
+2024-01-24 10:03:42,993 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:03:43,093 : INFO : hotelProduct.orderInResaScreen : 1
+2024-01-24 10:03:43,193 : INFO : Submitdata
+2024-01-24 10:03:46,511 : INFO : C2F8 : TWBSV : Product 'TWBSV' has been added
+2024-01-24 10:03:47,959 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:03:48,074 : INFO : hotelProduct.bookable : checkbox.checked
+2024-01-24 10:03:48,176 : INFO : hotelProduct.maxOccupancyTotal : 4
+2024-01-24 10:03:48,279 : INFO : hotelProduct.maxOccupancyAdult : 3
+2024-01-24 10:03:48,381 : INFO : hotelProduct.maxOccupancyChildren : 1
+2024-01-24 10:03:48,476 : INFO : hotelProduct.singleBebNumber : 2
+2024-01-24 10:03:48,582 : INFO : hotelProduct.doubleBebNumber : 0
+2024-01-24 10:03:48,777 : INFO : hotelProduct.quantity : 12
+2024-01-24 10:03:48,878 : INFO : hotelProduct.pmsCode : VCB
+2024-01-24 10:03:48,974 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:03:49,082 : INFO : hotelProduct.orderInResaScreen : 2
+2024-01-24 10:03:49,203 : INFO : Submitdata
+2024-01-24 10:03:52,727 : ERROR : C2F8 : VCB : Product already exists
+2024-01-24 10:03:54,182 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:03:54,282 : INFO : hotelProduct.bookable : checkbox.checked
+2024-01-24 10:03:54,384 : INFO : hotelProduct.maxOccupancyTotal : 4
+2024-01-24 10:03:54,483 : INFO : hotelProduct.maxOccupancyAdult : 3
+2024-01-24 10:03:54,562 : INFO : hotelProduct.maxOccupancyChildren : 1
+2024-01-24 10:03:54,673 : INFO : hotelProduct.singleBebNumber : 1
+2024-01-24 10:03:54,783 : INFO : hotelProduct.doubleBebNumber : 1
+2024-01-24 10:03:54,997 : INFO : hotelProduct.quantity : 3
+2024-01-24 10:03:55,079 : INFO : hotelProduct.pmsCode : V1B
+2024-01-24 10:03:55,148 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:03:55,249 : INFO : hotelProduct.orderInResaScreen : 3
+2024-01-24 10:03:55,346 : INFO : Submitdata
+2024-01-24 10:03:58,896 : ERROR : C2F8 : V1B : Product already exists
+2024-01-24 10:04:00,289 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:04:00,402 : INFO : hotelProduct.bookable : checkbox.checked
+2024-01-24 10:04:00,523 : INFO : hotelProduct.maxOccupancyTotal : 7
+2024-01-24 10:04:00,626 : INFO : hotelProduct.maxOccupancyAdult : 5
+2024-01-24 10:04:00,737 : INFO : hotelProduct.maxOccupancyChildren : 2
+2024-01-24 10:04:00,861 : INFO : hotelProduct.singleBebNumber : 2
+2024-01-24 10:04:00,960 : INFO : hotelProduct.doubleBebNumber : 1
+2024-01-24 10:04:01,163 : INFO : hotelProduct.quantity : 1
+2024-01-24 10:04:01,264 : INFO : hotelProduct.pmsCode : V2A
+2024-01-24 10:04:01,386 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:04:01,487 : INFO : hotelProduct.orderInResaScreen : 4
+2024-01-24 10:04:01,598 : INFO : Submitdata
+2024-01-24 10:04:04,988 : ERROR : C2F8 : V2A : Product already exists
+2024-01-24 10:04:15,875 : INFO : Product descriptions
+2024-01-24 10:04:25,987 : INFO : C2F8 : TWBSV : Product has been translated
+2024-01-24 10:05:19,615 : INFO : Product descriptions
+2024-01-24 10:05:29,954 : INFO : C2F8 : VCB  : Product has been translated
+2024-01-24 10:05:34,168 : INFO : Product descriptions
+2024-01-24 10:05:43,330 : INFO : C2F8 : V1B : Product has been translated
+2024-01-24 10:05:47,210 : INFO : Product descriptions
+2024-01-24 10:05:56,569 : INFO : C2F8 : V2A : Product has been translated
+2024-01-24 10:05:56,569 : INFO : C2F8 : Room Translation Complete
+2024-01-24 10:06:42,814 : INFO : Products -   
+2024-01-24 10:06:45,306 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:06:45,386 : INFO : Submitdata
+2024-01-24 10:06:48,495 : INFO : C2F8 : ATOUT1 : Product 'ATOUT1' has been added
+2024-01-24 10:06:49,794 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:06:49,891 : INFO : Submitdata
+2024-01-24 10:06:52,966 : INFO : C2F8 : ATOUT2 : Product 'ATOUT2' has been added
+2024-01-24 10:06:54,297 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:06:54,392 : INFO : Submitdata
+2024-01-24 10:06:57,524 : INFO : C2F8 : ATOUT3 : Product 'ATOUT3' has been added
+2024-01-24 10:06:58,865 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:06:58,966 : INFO : Submitdata
+2024-01-24 10:07:02,108 : INFO : C2F8 : ATOUT4 : Product 'ATOUT4' has been added
+2024-01-24 10:07:03,427 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:03,509 : INFO : Submitdata
+2024-01-24 10:07:06,589 : INFO : C2F8 : ATOUT5 : Product 'ATOUT5' has been added
+2024-01-24 10:07:07,933 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:08,028 : INFO : Submitdata
+2024-01-24 10:07:11,104 : INFO : C2F8 : DWINFO : Product 'DWINFO' has been added
+2024-01-24 10:07:12,440 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:12,518 : INFO : Submitdata
+2024-01-24 10:07:15,624 : INFO : C2F8 : DWROOM : Product 'DWROOM' has been added
+2024-01-24 10:07:16,986 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:17,064 : INFO : Submitdata
+2024-01-24 10:07:20,171 : INFO : C2F8 : DWROO2 : Product 'DWROO2' has been added
+2024-01-24 10:07:21,492 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:21,578 : INFO : Submitdata
+2024-01-24 10:07:24,683 : INFO : C2F8 : DWDEST : Product 'DWDEST' has been added
+2024-01-24 10:07:26,001 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:26,083 : INFO : Submitdata
+2024-01-24 10:07:29,197 : INFO : C2F8 : DWREST : Product 'DWREST' has been added
+2024-01-24 10:07:30,523 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:30,606 : INFO : Submitdata
+2024-01-24 10:07:33,666 : INFO : C2F8 : DWCHLD : Product 'DWCHLD' has been added
+2024-01-24 10:07:34,997 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:35,088 : INFO : Submitdata
+2024-01-24 10:07:38,210 : INFO : C2F8 : DWFIT : Product 'DWFIT' has been added
+2024-01-24 10:07:39,516 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:39,631 : INFO : Submitdata
+2024-01-24 10:07:42,727 : INFO : C2F8 : DWSPA : Product 'DWSPA' has been added
+2024-01-24 10:07:44,046 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:07:44,137 : INFO : Submitdata
+2024-01-24 10:07:47,244 : INFO : C2F8 : OPHSPA : Product 'OPHSPA' has been added
+2024-01-24 10:07:51,045 : INFO : Product descriptions
+2024-01-24 10:07:58,024 : INFO : C2F8 : ATOUT1 : Product has been translated
+2024-01-24 10:08:02,781 : INFO : Product descriptions
+2024-01-24 10:08:09,633 : INFO : C2F8 : ATOUT2 : Product has been translated
+2024-01-24 10:08:13,226 : INFO : Product descriptions
+2024-01-24 10:08:20,146 : INFO : C2F8 : ATOUT3 : Product has been translated
+2024-01-24 10:08:23,891 : INFO : Product descriptions
+2024-01-24 10:08:30,781 : INFO : C2F8 : ATOUT4 : Product has been translated
+2024-01-24 10:08:34,289 : INFO : Product descriptions
+2024-01-24 10:08:40,965 : INFO : C2F8 : ATOUT5 : Product has been translated
+2024-01-24 10:08:44,678 : INFO : Product descriptions
+2024-01-24 10:08:52,425 : INFO : C2F8 : DWINFO : Product has been translated
+2024-01-24 10:08:56,190 : INFO : Product descriptions
+2024-01-24 10:09:03,686 : INFO : C2F8 : DWROOM : Product has been translated
+2024-01-24 10:09:07,824 : INFO : Product descriptions
+2024-01-24 10:09:14,680 : INFO : C2F8 : DWROO2 : Product has been translated
+2024-01-24 10:09:18,192 : INFO : Product descriptions
+2024-01-24 10:09:25,828 : INFO : C2F8 : DWDEST : Product has been translated
+2024-01-24 10:09:29,415 : INFO : Product descriptions
+2024-01-24 10:09:36,303 : INFO : C2F8 : DWREST : Product has been translated
+2024-01-24 10:09:39,784 : INFO : Product descriptions
+2024-01-24 10:09:47,135 : INFO : C2F8 : DWCHLD : Product has been translated
+2024-01-24 10:09:50,843 : INFO : Product descriptions
+2024-01-24 10:09:57,861 : INFO : C2F8 : DWFIT : Product has been translated
+2024-01-24 10:10:01,630 : INFO : Product descriptions
+2024-01-24 10:10:08,433 : INFO : C2F8 : DWSPA : Product has been translated
+2024-01-24 10:10:12,072 : INFO : Product descriptions
+2024-01-24 10:10:18,870 : INFO : C2F8 : OPHSPA : Product has been translated
+2024-01-24 10:10:35,797 : INFO : Products -   
+2024-01-24 10:10:38,302 : INFO : hotelProduct.quantity : 1
+2024-01-24 10:10:38,403 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:10:38,503 : INFO : Submitdata
+2024-01-24 10:10:41,576 : INFO : C2F8 : FAMRNB : Product 'FAMRNB' has been added
+2024-01-24 10:10:42,917 : INFO : hotelProduct.quantity : 40
+2024-01-24 10:10:42,996 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:10:43,090 : INFO : Submitdata
+2024-01-24 10:10:46,187 : INFO : C2F8 : NOSMOK : Product 'NOSMOK' has been added
+2024-01-24 10:10:47,528 : INFO : hotelProduct.quantity : 40
+2024-01-24 10:10:47,614 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:10:47,703 : INFO : Submitdata
+2024-01-24 10:10:50,837 : INFO : C2F8 : NSRNMB : Product 'NSRNMB' has been added
+2024-01-24 10:10:52,120 : INFO : hotelProduct.quantity : 5
+2024-01-24 10:10:52,203 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:10:52,286 : INFO : Submitdata
+2024-01-24 10:10:55,399 : INFO : C2F8 : CONRNB : Product 'CONRNB' has been added
+2024-01-24 10:10:56,689 : INFO : hotelProduct.quantity : 15
+2024-01-24 10:10:56,757 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:10:56,836 : INFO : Submitdata
+2024-01-24 10:10:59,916 : INFO : C2F8 : IXTADB : Product 'IXTADB' has been added
+2024-01-24 10:11:01,272 : INFO : hotelProduct.quantity : 2
+2024-01-24 10:11:01,351 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:11:01,421 : INFO : Submitdata
+2024-01-24 10:11:04,513 : INFO : C2F8 : IXTCR : Product 'IXTCR' has been added
+2024-01-24 10:11:05,805 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:11:05,888 : INFO : Submitdata
+2024-01-24 10:11:09,132 : ERROR : C2F8 : MBUFF : Product already exists
+2024-01-24 10:12:54,615 : INFO : Products -   
+2024-01-24 10:12:57,081 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:12:57,162 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:12:57,246 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:12:57,326 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:12:57,410 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:12:57,478 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:12:57,563 : INFO : Submitdata
+2024-01-24 10:13:00,637 : INFO : C2F8 : PRINTE : Product 'PRINTE' has been added
+2024-01-24 10:13:01,978 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:02,078 : INFO : Submitdata
+2024-01-24 10:13:05,150 : INFO : C2F8 : WIFCOM : Product 'WIFCOM' has been added
+2024-01-24 10:13:06,467 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:06,550 : INFO : Submitdata
+2024-01-24 10:13:09,615 : INFO : C2F8 : WIFI : Product 'WIFI' has been added
+2024-01-24 10:13:10,913 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:11,004 : INFO : Submitdata
+2024-01-24 10:13:14,060 : INFO : C2F8 : WIFIBO : Product 'WIFIBO' has been added
+2024-01-24 10:13:15,381 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:15,456 : INFO : Submitdata
+2024-01-24 10:13:18,542 : INFO : C2F8 : AIRC  : Product 'AIRC' has been added
+2024-01-24 10:13:19,862 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:19,945 : INFO : Submitdata
+2024-01-24 10:13:22,988 : INFO : C2F8 : CHECK2 : Product 'CHECK2' has been added
+2024-01-24 10:13:24,308 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:24,396 : INFO : Submitdata
+2024-01-24 10:13:27,504 : INFO : C2F8 : COLORS : Product 'COLORS' has been added
+2024-01-24 10:13:28,839 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:28,912 : INFO : Submitdata
+2024-01-24 10:13:31,975 : INFO : C2F8 : FERA  : Product 'FERA' has been added
+2024-01-24 10:13:33,278 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:33,358 : INFO : Submitdata
+2024-01-24 10:13:36,423 : INFO : C2F8 : SAFE : Product 'SAFE' has been added
+2024-01-24 10:13:37,751 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:37,823 : INFO : Submitdata
+2024-01-24 10:13:40,923 : INFO : C2F8 : TVBEIN : Product 'TVBEIN' has been added
+2024-01-24 10:13:42,227 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:42,311 : INFO : Submitdata
+2024-01-24 10:13:45,421 : INFO : C2F8 : TVCANA : Product 'TVCANA' has been added
+2024-01-24 10:13:46,768 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:46,846 : INFO : Submitdata
+2024-01-24 10:13:49,928 : INFO : C2F8 : VCR : Product 'VCR' has been added
+2024-01-24 10:13:51,250 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:51,337 : INFO : Submitdata
+2024-01-24 10:13:54,382 : INFO : C2F8 : VOLT2 : Product 'VOLT2' has been added
+2024-01-24 10:13:55,708 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:13:55,781 : INFO : Submitdata
+2024-01-24 10:13:58,914 : INFO : C2F8 : VOLT3 : Product 'VOLT3' has been added
+2024-01-24 10:14:00,233 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:00,318 : INFO : Submitdata
+2024-01-24 10:14:03,377 : INFO : C2F8 : TEMPMA : Product 'TEMPMA' has been added
+2024-01-24 10:14:04,705 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:04,788 : INFO : Submitdata
+2024-01-24 10:14:07,850 : INFO : C2F8 : WINDOW : Product 'WINDOW' has been added
+2024-01-24 10:14:09,192 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:09,274 : INFO : Submitdata
+2024-01-24 10:14:12,349 : INFO : C2F8 : WORK1 : Product 'WORK1' has been added
+2024-01-24 10:14:13,668 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:13,738 : INFO : Submitdata
+2024-01-24 10:14:16,793 : INFO : C2F8 : BATH : Product 'BATH' has been added
+2024-01-24 10:14:18,098 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:14:18,165 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:14:18,251 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:14:18,335 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:14:18,397 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:14:18,467 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:18,551 : INFO : Submitdata
+2024-01-24 10:14:21,610 : INFO : C2F8 : HAIRD : Product 'HAIRD' has been added
+2024-01-24 10:14:22,953 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:23,036 : INFO : Submitdata
+2024-01-24 10:14:26,117 : INFO : C2F8 : SHOWER : Product 'SHOWER' has been added
+2024-01-24 10:14:27,432 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:27,496 : INFO : Submitdata
+2024-01-24 10:14:30,597 : INFO : C2F8 : MAKE : Product 'MAKE' has been added
+2024-01-24 10:14:31,900 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:31,983 : INFO : Submitdata
+2024-01-24 10:14:35,079 : INFO : C2F8 : TOILET : Product 'TOILET' has been added
+2024-01-24 10:14:36,397 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:36,487 : INFO : Submitdata
+2024-01-24 10:14:39,568 : INFO : C2F8 : AUDI : Product 'AUDI' has been added
+2024-01-24 10:14:40,899 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:40,999 : INFO : Submitdata
+2024-01-24 10:14:44,056 : INFO : C2F8 : EMERGE : Product 'EMERGE' has been added
+2024-01-24 10:14:45,391 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:45,482 : INFO : Submitdata
+2024-01-24 10:14:48,574 : INFO : C2F8 : SMOKE : Product 'SMOKE' has been added
+2024-01-24 10:14:49,907 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:49,990 : INFO : Submitdata
+2024-01-24 10:14:53,101 : INFO : C2F8 : SPINKL : Product 'SPINKL' has been added
+2024-01-24 10:14:54,403 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:54,489 : INFO : Submitdata
+2024-01-24 10:14:57,587 : INFO : C2F8 : VIEW : Product 'VIEW' has been added
+2024-01-24 10:14:58,890 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:14:58,961 : INFO : Submitdata
+2024-01-24 10:15:02,027 : INFO : C2F8 : VING : Product 'VING' has been added
+2024-01-24 10:15:03,347 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:03,436 : INFO : Submitdata
+2024-01-24 10:15:06,491 : INFO : C2F8 : COFFE : Product 'COFFE' has been added
+2024-01-24 10:15:07,829 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:15:07,895 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:15:07,958 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:15:08,041 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:15:08,110 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:15:08,179 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:08,264 : INFO : Submitdata
+2024-01-24 10:15:11,357 : INFO : C2F8 : MINIBA : Product 'MINIBA' has been added
+2024-01-24 10:15:12,663 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:12,742 : INFO : Submitdata
+2024-01-24 10:15:15,835 : INFO : C2F8 : DIAL : Product 'DIAL' has been added
+2024-01-24 10:15:17,154 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:15:17,229 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:15:17,334 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:15:17,428 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:15:17,490 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:15:17,570 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:17,661 : INFO : Submitdata
+2024-01-24 10:15:20,719 : INFO : C2F8 : PHON0 : Product 'PHON0' has been added
+2024-01-24 10:15:22,001 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:22,079 : INFO : Submitdata
+2024-01-24 10:15:25,145 : INFO : C2F8 : PHONE : Product 'PHONE' has been added
+2024-01-24 10:15:26,444 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:26,527 : INFO : Submitdata
+2024-01-24 10:15:29,607 : INFO : C2F8 : ALARM : Product 'ALARM' has been added
+2024-01-24 10:15:30,911 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:30,986 : INFO : Submitdata
+2024-01-24 10:15:34,057 : INFO : C2F8 : WAKE : Product 'WAKE' has been added
+2024-01-24 10:15:34,057 : ERROR : C2F8 : CL 0-3 Product not found in Product Library
+2024-01-24 10:15:34,057 : ERROR : C2F8 : CL 3-6 Product not found in Product Library
+2024-01-24 10:15:34,057 : ERROR : C2F8 : CL 4-6 Product not found in Product Library
+2024-01-24 10:15:35,377 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:15:35,461 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:15:35,540 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:15:35,627 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:15:35,709 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:15:35,778 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:35,863 : INFO : Submitdata
+2024-01-24 10:15:38,952 : INFO : C2F8 : NURSE : Product 'NURSE' has been added
+2024-01-24 10:15:40,277 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:40,352 : INFO : Submitdata
+2024-01-24 10:15:43,434 : INFO : C2F8 : PKGECL : Product 'PKGECL' has been added
+2024-01-24 10:15:45,323 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:45,415 : INFO : Submitdata
+2024-01-24 10:15:48,560 : INFO : C2F8 : PARK : Product 'PARK' has been added
+2024-01-24 10:15:49,879 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:49,972 : INFO : Submitdata
+2024-01-24 10:15:53,029 : INFO : C2F8 : PARKIN : Product 'PARKIN' has been added
+2024-01-24 10:15:54,362 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:54,445 : INFO : Submitdata
+2024-01-24 10:15:57,507 : INFO : C2F8 : WHEEL : Product 'WHEEL' has been added
+2024-01-24 10:15:58,795 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:15:58,874 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:15:58,946 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:15:59,011 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:15:59,073 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:15:59,139 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:15:59,212 : INFO : Submitdata
+2024-01-24 10:16:02,285 : INFO : C2F8 : BLAN : Product 'BLAN' has been added
+2024-01-24 10:16:03,639 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:16:03,725 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:16:03,808 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:16:03,886 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:16:03,971 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:16:04,056 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:04,147 : INFO : Submitdata
+2024-01-24 10:16:07,216 : INFO : C2F8 : COPY : Product 'COPY' has been added
+2024-01-24 10:16:08,561 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:08,658 : INFO : Submitdata
+2024-01-24 10:16:11,703 : INFO : C2F8 : REPASS : Product 'REPASS' has been added
+2024-01-24 10:16:13,004 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:13,091 : INFO : Submitdata
+2024-01-24 10:16:16,149 : INFO : C2F8 : WIFI2 : Product 'WIFI2' has been added
+2024-01-24 10:16:17,496 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:17,580 : INFO : Submitdata
+2024-01-24 10:16:20,656 : INFO : C2F8 : OPENH : Product 'OPENH' has been added
+2024-01-24 10:16:21,979 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:22,059 : INFO : Submitdata
+2024-01-24 10:16:25,120 : INFO : C2F8 : AIRCOM : Product 'AIRCOM' has been added
+2024-01-24 10:16:26,410 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:26,495 : INFO : Submitdata
+2024-01-24 10:16:29,555 : INFO : C2F8 : DAYLIT : Product 'DAYLIT' has been added
+2024-01-24 10:16:30,910 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:16:30,983 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:16:31,045 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:16:31,108 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:16:31,192 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:16:31,275 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:31,371 : INFO : Submitdata
+2024-01-24 10:16:34,443 : INFO : C2F8 : OVEPRO : Product 'OVEPRO' has been added
+2024-01-24 10:16:35,726 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:16:35,794 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:16:35,864 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:16:35,949 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:16:36,048 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:16:36,126 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:36,219 : INFO : Submitdata
+2024-01-24 10:16:39,259 : INFO : C2F8 : PODIUM : Product 'PODIUM' has been added
+2024-01-24 10:16:40,579 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:16:40,663 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:16:40,725 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:16:40,810 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:16:40,879 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:16:40,942 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:41,016 : INFO : Submitdata
+2024-01-24 10:16:44,053 : INFO : C2F8 : SEMVID : Product 'SEMVID' has been added
+2024-01-24 10:16:45,356 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:16:45,423 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:16:45,494 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:16:45,557 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:16:45,640 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:16:45,725 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:45,801 : INFO : Submitdata
+2024-01-24 10:16:48,867 : INFO : C2F8 : SYNMAX : Product 'SYNMAX' has been added
+2024-01-24 10:16:50,174 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:16:50,257 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:16:50,341 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:16:50,425 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:16:50,509 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:16:50,594 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:50,673 : INFO : Submitdata
+2024-01-24 10:16:53,772 : INFO : C2F8 : VIDCO : Product 'VIDCO' has been added
+2024-01-24 10:16:55,075 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:55,182 : INFO : Submitdata
+2024-01-24 10:16:58,269 : INFO : C2F8 : WIFI3 : Product 'WIFI3' has been added
+2024-01-24 10:16:59,584 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:16:59,664 : INFO : Submitdata
+2024-01-24 10:17:02,708 : INFO : C2F8 : AIRCOL : Product 'AIRCOL' has been added
+2024-01-24 10:17:04,055 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:04,140 : INFO : Submitdata
+2024-01-24 10:17:07,225 : INFO : C2F8 : DOORS : Product 'DOORS' has been added
+2024-01-24 10:17:08,552 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:08,651 : INFO : Submitdata
+2024-01-24 10:17:11,722 : INFO : C2F8 : EMER1 : Product 'EMER1' has been added
+2024-01-24 10:17:13,033 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:13,111 : INFO : Submitdata
+2024-01-24 10:17:16,190 : INFO : C2F8 : AUTAIR : Product 'AUTAIR' has been added
+2024-01-24 10:17:17,477 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:17,577 : INFO : Submitdata
+2024-01-24 10:17:20,632 : INFO : C2F8 : SUITV : Product 'SUITV' has been added
+2024-01-24 10:17:20,632 : WARNING : Please Manually Check this product: ['CL 0-3', 'CL 3-6', 'CL 4-6']
+2024-01-24 10:17:36,196 : INFO : Products -   
+2024-01-24 10:17:38,683 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:38,756 : INFO : Submitdata
+2024-01-24 10:17:41,835 : INFO : C2F8 : POOL : Product 'POOL' has been added
+2024-01-24 10:17:43,156 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:17:43,217 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:17:43,287 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:17:43,362 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:17:43,439 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:17:43,517 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:43,586 : INFO : Submitdata
+2024-01-24 10:17:46,669 : INFO : C2F8 : EBOAT : Product 'EBOAT' has been added
+2024-01-24 10:17:47,979 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:17:48,042 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:17:48,121 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:17:48,205 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:17:48,283 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:17:48,358 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:48,437 : INFO : Submitdata
+2024-01-24 10:17:51,514 : INFO : C2F8 : FISH : Product 'FISH' has been added
+2024-01-24 10:17:52,836 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:52,926 : INFO : Submitdata
+2024-01-24 10:17:56,048 : INFO : C2F8 : FITE : Product 'FITE' has been added
+2024-01-24 10:17:57,371 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:17:57,449 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:17:57,528 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:17:57,592 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:17:57,670 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:17:57,754 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:17:57,836 : INFO : Submitdata
+2024-01-24 10:18:00,954 : INFO : C2F8 : MASS : Product 'MASS' has been added
+2024-01-24 10:18:02,279 : INFO : hotelProduct.paying : checkbox.checked
+2024-01-24 10:18:02,343 : INFO : hotelProduct.maxOccupancyTotal : 1
+2024-01-24 10:18:02,411 : INFO : hotelProduct.maxQtyInRoom : 1
+2024-01-24 10:18:02,479 : INFO : hotelProduct.orderInResaScreen : 99
+2024-01-24 10:18:02,542 : INFO : hotelProduct.maxOccupancyAdult : 1
+2024-01-24 10:18:02,627 : INFO : hotelProduct.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:18:02,702 : INFO : Submitdata
+2024-01-24 10:18:05,768 : INFO : C2F8 : BIKRAC : Product 'BIKRAC' has been added
+2024-01-24 10:18:21,747 : INFO : Restaurants
+2024-01-24 10:18:24,218 : INFO : hotelRestaurant.rank : 1
+2024-01-24 10:18:24,287 : INFO : hotelRestaurant.name : Food Exchange
+2024-01-24 10:18:24,355 : INFO : hotelRestaurant.horaires : 07:00-21:00
+2024-01-24 10:18:24,440 : INFO : hotelRestaurant.mondayMidday : checkbox.checked
+2024-01-24 10:18:24,508 : INFO : hotelRestaurant.tuesdayMidday : checkbox.checked
+2024-01-24 10:18:24,581 : INFO : hotelRestaurant.wednesdayMidday : checkbox.checked
+2024-01-24 10:18:24,655 : INFO : hotelRestaurant.thursdayMidday : checkbox.checked
+2024-01-24 10:18:24,739 : INFO : hotelRestaurant.fridayMidday : checkbox.checked
+2024-01-24 10:18:24,813 : INFO : hotelRestaurant.saturdayMidday : checkbox.checked
+2024-01-24 10:18:24,887 : INFO : hotelRestaurant.sundayMidday : checkbox.checked
+2024-01-24 10:18:24,962 : INFO : hotelRestaurant.mondayEvening : checkbox.checked
+2024-01-24 10:18:25,020 : INFO : hotelRestaurant.tuesdayEvening : checkbox.checked
+2024-01-24 10:18:25,102 : INFO : hotelRestaurant.wednesdayEvening : checkbox.checked
+2024-01-24 10:18:25,179 : INFO : hotelRestaurant.thursdayEvening : checkbox.checked
+2024-01-24 10:18:25,257 : INFO : hotelRestaurant.fridayEvening : checkbox.checked
+2024-01-24 10:18:25,320 : INFO : hotelRestaurant.saturdayEvening : checkbox.checked
+2024-01-24 10:18:25,395 : INFO : hotelRestaurant.sundayEvening : checkbox.checked
+2024-01-24 10:18:25,483 : INFO : hotelRestaurant.cash : checkbox.checked
+2024-01-24 10:18:25,556 : INFO : hotelRestaurant.creditCard : checkbox.checked
+2024-01-24 10:18:25,624 : INFO : hotelRestaurant.maximumSeating : 47
+2024-01-24 10:18:25,703 : INFO : hotelRestaurant.wheelChairAccess : checkbox.checked
+2024-01-24 10:18:25,778 : INFO : hotelRestaurant.airConditionning : checkbox.checked
+2024-01-24 10:18:25,841 : INFO : hotelRestaurant.nonSmoking : checkbox.checked
+2024-01-24 10:18:25,925 : INFO : hotelRestaurant.exceptionalView : checkbox.checked
+2024-01-24 10:18:41,591 : INFO : Restaurant descriptions
+2024-01-24 10:18:49,936 : INFO : C2F8 : RT : Restaurant descriptions has been translated with selected languages
+2024-01-24 10:19:04,828 : INFO : Bars
+2024-01-24 10:19:07,255 : INFO : hotelBar.name : POOL Bar
+2024-01-24 10:19:07,318 : INFO : hotelBar.openingHours : 11:00-19:00
+2024-01-24 10:19:07,385 : INFO : hotelBar.maxSeats : 26
+2024-01-24 10:19:07,454 : INFO : hotelBar.lightMeal : checkbox.checked
+2024-01-24 10:19:07,538 : INFO : hotelBar.musicalAnimation : checkbox.checked
+2024-01-24 10:19:07,617 : INFO : hotelBar.happyHour : checkbox.checked
+2024-01-24 10:19:07,685 : INFO : hotelBar.mondayMidday : checkbox.checked
+2024-01-24 10:19:07,755 : INFO : hotelBar.tuesdayMidday : checkbox.checked
+2024-01-24 10:19:07,817 : INFO : hotelBar.wednesdayMidday : checkbox.checked
+2024-01-24 10:19:07,886 : INFO : hotelBar.thursdayMidday : checkbox.checked
+2024-01-24 10:19:07,954 : INFO : hotelBar.fridayMidday : checkbox.checked
+2024-01-24 10:19:08,017 : INFO : hotelBar.saturdayMidday : checkbox.checked
+2024-01-24 10:19:08,085 : INFO : hotelBar.sundayMidday : checkbox.checked
+2024-01-24 10:19:08,154 : INFO : hotelBar.mondayEvening : checkbox.checked
+2024-01-24 10:19:08,217 : INFO : hotelBar.tuesdayEvening : checkbox.checked
+2024-01-24 10:19:08,289 : INFO : hotelBar.wednesdayEvening : checkbox.checked
+2024-01-24 10:19:08,354 : INFO : hotelBar.thursdayEvening : checkbox.checked
+2024-01-24 10:19:08,416 : INFO : hotelBar.fridayEvening : checkbox.checked
+2024-01-24 10:19:08,486 : INFO : hotelBar.saturdayEvening : checkbox.checked
+2024-01-24 10:19:08,554 : INFO : hotelBar.sundayEvening : checkbox.checked
+2024-01-24 10:19:08,619 : INFO : hotelBar.rank : 1
+2024-01-24 10:19:10,188 : INFO : C2F8 : BAR2 : Bar 'BAR2' has been added
+2024-01-24 10:20:38,636 : INFO : Load content Book version 16
+2024-01-24 10:20:42,009 : INFO : C2F8 : Content Book Loaded
+2024-01-24 10:20:42,017 : INFO : Credentials loaded Username: NANSAN
+2024-01-24 10:20:50,277 : INFO : Login Success User: NANSAN
+2024-01-24 10:21:04,596 : INFO : Selected Hotel : C2F8 - NOVOTEL KOH SI CHANG
+2024-01-24 10:21:14,809 : INFO : Bar descriptions
+2024-01-24 10:21:22,474 : INFO : C2F8 : BAR2 : Bar has been translated
+2024-01-24 10:21:31,700 : INFO : Lounges
+2024-01-24 10:21:33,511 : INFO : hotelLounge.name : Laem Si Chang
+2024-01-24 10:21:33,589 : INFO : hotelLounge.surface : 48
+2024-01-24 10:21:33,658 : INFO : hotelLounge.maxNumberPax : 40
+2024-01-24 10:21:33,744 : INFO : hotelLounge.ceilingHeight : 3
+2024-01-24 10:21:33,806 : INFO : hotelLounge.floorCover : wood floor
+2024-01-24 10:21:33,874 : INFO : hotelLounge.nbPaxBoardRoom : 0
+2024-01-24 10:21:33,960 : INFO : hotelLounge.nbPaxInU : 20
+2024-01-24 10:21:34,043 : INFO : hotelLounge.nbPaxClassRoom : 30
+2024-01-24 10:21:34,143 : INFO : hotelLounge.nbPaxInV : 0
+2024-01-24 10:21:34,224 : INFO : hotelLounge.nbPaxTheater : 40
+2024-01-24 10:21:34,291 : INFO : hotelLounge.nbPaxRoundTables : 36
+2024-01-24 10:21:34,359 : INFO : hotelLounge.nbPaxRoundTablesOff : 0
+2024-01-24 10:21:34,445 : INFO : hotelLounge.nbPaxRoundTablesDc : 0
+2024-01-24 10:21:34,526 : INFO : hotelLounge.nbPaxRoundTablesOffDc : 0
+2024-01-24 10:21:34,593 : INFO : hotelLounge.cocktail : checkbox.checked
+2024-01-24 10:21:35,899 : INFO : C2F8 : Laem Si Chang : Lounge 'MEET' has been added
+2024-01-24 10:29:33,371 : INFO : Load content Book version 16
+2024-01-24 10:29:37,396 : INFO : C2F8 : Content Book Loaded
+2024-01-24 10:29:37,400 : INFO : Credentials loaded Username: NANSAN
+2024-01-24 10:29:46,240 : INFO : Login Success User: NANSAN
+2024-01-24 10:30:00,672 : INFO : Selected Hotel : C2F8 - NOVOTEL KOH SI CHANG
+2024-01-24 10:34:48,512 : INFO : Load content Book version 16
+2024-01-24 10:34:52,186 : INFO : C2F8 : Content Book Loaded
+2024-01-24 10:34:52,186 : INFO : Credentials loaded Username: NANSAN
+2024-01-24 10:35:00,120 : INFO : Login Success User: NANSAN
+2024-01-24 10:35:14,745 : INFO : Selected Hotel : C2F8 - NOVOTEL KOH SI CHANG
+2024-01-24 10:35:32,655 : INFO : C2F8 : Laem Si Chang : Lounge has been translated
+2024-01-24 10:35:42,910 : INFO : Accesses
+2024-01-24 10:35:44,601 : INFO : hotelAccess.name : NOVOTEL KOH SI CHANG
+2024-01-24 10:35:50,846 : INFO : Access descriptions
+2024-01-24 10:35:58,312 : INFO : C2F8 : ACCM : Access has been translated
+2024-01-24 10:36:01,434 : INFO : Accesses
+2024-01-24 10:37:03,623 : INFO : Surrounding Attractions -
+2024-01-24 10:37:05,345 : INFO : hotelIp.name : BKK
+2024-01-24 10:37:05,530 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:05,610 : INFO : hotelIp.carTime : 60
+2024-01-24 10:37:05,677 : INFO : hotelIp.orientation : N
+2024-01-24 10:37:05,757 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:07,001 : INFO : C2F8 : AER1 : Surrounding attraction 'AER1' has been added
+2024-01-24 10:37:07,942 : INFO : hotelIp.name : SUVARNABHUMI
+2024-01-24 10:37:08,105 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:08,204 : INFO : hotelIp.carTime : 60
+2024-01-24 10:37:08,306 : INFO : hotelIp.orientation : N
+2024-01-24 10:37:08,390 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:09,601 : INFO : C2F8 : APT1 : Surrounding attraction 'APT1' has been added
+2024-01-24 10:37:10,546 : INFO : hotelIp.name : SRIRACHA
+2024-01-24 10:37:10,705 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:10,794 : INFO : hotelIp.carTime : 0
+2024-01-24 10:37:10,877 : INFO : hotelIp.orientation : E
+2024-01-24 10:37:10,957 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:12,226 : INFO : C2F8 : PCN : Surrounding attraction 'PCN' has been added
+2024-01-24 10:37:13,168 : INFO : hotelIp.name : UTP
+2024-01-24 10:37:13,331 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:13,414 : INFO : hotelIp.carTime : 40
+2024-01-24 10:37:13,483 : INFO : hotelIp.orientation : E
+2024-01-24 10:37:13,568 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:14,872 : INFO : C2F8 : PCC : Surrounding attraction 'PCC' has been added
+2024-01-24 10:37:15,801 : INFO : hotelIp.name : BANGKOK
+2024-01-24 10:37:15,974 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:16,058 : INFO : hotelIp.carTime : 60
+2024-01-24 10:37:16,143 : INFO : hotelIp.orientation : E
+2024-01-24 10:37:16,228 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:17,461 : INFO : C2F8 : NCN : Surrounding attraction 'NCN' has been added
+2024-01-24 10:37:18,423 : INFO : hotelIp.name : BKK
+2024-01-24 10:37:18,612 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:18,679 : INFO : hotelIp.carTime : 60
+2024-01-24 10:37:18,764 : INFO : hotelIp.orientation : N
+2024-01-24 10:37:18,843 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:20,115 : INFO : C2F8 : NCC : Surrounding attraction 'NCC' has been added
+2024-01-24 10:37:21,050 : INFO : hotelIp.name : SRIRACHA
+2024-01-24 10:37:21,229 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:21,303 : INFO : hotelIp.carTime : 0
+2024-01-24 10:37:21,388 : INFO : hotelIp.orientation : E
+2024-01-24 10:37:21,488 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:22,723 : INFO : C2F8 : CTR1 : Surrounding attraction 'CTR1' has been added
+2024-01-24 10:37:23,664 : INFO : hotelIp.name : SRIRACHA
+2024-01-24 10:37:23,826 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:23,895 : INFO : hotelIp.carTime : 0
+2024-01-24 10:37:23,980 : INFO : hotelIp.orientation : E
+2024-01-24 10:37:24,080 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:25,358 : INFO : C2F8 : CENT : Surrounding attraction 'CENT' has been added
+2024-01-24 10:37:26,317 : INFO : hotelIp.name : DMK
+2024-01-24 10:37:26,486 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:26,565 : INFO : hotelIp.carTime : 90
+2024-01-24 10:37:26,636 : INFO : hotelIp.orientation : N
+2024-01-24 10:37:26,702 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:27,968 : INFO : C2F8 : NPT1 : Surrounding attraction 'NPT1' has been added
+2024-01-24 10:37:28,909 : INFO : hotelIp.name : KOH LOI PIER
+2024-01-24 10:37:29,071 : INFO : hotelIp.shuttle.scheduled : checkbox.checked
+2024-01-24 10:37:29,209 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:29,295 : INFO : hotelIp.carTime : 10
+2024-01-24 10:37:29,367 : INFO : hotelIp.orientation : N
+2024-01-24 10:37:29,443 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:30,698 : INFO : C2F8 : FERR : Surrounding attraction 'FERR' has been added
+2024-01-24 10:37:31,648 : INFO : hotelIp.name : QUEEN SIRIKIT
+2024-01-24 10:37:31,815 : INFO : hotelIp.walkingTime : 99
+2024-01-24 10:37:31,900 : INFO : hotelIp.carTime : 90
+2024-01-24 10:37:32,001 : INFO : hotelIp.orientation : N
+2024-01-24 10:37:32,074 : INFO : hotelIp.availableOnGdsMedia : checkbox.checked
+2024-01-24 10:37:33,366 : INFO : C2F8 : CONG : Surrounding attraction 'CONG' has been added
+2024-01-24 10:37:44,957 : INFO : Surrounding Attractions -
+2024-01-24 10:37:51,702 : INFO : Hotel Contacts
+2024-01-24 10:37:52,574 : INFO : hotelContactsForm_hotelStaffManagers_generalManager_name : Mr Austin-stanley ROBINSON
+2024-01-24 10:37:53,895 : INFO : C2F8 : createHotelContacts : Hotel contacts have been created
+2024-01-24 10:38:23,592 : INFO : Hotel Contacts
+2024-01-24 10:38:24,429 : INFO : hotelContactsForm_hotelStaffManagers_generalManager_name : Mr Austin-stanley ROBINSON
+2024-01-24 10:38:25,723 : INFO : C2F8 : createHotelContacts : Hotel contacts have been created
+2024-01-24 10:38:37,500 : INFO : Guarantees
+2024-01-24 10:38:38,953 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:38:39,044 : INFO : Submitdata
+2024-01-24 10:38:41,188 : INFO : C2F8 : AX : Guarantee has been added
+2024-01-24 10:38:41,865 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:38:41,958 : INFO : Submitdata
+2024-01-24 10:38:44,077 : INFO : C2F8 : CA : Guarantee has been added
+2024-01-24 10:38:44,748 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:38:44,827 : INFO : Submitdata
+2024-01-24 10:38:46,953 : INFO : C2F8 : VI : Guarantee has been added
+2024-01-24 10:38:47,639 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:38:47,717 : INFO : Submitdata
+2024-01-24 10:38:49,819 : INFO : C2F8 : WIRE : Guarantee has been added
+2024-01-24 10:38:50,495 : INFO : hotelGuarantee.qualified : checkbox.checked
+2024-01-24 10:38:50,580 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:38:50,664 : INFO : Submitdata
+2024-01-24 10:38:52,800 : INFO : C2F8 : IATA : Guarantee has been added
+2024-01-24 10:38:53,481 : INFO : Submitdata
+2024-01-24 10:38:55,609 : INFO : C2F8 : PCHECK : Guarantee has been added
+2024-01-24 10:38:56,291 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:38:56,373 : INFO : Submitdata
+2024-01-24 10:38:58,479 : INFO : C2F8 : CASH : Guarantee has been added
+2024-01-24 10:38:59,177 : INFO : Submitdata
+2024-01-24 10:39:01,289 : INFO : C2F8 : CCHECK : Guarantee has been added
+2024-01-24 10:39:01,990 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:39:02,074 : INFO : Submitdata
+2024-01-24 10:39:04,212 : INFO : C2F8 : PREP1 : Guarantee has been added
+2024-01-24 10:39:04,911 : INFO : hotelGuarantee.availableOnGDSMedia : checkbox.checked
+2024-01-24 10:39:05,006 : INFO : Submitdata
+2024-01-24 10:39:07,142 : INFO : C2F8 : GTO : Guarantee has been added
+2024-01-24 10:40:00,048 : INFO : Payments
+2024-01-24 10:40:01,484 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2024-01-24 10:40:01,582 : INFO : Submitdata
+2024-01-24 10:40:03,690 : INFO : C2F8 : AX : Payment has been added
+2024-01-24 10:40:04,380 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2024-01-24 10:40:04,467 : INFO : Submitdata
+2024-01-24 10:40:06,568 : INFO : C2F8 : CA : Payment has been added
+2024-01-24 10:40:07,240 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2024-01-24 10:40:07,338 : INFO : Submitdata
+2024-01-24 10:40:09,476 : INFO : C2F8 : VI : Payment has been added
+2024-01-24 10:40:10,145 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2024-01-24 10:40:10,230 : INFO : Submitdata
+2024-01-24 10:40:12,340 : INFO : C2F8 : WIRE : Payment has been added
+2024-01-24 10:40:13,019 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2024-01-24 10:40:13,106 : INFO : Submitdata
+2024-01-24 10:40:15,230 : INFO : C2F8 : CREDIT : Payment has been added
+2024-01-24 10:40:15,884 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2024-01-24 10:40:15,973 : INFO : Submitdata
+2024-01-24 10:40:18,076 : INFO : C2F8 : PCHECK : Payment has been added
+2024-01-24 10:40:18,763 : INFO : hotelPaymentForm_hotelPayment_availableOnGdsOrMedias : checkbox.checked
+2024-01-24 10:40:18,862 : INFO : Submitdata
+2024-01-24 10:40:21,039 : INFO : C2F8 : CR : Payment has been added
+2024-01-24 10:40:21,740 : INFO : Submitdata
+2024-01-24 10:40:23,839 : INFO : C2F8 : CCHECK : Payment has been added
+2024-01-24 10:40:24,523 : INFO : Submitdata
+2024-01-24 10:40:26,648 : INFO : C2F8 : PREPA1 : Payment has been added
+2024-01-24 10:40:27,340 : INFO : Submitdata
+2024-01-24 10:40:29,471 : INFO : C2F8 : PRCARD : Payment has been added
